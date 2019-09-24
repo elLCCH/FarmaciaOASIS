@@ -41,7 +41,6 @@
             this.btnCerrarSesion = new System.Windows.Forms.Button();
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.btnServicios = new System.Windows.Forms.Button();
-            this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.PanelEncabezado = new System.Windows.Forms.Panel();
             this.btnRestaurar = new System.Windows.Forms.Button();
             this.btnMinimizar = new System.Windows.Forms.Button();
@@ -52,7 +51,6 @@
             this.PanelMenuVertical.SuspendLayout();
             this.PanelTipoPasajero.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             this.PanelEncabezado.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pbxrecorrer)).BeginInit();
             this.SuspendLayout();
@@ -69,7 +67,6 @@
             this.PanelMenuVertical.Controls.Add(this.btnCerrarSesion);
             this.PanelMenuVertical.Controls.Add(this.pictureBox4);
             this.PanelMenuVertical.Controls.Add(this.btnServicios);
-            this.PanelMenuVertical.Controls.Add(this.pictureBox3);
             this.PanelMenuVertical.Cursor = System.Windows.Forms.Cursors.Default;
             this.PanelMenuVertical.Dock = System.Windows.Forms.DockStyle.Left;
             this.PanelMenuVertical.Location = new System.Drawing.Point(0, 0);
@@ -243,16 +240,6 @@
             this.btnServicios.UseVisualStyleBackColor = true;
             this.btnServicios.Click += new System.EventHandler(this.BtnServicios_Click);
             // 
-            // pictureBox3
-            // 
-            this.pictureBox3.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox3.Image")));
-            this.pictureBox3.Location = new System.Drawing.Point(3, 8);
-            this.pictureBox3.Name = "pictureBox3";
-            this.pictureBox3.Size = new System.Drawing.Size(56, 62);
-            this.pictureBox3.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
-            this.pictureBox3.TabIndex = 0;
-            this.pictureBox3.TabStop = false;
-            // 
             // PanelEncabezado
             // 
             this.PanelEncabezado.BackColor = System.Drawing.Color.DarkGoldenrod;
@@ -348,9 +335,9 @@
             this.PanelPrincipal.Name = "PanelPrincipal";
             this.PanelPrincipal.RowCount = 1;
             this.PanelPrincipal.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Percent, 50F));
-            this.PanelPrincipal.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 620F));
-            this.PanelPrincipal.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 620F));
-            this.PanelPrincipal.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 620F));
+            this.PanelPrincipal.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 630F));
+            this.PanelPrincipal.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 630F));
+            this.PanelPrincipal.RowStyles.Add(new System.Windows.Forms.RowStyle(System.Windows.Forms.SizeType.Absolute, 630F));
             this.PanelPrincipal.Size = new System.Drawing.Size(716, 630);
             this.PanelPrincipal.TabIndex = 15;
             // 
@@ -368,7 +355,6 @@
             this.PanelMenuVertical.PerformLayout();
             this.PanelTipoPasajero.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             this.PanelEncabezado.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.pbxrecorrer)).EndInit();
             this.ResumeLayout(false);
@@ -389,7 +375,6 @@
         public System.Windows.Forms.Button btnCerrarSesion;
         public System.Windows.Forms.PictureBox pictureBox4;
         public System.Windows.Forms.Button btnServicios;
-        public System.Windows.Forms.PictureBox pictureBox3;
         public System.Windows.Forms.Panel PanelEncabezado;
         public System.Windows.Forms.Button btnRestaurar;
         public System.Windows.Forms.Button btnMinimizar;
