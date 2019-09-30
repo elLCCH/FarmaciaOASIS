@@ -20,9 +20,9 @@ namespace FarmaciaOASIS.Vistas
         }
         private void SituarBotones(int y)
         {
-            btnChofer.Location = new Point(3, y);
-            btnVehiculos.Location = new Point(3, y = y + 50);
-            btnCerrarSesion.Location = new Point(3, y = y + 50);
+            //btnChofer.Location = new Point(3, y);
+            //btnVehiculos.Location = new Point(3, y = y + 50);
+            //btnCerrarSesion.Location = new Point(3, y = y + 50);
         }
         //abrir dentro de panel
         [DllImport("user32.DLL", EntryPoint = "ReleaseCapture")]
@@ -42,10 +42,7 @@ namespace FarmaciaOASIS.Vistas
             fh.Show();
         }
 
-        private void BtnServicios_Click(object sender, EventArgs e)
-        {
-            AbrirFormInPanel(new Form1());
-        }
+        
         private void Pbxrecorrer_Click(object sender, EventArgs e)
         {
             if (PanelMenuVertical.Width == 250)
@@ -55,14 +52,20 @@ namespace FarmaciaOASIS.Vistas
         }
         private void MenuAdministrador(int y)
         {
-            btnChofer.Location = new Point(3, y);
-            btnVehiculos.Location = new Point(3, y = y + 50);
-            btnUsuarios.Location = new Point(3, y = y + 50);
-            btnCerrarSesion.Location = new Point(3, y = y + 50);
+            //btnChofer.Location = new Point(3, y);
+            //btnVehiculos.Location = new Point(3, y = y + 50);
+            //btnUsuarios.Location = new Point(3, y = y + 50);
+            //btnCerrarSesion.Location = new Point(3, y = y + 50);
 
-            btnServicios.Visible = false;
-            btnPasajero.Visible = false;
-            PanelTipoPasajero.Visible = false;
+            //btnServicios.Visible = false;
+            //btnPasajero.Visible = false;
+            //PanelTipoPasajero.Visible = false;
+        }
+
+        private void tmFechaHora_Tick(object sender, EventArgs e)
+        {
+            lbFecha.Text = DateTime.Now.ToLongDateString();
+            lblHora.Text = DateTime.Now.ToString("HH:mm:ssss");
         }
     }
 }

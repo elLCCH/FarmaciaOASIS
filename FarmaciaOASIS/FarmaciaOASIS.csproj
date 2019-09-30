@@ -45,23 +45,80 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Form1.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Form1.Designer.cs">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Vistas\frmGestion.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\frmGestion.Designer.cs">
+      <DependentUpon>frmGestion.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\frmLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\frmLogin.Designer.cs">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </Compile>
     <Compile Include="Vistas\frmPrincipal.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Vistas\frmPrincipal.Designer.cs">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Form1.resx">
-      <DependentUpon>Form1.cs</DependentUpon>
-    </EmbeddedResource>
+    <Compile Include="Vistas\frmVentanaDatos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\frmVentanaDatos.Designer.cs">
+      <DependentUpon>frmVentanaDatos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Gestiones\frmGestionarClientes.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\Gestiones\frmGestionarClientes.Designer.cs">
+      <DependentUpon>frmGestionarClientes.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Gestiones\frmGestionarMedicamentos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\Gestiones\frmGestionarMedicamentos.Designer.cs">
+      <DependentUpon>frmGestionarMedicamentos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Gestiones\frmGestionarProveedores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\Gestiones\frmGestionarProveedores.Designer.cs">
+      <DependentUpon>frmGestionarProveedores.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\Gestiones\frmGestionarUsuarios.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\Gestiones\frmGestionarUsuarios.Designer.cs">
+      <DependentUpon>frmGestionarUsuarios.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\VentanasCruds\frmCliente.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\VentanasCruds\frmCliente.Designer.cs">
+      <DependentUpon>frmCliente.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\VentanasCruds\frmMedicamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\VentanasCruds\frmMedicamento.Designer.cs">
+      <DependentUpon>frmMedicamento.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\VentanasCruds\frmProveedor.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\VentanasCruds\frmProveedor.Designer.cs">
+      <DependentUpon>frmProveedor.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\VentanasCruds\frmUsuario.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\VentanasCruds\frmUsuario.Designer.cs">
+      <DependentUpon>frmUsuario.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -71,8 +128,41 @@
       <AutoGen>True</AutoGen>
       <DependentUpon>Resources.resx</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Vistas\frmGestion.resx">
+      <DependentUpon>frmGestion.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\frmLogin.resx">
+      <DependentUpon>frmLogin.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Vistas\frmPrincipal.resx">
       <DependentUpon>frmPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\frmVentanaDatos.resx">
+      <DependentUpon>frmVentanaDatos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\Gestiones\frmGestionarClientes.resx">
+      <DependentUpon>frmGestionarClientes.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\Gestiones\frmGestionarMedicamentos.resx">
+      <DependentUpon>frmGestionarMedicamentos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\Gestiones\frmGestionarProveedores.resx">
+      <DependentUpon>frmGestionarProveedores.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\Gestiones\frmGestionarUsuarios.resx">
+      <DependentUpon>frmGestionarUsuarios.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\VentanasCruds\frmCliente.resx">
+      <DependentUpon>frmCliente.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\VentanasCruds\frmMedicamento.resx">
+      <DependentUpon>frmMedicamento.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\VentanasCruds\frmProveedor.resx">
+      <DependentUpon>frmProveedor.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\VentanasCruds\frmUsuario.resx">
+      <DependentUpon>frmUsuario.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
@@ -86,6 +176,123 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Resources\2.png" />
+    <Content Include="Resources\21.png" />
+    <Content Include="Resources\bien.png" />
+    <Content Include="Resources\bien2.png" />
+    <Content Include="Resources\cadado.png" />
+    <Content Include="Resources\cerrar.png" />
+    <Content Include="Resources\CerrarSesion2.png" />
+    <Content Include="Resources\CerrarSesion21.png" />
+    <Content Include="Resources\Close.png" />
+    <Content Include="Resources\equis.png" />
+    <Content Include="Resources\estadistico.png" />
+    <Content Include="Resources\estadistico1.png" />
+    <Content Include="Resources\Farmacia Icons\-local-pharmacy_90649.png" />
+    <Content Include="Resources\Farmacia Icons\analitica.png" />
+    <Content Include="Resources\Farmacia Icons\archivo.png" />
+    <Content Include="Resources\Farmacia Icons\asistencia-medica-y-medicina.png" />
+    <Content Include="Resources\Farmacia Icons\burbuja-de-chat.png" />
+    <Content Include="Resources\Farmacia Icons\caduceo.png" />
+    <Content Include="Resources\Farmacia Icons\carpeta.png" />
+    <Content Include="Resources\Farmacia Icons\construir.png" />
+    <Content Include="Resources\Farmacia Icons\cropped-Farmacia-Plantilla-03.png" />
+    <Content Include="Resources\Farmacia Icons\deslizarse.png" />
+    <Content Include="Resources\Farmacia Icons\doctor.png" />
+    <Content Include="Resources\Farmacia Icons\droga %281%29.png" />
+    <Content Include="Resources\Farmacia Icons\droga %282%29.png" />
+    <Content Include="Resources\Farmacia Icons\droga.png" />
+    <Content Include="Resources\Farmacia Icons\enfermera.png" />
+    <Content Include="Resources\Farmacia Icons\facturacion %281%29.png" />
+    <Content Include="Resources\Farmacia Icons\facturacion.png" />
+    <Content Include="Resources\Farmacia Icons\farmaceutico %281%29.png" />
+    <Content Include="Resources\Farmacia Icons\farmaceutico %282%29.png" />
+    <Content Include="Resources\Farmacia Icons\farmaceutico.png" />
+    <Content Include="Resources\Farmacia Icons\farmacia %281%29.png" />
+    <Content Include="Resources\Farmacia Icons\farmacia %282%29.png" />
+    <Content Include="Resources\Farmacia Icons\farmacia.png" />
+    <Content Include="Resources\Farmacia Icons\historial-medico %281%29.png" />
+    <Content Include="Resources\Farmacia Icons\historial-medico.png" />
+    <Content Include="Resources\Farmacia Icons\hospital.png" />
+    <Content Include="Resources\Farmacia Icons\iconfinder_13-doctor_4714996.png" />
+    <Content Include="Resources\Farmacia Icons\iconfinder_1_hospital_2774740.png" />
+    <Content Include="Resources\Farmacia Icons\iconfinder_9_375256.png" />
+    <Content Include="Resources\Farmacia Icons\iconfinder_accessories-text-editor_118805.png" />
+    <Content Include="Resources\Farmacia Icons\iconfinder_Artboard_15_3874674.png" />
+    <Content Include="Resources\Farmacia Icons\iconfinder_Doctors1_2315997.png" />
+    <Content Include="Resources\Farmacia Icons\iconfinder_doctor_63121.png" />
+    <Content Include="Resources\Farmacia Icons\iconfinder_Dr._Slip_2415605.png" />
+    <Content Include="Resources\Farmacia Icons\iconfinder_medical-healthcare-hospital-02_4082097.png" />
+    <Content Include="Resources\Farmacia Icons\iconfinder_medical-healthcare-hospital-48_4082065.png" />
+    <Content Include="Resources\Farmacia Icons\iconfinder_medical_icon_3_1290986.png" />
+    <Content Include="Resources\Farmacia Icons\iconfinder_medical_suitecase_88329.png" />
+    <Content Include="Resources\Farmacia Icons\iconfinder_pdf_3745 %281%29.png" />
+    <Content Include="Resources\Farmacia Icons\iconfinder_pdf_3745 %282%29.png" />
+    <Content Include="Resources\Farmacia Icons\iconfinder_pdf_3745 %283%29.png" />
+    <Content Include="Resources\Farmacia Icons\iconfinder_pdf_3745 %284%29.png" />
+    <Content Include="Resources\Farmacia Icons\iconfinder_pdf_3745.png" />
+    <Content Include="Resources\Farmacia Icons\llamada-de-emergencia.png" />
+    <Content Include="Resources\Farmacia Icons\medicina %281%29.png" />
+    <Content Include="Resources\Farmacia Icons\medicina %282%29.png" />
+    <Content Include="Resources\Farmacia Icons\medicina.png" />
+    <Content Include="Resources\Farmacia Icons\pastillas %281%29.png" />
+    <Content Include="Resources\Farmacia Icons\pastillas.png" />
+    <Content Include="Resources\Farmacia Icons\portapapeles.png" />
+    <Content Include="Resources\Farmacia Icons\prescripcion %281%29.png" />
+    <Content Include="Resources\Farmacia Icons\prescripcion.png" />
+    <Content Include="Resources\Farmacia Icons\profesiones-y-trabajo.png" />
+    <Content Include="Resources\Farmacia Icons\ProyS\2.png" />
+    <Content Include="Resources\Farmacia Icons\ProyS\21.png" />
+    <Content Include="Resources\Farmacia Icons\ProyS\bien.png" />
+    <Content Include="Resources\Farmacia Icons\ProyS\bien2.png" />
+    <Content Include="Resources\Farmacia Icons\ProyS\cadado.png" />
+    <Content Include="Resources\Farmacia Icons\ProyS\cerrar.png" />
+    <Content Include="Resources\Farmacia Icons\ProyS\CerrarSesion2.png" />
+    <Content Include="Resources\Farmacia Icons\ProyS\CerrarSesion21.png" />
+    <Content Include="Resources\Farmacia Icons\ProyS\Close.png" />
+    <Content Include="Resources\Farmacia Icons\ProyS\equis.png" />
+    <Content Include="Resources\Farmacia Icons\ProyS\estadistico.png" />
+    <Content Include="Resources\Farmacia Icons\ProyS\estadistico1.png" />
+    <Content Include="Resources\Farmacia Icons\ProyS\icono-cliente.png" />
+    <Content Include="Resources\Farmacia Icons\ProyS\icono-cliente1.png" />
+    <Content Include="Resources\Farmacia Icons\ProyS\LetraFarmacia.png" />
+    <Content Include="Resources\Farmacia Icons\ProyS\logo de menu1.png" />
+    <Content Include="Resources\Farmacia Icons\ProyS\logo de menu11.png" />
+    <Content Include="Resources\Farmacia Icons\ProyS\medicamento.png" />
+    <Content Include="Resources\Farmacia Icons\ProyS\menu2.png" />
+    <Content Include="Resources\Farmacia Icons\ProyS\menu21.png" />
+    <Content Include="Resources\Farmacia Icons\ProyS\perfil.png" />
+    <Content Include="Resources\Farmacia Icons\ProyS\producto2.png" />
+    <Content Include="Resources\Farmacia Icons\ProyS\producto21.png" />
+    <Content Include="Resources\Farmacia Icons\ProyS\shut-down.png" />
+    <Content Include="Resources\Farmacia Icons\ProyS\user.png" />
+    <Content Include="Resources\Farmacia Icons\ProyS\Usuarios.png" />
+    <Content Include="Resources\Farmacia Icons\ProyS\Usuarios1.png" />
+    <Content Include="Resources\Farmacia Icons\salud %281%29.png" />
+    <Content Include="Resources\Farmacia Icons\salud.png" />
+    <Content Include="Resources\Farmacia Icons\seguro-medico.png" />
+    <Content Include="Resources\Farmacia Icons\telefono-inteligente.png" />
+    <Content Include="Resources\icono-cliente.png" />
+    <Content Include="Resources\icono-cliente1.png" />
+    <Content Include="Resources\LetraFarmacia.png" />
+    <Content Include="Resources\logo de menu1.png" />
+    <Content Include="Resources\logo de menu11.png" />
+    <Content Include="Resources\medicamento.png" />
+    <Content Include="Resources\menu2.png" />
+    <Content Include="Resources\menu21.png" />
+    <Content Include="Resources\perfil.png" />
+    <Content Include="Resources\producto2.png" />
+    <Content Include="Resources\producto21.png" />
+    <Content Include="Resources\shut-down.png" />
+    <Content Include="Resources\user.png" />
+    <Content Include="Resources\Usuarios.png" />
+    <Content Include="Resources\Usuarios1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="Controladores\" />
+    <Folder Include="Data\" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

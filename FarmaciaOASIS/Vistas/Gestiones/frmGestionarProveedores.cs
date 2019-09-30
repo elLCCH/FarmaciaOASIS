@@ -8,11 +8,11 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace FarmaciaOASIS
+namespace FarmaciaOASIS.Vistas.Gestiones
 {
-    public partial class Form1 : Form
+    public partial class frmGestionarProveedores : frmGestion
     {
-        public Form1()
+        public frmGestionarProveedores()
         {
             InitializeComponent();
         }
