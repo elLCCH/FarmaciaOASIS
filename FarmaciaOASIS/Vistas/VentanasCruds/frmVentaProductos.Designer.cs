@@ -59,12 +59,12 @@
             this.btnRegistrar = new System.Windows.Forms.Button();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnColocarProd = new System.Windows.Forms.Button();
-            this.textBox1 = new System.Windows.Forms.TextBox();
-            this.textBox2 = new System.Windows.Forms.TextBox();
-            this.textBox3 = new System.Windows.Forms.TextBox();
-            this.textBox4 = new System.Windows.Forms.TextBox();
-            this.textBox5 = new System.Windows.Forms.TextBox();
-            this.textBox6 = new System.Windows.Forms.TextBox();
+            this.txtCodigoPro = new System.Windows.Forms.TextBox();
+            this.txtNombrePro = new System.Windows.Forms.TextBox();
+            this.txtPrecio = new System.Windows.Forms.TextBox();
+            this.txtCantidad = new System.Windows.Forms.TextBox();
+            this.txtCiClie = new System.Windows.Forms.TextBox();
+            this.txtNombreCliente = new System.Windows.Forms.TextBox();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -84,8 +84,8 @@
             // 
             // groupBox2
             // 
-            this.groupBox2.Controls.Add(this.textBox6);
-            this.groupBox2.Controls.Add(this.textBox5);
+            this.groupBox2.Controls.Add(this.txtNombreCliente);
+            this.groupBox2.Controls.Add(this.txtCiClie);
             this.groupBox2.Controls.Add(this.label11);
             this.groupBox2.Controls.Add(this.lblIdClie);
             this.groupBox2.Controls.Add(this.label2);
@@ -167,10 +167,10 @@
             // 
             // groupBox3
             // 
-            this.groupBox3.Controls.Add(this.textBox4);
-            this.groupBox3.Controls.Add(this.textBox3);
-            this.groupBox3.Controls.Add(this.textBox2);
-            this.groupBox3.Controls.Add(this.textBox1);
+            this.groupBox3.Controls.Add(this.txtCantidad);
+            this.groupBox3.Controls.Add(this.txtPrecio);
+            this.groupBox3.Controls.Add(this.txtNombrePro);
+            this.groupBox3.Controls.Add(this.txtCodigoPro);
             this.groupBox3.Controls.Add(this.btnLimpiar);
             this.groupBox3.Controls.Add(this.label10);
             this.groupBox3.Controls.Add(this.lblTotal);
@@ -400,47 +400,47 @@
             this.btnColocarProd.Text = "Colocar Producto";
             this.btnColocarProd.UseVisualStyleBackColor = true;
             // 
-            // textBox1
+            // txtCodigoPro
             // 
-            this.textBox1.Location = new System.Drawing.Point(38, 19);
-            this.textBox1.Name = "textBox1";
-            this.textBox1.Size = new System.Drawing.Size(100, 20);
-            this.textBox1.TabIndex = 26;
+            this.txtCodigoPro.Location = new System.Drawing.Point(38, 19);
+            this.txtCodigoPro.Name = "txtCodigoPro";
+            this.txtCodigoPro.Size = new System.Drawing.Size(100, 20);
+            this.txtCodigoPro.TabIndex = 26;
             // 
-            // textBox2
+            // txtNombrePro
             // 
-            this.textBox2.Location = new System.Drawing.Point(163, 19);
-            this.textBox2.Name = "textBox2";
-            this.textBox2.Size = new System.Drawing.Size(122, 20);
-            this.textBox2.TabIndex = 27;
+            this.txtNombrePro.Location = new System.Drawing.Point(163, 19);
+            this.txtNombrePro.Name = "txtNombrePro";
+            this.txtNombrePro.Size = new System.Drawing.Size(122, 20);
+            this.txtNombrePro.TabIndex = 27;
             // 
-            // textBox3
+            // txtPrecio
             // 
-            this.textBox3.Location = new System.Drawing.Point(309, 19);
-            this.textBox3.Name = "textBox3";
-            this.textBox3.Size = new System.Drawing.Size(100, 20);
-            this.textBox3.TabIndex = 28;
+            this.txtPrecio.Location = new System.Drawing.Point(309, 19);
+            this.txtPrecio.Name = "txtPrecio";
+            this.txtPrecio.Size = new System.Drawing.Size(100, 20);
+            this.txtPrecio.TabIndex = 28;
             // 
-            // textBox4
+            // txtCantidad
             // 
-            this.textBox4.Location = new System.Drawing.Point(433, 19);
-            this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(100, 20);
-            this.textBox4.TabIndex = 29;
+            this.txtCantidad.Location = new System.Drawing.Point(433, 19);
+            this.txtCantidad.Name = "txtCantidad";
+            this.txtCantidad.Size = new System.Drawing.Size(100, 20);
+            this.txtCantidad.TabIndex = 29;
             // 
-            // textBox5
+            // txtCiClie
             // 
-            this.textBox5.Location = new System.Drawing.Point(131, 48);
-            this.textBox5.Name = "textBox5";
-            this.textBox5.Size = new System.Drawing.Size(100, 22);
-            this.textBox5.TabIndex = 33;
+            this.txtCiClie.Location = new System.Drawing.Point(131, 48);
+            this.txtCiClie.Name = "txtCiClie";
+            this.txtCiClie.Size = new System.Drawing.Size(100, 22);
+            this.txtCiClie.TabIndex = 33;
             // 
-            // textBox6
+            // txtNombreCliente
             // 
-            this.textBox6.Location = new System.Drawing.Point(131, 76);
-            this.textBox6.Name = "textBox6";
-            this.textBox6.Size = new System.Drawing.Size(100, 22);
-            this.textBox6.TabIndex = 34;
+            this.txtNombreCliente.Location = new System.Drawing.Point(131, 76);
+            this.txtNombreCliente.Name = "txtNombreCliente";
+            this.txtNombreCliente.Size = new System.Drawing.Size(100, 22);
+            this.txtNombreCliente.TabIndex = 34;
             // 
             // frmVentaProductos
             // 
@@ -472,8 +472,8 @@
 
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.GroupBox groupBox2;
-        private System.Windows.Forms.TextBox textBox6;
-        private System.Windows.Forms.TextBox textBox5;
+        private System.Windows.Forms.TextBox txtNombreCliente;
+        private System.Windows.Forms.TextBox txtCiClie;
         private System.Windows.Forms.Label label11;
         private System.Windows.Forms.Label lblIdClie;
         private System.Windows.Forms.Label label2;
@@ -482,10 +482,10 @@
         private System.Windows.Forms.Button btnConsultaPro;
         private System.Windows.Forms.Button btnConsultaCli;
         private System.Windows.Forms.GroupBox groupBox3;
-        private System.Windows.Forms.TextBox textBox4;
-        private System.Windows.Forms.TextBox textBox3;
-        private System.Windows.Forms.TextBox textBox2;
-        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.TextBox txtCantidad;
+        private System.Windows.Forms.TextBox txtPrecio;
+        private System.Windows.Forms.TextBox txtNombrePro;
+        private System.Windows.Forms.TextBox txtCodigoPro;
         private System.Windows.Forms.Button btnLimpiar;
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label lblTotal;
