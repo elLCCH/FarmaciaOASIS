@@ -119,6 +119,12 @@
     <Compile Include="Vistas\VentanasCruds\frmUsuario.Designer.cs">
       <DependentUpon>frmUsuario.cs</DependentUpon>
     </Compile>
+    <Compile Include="Vistas\VentanasCruds\frmVentaProductos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\VentanasCruds\frmVentaProductos.Designer.cs">
+      <DependentUpon>frmVentaProductos.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
@@ -163,6 +169,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="Vistas\VentanasCruds\frmUsuario.resx">
       <DependentUpon>frmUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\VentanasCruds\frmVentaProductos.resx">
+      <DependentUpon>frmVentaProductos.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
