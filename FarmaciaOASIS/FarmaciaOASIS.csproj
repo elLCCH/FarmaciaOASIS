@@ -328,6 +328,10 @@
     <None Include="Resources\logo de menu - modificado.png" />
     <Content Include="Resources\logo de menu1.png" />
     <Content Include="Resources\logo de menu11.png" />
+    <None Include="Resources\logo-2.jpg" />
+    <None Include="Resources\logo-3.jpg" />
+    <None Include="Resources\logo-4.jpg" />
+    <None Include="Resources\logo-5.jpg" />
     <Content Include="Resources\medicamento.png" />
     <None Include="Resources\medio bienvenida.jpg" />
     <Content Include="Resources\menu2.png" />
