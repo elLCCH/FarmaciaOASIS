@@ -32,8 +32,16 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="Bunifu_UI_v1.5.3">
+      <HintPath>..\..\..\Archivos de proyecto de Diseño de sistemas\proyecto de interfaces\project\taxidriver\taxidriver\bin\Debug\Bunifu_UI_v1.5.3.dll</HintPath>
+    </Reference>
+    <Reference Include="CircularProgressBar">
+      <HintPath>C:\Users\WINDOWS 10\Downloads\Compressed\Libraries\CircularProgressBar.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -43,6 +51,9 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
+    <Reference Include="WinFormAnimation">
+      <HintPath>C:\Users\WINDOWS 10\Downloads\Compressed\Libraries\WinFormAnimation.dll</HintPath>
+    </Reference>
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Program.cs" />
@@ -52,6 +63,12 @@
     </Compile>
     <Compile Include="Vistas\FormMenuPrincipal.designer.cs">
       <DependentUpon>FormMenuPrincipal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Vistas\frmBienvenido.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Vistas\frmBienvenido.Designer.cs">
+      <DependentUpon>frmBienvenido.cs</DependentUpon>
     </Compile>
     <Compile Include="Vistas\frmGestion.cs">
       <SubType>Form</SubType>
@@ -149,6 +166,9 @@
     </Compile>
     <EmbeddedResource Include="Vistas\FormMenuPrincipal.resx">
       <DependentUpon>FormMenuPrincipal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Vistas\frmBienvenido.resx">
+      <DependentUpon>frmBienvenido.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Vistas\frmGestion.resx">
       <DependentUpon>frmGestion.cs</DependentUpon>
@@ -305,9 +325,11 @@
     <Content Include="Resources\icono-cliente.png" />
     <Content Include="Resources\icono-cliente1.png" />
     <Content Include="Resources\LetraFarmacia.png" />
+    <None Include="Resources\logo de menu - modificado.png" />
     <Content Include="Resources\logo de menu1.png" />
     <Content Include="Resources\logo de menu11.png" />
     <Content Include="Resources\medicamento.png" />
+    <None Include="Resources\medio bienvenida.jpg" />
     <Content Include="Resources\menu2.png" />
     <Content Include="Resources\menu21.png" />
     <Content Include="Resources\perfil.png" />
