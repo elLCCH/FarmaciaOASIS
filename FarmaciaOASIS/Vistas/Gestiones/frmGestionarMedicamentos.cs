@@ -1,4 +1,6 @@
-﻿using System;
+﻿using FarmaciaOASIS.Controladores;
+using FarmaciaOASIS.Vistas.VentanasCruds;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -12,9 +14,144 @@ namespace FarmaciaOASIS.Vistas.Gestiones
 {
     public partial class frmGestionarMedicamentos : frmGestion
     {
+        MedicamentoController _objUsuario = new MedicamentoController();
         public frmGestionarMedicamentos()
         {
             InitializeComponent();
+        }
+
+        private void frmGestionarMedicamentos_Load(object sender, EventArgs e)
+        {
+            Listar(txtBusqueda.Text);
+        }
+
+        private void BtnAgregar_Click(object sender, EventArgs e)
+        {
+            frmMedicamento AddUsuario = new frmMedicamento();
+            AddUsuario.ShowDialog();
+            Listar(txtBusqueda.Text);
+
+        }
+
+        private void Listar(string pBuscar)
+        {
+
+            medicamentoBindingSource.DataSource = _objUsuario.Listar(pBuscar);
+
+        }
+
+        private void BtnModificar_Click(object sender, EventArgs e)
+        {
+            frmMedicamento AddUser = new frmMedicamento(codMedLabel1.Text);
+            AddUser.ShowDialog();
+            _objUsuario = new MedicamentoController();
+            Listar(txtBusqueda.Text);
+        }
+
+        private void BtnEliminar_Click(object sender, EventArgs e)
+        {
+            DialogResult res = MessageBox.Show("ELiminar registro?", "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (res == DialogResult.Yes)
+            {
+                _objUsuario.Eliminar(Convert.ToInt32(codMedLabel1.Text));
+                _objUsuario = new MedicamentoController();
+                Listar(txtBusqueda.Text);
+            }
+        }
+
+
+
+        private void TxtBusqueda_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyValue == 13)
+            {
+                Listar(txtBusqueda.Text);
+            }
+        }
+
+        private void medicamentoDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void medicamentoDataGridView_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        {
+            if (e.ColumnIndex >= 0 && this.medicamentoDataGridView.Columns[e.ColumnIndex].Name == "Eliminar" && e.RowIndex >= 0)
+            {
+                e.Paint(e.CellBounds, DataGridViewPaintParts.All);
+
+                DataGridViewButtonCell celBoton = this.medicamentoDataGridView.Rows[e.RowIndex].Cells["Eliminar"] as DataGridViewButtonCell;
+                Icon icoAtomico = new Icon(Environment.CurrentDirectory + @"\\Delete.ico"); //Recuerden colocar su icono en la carpeta debug de su proyecto
+                e.Graphics.DrawIcon(icoAtomico, e.CellBounds.Left + 3, e.CellBounds.Top + 3);
+
+                this.medicamentoDataGridView.Rows[e.RowIndex].Height = icoAtomico.Height + 8;
+                this.medicamentoDataGridView.Columns[e.ColumnIndex].Width = icoAtomico.Width + 8;
+
+                e.Handled = true;
+            }
+            if (e.ColumnIndex >= 0 && this.medicamentoDataGridView.Columns[e.ColumnIndex].Name == "Modificar" && e.RowIndex >= 0)
+            {
+                e.Paint(e.CellBounds, DataGridViewPaintParts.All);
+
+                DataGridViewButtonCell celBoton = this.medicamentoDataGridView.Rows[e.RowIndex].Cells["Modificar"] as DataGridViewButtonCell;
+                Icon icoAtomico = new Icon(Environment.CurrentDirectory + @"\\Update.ico"); //Recuerden colocar su icono en la carpeta debug de su proyecto
+                e.Graphics.DrawIcon(icoAtomico, e.CellBounds.Left + 3, e.CellBounds.Top + 3);
+
+                this.medicamentoDataGridView.Rows[e.RowIndex].Height = icoAtomico.Height + 8;
+                this.medicamentoDataGridView.Columns[e.ColumnIndex].Width = icoAtomico.Width + 8;
+
+                e.Handled = true;
+            }
+            if (e.ColumnIndex >= 0 && this.medicamentoDataGridView.Columns[e.ColumnIndex].Name == "Agregar" && e.RowIndex >= 0)
+            {
+                e.Paint(e.CellBounds, DataGridViewPaintParts.All);
+
+                DataGridViewButtonCell celBoton = this.medicamentoDataGridView.Rows[e.RowIndex].Cells["Agregar"] as DataGridViewButtonCell;
+                Icon icoAtomico = new Icon(Environment.CurrentDirectory + @"\\Add.ico"); //Recuerden colocar su icono en la carpeta debug de su proyecto
+                e.Graphics.DrawIcon(icoAtomico, e.CellBounds.Left + 3, e.CellBounds.Top + 3);
+
+                this.medicamentoDataGridView.Rows[e.RowIndex].Height = icoAtomico.Height + 8;
+                this.medicamentoDataGridView.Columns[e.ColumnIndex].Width = icoAtomico.Width + 8;
+
+                e.Handled = true;
+            }
+        }
+
+        private void medicamentoDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (this.medicamentoDataGridView.Columns[e.ColumnIndex].Name == "Eliminar")
+            {
+
+                // MessageBox.Show("hola");
+
+                DialogResult res = MessageBox.Show("ELiminar registro?", "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                if (res == DialogResult.Yes)
+                {
+                    _objUsuario.Eliminar(Convert.ToInt32(codMedLabel1.Text));
+                    _objUsuario = new MedicamentoController();
+                    Listar(txtBusqueda.Text);
+                }
+
+            }
+            if (this.medicamentoDataGridView.Columns[e.ColumnIndex].Name == "Modificar")
+            {
+
+                // MessageBox.Show("XD");
+                frmMedicamento AddUser = new frmMedicamento(codMedLabel1.Text);
+                AddUser.ShowDialog();
+                _objUsuario = new MedicamentoController();
+                Listar(txtBusqueda.Text);
+
+            }
+            if (this.medicamentoDataGridView.Columns[e.ColumnIndex].Name == "Modificar")
+            {
+
+                // MessageBox.Show("XD");
+                frmMedicamento AddUsuario = new frmMedicamento();
+                AddUsuario.ShowDialog();
+                Listar(txtBusqueda.Text);
+
+            }
         }
     }
 }
