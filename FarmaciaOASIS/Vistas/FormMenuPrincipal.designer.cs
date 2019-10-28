@@ -61,6 +61,7 @@
             this.tmMostrarMenu = new System.Windows.Forms.Timer(this.components);
             this.tmOcultarMenu = new System.Windows.Forms.Timer(this.components);
             this.tmFechaHora = new System.Windows.Forms.Timer(this.components);
+            this.btnProveedores = new System.Windows.Forms.Button();
             this.panel1ContenedorPrincipal.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
@@ -186,6 +187,7 @@
             // panelMenu
             // 
             this.panelMenu.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(40)))), ((int)(((byte)(165)))), ((int)(((byte)(204)))));
+            this.panelMenu.Controls.Add(this.btnProveedores);
             this.panelMenu.Controls.Add(this.btnCerrarSesion);
             this.panelMenu.Controls.Add(this.btnMenu);
             this.panelMenu.Controls.Add(this.btnCliente);
@@ -475,6 +477,27 @@
             this.tmFechaHora.Enabled = true;
             this.tmFechaHora.Tick += new System.EventHandler(this.tmFechaHora_Tick);
             // 
+            // btnProveedores
+            // 
+            this.btnProveedores.Cursor = System.Windows.Forms.Cursors.Default;
+            this.btnProveedores.FlatAppearance.BorderSize = 0;
+            this.btnProveedores.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(69)))), ((int)(((byte)(76)))));
+            this.btnProveedores.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(45)))), ((int)(((byte)(53)))));
+            this.btnProveedores.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnProveedores.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnProveedores.ForeColor = System.Drawing.Color.WhiteSmoke;
+            this.btnProveedores.Image = ((System.Drawing.Image)(resources.GetObject("btnProveedores.Image")));
+            this.btnProveedores.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnProveedores.Location = new System.Drawing.Point(1, 330);
+            this.btnProveedores.Name = "btnProveedores";
+            this.btnProveedores.Size = new System.Drawing.Size(229, 47);
+            this.btnProveedores.TabIndex = 18;
+            this.btnProveedores.Text = "  Proveedores";
+            this.btnProveedores.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnProveedores.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnProveedores.UseVisualStyleBackColor = true;
+            this.btnProveedores.Click += new System.EventHandler(this.BtnProveedores_Click);
+            // 
             // FormMenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -542,6 +565,7 @@
         private System.Windows.Forms.PictureBox btnMaximizar;
         private System.Windows.Forms.PictureBox btnCerrar;
         private System.Windows.Forms.Button btnCerrarSesion;
+        public System.Windows.Forms.Button btnProveedores;
     }
 }
 

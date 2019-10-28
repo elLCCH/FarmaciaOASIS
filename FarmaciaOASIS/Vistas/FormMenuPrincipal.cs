@@ -173,6 +173,11 @@ namespace FarmaciaOASIS.Vistas
 
         }
 
+        private void BtnProveedores_Click(object sender, EventArgs e)
+        {
+            AbrirFormEnPanel(new Gestiones.frmGestionarProveedores());
+        }
+
         private void button5_Click(object sender, EventArgs e)
         {
            // AbrirFormEnPanel(new Form1());

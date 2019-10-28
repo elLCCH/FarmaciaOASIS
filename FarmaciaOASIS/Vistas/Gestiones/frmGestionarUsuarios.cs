@@ -37,7 +37,7 @@ namespace FarmaciaOASIS.Vistas.Gestiones
         {
 
             usuarioBindingSource.DataSource = _objUsuario.Listar(pBuscar);
-            // usuarioDataGridView.Columns["imagen"].Visible = false;
+            // proveedorDataGridView.Columns["imagen"].Visible = false;
 
         }
 
@@ -70,52 +70,52 @@ namespace FarmaciaOASIS.Vistas.Gestiones
             }
         }
 
-        private void UsuarioDataGridView_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
+        private void proveedorDataGridView_CellPainting(object sender, DataGridViewCellPaintingEventArgs e)
         {
-            if (e.ColumnIndex >= 0 && this.usuarioDataGridView.Columns[e.ColumnIndex].Name == "Eliminar" && e.RowIndex >= 0)
+            if (e.ColumnIndex >= 0 && this.proveedorDataGridView.Columns[e.ColumnIndex].Name == "Eliminar" && e.RowIndex >= 0)
             {
                 e.Paint(e.CellBounds, DataGridViewPaintParts.All);
 
-                DataGridViewButtonCell celBoton = this.usuarioDataGridView.Rows[e.RowIndex].Cells["Eliminar"] as DataGridViewButtonCell;
+                DataGridViewButtonCell celBoton = this.proveedorDataGridView.Rows[e.RowIndex].Cells["Eliminar"] as DataGridViewButtonCell;
                 Icon icoAtomico = new Icon(Environment.CurrentDirectory + @"\\Delete.ico"); //Recuerden colocar su icono en la carpeta debug de su proyecto
                 e.Graphics.DrawIcon(icoAtomico, e.CellBounds.Left + 3, e.CellBounds.Top + 3);
 
-                this.usuarioDataGridView.Rows[e.RowIndex].Height = icoAtomico.Height + 8;
-                this.usuarioDataGridView.Columns[e.ColumnIndex].Width = icoAtomico.Width + 8;
+                this.proveedorDataGridView.Rows[e.RowIndex].Height = icoAtomico.Height + 8;
+                this.proveedorDataGridView.Columns[e.ColumnIndex].Width = icoAtomico.Width + 8;
 
                 e.Handled = true;
             }
-            if (e.ColumnIndex >= 0 && this.usuarioDataGridView.Columns[e.ColumnIndex].Name == "Modificar" && e.RowIndex >= 0)
+            if (e.ColumnIndex >= 0 && this.proveedorDataGridView.Columns[e.ColumnIndex].Name == "Modificar" && e.RowIndex >= 0)
             {
                 e.Paint(e.CellBounds, DataGridViewPaintParts.All);
 
-                DataGridViewButtonCell celBoton = this.usuarioDataGridView.Rows[e.RowIndex].Cells["Modificar"] as DataGridViewButtonCell;
+                DataGridViewButtonCell celBoton = this.proveedorDataGridView.Rows[e.RowIndex].Cells["Modificar"] as DataGridViewButtonCell;
                 Icon icoAtomico = new Icon(Environment.CurrentDirectory + @"\\Update.ico"); //Recuerden colocar su icono en la carpeta debug de su proyecto
                 e.Graphics.DrawIcon(icoAtomico, e.CellBounds.Left + 3, e.CellBounds.Top + 3);
 
-                this.usuarioDataGridView.Rows[e.RowIndex].Height = icoAtomico.Height + 8;
-                this.usuarioDataGridView.Columns[e.ColumnIndex].Width = icoAtomico.Width + 8;
+                this.proveedorDataGridView.Rows[e.RowIndex].Height = icoAtomico.Height + 8;
+                this.proveedorDataGridView.Columns[e.ColumnIndex].Width = icoAtomico.Width + 8;
 
                 e.Handled = true;
             }
-            if (e.ColumnIndex >= 0 && this.usuarioDataGridView.Columns[e.ColumnIndex].Name == "Agregar" && e.RowIndex >= 0)
+            if (e.ColumnIndex >= 0 && this.proveedorDataGridView.Columns[e.ColumnIndex].Name == "Agregar" && e.RowIndex >= 0)
             {
                 e.Paint(e.CellBounds, DataGridViewPaintParts.All);
 
-                DataGridViewButtonCell celBoton = this.usuarioDataGridView.Rows[e.RowIndex].Cells["Agregar"] as DataGridViewButtonCell;
+                DataGridViewButtonCell celBoton = this.proveedorDataGridView.Rows[e.RowIndex].Cells["Agregar"] as DataGridViewButtonCell;
                 Icon icoAtomico = new Icon(Environment.CurrentDirectory + @"\\Add.ico"); //Recuerden colocar su icono en la carpeta debug de su proyecto
                 e.Graphics.DrawIcon(icoAtomico, e.CellBounds.Left + 3, e.CellBounds.Top + 3);
 
-                this.usuarioDataGridView.Rows[e.RowIndex].Height = icoAtomico.Height + 8;
-                this.usuarioDataGridView.Columns[e.ColumnIndex].Width = icoAtomico.Width + 8;
+                this.proveedorDataGridView.Rows[e.RowIndex].Height = icoAtomico.Height + 8;
+                this.proveedorDataGridView.Columns[e.ColumnIndex].Width = icoAtomico.Width + 8;
 
                 e.Handled = true;
             }
         }
 
-        private void UsuarioDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
+        private void proveedorDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            if (this.usuarioDataGridView.Columns[e.ColumnIndex].Name == "Eliminar")
+            if (this.proveedorDataGridView.Columns[e.ColumnIndex].Name == "Eliminar")
             {
 
                 // MessageBox.Show("hola");
@@ -129,7 +129,7 @@ namespace FarmaciaOASIS.Vistas.Gestiones
                 }
 
             }
-            if (this.usuarioDataGridView.Columns[e.ColumnIndex].Name == "Modificar")
+            if (this.proveedorDataGridView.Columns[e.ColumnIndex].Name == "Modificar")
             {
 
                 // MessageBox.Show("XD");
@@ -139,7 +139,7 @@ namespace FarmaciaOASIS.Vistas.Gestiones
                 Listar(txtBusqueda.Text);
 
             }
-            if (this.usuarioDataGridView.Columns[e.ColumnIndex].Name == "Agregar")
+            if (this.proveedorDataGridView.Columns[e.ColumnIndex].Name == "Agregar")
             {
 
                 // MessageBox.Show("XD");

@@ -47,7 +47,7 @@
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.usuarioBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.cuentaLabel1 = new System.Windows.Forms.Label();
-            this.usuarioDataGridView = new System.Windows.Forms.DataGridView();
+            this.proveedorDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -63,7 +63,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingNavigator)).BeginInit();
             this.usuarioBindingNavigator.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.usuarioDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.proveedorDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // btnRegistrar
@@ -249,11 +249,11 @@
             this.cuentaLabel1.TabIndex = 20;
             this.cuentaLabel1.Text = "label2";
             // 
-            // usuarioDataGridView
+            // proveedorDataGridView
             // 
-            this.usuarioDataGridView.AutoGenerateColumns = false;
-            this.usuarioDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.usuarioDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.proveedorDataGridView.AutoGenerateColumns = false;
+            this.proveedorDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.proveedorDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3,
@@ -265,13 +265,13 @@
             this.Agregar,
             this.Modificar,
             this.Eliminar});
-            this.usuarioDataGridView.DataSource = this.usuarioBindingSource;
-            this.usuarioDataGridView.Location = new System.Drawing.Point(12, 139);
-            this.usuarioDataGridView.Name = "usuarioDataGridView";
-            this.usuarioDataGridView.Size = new System.Drawing.Size(1028, 220);
-            this.usuarioDataGridView.TabIndex = 20;
-            this.usuarioDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.UsuarioDataGridView_CellClick);
-            this.usuarioDataGridView.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.UsuarioDataGridView_CellPainting);
+            this.proveedorDataGridView.DataSource = this.usuarioBindingSource;
+            this.proveedorDataGridView.Location = new System.Drawing.Point(12, 139);
+            this.proveedorDataGridView.Name = "proveedorDataGridView";
+            this.proveedorDataGridView.Size = new System.Drawing.Size(1028, 220);
+            this.proveedorDataGridView.TabIndex = 20;
+            this.proveedorDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.proveedorDataGridView_CellClick);
+            this.proveedorDataGridView.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.proveedorDataGridView_CellPainting);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -341,7 +341,7 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1052, 455);
-            this.Controls.Add(this.usuarioDataGridView);
+            this.Controls.Add(this.proveedorDataGridView);
             this.Controls.Add(cuentaLabel);
             this.Controls.Add(this.cuentaLabel1);
             this.Controls.Add(this.usuarioBindingNavigator);
@@ -353,7 +353,7 @@
             this.Controls.SetChildIndex(this.usuarioBindingNavigator, 0);
             this.Controls.SetChildIndex(this.cuentaLabel1, 0);
             this.Controls.SetChildIndex(cuentaLabel, 0);
-            this.Controls.SetChildIndex(this.usuarioDataGridView, 0);
+            this.Controls.SetChildIndex(this.proveedorDataGridView, 0);
             this.Controls.SetChildIndex(this.txtBusqueda, 0);
             this.Controls.SetChildIndex(this.btnRegistrar, 0);
             this.Controls.SetChildIndex(this.btnModificar, 0);
@@ -362,7 +362,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingNavigator)).EndInit();
             this.usuarioBindingNavigator.ResumeLayout(false);
             this.usuarioBindingNavigator.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.usuarioDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.proveedorDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -386,7 +386,7 @@
         private System.Windows.Forms.ToolStripSeparator bindingNavigatorSeparator2;
         private System.Windows.Forms.ToolStripButton usuarioBindingNavigatorSaveItem;
         private System.Windows.Forms.Label cuentaLabel1;
-        private System.Windows.Forms.DataGridView usuarioDataGridView;
+        private System.Windows.Forms.DataGridView proveedorDataGridView;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;

@@ -54,6 +54,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controladores\ProveedorController.cs" />
     <Compile Include="Controladores\UsuarioController.cs" />
     <Compile Include="Data\Cliente.cs">
       <DependentUpon>dbFarmaciaOASIS.tt</DependentUpon>
