@@ -168,30 +168,22 @@ namespace FarmaciaOASIS.Vistas
             
         }
 
+        private void BtnProductos_Click(object sender, EventArgs e)
+        {
+
+        }
+
         private void button5_Click(object sender, EventArgs e)
         {
            // AbrirFormEnPanel(new Form1());
         }
-        private void panelContenedor_Paint(object sender, PaintEventArgs e)
-        {
 
+
+        private void BtnUsuarios_Click(object sender, EventArgs e)
+        {
+            AbrirFormEnPanel(new Gestiones.frmGestionarUsuarios());
         }
 
-    
-        private void pictureBox1_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void pictureBox9_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void panelMenu_Paint(object sender, PaintEventArgs e)
-        {
-
-        }
 
         
 

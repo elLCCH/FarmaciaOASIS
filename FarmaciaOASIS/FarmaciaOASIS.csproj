@@ -32,8 +32,17 @@
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
   <ItemGroup>
+    <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
+    </Reference>
+    <Reference Include="EntityFramework.SqlServer, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
+      <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
+    </Reference>
     <Reference Include="System" />
+    <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.Security" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -45,6 +54,40 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controladores\UsuarioController.cs" />
+    <Compile Include="Data\Cliente.cs">
+      <DependentUpon>dbFarmaciaOASIS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\dbFarmaciaOASIS.Context.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dbFarmaciaOASIS.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\dbFarmaciaOASIS.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dbFarmaciaOASIS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\dbFarmaciaOASIS.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>dbFarmaciaOASIS.edmx</DependentUpon>
+    </Compile>
+    <Compile Include="Data\DetalleFactura.cs">
+      <DependentUpon>dbFarmaciaOASIS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Factura.cs">
+      <DependentUpon>dbFarmaciaOASIS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Medicamento.cs">
+      <DependentUpon>dbFarmaciaOASIS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Proveedor.cs">
+      <DependentUpon>dbFarmaciaOASIS.tt</DependentUpon>
+    </Compile>
+    <Compile Include="Data\Usuario.cs">
+      <DependentUpon>dbFarmaciaOASIS.tt</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Vistas\FormMenuPrincipal.cs">
@@ -192,6 +235,21 @@
     <EmbeddedResource Include="Vistas\VentanasCruds\frmVentaProductos.resx">
       <DependentUpon>frmVentaProductos.cs</DependentUpon>
     </EmbeddedResource>
+    <EntityDeploy Include="Data\dbFarmaciaOASIS.edmx">
+      <Generator>EntityModelCodeGenerator</Generator>
+      <LastGenOutput>dbFarmaciaOASIS.Designer.cs</LastGenOutput>
+    </EntityDeploy>
+    <None Include="Data\dbFarmaciaOASIS.edmx.diagram">
+      <DependentUpon>dbFarmaciaOASIS.edmx</DependentUpon>
+    </None>
+    <None Include="packages.config" />
+    <None Include="Properties\DataSources\FarmaciaOASIS.Data.Cliente.datasource" />
+    <None Include="Properties\DataSources\FarmaciaOASIS.Data.dbFarmaciaOASISEntities.datasource" />
+    <None Include="Properties\DataSources\FarmaciaOASIS.Data.DetalleFactura.datasource" />
+    <None Include="Properties\DataSources\FarmaciaOASIS.Data.Factura.datasource" />
+    <None Include="Properties\DataSources\FarmaciaOASIS.Data.Medicamento.datasource" />
+    <None Include="Properties\DataSources\FarmaciaOASIS.Data.Proveedor.datasource" />
+    <None Include="Properties\DataSources\FarmaciaOASIS.Data.Usuario.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -206,6 +264,16 @@
     <None Include="App.config" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Data\dbFarmaciaOASIS.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <LastGenOutput>dbFarmaciaOASIS.Context.cs</LastGenOutput>
+      <DependentUpon>dbFarmaciaOASIS.edmx</DependentUpon>
+    </Content>
+    <Content Include="Data\dbFarmaciaOASIS.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>dbFarmaciaOASIS.edmx</DependentUpon>
+      <LastGenOutput>dbFarmaciaOASIS.cs</LastGenOutput>
+    </Content>
     <Content Include="Resources\2.png" />
     <Content Include="Resources\21.png" />
     <Content Include="Resources\bien.png" />
@@ -318,9 +386,9 @@
     <Content Include="Resources\Usuarios.png" />
     <Content Include="Resources\Usuarios1.png" />
   </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
-    <Folder Include="Controladores\" />
-    <Folder Include="Data\" />
+    <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

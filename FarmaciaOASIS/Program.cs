@@ -17,6 +17,7 @@ namespace FarmaciaOASIS
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Vistas.FormMenuPrincipal());
+            //Application.Run(new Vistas.Gestiones.frmGestionarUsuarios());
         }
     }
 }
