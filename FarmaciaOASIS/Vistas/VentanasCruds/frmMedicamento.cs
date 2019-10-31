@@ -46,7 +46,7 @@ namespace FarmaciaOASIS.Vistas.VentanasCruds
         {
             var reg = CargarDatos();
             if (_esNuevo)
-            {
+            { 
                 if (_objUsuario.Insertar(reg))
                 {
                     MessageBox.Show("se inserto correctamente");

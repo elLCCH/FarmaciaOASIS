@@ -178,10 +178,11 @@ namespace FarmaciaOASIS.Vistas
             AbrirFormEnPanel(new Gestiones.frmGestionarProveedores());
         }
 
-        private void button5_Click(object sender, EventArgs e)
+        private void BtnCliente_Click(object sender, EventArgs e)
         {
-           // AbrirFormEnPanel(new Form1());
+            AbrirFormEnPanel(new Gestiones.frmGestionarClientes());
         }
+
 
 
         private void BtnUsuarios_Click(object sender, EventArgs e)

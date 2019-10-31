@@ -54,6 +54,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Controladores\ClienteController.cs" />
     <Compile Include="Controladores\MedicamentoController.cs" />
     <Compile Include="Controladores\ProveedorController.cs" />
     <Compile Include="Controladores\UsuarioController.cs" />
