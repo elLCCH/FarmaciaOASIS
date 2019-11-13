@@ -31,7 +31,6 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label ciLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmGestionarClientes));
-            this.button1 = new System.Windows.Forms.Button();
             this.label1 = new System.Windows.Forms.Label();
             this.clienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.clienteBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
@@ -48,7 +47,6 @@
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.clienteBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.clienteDataGridView = new System.Windows.Forms.DataGridView();
-            this.ciLabel1 = new System.Windows.Forms.Label();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -56,6 +54,7 @@
             this.Agregar = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Modificar = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Eliminar = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ciLabel1 = new System.Windows.Forms.Label();
             ciLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clienteBindingNavigator)).BeginInit();
@@ -97,25 +96,6 @@
             ciLabel.Size = new System.Drawing.Size(19, 13);
             ciLabel.TabIndex = 18;
             ciLabel.Text = "Ci:";
-            // 
-            // button1
-            // 
-            this.button1.BackColor = System.Drawing.Color.SlateGray;
-            this.button1.Cursor = System.Windows.Forms.Cursors.Default;
-            this.button1.FlatAppearance.BorderSize = 0;
-            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(69)))), ((int)(((byte)(76)))));
-            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(45)))), ((int)(((byte)(53)))));
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.WhiteSmoke;
-            this.button1.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.button1.Location = new System.Drawing.Point(697, 376);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(246, 46);
-            this.button1.TabIndex = 12;
-            this.button1.Text = "Registrar Venta";
-            this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.button1.UseVisualStyleBackColor = false;
             // 
             // label1
             // 
@@ -276,15 +256,6 @@
             this.clienteDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.clienteDataGridView_CellClick);
             this.clienteDataGridView.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.clienteDataGridView_CellPainting);
             // 
-            // ciLabel1
-            // 
-            this.ciLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clienteBindingSource, "Ci", true));
-            this.ciLabel1.Location = new System.Drawing.Point(134, 124);
-            this.ciLabel1.Name = "ciLabel1";
-            this.ciLabel1.Size = new System.Drawing.Size(100, 23);
-            this.ciLabel1.TabIndex = 19;
-            this.ciLabel1.Text = "label2";
-            // 
             // dataGridViewTextBoxColumn1
             // 
             this.dataGridViewTextBoxColumn1.DataPropertyName = "CodCliente";
@@ -324,6 +295,15 @@
             this.Eliminar.HeaderText = "";
             this.Eliminar.Name = "Eliminar";
             // 
+            // ciLabel1
+            // 
+            this.ciLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clienteBindingSource, "Ci", true));
+            this.ciLabel1.Location = new System.Drawing.Point(134, 124);
+            this.ciLabel1.Name = "ciLabel1";
+            this.ciLabel1.Size = new System.Drawing.Size(100, 23);
+            this.ciLabel1.TabIndex = 19;
+            this.ciLabel1.Text = "label2";
+            // 
             // frmGestionarClientes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -334,7 +314,6 @@
             this.Controls.Add(this.clienteDataGridView);
             this.Controls.Add(this.clienteBindingNavigator);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.button1);
             this.Name = "frmGestionarClientes";
             this.Text = "frmGestionarClientes";
             this.Load += new System.EventHandler(this.frmGestionarClientes_Load);
@@ -342,7 +321,6 @@
             this.Controls.SetChildIndex(this.btnRegistrar, 0);
             this.Controls.SetChildIndex(this.btnModificar, 0);
             this.Controls.SetChildIndex(this.btnEliminar, 0);
-            this.Controls.SetChildIndex(this.button1, 0);
             this.Controls.SetChildIndex(this.label1, 0);
             this.Controls.SetChildIndex(this.clienteBindingNavigator, 0);
             this.Controls.SetChildIndex(this.clienteDataGridView, 0);
@@ -359,8 +337,6 @@
         }
 
         #endregion
-
-        public System.Windows.Forms.Button button1;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.BindingSource clienteBindingSource;
         private System.Windows.Forms.BindingNavigator clienteBindingNavigator;

@@ -373,7 +373,7 @@
             this.btnVentas.Text = " Ventas ";
             this.btnVentas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnVentas.UseVisualStyleBackColor = true;
-            this.btnVentas.Click += new System.EventHandler(this.btnListaClientes_Click);
+            this.btnVentas.Click += new System.EventHandler(this.BtnVentas_Click);
             // 
             // pictureBox1
             // 
@@ -536,7 +536,6 @@
 
         private System.Windows.Forms.Panel panel1ContenedorPrincipal;
         private System.Windows.Forms.Panel BarraTitulo;
-        private System.Windows.Forms.Panel panelContenedor;
         private System.Windows.Forms.Panel panel1;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label4;
@@ -553,7 +552,6 @@
         private System.Windows.Forms.Button btnProductos;
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox2;
-        private System.Windows.Forms.Button btnVentas;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.Button btnUsuarios;
         private System.Windows.Forms.Timer tmMostrarMenu;
@@ -566,6 +564,8 @@
         private System.Windows.Forms.PictureBox btnCerrar;
         private System.Windows.Forms.Button btnCerrarSesion;
         public System.Windows.Forms.Button btnProveedores;
+        public System.Windows.Forms.Button btnVentas;
+        public System.Windows.Forms.Panel panelContenedor;
     }
 }
 

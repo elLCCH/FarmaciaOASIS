@@ -20,6 +20,7 @@ namespace FarmaciaOASIS.Data
         public int CantMed { get; set; }
         public int Precio { get; set; }
         public int CodUsuario { get; set; }
+        public int Numero { get; set; }
     
         public virtual Factura Factura { get; set; }
         public virtual Medicamento Medicamento { get; set; }

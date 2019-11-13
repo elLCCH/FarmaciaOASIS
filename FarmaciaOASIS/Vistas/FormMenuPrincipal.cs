@@ -84,7 +84,7 @@ namespace FarmaciaOASIS.Vistas
         {
         }
         //METODO PARA ABRIR FORM DENTRO DE PANEL-----------------------------------------------------
-        private void AbrirFormEnPanel(object formHijo)
+        public void AbrirFormEnPanel(object formHijo)
         {
             if (this.panelContenedor.Controls.Count > 0)
                 this.panelContenedor.Controls.RemoveAt(0);
@@ -109,10 +109,6 @@ namespace FarmaciaOASIS.Vistas
         private void MostrarFormLogoAlCerrarForms(object sender, FormClosedEventArgs e)
         {
             MostrarFormLogo();
-        }
-        //METODOS PARA ABRIR OTROS FORMULARIOS Y MOSTRAR FORM DE LOGO Al CERRAR ----------------------------------------------------------
-        private void btnListaClientes_Click(object sender, EventArgs e)
-        { 
         }
         private void btnMembresia_Click(object sender, EventArgs e)
         {
@@ -176,6 +172,11 @@ namespace FarmaciaOASIS.Vistas
         private void BtnProveedores_Click(object sender, EventArgs e)
         {
             AbrirFormEnPanel(new Gestiones.frmGestionarProveedores());
+        }
+
+        private void BtnVentas_Click(object sender, EventArgs e)
+        {
+            AbrirFormEnPanel(new VentanasCruds.frmVentaProductos());
         }
 
         private void BtnCliente_Click(object sender, EventArgs e)

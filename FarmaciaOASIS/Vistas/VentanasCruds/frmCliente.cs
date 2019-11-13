@@ -1,5 +1,6 @@
 ﻿using FarmaciaOASIS.Controladores;
 using FarmaciaOASIS.Data;
+using FarmaciaOASIS.Vistas.Gestiones;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel;
@@ -15,6 +16,7 @@ namespace FarmaciaOASIS.Vistas.VentanasCruds
     public partial class frmCliente : frmVentanaDatos
     {
         ClienteController _objUsuario = new ClienteController();
+        
         private string _cuenta;
         private bool _esNuevo;
         public frmCliente()
@@ -29,7 +31,6 @@ namespace FarmaciaOASIS.Vistas.VentanasCruds
             _esNuevo = false;
             InitializeComponent();
         }
-
         private void frmCliente_Load(object sender, EventArgs e)
         {
             if (_esNuevo)
@@ -41,15 +42,15 @@ namespace FarmaciaOASIS.Vistas.VentanasCruds
                 clienteBindingSource.DataSource = _objUsuario.BuscarPorPK(_cuenta);
             }
         }
-
+        
         private void BtnAceptar_Click(object sender, EventArgs e)
         {
             var reg = CargarDatos();
             if (_esNuevo)
             {
-                MessageBox.Show(Convert.ToString(reg));
                 if (_objUsuario.Insertar(reg))
                 {
+                    //MessageBox.Show("soy me");
                     MessageBox.Show("se inserto correctamente");
                     Close();
                 }
