@@ -57,9 +57,12 @@ namespace FarmaciaOASIS.Vistas.VentanasCruds
                 nombreLabel2.Text = nombreTextBox.Text;
                 apellidoLabel2.Text = apellidoTextBox.Text;
                 panelxd.Visible = false;
+                clienteBindingSource.DataSource = _objUsuario.Listar(ciTextBox.Text);
+                
                 habilitar();
                 //Close();
             }
+            
         }
 
         private void BtnCancelar_Click(object sender, EventArgs e)
@@ -228,7 +231,7 @@ namespace FarmaciaOASIS.Vistas.VentanasCruds
             //preparacion para Factura
             facturaBindingSource.AddNew();
             var regFactura = (Factura)facturaBindingSource.Current;
-
+            
             //CARGAR DATOS para Factura
             regFactura.CodCliente = Convert.ToInt32(codClienteLabel2.Text);
             regFactura.Fecha = DateTime.Now;

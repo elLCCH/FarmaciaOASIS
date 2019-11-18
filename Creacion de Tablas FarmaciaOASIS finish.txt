@@ -1,0 +1,56 @@
+create table Cliente(
+CodCliente int IDENTITY(1,1) primary key,
+Ci varchar(15) not null,
+Nombre varchar(30) not null,
+Apellido varchar(30) not null
+);
+
+create table Factura(
+NoFactura int IDENTITY(1,1) primary key,
+Fecha datetime not null,
+CodCliente int not null
+constraint fk_Clientes foreign key (CodCliente) references Cliente(CodCliente) on update cascade on delete cascade
+);
+
+create table Proveedor(
+CodProv int IDENTITY(1,1) primary key,
+Nombre varchar(30) not null,
+Apellido varchar(30) not null,
+Ciudad varchar(20) not null,
+Direccion varchar(50) not null,
+Telf int not null
+);
+
+
+create table Medicamento(
+CodMed int IDENTITY(1,1) primary key,
+NomMed varchar(30) not null,
+Cantidad int not null,
+PUnit int not null,
+CodProv int not null,
+constraint fk_Prov foreign key (CodProv) references Proveedor(CodProv) on update cascade on delete cascade
+); 
+
+create table Usuario(
+CodUsuario int IDENTITY(1,1) primary key,
+Ci varchar(15) not null,
+Nombre varchar(30) not null,
+Apellido varchar(30) not null,
+Cuenta varchar(30) not null,
+Contrasenia varchar(40) not null,
+Rol varchar(25) not null,
+Cel int not null
+);
+
+create table DetalleFactura (
+Numero int IDENTITY(1,1) primary key,
+NoFactura int not null,
+NoAutorizacion int not null,
+CodMed int not null,
+CantMed int not null,
+Precio int not null,
+CodUsuario int not null,
+constraint fk_Facturee foreign key (NoFactura) references Factura(NoFactura) on update cascade on delete cascade,
+constraint fk_CodMedi foreign key (CodMed) references Medicamento(CodMed) on update cascade on delete cascade,
+constraint fk_User foreign key (CodUsuario) references Usuario(CodUsuario) on update cascade on delete cascade
+);

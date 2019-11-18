@@ -36,5 +36,6 @@ namespace FarmaciaOASIS.Controladores
         {
             return _db.Cliente.Where(x => x.Ci == pCi).ToList();
         }
+        
     }
 }
