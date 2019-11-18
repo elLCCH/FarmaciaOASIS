@@ -6,18 +6,27 @@
     cause the file to be unrecognizable by the program.
 -->
 <GenericObjectDataSource DisplayName="Cliente" Version="1.0" xmlns="urn:schemas-microsoft-com:xml-msdatasource">
-   <Children>
-      <GenericObjectDataSource DisplayName="Factura" Version="1.0">
-         <TypeInfo>FarmaciaOASIS.Data.Factura, FarmaciaOASIS, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</TypeInfo>
-      </GenericObjectDataSource>
-   </Children>
    <TypeInfo>FarmaciaOASIS.Data.Cliente, FarmaciaOASIS, Version=1.0.0.0, Culture=neutral, PublicKeyToken=null</TypeInfo>
    <TypeUISetting>
       <PropertyUISettings>
          <PropertyUISetting Name="Ci">
             <ControlSettings>
                <ControlSetting ArtifactName="Microsoft:System.Windows.Forms:Form">
-                  <BindableControlInfo Name="TextBox" Type="System.Windows.Forms.TextBox" AssemblyName="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+                  <BindableControlInfo Name="Label" Type="System.Windows.Forms.Label" AssemblyName="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+               </ControlSetting>
+            </ControlSettings>
+         </PropertyUISetting>
+         <PropertyUISetting Name="Apellido">
+            <ControlSettings>
+               <ControlSetting ArtifactName="Microsoft:System.Windows.Forms:Form">
+                  <BindableControlInfo Name="Label" Type="System.Windows.Forms.Label" AssemblyName="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+               </ControlSetting>
+            </ControlSettings>
+         </PropertyUISetting>
+         <PropertyUISetting Name="Nombre">
+            <ControlSettings>
+               <ControlSetting ArtifactName="Microsoft:System.Windows.Forms:Form">
+                  <BindableControlInfo Name="Label" Type="System.Windows.Forms.Label" AssemblyName="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
                </ControlSetting>
             </ControlSettings>
          </PropertyUISetting>

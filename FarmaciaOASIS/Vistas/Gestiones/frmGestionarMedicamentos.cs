@@ -143,7 +143,7 @@ namespace FarmaciaOASIS.Vistas.Gestiones
                 Listar(txtBusqueda.Text);
 
             }
-            if (this.medicamentoDataGridView.Columns[e.ColumnIndex].Name == "Modificar")
+            if (this.medicamentoDataGridView.Columns[e.ColumnIndex].Name == "Agregar")
             {
 
                 // MessageBox.Show("XD");

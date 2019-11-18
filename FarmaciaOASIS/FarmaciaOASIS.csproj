@@ -56,6 +56,7 @@
   <ItemGroup>
     <Compile Include="Controladores\ClienteController.cs" />
     <Compile Include="Controladores\DetalleFacturaController.cs" />
+    <Compile Include="Controladores\FacturaController.cs" />
     <Compile Include="Controladores\MedicamentoController.cs" />
     <Compile Include="Controladores\ProveedorController.cs" />
     <Compile Include="Controladores\UsuarioController.cs" />

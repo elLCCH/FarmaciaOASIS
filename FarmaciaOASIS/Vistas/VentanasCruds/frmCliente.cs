@@ -39,7 +39,7 @@ namespace FarmaciaOASIS.Vistas.VentanasCruds
             }
             else
             {
-                clienteBindingSource.DataSource = _objUsuario.BuscarPorPK(_cuenta);
+                clienteBindingSource.DataSource = _objUsuario.BuscarPorCI(_cuenta);
             }
         }
         

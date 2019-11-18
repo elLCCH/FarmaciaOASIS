@@ -32,7 +32,7 @@ namespace FarmaciaOASIS.Controladores
             _db.Cliente.Remove(reg);
             return _db.SaveChanges() > 0;
         }
-        internal List<Cliente> BuscarPorPK(string pCi)
+        internal List<Cliente> BuscarPorCI(string pCi)
         {
             return _db.Cliente.Where(x => x.Ci == pCi).ToList();
         }

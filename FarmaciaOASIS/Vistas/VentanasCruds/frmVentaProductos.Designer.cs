@@ -32,10 +32,10 @@
             System.Windows.Forms.Label ciLabel;
             System.Windows.Forms.Label cantidadLabel;
             System.Windows.Forms.Label pUnitLabel;
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle7 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle8 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle13 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle14 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle15 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle16 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.Label nomMedLabel;
             System.Windows.Forms.Label codMedLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmVentaProductos));
@@ -43,17 +43,15 @@
             System.Windows.Forms.Label ciLabel2;
             System.Windows.Forms.Label codClienteLabel;
             System.Windows.Forms.Label nombreLabel;
+            System.Windows.Forms.Label nombreLabel1;
+            System.Windows.Forms.Label apellidoLabel1;
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.codClienteLabel2 = new System.Windows.Forms.Label();
-            this.label9 = new System.Windows.Forms.Label();
-            this.txtApellidoCliente = new System.Windows.Forms.TextBox();
             this.ciLabel1 = new System.Windows.Forms.Label();
-            this.txtNombreCliente = new System.Windows.Forms.TextBox();
             this.txtCiClie = new System.Windows.Forms.TextBox();
             this.lblIdClie = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.pUnitLabel1 = new System.Windows.Forms.Label();
             this.cantidadLabel1 = new System.Windows.Forms.Label();
@@ -106,6 +104,8 @@
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.medicamentoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.detalleFacturaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.nombreLabel2 = new System.Windows.Forms.Label();
+            this.apellidoLabel2 = new System.Windows.Forms.Label();
             ciLabel = new System.Windows.Forms.Label();
             cantidadLabel = new System.Windows.Forms.Label();
             pUnitLabel = new System.Windows.Forms.Label();
@@ -115,6 +115,8 @@
             ciLabel2 = new System.Windows.Forms.Label();
             codClienteLabel = new System.Windows.Forms.Label();
             nombreLabel = new System.Windows.Forms.Label();
+            nombreLabel1 = new System.Windows.Forms.Label();
+            apellidoLabel1 = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
@@ -168,20 +170,20 @@
             // 
             // groupBox2
             // 
+            this.groupBox2.Controls.Add(apellidoLabel1);
+            this.groupBox2.Controls.Add(this.apellidoLabel2);
+            this.groupBox2.Controls.Add(nombreLabel1);
+            this.groupBox2.Controls.Add(this.nombreLabel2);
             this.groupBox2.Controls.Add(this.codClienteLabel2);
-            this.groupBox2.Controls.Add(this.label9);
-            this.groupBox2.Controls.Add(this.txtApellidoCliente);
             this.groupBox2.Controls.Add(ciLabel);
             this.groupBox2.Controls.Add(this.ciLabel1);
-            this.groupBox2.Controls.Add(this.txtNombreCliente);
             this.groupBox2.Controls.Add(this.txtCiClie);
             this.groupBox2.Controls.Add(this.lblIdClie);
             this.groupBox2.Controls.Add(this.label2);
-            this.groupBox2.Controls.Add(this.label3);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(11, 64);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(293, 141);
+            this.groupBox2.Size = new System.Drawing.Size(448, 170);
             this.groupBox2.TabIndex = 31;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Datos del Cliente";
@@ -195,23 +197,6 @@
             this.codClienteLabel2.TabIndex = 38;
             this.codClienteLabel2.Text = "label4";
             // 
-            // label9
-            // 
-            this.label9.AutoSize = true;
-            this.label9.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label9.Location = new System.Drawing.Point(24, 100);
-            this.label9.Name = "label9";
-            this.label9.Size = new System.Drawing.Size(72, 18);
-            this.label9.TabIndex = 37;
-            this.label9.Text = "Apellido:";
-            // 
-            // txtApellidoCliente
-            // 
-            this.txtApellidoCliente.Location = new System.Drawing.Point(126, 99);
-            this.txtApellidoCliente.Name = "txtApellidoCliente";
-            this.txtApellidoCliente.Size = new System.Drawing.Size(100, 22);
-            this.txtApellidoCliente.TabIndex = 36;
-            // 
             // ciLabel1
             // 
             this.ciLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clienteBindingSource, "Ci", true));
@@ -221,19 +206,13 @@
             this.ciLabel1.TabIndex = 35;
             this.ciLabel1.Text = "label9";
             // 
-            // txtNombreCliente
-            // 
-            this.txtNombreCliente.Location = new System.Drawing.Point(126, 71);
-            this.txtNombreCliente.Name = "txtNombreCliente";
-            this.txtNombreCliente.Size = new System.Drawing.Size(100, 22);
-            this.txtNombreCliente.TabIndex = 34;
-            // 
             // txtCiClie
             // 
             this.txtCiClie.Location = new System.Drawing.Point(126, 43);
             this.txtCiClie.Name = "txtCiClie";
             this.txtCiClie.Size = new System.Drawing.Size(100, 22);
             this.txtCiClie.TabIndex = 33;
+            this.txtCiClie.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TxtCiClie_KeyUp);
             // 
             // lblIdClie
             // 
@@ -252,16 +231,6 @@
             this.label2.Size = new System.Drawing.Size(29, 18);
             this.label2.TabIndex = 1;
             this.label2.Text = "CI:";
-            // 
-            // label3
-            // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.Location = new System.Drawing.Point(24, 71);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(73, 18);
-            this.label3.TabIndex = 2;
-            this.label3.Text = "Nombre:";
             // 
             // groupBox1
             // 
@@ -364,14 +333,14 @@
             this.dgvVentas.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(68)))), ((int)(((byte)(96)))));
             this.dgvVentas.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
             this.dgvVentas.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(51)))), ((int)(((byte)(72)))));
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvVentas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle13.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle13.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(51)))), ((int)(((byte)(72)))));
+            dataGridViewCellStyle13.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle13.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle13.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle13.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle13.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvVentas.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle13;
             this.dgvVentas.ColumnHeadersHeight = 30;
             this.dgvVentas.ColumnHeadersVisible = false;
             this.dgvVentas.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -380,31 +349,31 @@
             this.ColPrecio,
             this.ColCantidad,
             this.ColCosto});
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(68)))), ((int)(((byte)(96)))));
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.Color.Gainsboro;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvVentas.DefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle14.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle14.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(68)))), ((int)(((byte)(96)))));
+            dataGridViewCellStyle14.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle14.ForeColor = System.Drawing.Color.Gainsboro;
+            dataGridViewCellStyle14.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle14.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle14.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvVentas.DefaultCellStyle = dataGridViewCellStyle14;
             this.dgvVentas.EnableHeadersVisualStyles = false;
             this.dgvVentas.GridColor = System.Drawing.Color.SteelBlue;
             this.dgvVentas.Location = new System.Drawing.Point(18, 18);
             this.dgvVentas.Name = "dgvVentas";
             this.dgvVentas.ReadOnly = true;
             this.dgvVentas.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle7.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(51)))), ((int)(((byte)(72)))));
-            dataGridViewCellStyle7.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle7.ForeColor = System.Drawing.Color.PaleVioletRed;
-            dataGridViewCellStyle7.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle7.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle7.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvVentas.RowHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle15.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle15.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(35)))), ((int)(((byte)(51)))), ((int)(((byte)(72)))));
+            dataGridViewCellStyle15.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle15.ForeColor = System.Drawing.Color.PaleVioletRed;
+            dataGridViewCellStyle15.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle15.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle15.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvVentas.RowHeadersDefaultCellStyle = dataGridViewCellStyle15;
             this.dgvVentas.RowHeadersVisible = false;
-            dataGridViewCellStyle8.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            this.dgvVentas.RowsDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle16.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            this.dgvVentas.RowsDefaultCellStyle = dataGridViewCellStyle16;
             this.dgvVentas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvVentas.Size = new System.Drawing.Size(695, 216);
             this.dgvVentas.TabIndex = 11;
@@ -605,7 +574,7 @@
             this.PanelMed.Controls.Add(this.medicamentoDataGridView);
             this.PanelMed.Controls.Add(this.btnAceptarRP);
             this.PanelMed.Controls.Add(this.btnCancelarRP);
-            this.PanelMed.Location = new System.Drawing.Point(575, 22);
+            this.PanelMed.Location = new System.Drawing.Point(662, 22);
             this.PanelMed.Name = "PanelMed";
             this.PanelMed.Size = new System.Drawing.Size(478, 414);
             this.PanelMed.TabIndex = 48;
@@ -628,6 +597,7 @@
             this.txtBuscarMedicamento.Name = "txtBuscarMedicamento";
             this.txtBuscarMedicamento.Size = new System.Drawing.Size(297, 20);
             this.txtBuscarMedicamento.TabIndex = 39;
+            this.txtBuscarMedicamento.TextChanged += new System.EventHandler(this.TxtBuscarMedicamento_TextChanged);
             // 
             // txtCantAComprar
             // 
@@ -906,13 +876,49 @@
             // 
             this.detalleFacturaBindingSource.DataSource = typeof(FarmaciaOASIS.Data.DetalleFactura);
             // 
+            // nombreLabel1
+            // 
+            nombreLabel1.AutoSize = true;
+            nombreLabel1.Location = new System.Drawing.Point(25, 75);
+            nombreLabel1.Name = "nombreLabel1";
+            nombreLabel1.Size = new System.Drawing.Size(67, 16);
+            nombreLabel1.TabIndex = 40;
+            nombreLabel1.Text = "Nombre:";
+            // 
+            // nombreLabel2
+            // 
+            this.nombreLabel2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clienteBindingSource, "Nombre", true));
+            this.nombreLabel2.Location = new System.Drawing.Point(123, 75);
+            this.nombreLabel2.Name = "nombreLabel2";
+            this.nombreLabel2.Size = new System.Drawing.Size(100, 23);
+            this.nombreLabel2.TabIndex = 41;
+            this.nombreLabel2.Text = "label12";
+            // 
+            // apellidoLabel1
+            // 
+            apellidoLabel1.AutoSize = true;
+            apellidoLabel1.Location = new System.Drawing.Point(25, 99);
+            apellidoLabel1.Name = "apellidoLabel1";
+            apellidoLabel1.Size = new System.Drawing.Size(70, 16);
+            apellidoLabel1.TabIndex = 41;
+            apellidoLabel1.Text = "Apellido:";
+            // 
+            // apellidoLabel2
+            // 
+            this.apellidoLabel2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clienteBindingSource, "Apellido", true));
+            this.apellidoLabel2.Location = new System.Drawing.Point(123, 99);
+            this.apellidoLabel2.Name = "apellidoLabel2";
+            this.apellidoLabel2.Size = new System.Drawing.Size(100, 23);
+            this.apellidoLabel2.TabIndex = 42;
+            this.apellidoLabel2.Text = "label12";
+            // 
             // frmVentaProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(69)))), ((int)(((byte)(75)))));
-            this.ClientSize = new System.Drawing.Size(977, 536);
+            this.ClientSize = new System.Drawing.Size(1053, 536);
             this.Controls.Add(this.panelxd);
             this.Controls.Add(this.PanelMed);
             this.Controls.Add(this.groupBox4);
@@ -952,7 +958,6 @@
         private System.Windows.Forms.GroupBox groupBox2;
         private System.Windows.Forms.Label lblIdClie;
         private System.Windows.Forms.Label label2;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.GroupBox groupBox1;
         private System.Windows.Forms.Button btnRegProd;
         private System.Windows.Forms.Button btnRegistrarCliente;
@@ -966,9 +971,6 @@
         public System.Windows.Forms.TextBox txtCiClie;
         private System.Windows.Forms.Label ciLabel1;
         private System.Windows.Forms.BindingSource clienteBindingSource;
-        private System.Windows.Forms.Label label9;
-        public System.Windows.Forms.TextBox txtApellidoCliente;
-        public System.Windows.Forms.TextBox txtNombreCliente;
         private System.Windows.Forms.BindingSource medicamentoBindingSource;
         private System.Windows.Forms.Label pUnitLabel1;
         private System.Windows.Forms.Label cantidadLabel1;
@@ -1011,5 +1013,7 @@
         public System.Windows.Forms.Button btnAceptar;
         public System.Windows.Forms.Button btnCancelar;
         private System.Windows.Forms.Label label4;
+        private System.Windows.Forms.Label apellidoLabel2;
+        private System.Windows.Forms.Label nombreLabel2;
     }
 }
