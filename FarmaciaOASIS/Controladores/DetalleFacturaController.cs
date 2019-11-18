@@ -11,10 +11,6 @@ namespace FarmaciaOASIS.Controladores
     {
         dbFarmaciaOASISEntities _db = new dbFarmaciaOASISEntities();
 
-        //public List<DetalleFactura> Listar(int pBuscar)
-        //{
-
-        //}
         
         public bool Insertar(Data.DetalleFactura reg)
         {
@@ -29,13 +25,13 @@ namespace FarmaciaOASIS.Controladores
         }
         public bool Eliminar(int pParametro)
         {
-            var reg = _db.DetalleFactura.Where(x => x.NoFactura == pParametro).FirstOrDefault();
+            var reg = _db.DetalleFactura.Where(x => x.Numero == pParametro).FirstOrDefault();
             _db.DetalleFactura.Remove(reg);
             return _db.SaveChanges() > 0;
         }
-        internal List<DetalleFactura> BuscarPorPK(int pCi)
+        internal List<DetalleFactura> Listar(int pNoFactura)
         {
-            return _db.DetalleFactura.Where(x => x.NoFactura == pCi).ToList();
+            return _db.DetalleFactura.Where(x => x.NoFactura == pNoFactura).ToList();
         }
     }
 }

@@ -47,7 +47,6 @@
             this.bindingNavigatorSeparator2 = new System.Windows.Forms.ToolStripSeparator();
             this.medicamentoBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.medicamentoDataGridView = new System.Windows.Forms.DataGridView();
-            this.codMedLabel1 = new System.Windows.Forms.Label();
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -56,6 +55,7 @@
             this.Agregar = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Modificar = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Eliminar = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.codMedLabel1 = new System.Windows.Forms.Label();
             codMedLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.medicamentoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.medicamentoBindingNavigator)).BeginInit();
@@ -242,6 +242,7 @@
             this.medicamentoDataGridView.AllowUserToAddRows = false;
             this.medicamentoDataGridView.AllowUserToDeleteRows = false;
             this.medicamentoDataGridView.AutoGenerateColumns = false;
+            this.medicamentoDataGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(68)))), ((int)(((byte)(96)))));
             this.medicamentoDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.medicamentoDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
@@ -256,19 +257,10 @@
             this.medicamentoDataGridView.Location = new System.Drawing.Point(12, 136);
             this.medicamentoDataGridView.Name = "medicamentoDataGridView";
             this.medicamentoDataGridView.ReadOnly = true;
-            this.medicamentoDataGridView.Size = new System.Drawing.Size(761, 234);
+            this.medicamentoDataGridView.Size = new System.Drawing.Size(635, 234);
             this.medicamentoDataGridView.TabIndex = 19;
             this.medicamentoDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.medicamentoDataGridView_CellClick);
             this.medicamentoDataGridView.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.medicamentoDataGridView_CellPainting);
-            // 
-            // codMedLabel1
-            // 
-            this.codMedLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.medicamentoBindingSource, "CodMed", true));
-            this.codMedLabel1.Location = new System.Drawing.Point(128, 113);
-            this.codMedLabel1.Name = "codMedLabel1";
-            this.codMedLabel1.Size = new System.Drawing.Size(100, 23);
-            this.codMedLabel1.TabIndex = 20;
-            this.codMedLabel1.Text = "label2";
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -322,6 +314,15 @@
             this.Eliminar.HeaderText = "";
             this.Eliminar.Name = "Eliminar";
             this.Eliminar.ReadOnly = true;
+            // 
+            // codMedLabel1
+            // 
+            this.codMedLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.medicamentoBindingSource, "CodMed", true));
+            this.codMedLabel1.Location = new System.Drawing.Point(128, 113);
+            this.codMedLabel1.Name = "codMedLabel1";
+            this.codMedLabel1.Size = new System.Drawing.Size(100, 23);
+            this.codMedLabel1.TabIndex = 20;
+            this.codMedLabel1.Text = "label2";
             // 
             // frmGestionarMedicamentos
             // 

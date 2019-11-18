@@ -14,17 +14,11 @@
           <Property Name="Nombre" Type="varchar" MaxLength="30" Nullable="false" />
           <Property Name="Apellido" Type="varchar" MaxLength="30" Nullable="false" />
         </EntityType>
-        <!--Errores durante la generación:
-advertencia 6002: La tabla o vista 'dbFarmaciaOASIS.dbo.DetalleFactura' no tiene definida ninguna clave principal. Se ha inferido la clave y la definición se creado como una vista o tabla de solo lectura.-->
         <EntityType Name="DetalleFactura">
           <Key>
-            <PropertyRef Name="NoFactura" />
-            <PropertyRef Name="NoAutorizacion" />
-            <PropertyRef Name="CodMed" />
-            <PropertyRef Name="CantMed" />
-            <PropertyRef Name="Precio" />
-            <PropertyRef Name="CodUsuario" />
+            <PropertyRef Name="Numero" />
           </Key>
+          <Property Name="Numero" Type="int" Nullable="false" />
           <Property Name="NoFactura" Type="int" Nullable="false" />
           <Property Name="NoAutorizacion" Type="int" Nullable="false" />
           <Property Name="CodMed" Type="int" Nullable="false" />
@@ -102,7 +96,7 @@ advertencia 6002: La tabla o vista 'dbFarmaciaOASIS.dbo.DetalleFactura' no tiene
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="fk_Fact">
+        <Association Name="fk_Facturee">
           <End Role="Factura" Type="Self.Factura" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
@@ -146,20 +140,11 @@ advertencia 6002: La tabla o vista 'dbFarmaciaOASIS.dbo.DetalleFactura' no tiene
         </Association>
         <EntityContainer Name="dbFarmaciaOASISModelStoreContainer">
           <EntitySet Name="Cliente" EntityType="Self.Cliente" Schema="dbo" store:Type="Tables" />
+          <EntitySet Name="DetalleFactura" EntityType="Self.DetalleFactura" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Factura" EntityType="Self.Factura" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Medicamento" EntityType="Self.Medicamento" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Proveedor" EntityType="Self.Proveedor" Schema="dbo" store:Type="Tables" />
           <EntitySet Name="Usuario" EntityType="Self.Usuario" Schema="dbo" store:Type="Tables" />
-          <EntitySet Name="DetalleFactura" EntityType="Self.DetalleFactura" store:Type="Tables" store:Schema="dbo">
-            <DefiningQuery>SELECT 
-    [DetalleFactura].[NoFactura] AS [NoFactura], 
-    [DetalleFactura].[NoAutorizacion] AS [NoAutorizacion], 
-    [DetalleFactura].[CodMed] AS [CodMed], 
-    [DetalleFactura].[CantMed] AS [CantMed], 
-    [DetalleFactura].[Precio] AS [Precio], 
-    [DetalleFactura].[CodUsuario] AS [CodUsuario]
-    FROM [dbo].[DetalleFactura] AS [DetalleFactura]</DefiningQuery>
-          </EntitySet>
           <AssociationSet Name="fk_Clientes" Association="Self.fk_Clientes">
             <End Role="Cliente" EntitySet="Cliente" />
             <End Role="Factura" EntitySet="Factura" />
@@ -168,7 +153,7 @@ advertencia 6002: La tabla o vista 'dbFarmaciaOASIS.dbo.DetalleFactura' no tiene
             <End Role="Medicamento" EntitySet="Medicamento" />
             <End Role="DetalleFactura" EntitySet="DetalleFactura" />
           </AssociationSet>
-          <AssociationSet Name="fk_Fact" Association="Self.fk_Fact">
+          <AssociationSet Name="fk_Facturee" Association="Self.fk_Facturee">
             <End Role="Factura" EntitySet="Factura" />
             <End Role="DetalleFactura" EntitySet="DetalleFactura" />
           </AssociationSet>
@@ -196,6 +181,21 @@ advertencia 6002: La tabla o vista 'dbFarmaciaOASIS.dbo.DetalleFactura' no tiene
           <Property Name="Apellido" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
           <NavigationProperty Name="Factura" Relationship="Self.fk_Clientes" FromRole="Cliente" ToRole="Factura" />
         </EntityType>
+        <EntityType Name="DetalleFactura">
+          <Key>
+            <PropertyRef Name="Numero" />
+          </Key>
+          <Property Name="Numero" Type="Int32" Nullable="false" />
+          <Property Name="NoFactura" Type="Int32" Nullable="false" />
+          <Property Name="NoAutorizacion" Type="Int32" Nullable="false" />
+          <Property Name="CodMed" Type="Int32" Nullable="false" />
+          <Property Name="CantMed" Type="Int32" Nullable="false" />
+          <Property Name="Precio" Type="Int32" Nullable="false" />
+          <Property Name="CodUsuario" Type="Int32" Nullable="false" />
+          <NavigationProperty Name="Medicamento" Relationship="Self.fk_CodMedi" FromRole="DetalleFactura" ToRole="Medicamento" />
+          <NavigationProperty Name="Factura" Relationship="Self.fk_Facturee" FromRole="DetalleFactura" ToRole="Factura" />
+          <NavigationProperty Name="Usuario" Relationship="Self.fk_User" FromRole="DetalleFactura" ToRole="Usuario" />
+        </EntityType>
         <EntityType Name="Factura">
           <Key>
             <PropertyRef Name="NoFactura" />
@@ -204,7 +204,7 @@ advertencia 6002: La tabla o vista 'dbFarmaciaOASIS.dbo.DetalleFactura' no tiene
           <Property Name="Fecha" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="CodCliente" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Cliente" Relationship="Self.fk_Clientes" FromRole="Factura" ToRole="Cliente" />
-          <NavigationProperty Name="DetalleFactura" Relationship="Self.fk_Fact" FromRole="Factura" ToRole="DetalleFactura" />
+          <NavigationProperty Name="DetalleFactura" Relationship="Self.fk_Facturee" FromRole="Factura" ToRole="DetalleFactura" />
         </EntityType>
         <EntityType Name="Medicamento">
           <Key>
@@ -244,25 +244,6 @@ advertencia 6002: La tabla o vista 'dbFarmaciaOASIS.dbo.DetalleFactura' no tiene
           <Property Name="Cel" Type="Int32" Nullable="false" />
           <NavigationProperty Name="DetalleFactura" Relationship="Self.fk_User" FromRole="Usuario" ToRole="DetalleFactura" />
         </EntityType>
-        <EntityType Name="DetalleFactura">
-          <Key>
-            <PropertyRef Name="NoFactura" />
-            <PropertyRef Name="NoAutorizacion" />
-            <PropertyRef Name="CodMed" />
-            <PropertyRef Name="CantMed" />
-            <PropertyRef Name="Precio" />
-            <PropertyRef Name="CodUsuario" />
-          </Key>
-          <Property Name="NoFactura" Type="Int32" Nullable="false" />
-          <Property Name="NoAutorizacion" Type="Int32" Nullable="false" />
-          <Property Name="CodMed" Type="Int32" Nullable="false" />
-          <Property Name="CantMed" Type="Int32" Nullable="false" />
-          <Property Name="Precio" Type="Int32" Nullable="false" />
-          <Property Name="CodUsuario" Type="Int32" Nullable="false" />
-          <NavigationProperty Name="Factura" Relationship="Self.fk_Fact" FromRole="DetalleFactura" ToRole="Factura" />
-          <NavigationProperty Name="Medicamento" Relationship="Self.fk_CodMedi" FromRole="DetalleFactura" ToRole="Medicamento" />
-          <NavigationProperty Name="Usuario" Relationship="Self.fk_User" FromRole="DetalleFactura" ToRole="Usuario" />
-        </EntityType>
         <Association Name="fk_Clientes">
           <End Role="Cliente" Type="Self.Cliente" Multiplicity="1">
             <OnDelete Action="Cascade" />
@@ -274,20 +255,6 @@ advertencia 6002: La tabla o vista 'dbFarmaciaOASIS.dbo.DetalleFactura' no tiene
             </Principal>
             <Dependent Role="Factura">
               <PropertyRef Name="CodCliente" />
-            </Dependent>
-          </ReferentialConstraint>
-        </Association>
-        <Association Name="fk_Fact">
-          <End Role="Factura" Type="Self.Factura" Multiplicity="1">
-            <OnDelete Action="Cascade" />
-          </End>
-          <End Role="DetalleFactura" Type="Self.DetalleFactura" Multiplicity="*" />
-          <ReferentialConstraint>
-            <Principal Role="Factura">
-              <PropertyRef Name="NoFactura" />
-            </Principal>
-            <Dependent Role="DetalleFactura">
-              <PropertyRef Name="NoFactura" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -305,17 +272,17 @@ advertencia 6002: La tabla o vista 'dbFarmaciaOASIS.dbo.DetalleFactura' no tiene
             </Dependent>
           </ReferentialConstraint>
         </Association>
-        <Association Name="fk_Prov">
-          <End Role="Proveedor" Type="Self.Proveedor" Multiplicity="1">
+        <Association Name="fk_Facturee">
+          <End Role="Factura" Type="Self.Factura" Multiplicity="1">
             <OnDelete Action="Cascade" />
           </End>
-          <End Role="Medicamento" Type="Self.Medicamento" Multiplicity="*" />
+          <End Role="DetalleFactura" Type="Self.DetalleFactura" Multiplicity="*" />
           <ReferentialConstraint>
-            <Principal Role="Proveedor">
-              <PropertyRef Name="CodProv" />
+            <Principal Role="Factura">
+              <PropertyRef Name="NoFactura" />
             </Principal>
-            <Dependent Role="Medicamento">
-              <PropertyRef Name="CodProv" />
+            <Dependent Role="DetalleFactura">
+              <PropertyRef Name="NoFactura" />
             </Dependent>
           </ReferentialConstraint>
         </Association>
@@ -333,32 +300,46 @@ advertencia 6002: La tabla o vista 'dbFarmaciaOASIS.dbo.DetalleFactura' no tiene
             </Dependent>
           </ReferentialConstraint>
         </Association>
+        <Association Name="fk_Prov">
+          <End Role="Proveedor" Type="Self.Proveedor" Multiplicity="1">
+            <OnDelete Action="Cascade" />
+          </End>
+          <End Role="Medicamento" Type="Self.Medicamento" Multiplicity="*" />
+          <ReferentialConstraint>
+            <Principal Role="Proveedor">
+              <PropertyRef Name="CodProv" />
+            </Principal>
+            <Dependent Role="Medicamento">
+              <PropertyRef Name="CodProv" />
+            </Dependent>
+          </ReferentialConstraint>
+        </Association>
         <EntityContainer Name="dbFarmaciaOASISEntities" annotation:LazyLoadingEnabled="true">
           <EntitySet Name="Cliente" EntityType="Self.Cliente" />
+          <EntitySet Name="DetalleFactura" EntityType="Self.DetalleFactura" />
           <EntitySet Name="Factura" EntityType="Self.Factura" />
           <EntitySet Name="Medicamento" EntityType="Self.Medicamento" />
           <EntitySet Name="Proveedor" EntityType="Self.Proveedor" />
           <EntitySet Name="Usuario" EntityType="Self.Usuario" />
-          <EntitySet Name="DetalleFactura" EntityType="Self.DetalleFactura" />
           <AssociationSet Name="fk_Clientes" Association="Self.fk_Clientes">
             <End Role="Cliente" EntitySet="Cliente" />
             <End Role="Factura" EntitySet="Factura" />
-          </AssociationSet>
-          <AssociationSet Name="fk_Fact" Association="Self.fk_Fact">
-            <End Role="Factura" EntitySet="Factura" />
-            <End Role="DetalleFactura" EntitySet="DetalleFactura" />
           </AssociationSet>
           <AssociationSet Name="fk_CodMedi" Association="Self.fk_CodMedi">
             <End Role="Medicamento" EntitySet="Medicamento" />
             <End Role="DetalleFactura" EntitySet="DetalleFactura" />
           </AssociationSet>
-          <AssociationSet Name="fk_Prov" Association="Self.fk_Prov">
-            <End Role="Proveedor" EntitySet="Proveedor" />
-            <End Role="Medicamento" EntitySet="Medicamento" />
+          <AssociationSet Name="fk_Facturee" Association="Self.fk_Facturee">
+            <End Role="Factura" EntitySet="Factura" />
+            <End Role="DetalleFactura" EntitySet="DetalleFactura" />
           </AssociationSet>
           <AssociationSet Name="fk_User" Association="Self.fk_User">
             <End Role="Usuario" EntitySet="Usuario" />
             <End Role="DetalleFactura" EntitySet="DetalleFactura" />
+          </AssociationSet>
+          <AssociationSet Name="fk_Prov" Association="Self.fk_Prov">
+            <End Role="Proveedor" EntitySet="Proveedor" />
+            <End Role="Medicamento" EntitySet="Medicamento" />
           </AssociationSet>
         </EntityContainer>
       </Schema>
@@ -374,6 +355,19 @@ advertencia 6002: La tabla o vista 'dbFarmaciaOASIS.dbo.DetalleFactura' no tiene
                 <ScalarProperty Name="Ci" ColumnName="Ci" />
                 <ScalarProperty Name="Nombre" ColumnName="Nombre" />
                 <ScalarProperty Name="Apellido" ColumnName="Apellido" />
+              </MappingFragment>
+            </EntityTypeMapping>
+          </EntitySetMapping>
+          <EntitySetMapping Name="DetalleFactura">
+            <EntityTypeMapping TypeName="dbFarmaciaOASISModel.DetalleFactura">
+              <MappingFragment StoreEntitySet="DetalleFactura">
+                <ScalarProperty Name="Numero" ColumnName="Numero" />
+                <ScalarProperty Name="NoFactura" ColumnName="NoFactura" />
+                <ScalarProperty Name="NoAutorizacion" ColumnName="NoAutorizacion" />
+                <ScalarProperty Name="CodMed" ColumnName="CodMed" />
+                <ScalarProperty Name="CantMed" ColumnName="CantMed" />
+                <ScalarProperty Name="Precio" ColumnName="Precio" />
+                <ScalarProperty Name="CodUsuario" ColumnName="CodUsuario" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>
@@ -420,18 +414,6 @@ advertencia 6002: La tabla o vista 'dbFarmaciaOASIS.dbo.DetalleFactura' no tiene
                 <ScalarProperty Name="Contrasenia" ColumnName="Contrasenia" />
                 <ScalarProperty Name="Rol" ColumnName="Rol" />
                 <ScalarProperty Name="Cel" ColumnName="Cel" />
-              </MappingFragment>
-            </EntityTypeMapping>
-          </EntitySetMapping>
-          <EntitySetMapping Name="DetalleFactura">
-            <EntityTypeMapping TypeName="dbFarmaciaOASISModel.DetalleFactura">
-              <MappingFragment StoreEntitySet="DetalleFactura">
-                <ScalarProperty Name="NoFactura" ColumnName="NoFactura" />
-                <ScalarProperty Name="NoAutorizacion" ColumnName="NoAutorizacion" />
-                <ScalarProperty Name="CodMed" ColumnName="CodMed" />
-                <ScalarProperty Name="CantMed" ColumnName="CantMed" />
-                <ScalarProperty Name="Precio" ColumnName="Precio" />
-                <ScalarProperty Name="CodUsuario" ColumnName="CodUsuario" />
               </MappingFragment>
             </EntityTypeMapping>
           </EntitySetMapping>

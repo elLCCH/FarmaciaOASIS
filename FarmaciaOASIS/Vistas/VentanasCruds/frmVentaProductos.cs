@@ -23,11 +23,13 @@ namespace FarmaciaOASIS.Vistas.VentanasCruds
             InitializeComponent();
             clienteBindingSource.DataSource = _objUsuario.Listar("");
             medicamentoBindingSource.DataSource = _med.Listar("");
+            detalleFacturaBindingSource.DataSource = _objFac.Listar(1);
         }
 
         private void frmVentaProductos_Load(object sender, EventArgs e)
         {
             limpiar();
+            //detalleFacturaBindingSource.AddNew();
             
         }
 
@@ -35,6 +37,7 @@ namespace FarmaciaOASIS.Vistas.VentanasCruds
         {
             clienteBindingSource.AddNew();
             panelxd.Visible = true;
+            Inhabilitar();
         }
         private Cliente CargarDatos()
         {
@@ -53,6 +56,7 @@ namespace FarmaciaOASIS.Vistas.VentanasCruds
                 txtNombreCliente.Text = nombreTextBox.Text;
                 txtApellidoCliente.Text = apellidoTextBox.Text;
                 panelxd.Visible = false;
+                habilitar();
                 //Close();
             }
         }
@@ -60,6 +64,7 @@ namespace FarmaciaOASIS.Vistas.VentanasCruds
         private void BtnCancelar_Click(object sender, EventArgs e)
         {
             panelxd.Visible = false;
+            habilitar();
         }
 
         private void BtnAceptarRP_Click(object sender, EventArgs e)
@@ -73,7 +78,8 @@ namespace FarmaciaOASIS.Vistas.VentanasCruds
             {
                 btnColocarProd.Visible = true;
                 calcularPrecio();
-                
+                btnColocarProd.Enabled = true;
+                habilitar();
             }
             
         }
@@ -113,12 +119,38 @@ namespace FarmaciaOASIS.Vistas.VentanasCruds
         {
             medicamentoBindingSource.DataSource = _med.Listar(txtBuscarMedicamento.Text);
             PanelMed.Visible = true;
-            
+            Inhabilitar();
+
         }
 
+        private void Inhabilitar()
+        {
+            btnRegProd.Enabled = false;
+            btnRegistrarCliente.Enabled = false;
+            txtApellidoCliente.Enabled = false;
+            txtNombreCliente.Enabled = false;
+            txtCiClie.Enabled = false;
+            txtTotal.Enabled = false;
+            txtCant.Enabled = false;
+            btnEliminar.Enabled = false;
+            btnRegistrar.Enabled = false;
+        }
+        private void habilitar()
+        {
+            btnRegProd.Enabled = true;
+            btnRegistrarCliente.Enabled = true;
+            txtApellidoCliente.Enabled = true;
+            txtNombreCliente.Enabled = true;
+            txtCiClie.Enabled = true;
+            txtTotal.Enabled = true;
+            txtCant.Enabled = true;
+            btnEliminar.Enabled = true;
+            btnRegistrar.Enabled = true;
+        }
         private void BtnCancelarRP_Click(object sender, EventArgs e)
         {
             PanelMed.Visible = false;
+            habilitar();
         }
         private Medicamento CargarDatosMedicamento()
         {
@@ -148,12 +180,17 @@ namespace FarmaciaOASIS.Vistas.VentanasCruds
             dgvVentas.Rows.Add(codMedLabel1.Text, nomMedLabel1.Text, pUnitLabel1.Text, txtCant.Text, txtTotal.Text);
             sumaTotalDGV();
             limpiar();
+            btnColocarProd.Enabled = false;
         }
 
         private void sumaTotalDGV()
         {
-            
-           // btnEliminar.Visible = false;
+            int TotalPago = 0;
+            foreach (DataGridViewRow row in dgvVentas.Rows)
+            {
+                TotalPago = TotalPago + Convert.ToInt32(row.Cells["ColCosto"].Value);
+            }
+            lblTotal.Text = Convert.ToString(TotalPago);
 
         }
 
@@ -175,61 +212,52 @@ namespace FarmaciaOASIS.Vistas.VentanasCruds
 
         private void BtnRegistrar_Click(object sender, EventArgs e)
         {
+            int ultimoIDFactura = 10;
             string codigo, nombre, precio, cantidad, costo;
             //double sumatoriaTotal = 0;
             foreach (DataGridViewRow row in dgvVentas.Rows)
             {
+                ultimoIDFactura = ultimoIDFactura + 1;
+                detalleFacturaBindingSource.AddNew();
+                var reg = (DetalleFactura)detalleFacturaBindingSource.Current;
+                
+                //CARGAR DATOS
                 codigo = Convert.ToString(row.Cells["ColCodigo"].Value);
                 nombre = Convert.ToString(row.Cells["ColNombre"].Value);
                 precio = Convert.ToString(row.Cells["ColPrecio"].Value);
                 cantidad = Convert.ToString(row.Cells["ColCantidad"].Value);
                 costo = Convert.ToString(row.Cells["ColCosto"].Value);
-                
 
-                noFacturaTextBox.Text = "444";
-                noAutorizacionTextBox.Text = "555555";
-                codMedTextBox.Text = codigo;
-                cantMedTextBox.Text = cantidad;
-                precioTextBox.Text = precio;
-                codUsuarioTextBox.Text = "0";
-                MessageBox.Show("cod: " + codMedTextBox.Text
-                            + "\nnombre: " + codUsuarioTextBox.Text
-                            + "\nprecio: " + precioTextBox.Text
-                            + "\ncant: " + cantMedTextBox.Text
-                            + "\ncosto: " + precioTextBox.Text
-                            + "\nFactura: "+ noFacturaTextBox.Text
-                            + "\nAutoriza: " + noAutorizacionTextBox.Text
-                );
+                //numeroTextBox.Text = Convert.ToString(cont);
+                //noFacturaTextBox.Text = "444";
+                //noAutorizacionTextBox.Text = "555555";
+                //codMedTextBox.Text = codigo;
+                //cantMedTextBox.Text = cantidad;
+                //precioTextBox.Text = precio;
+                //codUsuarioTextBox.Text = "0";
+
                 
-                var reg = CargarDatosDFactura();
+                reg.NoFactura = 444;
+                reg.NoAutorizacion = 555555;
+                reg.CodMed = Convert.ToInt32(codigo);
+                reg.CantMed = Convert.ToInt32(cantidad);
+                reg.Precio = Convert.ToInt32(precio);
+                reg.CodUsuario = 0;
+                reg.Numero = ultimoIDFactura;
+                //INSERTACION
                 if (_objFac.Insertar(reg))
                 {
                     MessageBox.Show("se inserto correctamente");
-                    
+
                 }
-                
-
-
 
             }
             
         }
-        private DetalleFactura CargarDatosDFactura()
-        {
-            var reg = (DetalleFactura)detalleFacturaBindingSource.Current;
-            //reg.FechaNac = DateTime.Now;
-            return reg;
-        }
 
-        private void Button1_Click(object sender, EventArgs e)
+        private void BtnLimpiar_Click(object sender, EventArgs e)
         {
-            detalleFacturaBindingSource.AddNew();
-            var reg = CargarDatosDFactura();
-            if (_objFac.Insertar(reg))
-            {
-                MessageBox.Show("se inserto correctamente");
-
-            }
+            limpiar();
         }
     }
 }

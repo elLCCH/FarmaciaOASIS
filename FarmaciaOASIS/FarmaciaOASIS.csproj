@@ -270,8 +270,8 @@
   <ItemGroup>
     <Content Include="Data\dbFarmaciaOASIS.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>dbFarmaciaOASIS.Context.cs</LastGenOutput>
       <DependentUpon>dbFarmaciaOASIS.edmx</DependentUpon>
+      <LastGenOutput>dbFarmaciaOASIS.Context.cs</LastGenOutput>
     </Content>
     <Content Include="Data\dbFarmaciaOASIS.tt">
       <Generator>TextTemplatingFileGenerator</Generator>

@@ -251,6 +251,8 @@
             // 
             // proveedorDataGridView
             // 
+            this.proveedorDataGridView.AllowUserToAddRows = false;
+            this.proveedorDataGridView.AllowUserToDeleteRows = false;
             this.proveedorDataGridView.AutoGenerateColumns = false;
             this.proveedorDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.proveedorDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
@@ -268,6 +270,7 @@
             this.proveedorDataGridView.DataSource = this.usuarioBindingSource;
             this.proveedorDataGridView.Location = new System.Drawing.Point(12, 139);
             this.proveedorDataGridView.Name = "proveedorDataGridView";
+            this.proveedorDataGridView.ReadOnly = true;
             this.proveedorDataGridView.Size = new System.Drawing.Size(1028, 220);
             this.proveedorDataGridView.TabIndex = 20;
             this.proveedorDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.proveedorDataGridView_CellClick);
@@ -278,63 +281,74 @@
             this.dataGridViewTextBoxColumn1.DataPropertyName = "CodUsuario";
             this.dataGridViewTextBoxColumn1.HeaderText = "CodUsuario";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn2
             // 
             this.dataGridViewTextBoxColumn2.DataPropertyName = "Ci";
             this.dataGridViewTextBoxColumn2.HeaderText = "Ci";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn3
             // 
             this.dataGridViewTextBoxColumn3.DataPropertyName = "Nombre";
             this.dataGridViewTextBoxColumn3.HeaderText = "Nombre";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn4
             // 
             this.dataGridViewTextBoxColumn4.DataPropertyName = "Apellido";
             this.dataGridViewTextBoxColumn4.HeaderText = "Apellido";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn5
             // 
             this.dataGridViewTextBoxColumn5.DataPropertyName = "Cuenta";
             this.dataGridViewTextBoxColumn5.HeaderText = "Cuenta";
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn6
             // 
             this.dataGridViewTextBoxColumn6.DataPropertyName = "Contrasenia";
             this.dataGridViewTextBoxColumn6.HeaderText = "Contrasenia";
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn7
             // 
             this.dataGridViewTextBoxColumn7.DataPropertyName = "Rol";
             this.dataGridViewTextBoxColumn7.HeaderText = "Rol";
             this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
             // 
             // dataGridViewTextBoxColumn8
             // 
             this.dataGridViewTextBoxColumn8.DataPropertyName = "Cel";
             this.dataGridViewTextBoxColumn8.HeaderText = "Cel";
             this.dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            this.dataGridViewTextBoxColumn8.ReadOnly = true;
             // 
             // Agregar
             // 
             this.Agregar.HeaderText = "";
             this.Agregar.Name = "Agregar";
+            this.Agregar.ReadOnly = true;
             // 
             // Modificar
             // 
             this.Modificar.HeaderText = "";
             this.Modificar.Name = "Modificar";
+            this.Modificar.ReadOnly = true;
             // 
             // Eliminar
             // 
             this.Eliminar.HeaderText = "";
             this.Eliminar.Name = "Eliminar";
+            this.Eliminar.ReadOnly = true;
             // 
             // frmGestionarUsuarios
             // 

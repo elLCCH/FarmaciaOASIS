@@ -14,16 +14,16 @@ namespace FarmaciaOASIS.Data
     
     public partial class DetalleFactura
     {
+        public int Numero { get; set; }
         public int NoFactura { get; set; }
         public int NoAutorizacion { get; set; }
         public int CodMed { get; set; }
         public int CantMed { get; set; }
         public int Precio { get; set; }
         public int CodUsuario { get; set; }
-        public int Numero { get; set; }
     
-        public virtual Factura Factura { get; set; }
         public virtual Medicamento Medicamento { get; set; }
+        public virtual Factura Factura { get; set; }
         public virtual Usuario Usuario { get; set; }
     }
 }

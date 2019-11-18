@@ -26,10 +26,10 @@ namespace FarmaciaOASIS.Data
         }
     
         public virtual DbSet<Cliente> Cliente { get; set; }
+        public virtual DbSet<DetalleFactura> DetalleFactura { get; set; }
         public virtual DbSet<Factura> Factura { get; set; }
         public virtual DbSet<Medicamento> Medicamento { get; set; }
         public virtual DbSet<Proveedor> Proveedor { get; set; }
         public virtual DbSet<Usuario> Usuario { get; set; }
-        public virtual DbSet<DetalleFactura> DetalleFactura { get; set; }
     }
 }
