@@ -4,13 +4,13 @@
   <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
     <!-- Diagram content (shape and connector positions) -->
     <edmx:Diagrams>
-      <Diagram DiagramId="88b3f9d0a1294747b5294fc111d16adb" Name="Diagram1">
+      <Diagram DiagramId="47025552bb9b4d67be9a7c4eb044f36b" Name="Diagram1">
         <EntityTypeShape EntityType="dbFarmaciaOASISModel.Cliente" Width="1.5" PointX="0.75" PointY="1.375" IsExpanded="true" />
         <EntityTypeShape EntityType="dbFarmaciaOASISModel.DetalleFactura" Width="1.5" PointX="5.25" PointY="1" IsExpanded="true" />
         <EntityTypeShape EntityType="dbFarmaciaOASISModel.Factura" Width="1.5" PointX="3" PointY="1.375" IsExpanded="true" />
-        <EntityTypeShape EntityType="dbFarmaciaOASISModel.Medicamento" Width="1.5" PointX="7.375" PointY="1.25" IsExpanded="true" />
-        <EntityTypeShape EntityType="dbFarmaciaOASISModel.Proveedor" Width="1.5" PointX="6.875" PointY="4" IsExpanded="true" />
-        <EntityTypeShape EntityType="dbFarmaciaOASISModel.Usuario" Width="1.5" PointX="1.5" PointY="3.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbFarmaciaOASISModel.Medicamento" Width="1.5" PointX="3" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbFarmaciaOASISModel.Proveedor" Width="1.5" PointX="0.75" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="dbFarmaciaOASISModel.Usuario" Width="1.5" PointX="3" PointY="7.75" IsExpanded="true" />
         <AssociationConnector Association="dbFarmaciaOASISModel.fk_Clientes" ManuallyRouted="false" />
         <AssociationConnector Association="dbFarmaciaOASISModel.fk_CodMedi" ManuallyRouted="false" />
         <AssociationConnector Association="dbFarmaciaOASISModel.fk_Facturee" ManuallyRouted="false" />

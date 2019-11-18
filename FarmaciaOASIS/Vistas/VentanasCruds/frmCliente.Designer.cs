@@ -31,16 +31,13 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label apellidoLabel;
             System.Windows.Forms.Label ciLabel;
-            System.Windows.Forms.Label codClienteLabel;
             System.Windows.Forms.Label nombreLabel;
             this.clienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.apellidoTextBox = new System.Windows.Forms.TextBox();
             this.ciTextBox = new System.Windows.Forms.TextBox();
-            this.codClienteTextBox = new System.Windows.Forms.TextBox();
             this.nombreTextBox = new System.Windows.Forms.TextBox();
             apellidoLabel = new System.Windows.Forms.Label();
             ciLabel = new System.Windows.Forms.Label();
-            codClienteLabel = new System.Windows.Forms.Label();
             nombreLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).BeginInit();
             this.SuspendLayout();
@@ -77,15 +74,6 @@
             ciLabel.TabIndex = 21;
             ciLabel.Text = "Ci:";
             // 
-            // codClienteLabel
-            // 
-            codClienteLabel.AutoSize = true;
-            codClienteLabel.Location = new System.Drawing.Point(62, 90);
-            codClienteLabel.Name = "codClienteLabel";
-            codClienteLabel.Size = new System.Drawing.Size(64, 13);
-            codClienteLabel.TabIndex = 23;
-            codClienteLabel.Text = "Cod Cliente:";
-            // 
             // nombreLabel
             // 
             nombreLabel.AutoSize = true;
@@ -115,14 +103,6 @@
             this.ciTextBox.Size = new System.Drawing.Size(100, 20);
             this.ciTextBox.TabIndex = 22;
             // 
-            // codClienteTextBox
-            // 
-            this.codClienteTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clienteBindingSource, "CodCliente", true));
-            this.codClienteTextBox.Location = new System.Drawing.Point(132, 87);
-            this.codClienteTextBox.Name = "codClienteTextBox";
-            this.codClienteTextBox.Size = new System.Drawing.Size(100, 20);
-            this.codClienteTextBox.TabIndex = 24;
-            // 
             // nombreTextBox
             // 
             this.nombreTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clienteBindingSource, "Nombre", true));
@@ -140,8 +120,6 @@
             this.Controls.Add(this.apellidoTextBox);
             this.Controls.Add(ciLabel);
             this.Controls.Add(this.ciTextBox);
-            this.Controls.Add(codClienteLabel);
-            this.Controls.Add(this.codClienteTextBox);
             this.Controls.Add(nombreLabel);
             this.Controls.Add(this.nombreTextBox);
             this.Name = "frmCliente";
@@ -152,8 +130,6 @@
             this.Controls.SetChildIndex(this.btnAceptar, 0);
             this.Controls.SetChildIndex(this.nombreTextBox, 0);
             this.Controls.SetChildIndex(nombreLabel, 0);
-            this.Controls.SetChildIndex(this.codClienteTextBox, 0);
-            this.Controls.SetChildIndex(codClienteLabel, 0);
             this.Controls.SetChildIndex(this.ciTextBox, 0);
             this.Controls.SetChildIndex(ciLabel, 0);
             this.Controls.SetChildIndex(this.apellidoTextBox, 0);
@@ -169,7 +145,6 @@
         private System.Windows.Forms.BindingSource clienteBindingSource;
         private System.Windows.Forms.TextBox apellidoTextBox;
         private System.Windows.Forms.TextBox ciTextBox;
-        private System.Windows.Forms.TextBox codClienteTextBox;
         private System.Windows.Forms.TextBox nombreTextBox;
     }
 }

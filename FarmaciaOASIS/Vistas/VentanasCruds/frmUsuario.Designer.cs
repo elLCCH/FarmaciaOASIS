@@ -32,7 +32,6 @@
             System.Windows.Forms.Label apellidoLabel;
             System.Windows.Forms.Label celLabel;
             System.Windows.Forms.Label ciLabel;
-            System.Windows.Forms.Label codUsuarioLabel;
             System.Windows.Forms.Label contraseniaLabel;
             System.Windows.Forms.Label cuentaLabel;
             System.Windows.Forms.Label nombreLabel;
@@ -41,7 +40,6 @@
             this.apellidoTextBox = new System.Windows.Forms.TextBox();
             this.celTextBox = new System.Windows.Forms.TextBox();
             this.ciTextBox = new System.Windows.Forms.TextBox();
-            this.codUsuarioTextBox = new System.Windows.Forms.TextBox();
             this.contraseniaTextBox = new System.Windows.Forms.TextBox();
             this.cuentaTextBox = new System.Windows.Forms.TextBox();
             this.nombreTextBox = new System.Windows.Forms.TextBox();
@@ -49,7 +47,6 @@
             apellidoLabel = new System.Windows.Forms.Label();
             celLabel = new System.Windows.Forms.Label();
             ciLabel = new System.Windows.Forms.Label();
-            codUsuarioLabel = new System.Windows.Forms.Label();
             contraseniaLabel = new System.Windows.Forms.Label();
             cuentaLabel = new System.Windows.Forms.Label();
             nombreLabel = new System.Windows.Forms.Label();
@@ -71,10 +68,6 @@
             this.btnCancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(118)))), ((int)(((byte)(126)))));
             this.btnCancelar.Click += new System.EventHandler(this.BtnCancelar_Click);
             // 
-            // usuarioBindingSource
-            // 
-            this.usuarioBindingSource.DataSource = typeof(FarmaciaOASIS.Data.Usuario);
-            // 
             // apellidoLabel
             // 
             apellidoLabel.AutoSize = true;
@@ -83,14 +76,6 @@
             apellidoLabel.Size = new System.Drawing.Size(47, 13);
             apellidoLabel.TabIndex = 19;
             apellidoLabel.Text = "Apellido:";
-            // 
-            // apellidoTextBox
-            // 
-            this.apellidoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "Apellido", true));
-            this.apellidoTextBox.Location = new System.Drawing.Point(164, 145);
-            this.apellidoTextBox.Name = "apellidoTextBox";
-            this.apellidoTextBox.Size = new System.Drawing.Size(100, 20);
-            this.apellidoTextBox.TabIndex = 20;
             // 
             // celLabel
             // 
@@ -101,14 +86,6 @@
             celLabel.TabIndex = 21;
             celLabel.Text = "Cel:";
             // 
-            // celTextBox
-            // 
-            this.celTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "Cel", true));
-            this.celTextBox.Location = new System.Drawing.Point(164, 225);
-            this.celTextBox.Name = "celTextBox";
-            this.celTextBox.Size = new System.Drawing.Size(100, 20);
-            this.celTextBox.TabIndex = 22;
-            // 
             // ciLabel
             // 
             ciLabel.AutoSize = true;
@@ -117,31 +94,6 @@
             ciLabel.Size = new System.Drawing.Size(19, 13);
             ciLabel.TabIndex = 23;
             ciLabel.Text = "Ci:";
-            // 
-            // ciTextBox
-            // 
-            this.ciTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "Ci", true));
-            this.ciTextBox.Location = new System.Drawing.Point(164, 93);
-            this.ciTextBox.Name = "ciTextBox";
-            this.ciTextBox.Size = new System.Drawing.Size(100, 20);
-            this.ciTextBox.TabIndex = 24;
-            // 
-            // codUsuarioLabel
-            // 
-            codUsuarioLabel.AutoSize = true;
-            codUsuarioLabel.Location = new System.Drawing.Point(90, 70);
-            codUsuarioLabel.Name = "codUsuarioLabel";
-            codUsuarioLabel.Size = new System.Drawing.Size(68, 13);
-            codUsuarioLabel.TabIndex = 25;
-            codUsuarioLabel.Text = "Cod Usuario:";
-            // 
-            // codUsuarioTextBox
-            // 
-            this.codUsuarioTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "CodUsuario", true));
-            this.codUsuarioTextBox.Location = new System.Drawing.Point(164, 67);
-            this.codUsuarioTextBox.Name = "codUsuarioTextBox";
-            this.codUsuarioTextBox.Size = new System.Drawing.Size(100, 20);
-            this.codUsuarioTextBox.TabIndex = 26;
             // 
             // contraseniaLabel
             // 
@@ -152,14 +104,6 @@
             contraseniaLabel.TabIndex = 27;
             contraseniaLabel.Text = "Contrasenia:";
             // 
-            // contraseniaTextBox
-            // 
-            this.contraseniaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "Contrasenia", true));
-            this.contraseniaTextBox.Location = new System.Drawing.Point(164, 199);
-            this.contraseniaTextBox.Name = "contraseniaTextBox";
-            this.contraseniaTextBox.Size = new System.Drawing.Size(100, 20);
-            this.contraseniaTextBox.TabIndex = 28;
-            // 
             // cuentaLabel
             // 
             cuentaLabel.AutoSize = true;
@@ -168,14 +112,6 @@
             cuentaLabel.Size = new System.Drawing.Size(44, 13);
             cuentaLabel.TabIndex = 29;
             cuentaLabel.Text = "Cuenta:";
-            // 
-            // cuentaTextBox
-            // 
-            this.cuentaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "Cuenta", true));
-            this.cuentaTextBox.Location = new System.Drawing.Point(164, 173);
-            this.cuentaTextBox.Name = "cuentaTextBox";
-            this.cuentaTextBox.Size = new System.Drawing.Size(100, 20);
-            this.cuentaTextBox.TabIndex = 30;
             // 
             // nombreLabel
             // 
@@ -186,14 +122,6 @@
             nombreLabel.TabIndex = 31;
             nombreLabel.Text = "Nombre:";
             // 
-            // nombreTextBox
-            // 
-            this.nombreTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "Nombre", true));
-            this.nombreTextBox.Location = new System.Drawing.Point(164, 119);
-            this.nombreTextBox.Name = "nombreTextBox";
-            this.nombreTextBox.Size = new System.Drawing.Size(100, 20);
-            this.nombreTextBox.TabIndex = 32;
-            // 
             // rolLabel
             // 
             rolLabel.AutoSize = true;
@@ -202,6 +130,58 @@
             rolLabel.Size = new System.Drawing.Size(26, 13);
             rolLabel.TabIndex = 32;
             rolLabel.Text = "Rol:";
+            // 
+            // usuarioBindingSource
+            // 
+            this.usuarioBindingSource.DataSource = typeof(FarmaciaOASIS.Data.Usuario);
+            // 
+            // apellidoTextBox
+            // 
+            this.apellidoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "Apellido", true));
+            this.apellidoTextBox.Location = new System.Drawing.Point(164, 145);
+            this.apellidoTextBox.Name = "apellidoTextBox";
+            this.apellidoTextBox.Size = new System.Drawing.Size(100, 20);
+            this.apellidoTextBox.TabIndex = 20;
+            // 
+            // celTextBox
+            // 
+            this.celTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "Cel", true));
+            this.celTextBox.Location = new System.Drawing.Point(164, 225);
+            this.celTextBox.Name = "celTextBox";
+            this.celTextBox.Size = new System.Drawing.Size(100, 20);
+            this.celTextBox.TabIndex = 22;
+            // 
+            // ciTextBox
+            // 
+            this.ciTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "Ci", true));
+            this.ciTextBox.Location = new System.Drawing.Point(164, 93);
+            this.ciTextBox.Name = "ciTextBox";
+            this.ciTextBox.Size = new System.Drawing.Size(100, 20);
+            this.ciTextBox.TabIndex = 24;
+            // 
+            // contraseniaTextBox
+            // 
+            this.contraseniaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "Contrasenia", true));
+            this.contraseniaTextBox.Location = new System.Drawing.Point(164, 199);
+            this.contraseniaTextBox.Name = "contraseniaTextBox";
+            this.contraseniaTextBox.Size = new System.Drawing.Size(100, 20);
+            this.contraseniaTextBox.TabIndex = 28;
+            // 
+            // cuentaTextBox
+            // 
+            this.cuentaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "Cuenta", true));
+            this.cuentaTextBox.Location = new System.Drawing.Point(164, 173);
+            this.cuentaTextBox.Name = "cuentaTextBox";
+            this.cuentaTextBox.Size = new System.Drawing.Size(100, 20);
+            this.cuentaTextBox.TabIndex = 30;
+            // 
+            // nombreTextBox
+            // 
+            this.nombreTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "Nombre", true));
+            this.nombreTextBox.Location = new System.Drawing.Point(164, 119);
+            this.nombreTextBox.Name = "nombreTextBox";
+            this.nombreTextBox.Size = new System.Drawing.Size(100, 20);
+            this.nombreTextBox.TabIndex = 32;
             // 
             // rolComboBox
             // 
@@ -228,8 +208,6 @@
             this.Controls.Add(this.celTextBox);
             this.Controls.Add(ciLabel);
             this.Controls.Add(this.ciTextBox);
-            this.Controls.Add(codUsuarioLabel);
-            this.Controls.Add(this.codUsuarioTextBox);
             this.Controls.Add(contraseniaLabel);
             this.Controls.Add(this.contraseniaTextBox);
             this.Controls.Add(cuentaLabel);
@@ -247,8 +225,6 @@
             this.Controls.SetChildIndex(cuentaLabel, 0);
             this.Controls.SetChildIndex(this.contraseniaTextBox, 0);
             this.Controls.SetChildIndex(contraseniaLabel, 0);
-            this.Controls.SetChildIndex(this.codUsuarioTextBox, 0);
-            this.Controls.SetChildIndex(codUsuarioLabel, 0);
             this.Controls.SetChildIndex(this.ciTextBox, 0);
             this.Controls.SetChildIndex(ciLabel, 0);
             this.Controls.SetChildIndex(this.celTextBox, 0);
@@ -269,7 +245,6 @@
         private System.Windows.Forms.TextBox apellidoTextBox;
         private System.Windows.Forms.TextBox celTextBox;
         private System.Windows.Forms.TextBox ciTextBox;
-        private System.Windows.Forms.TextBox codUsuarioTextBox;
         private System.Windows.Forms.TextBox contraseniaTextBox;
         private System.Windows.Forms.TextBox cuentaTextBox;
         private System.Windows.Forms.TextBox nombreTextBox;

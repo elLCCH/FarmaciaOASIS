@@ -36,5 +36,9 @@ namespace FarmaciaOASIS.Controladores
         //{
         //    return _db.Factura.Where(x => x.Ci == pCi).ToList();
         //}
+        internal string BuscarElMax()
+        {
+            return _db.Factura.Max(x => x.NoFactura).ToString();
+        }
     }
 }

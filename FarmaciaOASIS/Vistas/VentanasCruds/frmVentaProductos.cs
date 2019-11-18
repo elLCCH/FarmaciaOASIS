@@ -17,20 +17,21 @@ namespace FarmaciaOASIS.Vistas.VentanasCruds
     {
         ClienteController _objUsuario = new ClienteController();
         MedicamentoController _med = new MedicamentoController();
-        DetalleFacturaController _objFac = new DetalleFacturaController();
+        DetalleFacturaController _objDFac = new DetalleFacturaController();
+        FacturaController _Factura = new FacturaController();
         public frmVentaProductos()
         {
             InitializeComponent();
-            clienteBindingSource.DataSource = _objUsuario.Listar("");
-            medicamentoBindingSource.DataSource = _med.Listar("");
-            detalleFacturaBindingSource.DataSource = _objFac.Listar(1);
+            clienteBindingSource.DataSource = _objUsuario.Listar("0");
+            medicamentoBindingSource.DataSource = _med.Listar("0");
+            detalleFacturaBindingSource.DataSource = _objDFac.Listar(1);
         }
 
         private void frmVentaProductos_Load(object sender, EventArgs e)
         {
             limpiar();
             //detalleFacturaBindingSource.AddNew();
-            
+            btnRegProd.Enabled = false;
         }
 
         private void BtnRegistrarCliente_Click(object sender, EventArgs e)
@@ -205,26 +206,53 @@ namespace FarmaciaOASIS.Vistas.VentanasCruds
             txtCant.Text = "";
             txtTotal.Text = "";
             txtCantAComprar.Text = "";
+            
+
+
         }
 
         private void BtnEliminar_Click(object sender, EventArgs e)
         {
             dgvVentas.Rows.RemoveAt(dgvVentas.CurrentRow.Index);
             sumaTotalDGV();
+            nombreLabel2.Text = "";
+            apellidoLabel2.Text = "";
+            txtCiClie.Text = "";
+            ciLabel1.Text = "";
+            codClienteLabel2.Text = "";
         }
 
         private void BtnRegistrar_Click(object sender, EventArgs e)
         {
-            int ultimoIDFactura = 10;
+            
+            //preparacion para Factura
+            facturaBindingSource.AddNew();
+            var regFactura = (Factura)facturaBindingSource.Current;
+
+            //CARGAR DATOS para Factura
+            regFactura.CodCliente = Convert.ToInt32(codClienteLabel2.Text);
+            regFactura.Fecha = DateTime.Now;
+            if (_Factura.Insertar(regFactura))
+            {
+                MessageBox.Show("se creo una nueva factura");
+
+            }
+            ////----------------------------------------------------------/////
+
+            //CALCULO DE LA ULTIMA FACTURA
+            int UltimaFactura = Convert.ToInt32(_Factura.BuscarElMax());
+            MessageBox.Show(Convert.ToString(UltimaFactura));
+
             string codigo, nombre, precio, cantidad, costo;
             
             foreach (DataGridViewRow row in dgvVentas.Rows)
             {
-                ultimoIDFactura = ultimoIDFactura + 1;
+                
+                //preparacion para Detalle Factura
                 detalleFacturaBindingSource.AddNew();
                 var reg = (DetalleFactura)detalleFacturaBindingSource.Current;
-                
-                //CARGAR DATOS
+
+                //CARGAR DATOS para Detalle Factura
                 codigo = Convert.ToString(row.Cells["ColCodigo"].Value);
                 nombre = Convert.ToString(row.Cells["ColNombre"].Value);
                 precio = Convert.ToString(row.Cells["ColPrecio"].Value);
@@ -240,15 +268,15 @@ namespace FarmaciaOASIS.Vistas.VentanasCruds
                 //codUsuarioTextBox.Text = "0";
 
                 
-                reg.NoFactura = 444;
+                reg.NoFactura = UltimaFactura;
                 reg.NoAutorizacion = 555555;
                 reg.CodMed = Convert.ToInt32(codigo);
                 reg.CantMed = Convert.ToInt32(cantidad);
                 reg.Precio = Convert.ToInt32(precio);
-                reg.CodUsuario = 0;
-                reg.Numero = ultimoIDFactura;
-                //INSERTACION
-                if (_objFac.Insertar(reg))
+                reg.CodUsuario = 1;
+
+                //INSERTACION para Detalle Factura
+                if (_objDFac.Insertar(reg))
                 {
                     MessageBox.Show("se inserto correctamente");
 
@@ -261,19 +289,25 @@ namespace FarmaciaOASIS.Vistas.VentanasCruds
         private void BtnLimpiar_Click(object sender, EventArgs e)
         {
             limpiar();
+            dgvVentas.Rows.Clear();
+            clienteBindingSource.DataSource = _objUsuario.Listar("0");
+            txtCiClie.Text="";
+            lblTotal.Text = "0";
         }
 
         private void TxtCiClie_KeyUp(object sender, KeyEventArgs e)
         {
             if (e.KeyValue == 13)
             {
-                //clienteBindingSource.AddNew();
+                
                 var reg = (Cliente)clienteBindingSource.Current;
                 clienteBindingSource.DataSource = _objUsuario.BuscarPorCI(txtCiClie.Text);
-                
-                //nombreLabel2.Text = reg.Nombre;
-                //apellidoLabel2.Text = reg.Apellido;
-                //panelxd.Visible = true;
+                if(codClienteLabel2.Text != "")
+                {
+                    btnRegProd.Enabled = true;
+                }
+                else { btnRegProd.Enabled = false; }
+
             }
             
 

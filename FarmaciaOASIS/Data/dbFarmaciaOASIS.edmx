@@ -9,7 +9,7 @@
           <Key>
             <PropertyRef Name="CodCliente" />
           </Key>
-          <Property Name="CodCliente" Type="int" Nullable="false" />
+          <Property Name="CodCliente" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Ci" Type="varchar" MaxLength="15" Nullable="false" />
           <Property Name="Nombre" Type="varchar" MaxLength="30" Nullable="false" />
           <Property Name="Apellido" Type="varchar" MaxLength="30" Nullable="false" />
@@ -18,7 +18,7 @@
           <Key>
             <PropertyRef Name="Numero" />
           </Key>
-          <Property Name="Numero" Type="int" Nullable="false" />
+          <Property Name="Numero" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="NoFactura" Type="int" Nullable="false" />
           <Property Name="NoAutorizacion" Type="int" Nullable="false" />
           <Property Name="CodMed" Type="int" Nullable="false" />
@@ -30,7 +30,7 @@
           <Key>
             <PropertyRef Name="NoFactura" />
           </Key>
-          <Property Name="NoFactura" Type="int" Nullable="false" />
+          <Property Name="NoFactura" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Fecha" Type="datetime" Nullable="false" />
           <Property Name="CodCliente" Type="int" Nullable="false" />
         </EntityType>
@@ -38,7 +38,7 @@
           <Key>
             <PropertyRef Name="CodMed" />
           </Key>
-          <Property Name="CodMed" Type="int" Nullable="false" />
+          <Property Name="CodMed" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="NomMed" Type="varchar" MaxLength="30" Nullable="false" />
           <Property Name="Cantidad" Type="int" Nullable="false" />
           <Property Name="PUnit" Type="int" Nullable="false" />
@@ -48,7 +48,7 @@
           <Key>
             <PropertyRef Name="CodProv" />
           </Key>
-          <Property Name="CodProv" Type="int" Nullable="false" />
+          <Property Name="CodProv" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Nombre" Type="varchar" MaxLength="30" Nullable="false" />
           <Property Name="Apellido" Type="varchar" MaxLength="30" Nullable="false" />
           <Property Name="Ciudad" Type="varchar" MaxLength="20" Nullable="false" />
@@ -59,7 +59,7 @@
           <Key>
             <PropertyRef Name="CodUsuario" />
           </Key>
-          <Property Name="CodUsuario" Type="int" Nullable="false" />
+          <Property Name="CodUsuario" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="Ci" Type="varchar" MaxLength="15" Nullable="false" />
           <Property Name="Nombre" Type="varchar" MaxLength="30" Nullable="false" />
           <Property Name="Apellido" Type="varchar" MaxLength="30" Nullable="false" />
@@ -175,7 +175,7 @@
           <Key>
             <PropertyRef Name="CodCliente" />
           </Key>
-          <Property Name="CodCliente" Type="Int32" Nullable="false" />
+          <Property Name="CodCliente" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Ci" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Nombre" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Apellido" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
@@ -185,7 +185,7 @@
           <Key>
             <PropertyRef Name="Numero" />
           </Key>
-          <Property Name="Numero" Type="Int32" Nullable="false" />
+          <Property Name="Numero" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="NoFactura" Type="Int32" Nullable="false" />
           <Property Name="NoAutorizacion" Type="Int32" Nullable="false" />
           <Property Name="CodMed" Type="Int32" Nullable="false" />
@@ -200,7 +200,7 @@
           <Key>
             <PropertyRef Name="NoFactura" />
           </Key>
-          <Property Name="NoFactura" Type="Int32" Nullable="false" />
+          <Property Name="NoFactura" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Fecha" Type="DateTime" Nullable="false" Precision="3" />
           <Property Name="CodCliente" Type="Int32" Nullable="false" />
           <NavigationProperty Name="Cliente" Relationship="Self.fk_Clientes" FromRole="Factura" ToRole="Cliente" />
@@ -210,7 +210,7 @@
           <Key>
             <PropertyRef Name="CodMed" />
           </Key>
-          <Property Name="CodMed" Type="Int32" Nullable="false" />
+          <Property Name="CodMed" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="NomMed" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Cantidad" Type="Int32" Nullable="false" />
           <Property Name="PUnit" Type="Int32" Nullable="false" />
@@ -222,7 +222,7 @@
           <Key>
             <PropertyRef Name="CodProv" />
           </Key>
-          <Property Name="CodProv" Type="Int32" Nullable="false" />
+          <Property Name="CodProv" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Nombre" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Apellido" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Ciudad" Type="String" MaxLength="20" FixedLength="false" Unicode="false" Nullable="false" />
@@ -234,7 +234,7 @@
           <Key>
             <PropertyRef Name="CodUsuario" />
           </Key>
-          <Property Name="CodUsuario" Type="Int32" Nullable="false" />
+          <Property Name="CodUsuario" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
           <Property Name="Ci" Type="String" MaxLength="15" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Nombre" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
           <Property Name="Apellido" Type="String" MaxLength="30" FixedLength="false" Unicode="false" Nullable="false" />
