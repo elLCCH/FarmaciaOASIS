@@ -5,11 +5,14 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
-using System.Drawing;
+//using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.IO;
+using iTextSharp.text;
+using iTextSharp.text.pdf;
 
 namespace FarmaciaOASIS.Vistas.VentanasCruds
 {
@@ -247,10 +250,83 @@ namespace FarmaciaOASIS.Vistas.VentanasCruds
             MessageBox.Show(Convert.ToString(UltimaFactura));
 
             string codigo, nombre, precio, cantidad, costo;
-            
+            //---------FACTURA----------------------------
+            string numfact, nom, cinit, fechaf;
+            //int cantprod = 7;
+            numfact = Convert.ToString(UltimaFactura);
+            cinit = ciLabel1.Text;
+            nom = nombreLabel2.Text+" "+apellidoLabel2.Text;
+            fechaf = Convert.ToString(DateTime.Now);
+            //sumtotalprec = "753.30";
+            string ruta = @"c:\FarmaciaOasis";
+
+            Document doc = new Document(iTextSharp.text.PageSize.LETTER, 15, 15, 20, 25);
+
+            DirectoryInfo di = Directory.CreateDirectory(ruta);
+            PdfWriter wri = PdfWriter.GetInstance(doc, new FileStream("c://FarmaciaOasis//Factura " + numfact + ".pdf", FileMode.Create));
+            doc.Open();
+            //imagen
+            iTextSharp.text.Image logo = iTextSharp.text.Image.GetInstance("facturalogo.png");
+            logo.ScalePercent(20);
+            logo.SetAbsolutePosition(doc.PageSize.Width - 140, doc.PageSize.Height - 90);
+            doc.Add(logo);
+
+            //imagen
+
+            //BaseFont bfTimes = BaseFont.CreateFont(BaseFont.TIMES_ROMAN, BaseFont.CP1252, false);
+            Font times = new Font(iTextSharp.text.Font.NORMAL, 16, 1);
+            //BaseFont bfTimes2 = BaseFont.CreateFont(BaseFont.TIMES_ROMAN, BaseFont.CP1252, false);
+            Font times2 = new Font(iTextSharp.text.Font.NORMAL, 10, 1);
+            Paragraph Titulo = new Paragraph("Factura", times);
+            Titulo.Alignment = Element.ALIGN_CENTER;
+            doc.Add(Titulo);
+            Paragraph numf = new Paragraph("Nombre: " + nom + "\nNº FACTURA: " + numfact, times2);
+            numf.Alignment = Element.ALIGN_LEFT;
+            doc.Add(numf);
+            Paragraph nit = new Paragraph("Fecha: " + fechaf + "\nCI/NIT: " + cinit, times2);
+            nit.Alignment = Element.ALIGN_LEFT;
+            doc.Add(nit);
+            Paragraph dato1 = new Paragraph(" ", times2);
+            dato1.Alignment = Element.ALIGN_LEFT;
+            doc.Add(dato1);
+            //lista
+            /*List lista = new List(List.UNORDERED);
+            lista.SetListSymbol("\u2022");
+            lista.IndentationLeft =30;
+            lista.Add("Ms");
+            lista.Add("Ms2");
+            lista.Add("Ms2");
+            lista.Add("Ms2");
+            lista.Add("Ms2");
+            doc.Add(lista);*/
+            //TABLA
+            PdfPTable tabla = new PdfPTable(4);
+
+            PdfPCell Titulos = new PdfPCell(new Phrase("Detalle", new iTextSharp.text.Font(iTextSharp.text.Font.NORMAL, 12, iTextSharp.text.Font.BOLD, iTextSharp.text.BaseColor.BLACK)));
+            Titulos.Colspan = 4;
+            Titulos.HorizontalAlignment = 1;
+            tabla.AddCell(Titulos);
+
+            PdfPCell t1 = new PdfPCell(new Phrase("Cantidad", new iTextSharp.text.Font(iTextSharp.text.Font.NORMAL, 12, iTextSharp.text.Font.BOLD, iTextSharp.text.BaseColor.BLACK)));
+            t1.HorizontalAlignment = 1;
+            tabla.AddCell(t1);
+            //tabla.AddCell(new Phrase("Cantidad",HorizontalAlignment.Center,));
+            PdfPCell t2 = new PdfPCell(new Phrase("Concepto", new iTextSharp.text.Font(iTextSharp.text.Font.NORMAL, 12, iTextSharp.text.Font.BOLD, iTextSharp.text.BaseColor.BLACK)));
+            t2.HorizontalAlignment = 1;
+            tabla.AddCell(t2);
+            PdfPCell t3 = new PdfPCell(new Phrase("Precio Unitario", new iTextSharp.text.Font(iTextSharp.text.Font.NORMAL, 12, iTextSharp.text.Font.BOLD, iTextSharp.text.BaseColor.BLACK)));
+            t3.HorizontalAlignment = 1;
+            tabla.AddCell(t3);
+            PdfPCell t4 = new PdfPCell(new Phrase("Subtotal", new iTextSharp.text.Font(iTextSharp.text.Font.NORMAL, 12, iTextSharp.text.Font.BOLD, iTextSharp.text.BaseColor.BLACK)));
+            t4.HorizontalAlignment = 1;
+            tabla.AddCell(t4);
+
+            double c1, c2, subt, totalprods=0;
+            //int colcont = 0, totalprods = 0;
+            //quant = Convert.ToInt32(dataGridView1.Rows.Count.ToString());
+            //---------FACTURA----------------------------
             foreach (DataGridViewRow row in dgvVentas.Rows)
-            {
-                
+            {   
                 //preparacion para Detalle Factura
                 detalleFacturaBindingSource.AddNew();
                 var reg = (DetalleFactura)detalleFacturaBindingSource.Current;
@@ -277,7 +353,16 @@ namespace FarmaciaOASIS.Vistas.VentanasCruds
                 reg.CantMed = Convert.ToInt32(cantidad);
                 reg.Precio = Convert.ToInt32(precio);
                 reg.CodUsuario = 1;
-
+                //---------FACTURA----------------------------
+                tabla.AddCell(cantidad);
+                tabla.AddCell(nombre);
+                tabla.AddCell(precio);
+                c1 = Convert.ToDouble(cantidad);
+                c2 = Convert.ToDouble(precio);
+                subt = c1 * c2;
+                totalprods = subt + totalprods;
+                tabla.AddCell(Convert.ToString(subt));
+                //---------FACTURA----------------------------
                 //INSERTACION para Detalle Factura
                 if (_objDFac.Insertar(reg))
                 {
@@ -286,7 +371,17 @@ namespace FarmaciaOASIS.Vistas.VentanasCruds
                 }
 
             }
-            
+            //---------FACTURA----------------------------
+            PdfPCell total = new PdfPCell(new Phrase("TOTAL:                    " + totalprods, new iTextSharp.text.Font(iTextSharp.text.Font.NORMAL, 12, iTextSharp.text.Font.BOLD, iTextSharp.text.BaseColor.BLACK)));
+            total.Colspan = 4;
+            total.HorizontalAlignment = 2;
+            tabla.AddCell(total);
+            doc.Add(tabla);
+
+            doc.Close();
+            // num factura en nombre
+            System.Diagnostics.Process.Start("C:\\FarmaciaOasis\\Factura " + numfact + ".pdf");
+            //---------FACTURA----------------------------
         }
 
         private void BtnLimpiar_Click(object sender, EventArgs e)
