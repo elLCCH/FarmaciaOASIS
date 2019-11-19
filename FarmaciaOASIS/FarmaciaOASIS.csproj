@@ -33,10 +33,10 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="Bunifu_UI_v1.5.3">
-      <HintPath>..\..\..\Archivos de proyecto de Diseño de sistemas\proyecto de interfaces\project\taxidriver\taxidriver\bin\Debug\Bunifu_UI_v1.5.3.dll</HintPath>
+      <HintPath>.\Bunifu_UI_v1.5.3.dll</HintPath>
     </Reference>
-    <Reference Include="CircularProgressBar">
-      <HintPath>C:\Users\WINDOWS 10\Downloads\Compressed\Libraries\CircularProgressBar.dll</HintPath>
+    <Reference Include="CircularProgressBar, Version=2.7.0.7, Culture=neutral, PublicKeyToken=310fd07b25df79b3, processorArchitecture=MSIL">
+      <HintPath>..\packages\CircularProgressBar.2.7.0.7\lib\net40\CircularProgressBar.dll</HintPath>
     </Reference>
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="System" />
@@ -51,8 +51,8 @@
     <Reference Include="System.Net.Http" />
     <Reference Include="System.Windows.Forms" />
     <Reference Include="System.Xml" />
-    <Reference Include="WinFormAnimation">
-      <HintPath>C:\Users\WINDOWS 10\Downloads\Compressed\Libraries\WinFormAnimation.dll</HintPath>
+    <Reference Include="WinFormAnimation, Version=1.6.0.4, Culture=neutral, PublicKeyToken=310fd07b25df79b3, processorArchitecture=MSIL">
+      <HintPath>..\packages\WinFormAnimation.1.6.0.4\lib\net40\WinFormAnimation.dll</HintPath>
     </Reference>
   </ItemGroup>
   <ItemGroup>
@@ -212,6 +212,7 @@
     <EmbeddedResource Include="Vistas\VentanasCruds\frmVentaProductos.resx">
       <DependentUpon>frmVentaProductos.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
