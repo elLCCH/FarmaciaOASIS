@@ -84,7 +84,7 @@ namespace FarmaciaOASIS.Vistas
         {
         }
         //METODO PARA ABRIR FORM DENTRO DE PANEL-----------------------------------------------------
-        private void AbrirFormEnPanel(object formHijo)
+        public void AbrirFormEnPanel(object formHijo)
         {
             if (this.panelContenedor.Controls.Count > 0)
                 this.panelContenedor.Controls.RemoveAt(0);
@@ -109,10 +109,6 @@ namespace FarmaciaOASIS.Vistas
         private void MostrarFormLogoAlCerrarForms(object sender, FormClosedEventArgs e)
         {
             MostrarFormLogo();
-        }
-        //METODOS PARA ABRIR OTROS FORMULARIOS Y MOSTRAR FORM DE LOGO Al CERRAR ----------------------------------------------------------
-        private void btnListaClientes_Click(object sender, EventArgs e)
-        { 
         }
         private void btnMembresia_Click(object sender, EventArgs e)
         {
@@ -168,30 +164,33 @@ namespace FarmaciaOASIS.Vistas
             
         }
 
-        private void button5_Click(object sender, EventArgs e)
+        private void BtnProductos_Click(object sender, EventArgs e)
         {
-           // AbrirFormEnPanel(new Form1());
-        }
-        private void panelContenedor_Paint(object sender, PaintEventArgs e)
-        {
-
+            AbrirFormEnPanel(new Gestiones.frmGestionarMedicamentos());
         }
 
-    
-        private void pictureBox1_Click(object sender, EventArgs e)
+        private void BtnProveedores_Click(object sender, EventArgs e)
         {
-
+            AbrirFormEnPanel(new Gestiones.frmGestionarProveedores());
         }
 
-        private void pictureBox9_Click(object sender, EventArgs e)
+        private void BtnVentas_Click(object sender, EventArgs e)
         {
-
+            AbrirFormEnPanel(new VentanasCruds.frmVentaProductos());
         }
 
-        private void panelMenu_Paint(object sender, PaintEventArgs e)
+        private void BtnCliente_Click(object sender, EventArgs e)
         {
-
+            AbrirFormEnPanel(new Gestiones.frmGestionarClientes());
         }
+
+
+
+        private void BtnUsuarios_Click(object sender, EventArgs e)
+        {
+            AbrirFormEnPanel(new Gestiones.frmGestionarUsuarios());
+        }
+
 
         
 
