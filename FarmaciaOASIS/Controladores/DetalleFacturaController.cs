@@ -33,5 +33,6 @@ namespace FarmaciaOASIS.Controladores
         {
             return _db.DetalleFactura.Where(x => x.NoFactura == pNoFactura).ToList();
         }
+        
     }
 }

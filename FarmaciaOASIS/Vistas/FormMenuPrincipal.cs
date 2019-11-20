@@ -189,6 +189,11 @@ namespace FarmaciaOASIS.Vistas
             AbrirFormEnPanel(new Gestiones.frmGestionarProveedores());
         }
 
+        private void BtnReportes_Click(object sender, EventArgs e)
+        {
+            AbrirFormEnPanel(new Gestiones.frmReportes());
+        }
+
         private void BtnVentas_Click(object sender, EventArgs e)
         {
             AbrirFormEnPanel(new VentanasCruds.frmVentaProductos(Convert.ToInt32(codUsuarioLabel1.Text)));
