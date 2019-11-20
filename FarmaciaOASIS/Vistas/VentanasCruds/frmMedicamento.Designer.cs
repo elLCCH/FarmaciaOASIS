@@ -50,6 +50,7 @@
             this.btnAceptar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(159)))), ((int)(((byte)(127)))));
             this.btnAceptar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.btnAceptar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(118)))), ((int)(((byte)(126)))));
+            this.btnAceptar.TabIndex = 12;
             this.btnAceptar.Click += new System.EventHandler(this.BtnAceptar_Click);
             // 
             // btnCancelar
@@ -57,41 +58,56 @@
             this.btnCancelar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(159)))), ((int)(((byte)(127)))));
             this.btnCancelar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.btnCancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(118)))), ((int)(((byte)(126)))));
+            this.btnCancelar.TabIndex = 13;
             this.btnCancelar.Click += new System.EventHandler(this.BtnCancelar_Click);
+            // 
+            // label1
+            // 
+            this.label1.Location = new System.Drawing.Point(31, 9);
+            this.label1.Size = new System.Drawing.Size(248, 31);
+            this.label1.Text = "MEDICAMENTOS";
             // 
             // cantidadLabel
             // 
             cantidadLabel.AutoSize = true;
-            cantidadLabel.Location = new System.Drawing.Point(91, 103);
+            cantidadLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            cantidadLabel.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            cantidadLabel.Location = new System.Drawing.Point(33, 174);
             cantidadLabel.Name = "cantidadLabel";
-            cantidadLabel.Size = new System.Drawing.Size(52, 13);
+            cantidadLabel.Size = new System.Drawing.Size(89, 24);
             cantidadLabel.TabIndex = 18;
             cantidadLabel.Text = "Cantidad:";
             // 
             // codProvLabel
             // 
             codProvLabel.AutoSize = true;
-            codProvLabel.Location = new System.Drawing.Point(91, 155);
+            codProvLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            codProvLabel.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            codProvLabel.Location = new System.Drawing.Point(33, 266);
             codProvLabel.Name = "codProvLabel";
-            codProvLabel.Size = new System.Drawing.Size(54, 13);
+            codProvLabel.Size = new System.Drawing.Size(93, 24);
             codProvLabel.TabIndex = 22;
             codProvLabel.Text = "Cod Prov:";
             // 
             // nomMedLabel
             // 
             nomMedLabel.AutoSize = true;
-            nomMedLabel.Location = new System.Drawing.Point(91, 181);
+            nomMedLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            nomMedLabel.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            nomMedLabel.Location = new System.Drawing.Point(33, 130);
             nomMedLabel.Name = "nomMedLabel";
-            nomMedLabel.Size = new System.Drawing.Size(56, 13);
+            nomMedLabel.Size = new System.Drawing.Size(99, 24);
             nomMedLabel.TabIndex = 24;
             nomMedLabel.Text = "Nom Med:";
             // 
             // pUnitLabel
             // 
             pUnitLabel.AutoSize = true;
-            pUnitLabel.Location = new System.Drawing.Point(91, 207);
+            pUnitLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            pUnitLabel.ForeColor = System.Drawing.SystemColors.AppWorkspace;
+            pUnitLabel.Location = new System.Drawing.Point(33, 219);
             pUnitLabel.Name = "pUnitLabel";
-            pUnitLabel.Size = new System.Drawing.Size(36, 13);
+            pUnitLabel.Size = new System.Drawing.Size(59, 24);
             pUnitLabel.TabIndex = 26;
             pUnitLabel.Text = "PUnit:";
             // 
@@ -102,34 +118,38 @@
             // cantidadTextBox
             // 
             this.cantidadTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.medicamentoBindingSource, "Cantidad", true));
-            this.cantidadTextBox.Location = new System.Drawing.Point(153, 100);
+            this.cantidadTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cantidadTextBox.Location = new System.Drawing.Point(132, 171);
             this.cantidadTextBox.Name = "cantidadTextBox";
-            this.cantidadTextBox.Size = new System.Drawing.Size(100, 20);
-            this.cantidadTextBox.TabIndex = 19;
+            this.cantidadTextBox.Size = new System.Drawing.Size(206, 29);
+            this.cantidadTextBox.TabIndex = 9;
             // 
             // codProvTextBox
             // 
             this.codProvTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.medicamentoBindingSource, "CodProv", true));
-            this.codProvTextBox.Location = new System.Drawing.Point(153, 152);
+            this.codProvTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.codProvTextBox.Location = new System.Drawing.Point(132, 263);
             this.codProvTextBox.Name = "codProvTextBox";
-            this.codProvTextBox.Size = new System.Drawing.Size(100, 20);
-            this.codProvTextBox.TabIndex = 23;
+            this.codProvTextBox.Size = new System.Drawing.Size(206, 29);
+            this.codProvTextBox.TabIndex = 11;
             // 
             // nomMedTextBox
             // 
             this.nomMedTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.medicamentoBindingSource, "NomMed", true));
-            this.nomMedTextBox.Location = new System.Drawing.Point(153, 178);
+            this.nomMedTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nomMedTextBox.Location = new System.Drawing.Point(132, 127);
             this.nomMedTextBox.Name = "nomMedTextBox";
-            this.nomMedTextBox.Size = new System.Drawing.Size(100, 20);
-            this.nomMedTextBox.TabIndex = 25;
+            this.nomMedTextBox.Size = new System.Drawing.Size(206, 29);
+            this.nomMedTextBox.TabIndex = 8;
             // 
             // pUnitTextBox
             // 
             this.pUnitTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.medicamentoBindingSource, "PUnit", true));
-            this.pUnitTextBox.Location = new System.Drawing.Point(153, 204);
+            this.pUnitTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.pUnitTextBox.Location = new System.Drawing.Point(132, 216);
             this.pUnitTextBox.Name = "pUnitTextBox";
-            this.pUnitTextBox.Size = new System.Drawing.Size(100, 20);
-            this.pUnitTextBox.TabIndex = 27;
+            this.pUnitTextBox.Size = new System.Drawing.Size(206, 29);
+            this.pUnitTextBox.TabIndex = 10;
             // 
             // frmMedicamento
             // 
@@ -147,6 +167,7 @@
             this.Name = "frmMedicamento";
             this.Text = "frmMedicamento";
             this.Load += new System.EventHandler(this.frmMedicamento_Load);
+            this.Controls.SetChildIndex(this.label1, 0);
             this.Controls.SetChildIndex(this.pUnitTextBox, 0);
             this.Controls.SetChildIndex(pUnitLabel, 0);
             this.Controls.SetChildIndex(this.nomMedTextBox, 0);

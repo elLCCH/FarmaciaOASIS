@@ -93,7 +93,7 @@
             this.txtpass.Location = new System.Drawing.Point(285, 138);
             this.txtpass.Name = "txtpass";
             this.txtpass.Size = new System.Drawing.Size(275, 19);
-            this.txtpass.TabIndex = 6;
+            this.txtpass.TabIndex = 2;
             this.txtpass.Text = "Contraseña";
             // 
             // txtuser
@@ -105,7 +105,7 @@
             this.txtuser.Location = new System.Drawing.Point(285, 73);
             this.txtuser.Name = "txtuser";
             this.txtuser.Size = new System.Drawing.Size(275, 19);
-            this.txtuser.TabIndex = 5;
+            this.txtuser.TabIndex = 1;
             this.txtuser.Text = "Usuario";
             // 
             // pictureBox1
@@ -140,7 +140,7 @@
             this.btnLogCancelar.Location = new System.Drawing.Point(419, 194);
             this.btnLogCancelar.Name = "btnLogCancelar";
             this.btnLogCancelar.Size = new System.Drawing.Size(141, 40);
-            this.btnLogCancelar.TabIndex = 14;
+            this.btnLogCancelar.TabIndex = 4;
             this.btnLogCancelar.Text = "Cancelar";
             this.btnLogCancelar.UseVisualStyleBackColor = false;
             // 
@@ -158,7 +158,7 @@
             this.btnLogAceptar.Location = new System.Drawing.Point(240, 194);
             this.btnLogAceptar.Name = "btnLogAceptar";
             this.btnLogAceptar.Size = new System.Drawing.Size(141, 40);
-            this.btnLogAceptar.TabIndex = 15;
+            this.btnLogAceptar.TabIndex = 3;
             this.btnLogAceptar.Text = "Aceptar";
             this.btnLogAceptar.UseVisualStyleBackColor = false;
             this.btnLogAceptar.Click += new System.EventHandler(this.BtnLogAceptar_Click);

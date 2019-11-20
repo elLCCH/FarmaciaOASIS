@@ -35,10 +35,12 @@ namespace FarmaciaOASIS.Vistas.VentanasCruds
             if (_esNuevo)
             {
                 medicamentoBindingSource.AddNew();
+                label1.Text = "         REGISTRAR\n     MEDICAMENTO";
             }
             else
             {
                 medicamentoBindingSource.DataSource = _objUsuario.BuscarPorPK(Convert.ToInt32(_cuenta));
+                label1.Text = "         MODIFICAR\n     MEDICAMENTO";
             }
         }
 

@@ -69,8 +69,8 @@ namespace FarmaciaOASIS.Vistas.VentanasCruds
                 nombreLabel2.Text = nombreTextBox.Text;
                 apellidoLabel2.Text = apellidoTextBox.Text;
                 panelxd.Visible = false;
-                clienteBindingSource.DataSource = _objUsuario.Listar(ciTextBox.Text);
-
+                clienteBindingSource.DataSource = _objUsuario.BuscarPorCI(ciTextBox.Text);
+                txtCiClie.Focus();
                 habilitar();
                 //Close();
             }
@@ -96,6 +96,7 @@ namespace FarmaciaOASIS.Vistas.VentanasCruds
                 btnColocarProd.Visible = true;
                 calcularPrecio();
                 btnColocarProd.Enabled = true;
+                btnColocarProd.Focus();
                 habilitar();
             }
 
@@ -110,6 +111,7 @@ namespace FarmaciaOASIS.Vistas.VentanasCruds
         private void BtnRegProd_Click(object sender, EventArgs e)
         {
             medicamentoBindingSource.DataSource = _med.Listar(txtBuscarMedicamento.Text);
+            txtBuscarMedicamento.Focus();
             PanelMed.Visible = true;
             Inhabilitar();
 
