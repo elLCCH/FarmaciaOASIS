@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmLogin));
             this.pictureBox4 = new System.Windows.Forms.PictureBox();
             this.panel1 = new System.Windows.Forms.Panel();
@@ -41,6 +42,7 @@
             this.label1 = new System.Windows.Forms.Label();
             this.btnminimizar = new System.Windows.Forms.PictureBox();
             this.btncerrar = new System.Windows.Forms.PictureBox();
+            this.usuarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox4)).BeginInit();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
@@ -48,6 +50,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnminimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btncerrar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // pictureBox4
@@ -68,7 +71,7 @@
             this.panel1.Dock = System.Windows.Forms.DockStyle.Left;
             this.panel1.Location = new System.Drawing.Point(0, 0);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(220, 279);
+            this.panel1.Size = new System.Drawing.Size(220, 248);
             this.panel1.TabIndex = 4;
             // 
             // pictureBox2
@@ -158,6 +161,7 @@
             this.btnLogAceptar.TabIndex = 15;
             this.btnLogAceptar.Text = "Aceptar";
             this.btnLogAceptar.UseVisualStyleBackColor = false;
+            this.btnLogAceptar.Click += new System.EventHandler(this.BtnLogAceptar_Click);
             // 
             // label1
             // 
@@ -192,12 +196,16 @@
             this.btncerrar.TabIndex = 17;
             this.btncerrar.TabStop = false;
             // 
+            // usuarioBindingSource
+            // 
+            this.usuarioBindingSource.DataSource = typeof(FarmaciaOASIS.Data.Usuario);
+            // 
             // frmLogin
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(69)))), ((int)(((byte)(75)))));
-            this.ClientSize = new System.Drawing.Size(601, 279);
+            this.ClientSize = new System.Drawing.Size(601, 248);
             this.Controls.Add(this.btnminimizar);
             this.Controls.Add(this.btncerrar);
             this.Controls.Add(this.label1);
@@ -218,6 +226,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnminimizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btncerrar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -237,5 +246,6 @@
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.PictureBox btnminimizar;
         private System.Windows.Forms.PictureBox btncerrar;
+        private System.Windows.Forms.BindingSource usuarioBindingSource;
     }
 }

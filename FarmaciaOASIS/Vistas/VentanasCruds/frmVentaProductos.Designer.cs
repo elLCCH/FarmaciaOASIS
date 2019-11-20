@@ -47,7 +47,6 @@
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.apellidoLabel2 = new System.Windows.Forms.Label();
-            this.clienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.nombreLabel2 = new System.Windows.Forms.Label();
             this.codClienteLabel2 = new System.Windows.Forms.Label();
             this.ciLabel1 = new System.Windows.Forms.Label();
@@ -56,7 +55,6 @@
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.pUnitLabel1 = new System.Windows.Forms.Label();
-            this.medicamentoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.cantidadLabel1 = new System.Windows.Forms.Label();
             this.btnRegProd = new System.Windows.Forms.Button();
             this.btnRegistrarCliente = new System.Windows.Forms.Button();
@@ -87,13 +85,6 @@
             this.txtBuscarMedicamento = new System.Windows.Forms.TextBox();
             this.txtCantAComprar = new System.Windows.Forms.TextBox();
             this.medicamentoDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.btnAceptarRP = new System.Windows.Forms.Button();
             this.btnCancelarRP = new System.Windows.Forms.Button();
             this.panelxd = new System.Windows.Forms.Panel();
@@ -103,8 +94,19 @@
             this.nombreTextBox = new System.Windows.Forms.TextBox();
             this.btnAceptar = new System.Windows.Forms.Button();
             this.btnCancelar = new System.Windows.Forms.Button();
+            this.txtNoAutorizacion = new System.Windows.Forms.TextBox();
+            this.clienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.medicamentoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.detalleFacturaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.facturaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.usuarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
             ciLabel = new System.Windows.Forms.Label();
             cantidadLabel = new System.Windows.Forms.Label();
             pUnitLabel = new System.Windows.Forms.Label();
@@ -116,17 +118,18 @@
             nombreLabel1 = new System.Windows.Forms.Label();
             apellidoLabel1 = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).BeginInit();
             this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.medicamentoBindingSource)).BeginInit();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVentas)).BeginInit();
             this.groupBox4.SuspendLayout();
             this.PanelMed.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.medicamentoDataGridView)).BeginInit();
             this.panelxd.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.medicamentoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.detalleFacturaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.facturaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // ciLabel
@@ -260,10 +263,6 @@
             this.apellidoLabel2.Size = new System.Drawing.Size(100, 23);
             this.apellidoLabel2.TabIndex = 42;
             // 
-            // clienteBindingSource
-            // 
-            this.clienteBindingSource.DataSource = typeof(FarmaciaOASIS.Data.Cliente);
-            // 
             // nombreLabel2
             // 
             this.nombreLabel2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clienteBindingSource, "Nombre", true));
@@ -338,10 +337,6 @@
             this.pUnitLabel1.Size = new System.Drawing.Size(100, 23);
             this.pUnitLabel1.TabIndex = 26;
             this.pUnitLabel1.Text = "label11";
-            // 
-            // medicamentoBindingSource
-            // 
-            this.medicamentoBindingSource.DataSource = typeof(FarmaciaOASIS.Data.Medicamento);
             // 
             // cantidadLabel1
             // 
@@ -706,55 +701,6 @@
             this.medicamentoDataGridView.Size = new System.Drawing.Size(414, 234);
             this.medicamentoDataGridView.TabIndex = 37;
             // 
-            // dataGridViewTextBoxColumn1
-            // 
-            this.dataGridViewTextBoxColumn1.DataPropertyName = "CodMed";
-            this.dataGridViewTextBoxColumn1.HeaderText = "CodMed";
-            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "NomMed";
-            this.dataGridViewTextBoxColumn2.HeaderText = "NomMed";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            this.dataGridViewTextBoxColumn3.DataPropertyName = "Cantidad";
-            this.dataGridViewTextBoxColumn3.HeaderText = "Cantidad";
-            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            this.dataGridViewTextBoxColumn3.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            this.dataGridViewTextBoxColumn4.DataPropertyName = "PUnit";
-            this.dataGridViewTextBoxColumn4.HeaderText = "PUnit";
-            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            this.dataGridViewTextBoxColumn4.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn5
-            // 
-            this.dataGridViewTextBoxColumn5.DataPropertyName = "CodProv";
-            this.dataGridViewTextBoxColumn5.HeaderText = "CodProv";
-            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
-            this.dataGridViewTextBoxColumn5.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn6
-            // 
-            this.dataGridViewTextBoxColumn6.DataPropertyName = "DetalleFactura";
-            this.dataGridViewTextBoxColumn6.HeaderText = "DetalleFactura";
-            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
-            this.dataGridViewTextBoxColumn6.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn7
-            // 
-            this.dataGridViewTextBoxColumn7.DataPropertyName = "Proveedor";
-            this.dataGridViewTextBoxColumn7.HeaderText = "Proveedor";
-            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
-            this.dataGridViewTextBoxColumn7.ReadOnly = true;
-            // 
             // btnAceptarRP
             // 
             this.btnAceptarRP.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(53)))), ((int)(((byte)(73)))));
@@ -884,6 +830,71 @@
             this.btnCancelar.UseVisualStyleBackColor = false;
             this.btnCancelar.Click += new System.EventHandler(this.BtnCancelar_Click);
             // 
+            // txtNoAutorizacion
+            // 
+            this.txtNoAutorizacion.Location = new System.Drawing.Point(556, 30);
+            this.txtNoAutorizacion.Name = "txtNoAutorizacion";
+            this.txtNoAutorizacion.Size = new System.Drawing.Size(100, 20);
+            this.txtNoAutorizacion.TabIndex = 57;
+            this.txtNoAutorizacion.Text = "55555";
+            // 
+            // clienteBindingSource
+            // 
+            this.clienteBindingSource.DataSource = typeof(FarmaciaOASIS.Data.Cliente);
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            this.dataGridViewTextBoxColumn1.DataPropertyName = "CodMed";
+            this.dataGridViewTextBoxColumn1.HeaderText = "CodMed";
+            this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            this.dataGridViewTextBoxColumn1.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "NomMed";
+            this.dataGridViewTextBoxColumn2.HeaderText = "NomMed";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            this.dataGridViewTextBoxColumn2.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "Cantidad";
+            this.dataGridViewTextBoxColumn3.HeaderText = "Cantidad";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            this.dataGridViewTextBoxColumn3.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "PUnit";
+            this.dataGridViewTextBoxColumn4.HeaderText = "PUnit";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            this.dataGridViewTextBoxColumn4.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "CodProv";
+            this.dataGridViewTextBoxColumn5.HeaderText = "CodProv";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            this.dataGridViewTextBoxColumn5.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            this.dataGridViewTextBoxColumn6.DataPropertyName = "DetalleFactura";
+            this.dataGridViewTextBoxColumn6.HeaderText = "DetalleFactura";
+            this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            this.dataGridViewTextBoxColumn6.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            this.dataGridViewTextBoxColumn7.DataPropertyName = "Proveedor";
+            this.dataGridViewTextBoxColumn7.HeaderText = "Proveedor";
+            this.dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            this.dataGridViewTextBoxColumn7.ReadOnly = true;
+            // 
+            // medicamentoBindingSource
+            // 
+            this.medicamentoBindingSource.DataSource = typeof(FarmaciaOASIS.Data.Medicamento);
+            // 
             // detalleFacturaBindingSource
             // 
             this.detalleFacturaBindingSource.DataSource = typeof(FarmaciaOASIS.Data.DetalleFactura);
@@ -892,6 +903,10 @@
             // 
             this.facturaBindingSource.DataSource = typeof(FarmaciaOASIS.Data.Factura);
             // 
+            // usuarioBindingSource
+            // 
+            this.usuarioBindingSource.DataSource = typeof(FarmaciaOASIS.Data.Usuario);
+            // 
             // frmVentaProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -899,6 +914,7 @@
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(69)))), ((int)(((byte)(75)))));
             this.ClientSize = new System.Drawing.Size(1160, 609);
+            this.Controls.Add(this.txtNoAutorizacion);
             this.Controls.Add(this.panelxd);
             this.Controls.Add(this.PanelMed);
             this.Controls.Add(this.groupBox4);
@@ -912,10 +928,8 @@
             this.Load += new System.EventHandler(this.frmVentaProductos_Load);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.medicamentoBindingSource)).EndInit();
             this.groupBox3.ResumeLayout(false);
             this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVentas)).EndInit();
@@ -926,8 +940,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.medicamentoDataGridView)).EndInit();
             this.panelxd.ResumeLayout(false);
             this.panelxd.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.medicamentoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.detalleFacturaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.facturaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -996,5 +1013,7 @@
         private System.Windows.Forms.Label apellidoLabel2;
         private System.Windows.Forms.Label nombreLabel2;
         private System.Windows.Forms.BindingSource facturaBindingSource;
+        private System.Windows.Forms.TextBox txtNoAutorizacion;
+        private System.Windows.Forms.BindingSource usuarioBindingSource;
     }
 }
