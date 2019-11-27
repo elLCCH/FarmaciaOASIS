@@ -39,7 +39,6 @@
             this.panelContenedor = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.codUsuarioLabel1 = new System.Windows.Forms.Label();
-            this.usuarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.rolLabel1 = new System.Windows.Forms.Label();
             this.ciLabel1 = new System.Windows.Forms.Label();
             this.apellidoLabel1 = new System.Windows.Forms.Label();
@@ -70,6 +69,7 @@
             this.tmMostrarMenu = new System.Windows.Forms.Timer(this.components);
             this.tmOcultarMenu = new System.Windows.Forms.Timer(this.components);
             this.tmFechaHora = new System.Windows.Forms.Timer(this.components);
+            this.usuarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
             nombreLabel = new System.Windows.Forms.Label();
             apellidoLabel = new System.Windows.Forms.Label();
             ciLabel = new System.Windows.Forms.Label();
@@ -77,7 +77,6 @@
             codUsuarioLabel = new System.Windows.Forms.Label();
             this.panel1ContenedorPrincipal.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             this.panelMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMenu)).BeginInit();
@@ -92,50 +91,61 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMaximizar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // nombreLabel
             // 
             nombreLabel.AutoSize = true;
+            nombreLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            nombreLabel.ForeColor = System.Drawing.SystemColors.ControlDark;
             nombreLabel.Location = new System.Drawing.Point(83, 24);
             nombreLabel.Name = "nombreLabel";
-            nombreLabel.Size = new System.Drawing.Size(47, 13);
+            nombreLabel.Size = new System.Drawing.Size(91, 24);
             nombreLabel.TabIndex = 7;
             nombreLabel.Text = "Nombre:";
             // 
             // apellidoLabel
             // 
             apellidoLabel.AutoSize = true;
-            apellidoLabel.Location = new System.Drawing.Point(83, 45);
+            apellidoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            apellidoLabel.ForeColor = System.Drawing.SystemColors.ControlDark;
+            apellidoLabel.Location = new System.Drawing.Point(83, 47);
             apellidoLabel.Name = "apellidoLabel";
-            apellidoLabel.Size = new System.Drawing.Size(47, 13);
+            apellidoLabel.Size = new System.Drawing.Size(93, 24);
             apellidoLabel.TabIndex = 8;
             apellidoLabel.Text = "Apellido:";
             // 
             // ciLabel
             // 
             ciLabel.AutoSize = true;
-            ciLabel.Location = new System.Drawing.Point(220, 24);
+            ciLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            ciLabel.ForeColor = System.Drawing.SystemColors.ControlDark;
+            ciLabel.Location = new System.Drawing.Point(83, 3);
             ciLabel.Name = "ciLabel";
-            ciLabel.Size = new System.Drawing.Size(19, 13);
+            ciLabel.Size = new System.Drawing.Size(35, 24);
             ciLabel.TabIndex = 10;
             ciLabel.Text = "Ci:";
             // 
             // rolLabel
             // 
             rolLabel.AutoSize = true;
-            rolLabel.Location = new System.Drawing.Point(219, 44);
+            rolLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            rolLabel.ForeColor = System.Drawing.SystemColors.ControlDark;
+            rolLabel.Location = new System.Drawing.Point(83, 71);
             rolLabel.Name = "rolLabel";
-            rolLabel.Size = new System.Drawing.Size(26, 13);
+            rolLabel.Size = new System.Drawing.Size(47, 24);
             rolLabel.TabIndex = 12;
             rolLabel.Text = "Rol:";
             // 
             // codUsuarioLabel
             // 
             codUsuarioLabel.AutoSize = true;
-            codUsuarioLabel.Location = new System.Drawing.Point(352, 27);
+            codUsuarioLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            codUsuarioLabel.ForeColor = System.Drawing.SystemColors.ControlDark;
+            codUsuarioLabel.Location = new System.Drawing.Point(302, 73);
             codUsuarioLabel.Name = "codUsuarioLabel";
-            codUsuarioLabel.Size = new System.Drawing.Size(68, 13);
+            codUsuarioLabel.Size = new System.Drawing.Size(131, 24);
             codUsuarioLabel.TabIndex = 13;
             codUsuarioLabel.Text = "Cod Usuario:";
             // 
@@ -186,20 +196,20 @@
             // codUsuarioLabel1
             // 
             this.codUsuarioLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "CodUsuario", true));
-            this.codUsuarioLabel1.Location = new System.Drawing.Point(426, 27);
+            this.codUsuarioLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.codUsuarioLabel1.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.codUsuarioLabel1.Location = new System.Drawing.Point(439, 73);
             this.codUsuarioLabel1.Name = "codUsuarioLabel1";
             this.codUsuarioLabel1.Size = new System.Drawing.Size(100, 23);
             this.codUsuarioLabel1.TabIndex = 14;
             this.codUsuarioLabel1.Text = "aa";
             // 
-            // usuarioBindingSource
-            // 
-            this.usuarioBindingSource.DataSource = typeof(FarmaciaOASIS.Data.Usuario);
-            // 
             // rolLabel1
             // 
             this.rolLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "Rol", true));
-            this.rolLabel1.Location = new System.Drawing.Point(251, 44);
+            this.rolLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rolLabel1.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.rolLabel1.Location = new System.Drawing.Point(182, 73);
             this.rolLabel1.Name = "rolLabel1";
             this.rolLabel1.Size = new System.Drawing.Size(100, 23);
             this.rolLabel1.TabIndex = 13;
@@ -208,7 +218,9 @@
             // ciLabel1
             // 
             this.ciLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "Ci", true));
-            this.ciLabel1.Location = new System.Drawing.Point(245, 24);
+            this.ciLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ciLabel1.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.ciLabel1.Location = new System.Drawing.Point(182, 4);
             this.ciLabel1.Name = "ciLabel1";
             this.ciLabel1.Size = new System.Drawing.Size(100, 23);
             this.ciLabel1.TabIndex = 11;
@@ -217,7 +229,9 @@
             // apellidoLabel1
             // 
             this.apellidoLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "Apellido", true));
-            this.apellidoLabel1.Location = new System.Drawing.Point(136, 45);
+            this.apellidoLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.apellidoLabel1.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.apellidoLabel1.Location = new System.Drawing.Point(182, 48);
             this.apellidoLabel1.Name = "apellidoLabel1";
             this.apellidoLabel1.Size = new System.Drawing.Size(100, 23);
             this.apellidoLabel1.TabIndex = 9;
@@ -226,7 +240,9 @@
             // nombreLabel1
             // 
             this.nombreLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "Nombre", true));
-            this.nombreLabel1.Location = new System.Drawing.Point(136, 24);
+            this.nombreLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nombreLabel1.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.nombreLabel1.Location = new System.Drawing.Point(182, 27);
             this.nombreLabel1.Name = "nombreLabel1";
             this.nombreLabel1.Size = new System.Drawing.Size(100, 23);
             this.nombreLabel1.TabIndex = 8;
@@ -581,6 +597,10 @@
             this.tmFechaHora.Enabled = true;
             this.tmFechaHora.Tick += new System.EventHandler(this.tmFechaHora_Tick);
             // 
+            // usuarioBindingSource
+            // 
+            this.usuarioBindingSource.DataSource = typeof(FarmaciaOASIS.Data.Usuario);
+            // 
             // FormMenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -598,7 +618,6 @@
             this.panel1ContenedorPrincipal.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             this.panelMenu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnMenu)).EndInit();
@@ -613,6 +632,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMaximizar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -635,7 +655,6 @@
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button btnUsuarios;
         private System.Windows.Forms.Timer tmMostrarMenu;
         private System.Windows.Forms.Timer tmOcultarMenu;
         private System.Windows.Forms.Timer tmFechaHora;
@@ -654,6 +673,7 @@
         private System.Windows.Forms.Label apellidoLabel1;
         private System.Windows.Forms.Label nombreLabel1;
         public System.Windows.Forms.Label codUsuarioLabel1;
+        public System.Windows.Forms.Button btnUsuarios;
     }
 }
 

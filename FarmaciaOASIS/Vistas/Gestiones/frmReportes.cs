@@ -19,9 +19,9 @@ namespace FarmaciaOASIS.Vistas.Gestiones
             InitializeComponent();
         }
 
-        private void frmGestionarClientes_Load(object sender, EventArgs e)
+        private void frmReportes_Load(object sender, EventArgs e)
         {
-            Listar(txtBusqueda.Text);
+            ListarTodo();
         }
 
         
@@ -33,8 +33,14 @@ namespace FarmaciaOASIS.Vistas.Gestiones
             // clienteDataGridView.Columns["imagen"].Visible = false;
 
         }
+        private void ListarTodo()
+        {
 
-        
+            detalleFacturaBindingSource.DataSource = _DFac.ListarTodo();
+
+        }
+
+
 
 
 
@@ -42,12 +48,31 @@ namespace FarmaciaOASIS.Vistas.Gestiones
         {
             if (e.KeyValue == 13)
             {
-                Listar(txtBusqueda.Text);
+                if(txtBusqueda.Text=="")
+                {
+                    ListarTodo();
+                    lblTotal.Text = "";
+                }
+                else
+                {
+                    Listar(txtBusqueda.Text);
+                    sumaTotalDGV();
+                }
+                
             }
         }
 
-        
+        private void sumaTotalDGV()
+        {
+            int TotalPago = 0;
+            foreach (DataGridViewRow row in detalleFacturaDataGridView.Rows)
+            {
+                TotalPago = TotalPago + (Convert.ToInt32(row.Cells["ColPre"].Value))* (Convert.ToInt32(row.Cells["ColCant"].Value));
+            }
+            lblTotal.Text = Convert.ToString(TotalPago);
 
-        
+        }
+
+
     }
 }

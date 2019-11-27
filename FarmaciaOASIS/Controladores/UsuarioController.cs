@@ -58,5 +58,6 @@ namespace FarmaciaOASIS.Controladores
         {
             return _db.Usuario.Where(x => x.Cuenta == pUser && x.Contrasenia == pPass).ToList();
         }
+        
     }
 }

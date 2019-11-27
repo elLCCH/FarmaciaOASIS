@@ -21,6 +21,7 @@ namespace FarmaciaOASIS.Vistas
         {
             InitializeComponent();
             this.SetStyle(ControlStyles.ResizeRedraw, true);
+
         }
         public FormMenuPrincipal(string pCuenta, string pPass)
         {
@@ -29,7 +30,20 @@ namespace FarmaciaOASIS.Vistas
             InitializeComponent();
             this.SetStyle(ControlStyles.ResizeRedraw, true);
         }
+        private void FormMenuPrincipal_Load(object sender, EventArgs e)
+        {
+            usuarioBindingSource.DataSource = _Usuario.ControlSesion(_Cuenta, _Pass);
+            MostrarFormLogo();
 
+            var reg = (Usuario)usuarioBindingSource.Current;
+            if (reg.Rol != "ADMINISTRADOR")
+            {
+
+                btnProveedores.Visible = false;
+                btnUsuarios.Visible = false;
+            }
+
+        }
         int lx, ly;
         int sw, sh;
         //METODO PARA ARRASTRAR EL FORMULARIO---------------------------------------------------------------------
@@ -113,13 +127,7 @@ namespace FarmaciaOASIS.Vistas
         {
            AbrirFormEnPanel(new Vistas.frmLogo());
         }
-        private void FormMenuPrincipal_Load(object sender, EventArgs e)
-        {
-            usuarioBindingSource.DataSource = _Usuario.ControlSesion(_Cuenta, _Pass);
-            MostrarFormLogo();
-            //var reg = (Usuario)usuarioBindingSource.Current;
-            
-        }
+        
         //METODO PARA MOSTRAR FORMULARIO DE LOGO Al CERRAR OTROS FORM ----------------------------------------------------------
         private void MostrarFormLogoAlCerrarForms(object sender, FormClosedEventArgs e)
         {
