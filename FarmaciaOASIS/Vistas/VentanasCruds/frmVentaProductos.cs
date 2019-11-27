@@ -196,13 +196,81 @@ namespace FarmaciaOASIS.Vistas.VentanasCruds
         public static string CodMed;
 
 
+
+        public static int cont_fila = 0;
+        public static double total;
         private void BtnColocarProd_Click(object sender, EventArgs e)
         {
-            dgvVentas.Rows.Add(codMedLabel1.Text, nomMedLabel1.Text, pUnitLabel1.Text, txtCant.Text, txtTotal.Text);
+            /*dgvVentas.Rows.Add(codMedLabel1.Text, nomMedLabel1.Text, pUnitLabel1.Text, txtCant.Text, txtTotal.Text);
             sumaTotalDGV();
             limpiar();
             btnColocarProd.Enabled = false;
+            */
+            bool existe = false;
+            int num_fila = 0;
+            if (cont_fila == 0)
+            {
+                dgvVentas.Rows.Add(codMedLabel1.Text, nomMedLabel1.Text, pUnitLabel1.Text, txtCant.Text, txtTotal.Text);
+                cont_fila++;
+            }
+            else
+            {
+                
+                foreach (DataGridViewRow Fila in dgvVentas.Rows)
+                {
+                    if (Fila.Cells[0].Value.ToString() == codMedLabel1.Text)
+                    {
+                        existe = true;
+                        num_fila = Fila.Index;
+                    }
+                }
+                if (existe == true)
+                {
+                    dgvVentas.Rows[num_fila].Cells[3].Value = (Convert.ToDouble(txtCant.Text) + Convert.ToDouble(dgvVentas.Rows[num_fila].Cells[3].Value)).ToString();
+                    double importe = Convert.ToDouble(dgvVentas.Rows[num_fila].Cells[2].Value) * Convert.ToDouble(dgvVentas.Rows[num_fila].Cells[3].Value);
+                    dgvVentas.Rows[num_fila].Cells[4].Value = importe;
+                }
+                else
+                {
+
+                    dgvVentas.Rows.Add(codMedLabel1.Text, nomMedLabel1.Text, pUnitLabel1.Text, txtCant.Text);
+                    double costo = Convert.ToDouble(dgvVentas.Rows[cont_fila].Cells[2].Value) * Convert.ToDouble(dgvVentas.Rows[cont_fila].Cells[3].Value);
+                    dgvVentas.Rows[cont_fila].Cells[4].Value = costo;
+                    cont_fila++;
+                }
+            }
+
         }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         private void sumaTotalDGV()
         {

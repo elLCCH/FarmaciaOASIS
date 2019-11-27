@@ -37,10 +37,6 @@
             System.Windows.Forms.Label fechaLabel;
             this.detalleFacturaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.detalleFacturaDataGridView = new System.Windows.Forms.DataGridView();
-            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CodMed = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColCant = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColPre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreLabel1 = new System.Windows.Forms.Label();
             this.apellidoLabel1 = new System.Windows.Forms.Label();
             this.ciLabel1 = new System.Windows.Forms.Label();
@@ -49,6 +45,10 @@
             this.fechaLabel1 = new System.Windows.Forms.Label();
             this.lblTotal = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
+            this.ColNumFact = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CodMed = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColCant = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColPre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             nombreLabel = new System.Windows.Forms.Label();
             apellidoLabel = new System.Windows.Forms.Label();
             ciLabel = new System.Windows.Forms.Label();
@@ -64,6 +64,7 @@
             this.btnRegistrar.FlatAppearance.BorderSize = 0;
             this.btnRegistrar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(69)))), ((int)(((byte)(76)))));
             this.btnRegistrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(45)))), ((int)(((byte)(53)))));
+            this.btnRegistrar.Click += new System.EventHandler(this.BtnRegistrar_Click);
             // 
             // btnModificar
             // 
@@ -160,7 +161,7 @@
             this.detalleFacturaDataGridView.AutoGenerateColumns = false;
             this.detalleFacturaDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.detalleFacturaDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn2,
+            this.ColNumFact,
             this.CodMed,
             this.ColCant,
             this.ColPre});
@@ -170,34 +171,6 @@
             this.detalleFacturaDataGridView.ReadOnly = true;
             this.detalleFacturaDataGridView.Size = new System.Drawing.Size(451, 265);
             this.detalleFacturaDataGridView.TabIndex = 12;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            this.dataGridViewTextBoxColumn2.DataPropertyName = "NoFactura";
-            this.dataGridViewTextBoxColumn2.HeaderText = "NoFactura";
-            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            this.dataGridViewTextBoxColumn2.ReadOnly = true;
-            // 
-            // CodMed
-            // 
-            this.CodMed.DataPropertyName = "CodMed";
-            this.CodMed.HeaderText = "CodMed";
-            this.CodMed.Name = "CodMed";
-            this.CodMed.ReadOnly = true;
-            // 
-            // ColCant
-            // 
-            this.ColCant.DataPropertyName = "CantMed";
-            this.ColCant.HeaderText = "CantMed";
-            this.ColCant.Name = "ColCant";
-            this.ColCant.ReadOnly = true;
-            // 
-            // ColPre
-            // 
-            this.ColPre.DataPropertyName = "Precio";
-            this.ColPre.HeaderText = "Precio";
-            this.ColPre.Name = "ColPre";
-            this.ColPre.ReadOnly = true;
             // 
             // nombreLabel1
             // 
@@ -287,6 +260,34 @@
             this.label1.TabIndex = 21;
             this.label1.Text = "REPORTE DE FACTURA";
             // 
+            // ColNumFact
+            // 
+            this.ColNumFact.DataPropertyName = "NoFactura";
+            this.ColNumFact.HeaderText = "NoFactura";
+            this.ColNumFact.Name = "ColNumFact";
+            this.ColNumFact.ReadOnly = true;
+            // 
+            // CodMed
+            // 
+            this.CodMed.DataPropertyName = "CodMed";
+            this.CodMed.HeaderText = "CodMed";
+            this.CodMed.Name = "CodMed";
+            this.CodMed.ReadOnly = true;
+            // 
+            // ColCant
+            // 
+            this.ColCant.DataPropertyName = "CantMed";
+            this.ColCant.HeaderText = "CantMed";
+            this.ColCant.Name = "ColCant";
+            this.ColCant.ReadOnly = true;
+            // 
+            // ColPre
+            // 
+            this.ColPre.DataPropertyName = "Precio";
+            this.ColPre.HeaderText = "Precio";
+            this.ColPre.Name = "ColPre";
+            this.ColPre.ReadOnly = true;
+            // 
             // frmReportes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -348,10 +349,10 @@
         private System.Windows.Forms.Label noAutorizacionLabel1;
         private System.Windows.Forms.Label fechaLabel1;
         private System.Windows.Forms.Label lblTotal;
-        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.DataGridViewTextBoxColumn ColNumFact;
         private System.Windows.Forms.DataGridViewTextBoxColumn CodMed;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColCant;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColPre;
-        private System.Windows.Forms.Label label1;
     }
 }
