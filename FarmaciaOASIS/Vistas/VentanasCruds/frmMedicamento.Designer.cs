@@ -63,7 +63,7 @@
             // 
             // label1
             // 
-            this.label1.Location = new System.Drawing.Point(31, 9);
+            this.label1.Location = new System.Drawing.Point(63, 33);
             this.label1.Size = new System.Drawing.Size(248, 31);
             this.label1.Text = "MEDICAMENTOS";
             // 

@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label ciLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmGestionarClientes));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.clienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.clienteBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
@@ -51,7 +52,6 @@
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Agregar = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Modificar = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Eliminar = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ciLabel1 = new System.Windows.Forms.Label();
@@ -67,6 +67,7 @@
             this.btnRegistrar.FlatAppearance.BorderSize = 0;
             this.btnRegistrar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(69)))), ((int)(((byte)(76)))));
             this.btnRegistrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(45)))), ((int)(((byte)(53)))));
+            this.btnRegistrar.Location = new System.Drawing.Point(170, 390);
             this.btnRegistrar.Click += new System.EventHandler(this.BtnAgregar_Click);
             // 
             // btnModificar
@@ -74,6 +75,7 @@
             this.btnModificar.FlatAppearance.BorderSize = 0;
             this.btnModificar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(69)))), ((int)(((byte)(76)))));
             this.btnModificar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(45)))), ((int)(((byte)(53)))));
+            this.btnModificar.Location = new System.Drawing.Point(341, 390);
             this.btnModificar.Click += new System.EventHandler(this.BtnModificar_Click);
             // 
             // btnEliminar
@@ -81,19 +83,25 @@
             this.btnEliminar.FlatAppearance.BorderSize = 0;
             this.btnEliminar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(69)))), ((int)(((byte)(76)))));
             this.btnEliminar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(45)))), ((int)(((byte)(53)))));
+            this.btnEliminar.Location = new System.Drawing.Point(512, 390);
             this.btnEliminar.Click += new System.EventHandler(this.BtnEliminar_Click);
             // 
             // txtBusqueda
             // 
+            this.txtBusqueda.BackColor = System.Drawing.Color.SpringGreen;
+            this.txtBusqueda.Location = new System.Drawing.Point(119, 84);
+            this.txtBusqueda.Size = new System.Drawing.Size(546, 19);
             this.txtBusqueda.Text = "";
             this.txtBusqueda.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TxtBusqueda_KeyUp);
             // 
             // ciLabel
             // 
             ciLabel.AutoSize = true;
-            ciLabel.Location = new System.Drawing.Point(109, 124);
+            ciLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            ciLabel.ForeColor = System.Drawing.Color.White;
+            ciLabel.Location = new System.Drawing.Point(119, 124);
             ciLabel.Name = "ciLabel";
-            ciLabel.Size = new System.Drawing.Size(19, 13);
+            ciLabel.Size = new System.Drawing.Size(22, 13);
             ciLabel.TabIndex = 18;
             ciLabel.Text = "Ci:";
             // 
@@ -102,7 +110,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(214, 20);
+            this.label1.Location = new System.Drawing.Point(280, 37);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(342, 31);
             this.label1.TabIndex = 17;
@@ -154,7 +162,7 @@
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(37, 22);
             this.bindingNavigatorCountItem.Text = "de {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Número total de elementos";
             // 
@@ -241,20 +249,29 @@
             this.clienteDataGridView.AllowUserToAddRows = false;
             this.clienteDataGridView.AllowUserToDeleteRows = false;
             this.clienteDataGridView.AutoGenerateColumns = false;
+            this.clienteDataGridView.BackgroundColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(68)))), ((int)(((byte)(96)))));
             this.clienteDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.clienteDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
             this.dataGridViewTextBoxColumn2,
             this.dataGridViewTextBoxColumn3,
             this.dataGridViewTextBoxColumn4,
-            this.Agregar,
             this.Modificar,
             this.Eliminar});
             this.clienteDataGridView.DataSource = this.clienteBindingSource;
-            this.clienteDataGridView.Location = new System.Drawing.Point(49, 150);
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.clienteDataGridView.DefaultCellStyle = dataGridViewCellStyle1;
+            this.clienteDataGridView.GridColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(69)))), ((int)(((byte)(75)))));
+            this.clienteDataGridView.Location = new System.Drawing.Point(119, 150);
             this.clienteDataGridView.Name = "clienteDataGridView";
             this.clienteDataGridView.ReadOnly = true;
-            this.clienteDataGridView.Size = new System.Drawing.Size(857, 220);
+            this.clienteDataGridView.Size = new System.Drawing.Size(664, 220);
             this.clienteDataGridView.TabIndex = 18;
             this.clienteDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.clienteDataGridView_CellClick);
             this.clienteDataGridView.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.clienteDataGridView_CellPainting);
@@ -287,28 +304,26 @@
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
             this.dataGridViewTextBoxColumn4.ReadOnly = true;
             // 
-            // Agregar
-            // 
-            this.Agregar.HeaderText = "";
-            this.Agregar.Name = "Agregar";
-            this.Agregar.ReadOnly = true;
-            // 
             // Modificar
             // 
             this.Modificar.HeaderText = "";
             this.Modificar.Name = "Modificar";
             this.Modificar.ReadOnly = true;
+            this.Modificar.Width = 50;
             // 
             // Eliminar
             // 
             this.Eliminar.HeaderText = "";
             this.Eliminar.Name = "Eliminar";
             this.Eliminar.ReadOnly = true;
+            this.Eliminar.Width = 50;
             // 
             // ciLabel1
             // 
             this.ciLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clienteBindingSource, "Ci", true));
-            this.ciLabel1.Location = new System.Drawing.Point(134, 124);
+            this.ciLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ciLabel1.ForeColor = System.Drawing.Color.White;
+            this.ciLabel1.Location = new System.Drawing.Point(144, 124);
             this.ciLabel1.Name = "ciLabel1";
             this.ciLabel1.Size = new System.Drawing.Size(100, 23);
             this.ciLabel1.TabIndex = 19;
@@ -368,7 +383,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Agregar;
         private System.Windows.Forms.DataGridViewTextBoxColumn Modificar;
         private System.Windows.Forms.DataGridViewTextBoxColumn Eliminar;
     }
