@@ -239,6 +239,7 @@ namespace FarmaciaOASIS.Vistas.VentanasCruds
                     cont_fila++;
                 }
             }
+            sumaTotalDGV();
 
         }
         private void sumaTotalDGV()
