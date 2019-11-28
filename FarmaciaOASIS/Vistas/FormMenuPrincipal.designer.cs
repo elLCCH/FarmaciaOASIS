@@ -29,13 +29,20 @@
         private void InitializeComponent()
         {
             this.components = new System.ComponentModel.Container();
+            System.Windows.Forms.Label nombreLabel;
+            System.Windows.Forms.Label apellidoLabel;
+            System.Windows.Forms.Label ciLabel;
+            System.Windows.Forms.Label rolLabel;
+            System.Windows.Forms.Label codUsuarioLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMenuPrincipal));
             this.panel1ContenedorPrincipal = new System.Windows.Forms.Panel();
             this.panelContenedor = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
+            this.codUsuarioLabel1 = new System.Windows.Forms.Label();
+            this.rolLabel1 = new System.Windows.Forms.Label();
+            this.ciLabel1 = new System.Windows.Forms.Label();
+            this.apellidoLabel1 = new System.Windows.Forms.Label();
+            this.nombreLabel1 = new System.Windows.Forms.Label();
             this.lbFecha = new System.Windows.Forms.Label();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
             this.lblHora = new System.Windows.Forms.Label();
@@ -62,6 +69,12 @@
             this.tmMostrarMenu = new System.Windows.Forms.Timer(this.components);
             this.tmOcultarMenu = new System.Windows.Forms.Timer(this.components);
             this.tmFechaHora = new System.Windows.Forms.Timer(this.components);
+            this.usuarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            nombreLabel = new System.Windows.Forms.Label();
+            apellidoLabel = new System.Windows.Forms.Label();
+            ciLabel = new System.Windows.Forms.Label();
+            rolLabel = new System.Windows.Forms.Label();
+            codUsuarioLabel = new System.Windows.Forms.Label();
             this.panel1ContenedorPrincipal.SuspendLayout();
             this.panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
@@ -78,7 +91,63 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMaximizar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).BeginInit();
             this.SuspendLayout();
+            // 
+            // nombreLabel
+            // 
+            nombreLabel.AutoSize = true;
+            nombreLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            nombreLabel.ForeColor = System.Drawing.SystemColors.ControlDark;
+            nombreLabel.Location = new System.Drawing.Point(83, 24);
+            nombreLabel.Name = "nombreLabel";
+            nombreLabel.Size = new System.Drawing.Size(91, 24);
+            nombreLabel.TabIndex = 7;
+            nombreLabel.Text = "Nombre:";
+            // 
+            // apellidoLabel
+            // 
+            apellidoLabel.AutoSize = true;
+            apellidoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            apellidoLabel.ForeColor = System.Drawing.SystemColors.ControlDark;
+            apellidoLabel.Location = new System.Drawing.Point(83, 47);
+            apellidoLabel.Name = "apellidoLabel";
+            apellidoLabel.Size = new System.Drawing.Size(93, 24);
+            apellidoLabel.TabIndex = 8;
+            apellidoLabel.Text = "Apellido:";
+            // 
+            // ciLabel
+            // 
+            ciLabel.AutoSize = true;
+            ciLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            ciLabel.ForeColor = System.Drawing.SystemColors.ControlDark;
+            ciLabel.Location = new System.Drawing.Point(83, 3);
+            ciLabel.Name = "ciLabel";
+            ciLabel.Size = new System.Drawing.Size(35, 24);
+            ciLabel.TabIndex = 10;
+            ciLabel.Text = "Ci:";
+            // 
+            // rolLabel
+            // 
+            rolLabel.AutoSize = true;
+            rolLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            rolLabel.ForeColor = System.Drawing.SystemColors.ControlDark;
+            rolLabel.Location = new System.Drawing.Point(83, 71);
+            rolLabel.Name = "rolLabel";
+            rolLabel.Size = new System.Drawing.Size(47, 24);
+            rolLabel.TabIndex = 12;
+            rolLabel.Text = "Rol:";
+            // 
+            // codUsuarioLabel
+            // 
+            codUsuarioLabel.AutoSize = true;
+            codUsuarioLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            codUsuarioLabel.ForeColor = System.Drawing.SystemColors.ControlDark;
+            codUsuarioLabel.Location = new System.Drawing.Point(302, 73);
+            codUsuarioLabel.Name = "codUsuarioLabel";
+            codUsuarioLabel.Size = new System.Drawing.Size(131, 24);
+            codUsuarioLabel.TabIndex = 13;
+            codUsuarioLabel.Text = "Cod Usuario:";
             // 
             // panel1ContenedorPrincipal
             // 
@@ -90,7 +159,7 @@
             this.panel1ContenedorPrincipal.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1ContenedorPrincipal.Location = new System.Drawing.Point(0, 0);
             this.panel1ContenedorPrincipal.Name = "panel1ContenedorPrincipal";
-            this.panel1ContenedorPrincipal.Size = new System.Drawing.Size(1044, 600);
+            this.panel1ContenedorPrincipal.Size = new System.Drawing.Size(1100, 780);
             this.panel1ContenedorPrincipal.TabIndex = 0;
             // 
             // panelContenedor
@@ -99,56 +168,85 @@
             this.panelContenedor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelContenedor.Location = new System.Drawing.Point(230, 50);
             this.panelContenedor.Name = "panelContenedor";
-            this.panelContenedor.Size = new System.Drawing.Size(814, 450);
-            this.panelContenedor.TabIndex = 6;
+            this.panelContenedor.Size = new System.Drawing.Size(870, 619);
+            this.panelContenedor.TabIndex = 2;
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(61)))), ((int)(((byte)(69)))));
-            this.panel1.Controls.Add(this.label5);
-            this.panel1.Controls.Add(this.label4);
-            this.panel1.Controls.Add(this.label3);
+            this.panel1.Controls.Add(codUsuarioLabel);
+            this.panel1.Controls.Add(this.codUsuarioLabel1);
+            this.panel1.Controls.Add(rolLabel);
+            this.panel1.Controls.Add(this.rolLabel1);
+            this.panel1.Controls.Add(ciLabel);
+            this.panel1.Controls.Add(this.ciLabel1);
+            this.panel1.Controls.Add(apellidoLabel);
+            this.panel1.Controls.Add(this.apellidoLabel1);
+            this.panel1.Controls.Add(nombreLabel);
+            this.panel1.Controls.Add(this.nombreLabel1);
             this.panel1.Controls.Add(this.lbFecha);
             this.panel1.Controls.Add(this.pictureBox7);
             this.panel1.Controls.Add(this.lblHora);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(230, 500);
+            this.panel1.Location = new System.Drawing.Point(230, 669);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(814, 100);
+            this.panel1.Size = new System.Drawing.Size(870, 111);
             this.panel1.TabIndex = 5;
             // 
-            // label5
+            // codUsuarioLabel1
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.LightGray;
-            this.label5.Location = new System.Drawing.Point(83, 54);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(45, 16);
-            this.label5.TabIndex = 7;
-            this.label5.Text = "Cargo";
+            this.codUsuarioLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "CodUsuario", true));
+            this.codUsuarioLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.codUsuarioLabel1.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.codUsuarioLabel1.Location = new System.Drawing.Point(439, 73);
+            this.codUsuarioLabel1.Name = "codUsuarioLabel1";
+            this.codUsuarioLabel1.Size = new System.Drawing.Size(100, 23);
+            this.codUsuarioLabel1.TabIndex = 14;
+            this.codUsuarioLabel1.Text = "aa";
             // 
-            // label4
+            // rolLabel1
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.ForeColor = System.Drawing.Color.LightGray;
-            this.label4.Location = new System.Drawing.Point(83, 36);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(97, 16);
-            this.label4.TabIndex = 6;
-            this.label4.Text = "Apellidos User";
+            this.rolLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "Rol", true));
+            this.rolLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rolLabel1.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.rolLabel1.Location = new System.Drawing.Point(182, 73);
+            this.rolLabel1.Name = "rolLabel1";
+            this.rolLabel1.Size = new System.Drawing.Size(100, 23);
+            this.rolLabel1.TabIndex = 13;
+            this.rolLabel1.Text = "label1";
             // 
-            // label3
+            // ciLabel1
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.LightGray;
-            this.label3.Location = new System.Drawing.Point(83, 18);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(67, 16);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Nombres ";
+            this.ciLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "Ci", true));
+            this.ciLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ciLabel1.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.ciLabel1.Location = new System.Drawing.Point(182, 4);
+            this.ciLabel1.Name = "ciLabel1";
+            this.ciLabel1.Size = new System.Drawing.Size(100, 23);
+            this.ciLabel1.TabIndex = 11;
+            this.ciLabel1.Text = "label1";
+            // 
+            // apellidoLabel1
+            // 
+            this.apellidoLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "Apellido", true));
+            this.apellidoLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.apellidoLabel1.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.apellidoLabel1.Location = new System.Drawing.Point(182, 48);
+            this.apellidoLabel1.Name = "apellidoLabel1";
+            this.apellidoLabel1.Size = new System.Drawing.Size(100, 23);
+            this.apellidoLabel1.TabIndex = 9;
+            this.apellidoLabel1.Text = "label1";
+            // 
+            // nombreLabel1
+            // 
+            this.nombreLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "Nombre", true));
+            this.nombreLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nombreLabel1.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.nombreLabel1.Location = new System.Drawing.Point(182, 27);
+            this.nombreLabel1.Name = "nombreLabel1";
+            this.nombreLabel1.Size = new System.Drawing.Size(100, 23);
+            this.nombreLabel1.TabIndex = 8;
+            this.nombreLabel1.Text = "label1";
             // 
             // lbFecha
             // 
@@ -156,7 +254,7 @@
             this.lbFecha.AutoSize = true;
             this.lbFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.lbFecha.ForeColor = System.Drawing.Color.White;
-            this.lbFecha.Location = new System.Drawing.Point(552, 71);
+            this.lbFecha.Location = new System.Drawing.Point(608, 71);
             this.lbFecha.Name = "lbFecha";
             this.lbFecha.Size = new System.Drawing.Size(224, 20);
             this.lbFecha.TabIndex = 4;
@@ -178,7 +276,7 @@
             this.lblHora.AutoSize = true;
             this.lblHora.Font = new System.Drawing.Font("Microsoft Sans Serif", 35.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHora.ForeColor = System.Drawing.Color.LightGray;
-            this.lblHora.Location = new System.Drawing.Point(556, 11);
+            this.lblHora.Location = new System.Drawing.Point(612, 11);
             this.lblHora.Name = "lblHora";
             this.lblHora.Size = new System.Drawing.Size(205, 54);
             this.lblHora.TabIndex = 1;
@@ -203,7 +301,7 @@
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 50);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(230, 550);
+            this.panelMenu.Size = new System.Drawing.Size(230, 730);
             this.panelMenu.TabIndex = 2;
             // 
             // btnProveedores
@@ -217,10 +315,10 @@
             this.btnProveedores.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.btnProveedores.Image = ((System.Drawing.Image)(resources.GetObject("btnProveedores.Image")));
             this.btnProveedores.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnProveedores.Location = new System.Drawing.Point(1, 330);
+            this.btnProveedores.Location = new System.Drawing.Point(1, 274);
             this.btnProveedores.Name = "btnProveedores";
             this.btnProveedores.Size = new System.Drawing.Size(229, 47);
-            this.btnProveedores.TabIndex = 18;
+            this.btnProveedores.TabIndex = 5;
             this.btnProveedores.Text = "  Proveedores";
             this.btnProveedores.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnProveedores.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -239,10 +337,10 @@
             this.btnCerrarSesion.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.btnCerrarSesion.Image = global::FarmaciaOASIS.Properties.Resources.CerrarSesion2;
             this.btnCerrarSesion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCerrarSesion.Location = new System.Drawing.Point(0, 460);
+            this.btnCerrarSesion.Location = new System.Drawing.Point(0, 640);
             this.btnCerrarSesion.Name = "btnCerrarSesion";
             this.btnCerrarSesion.Size = new System.Drawing.Size(230, 97);
-            this.btnCerrarSesion.TabIndex = 13;
+            this.btnCerrarSesion.TabIndex = 7;
             this.btnCerrarSesion.Text = "Cerrar Sesion";
             this.btnCerrarSesion.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCerrarSesion.UseVisualStyleBackColor = true;
@@ -274,7 +372,7 @@
             this.btnCliente.Location = new System.Drawing.Point(2, 101);
             this.btnCliente.Name = "btnCliente";
             this.btnCliente.Size = new System.Drawing.Size(222, 50);
-            this.btnCliente.TabIndex = 10;
+            this.btnCliente.TabIndex = 2;
             this.btnCliente.Text = "  Cliente";
             this.btnCliente.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCliente.UseVisualStyleBackColor = true;
@@ -300,13 +398,14 @@
             this.btnReportes.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.btnReportes.Image = global::FarmaciaOASIS.Properties.Resources.estadistico;
             this.btnReportes.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnReportes.Location = new System.Drawing.Point(3, 274);
+            this.btnReportes.Location = new System.Drawing.Point(3, 218);
             this.btnReportes.Name = "btnReportes";
             this.btnReportes.Size = new System.Drawing.Size(230, 50);
-            this.btnReportes.TabIndex = 8;
+            this.btnReportes.TabIndex = 4;
             this.btnReportes.Text = "  Reportes ";
             this.btnReportes.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnReportes.UseVisualStyleBackColor = true;
+            this.btnReportes.Click += new System.EventHandler(this.BtnReportes_Click);
             // 
             // pictureBox3
             // 
@@ -331,7 +430,7 @@
             this.btnProductos.Location = new System.Drawing.Point(2, 45);
             this.btnProductos.Name = "btnProductos";
             this.btnProductos.Size = new System.Drawing.Size(230, 50);
-            this.btnProductos.TabIndex = 6;
+            this.btnProductos.TabIndex = 1;
             this.btnProductos.Text = "  Productos";
             this.btnProductos.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnProductos.UseVisualStyleBackColor = true;
@@ -369,7 +468,7 @@
             this.btnVentas.Location = new System.Drawing.Point(0, 157);
             this.btnVentas.Name = "btnVentas";
             this.btnVentas.Size = new System.Drawing.Size(230, 50);
-            this.btnVentas.TabIndex = 2;
+            this.btnVentas.TabIndex = 3;
             this.btnVentas.Text = " Ventas ";
             this.btnVentas.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnVentas.UseVisualStyleBackColor = true;
@@ -395,10 +494,10 @@
             this.btnUsuarios.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.btnUsuarios.Image = global::FarmaciaOASIS.Properties.Resources.Usuarios;
             this.btnUsuarios.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnUsuarios.Location = new System.Drawing.Point(0, 218);
+            this.btnUsuarios.Location = new System.Drawing.Point(3, 327);
             this.btnUsuarios.Name = "btnUsuarios";
             this.btnUsuarios.Size = new System.Drawing.Size(230, 50);
-            this.btnUsuarios.TabIndex = 0;
+            this.btnUsuarios.TabIndex = 6;
             this.btnUsuarios.Text = "  Usuarios";
             this.btnUsuarios.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnUsuarios.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -416,7 +515,7 @@
             this.BarraTitulo.Dock = System.Windows.Forms.DockStyle.Top;
             this.BarraTitulo.Location = new System.Drawing.Point(0, 0);
             this.BarraTitulo.Name = "BarraTitulo";
-            this.BarraTitulo.Size = new System.Drawing.Size(1044, 50);
+            this.BarraTitulo.Size = new System.Drawing.Size(1100, 50);
             this.BarraTitulo.TabIndex = 1;
             this.BarraTitulo.MouseDown += new System.Windows.Forms.MouseEventHandler(this.BarraTitulo_MouseDown);
             // 
@@ -425,7 +524,7 @@
             this.btnNormal.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnNormal.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnNormal.Image = ((System.Drawing.Image)(resources.GetObject("btnNormal.Image")));
-            this.btnNormal.Location = new System.Drawing.Point(964, 12);
+            this.btnNormal.Location = new System.Drawing.Point(1020, 12);
             this.btnNormal.Name = "btnNormal";
             this.btnNormal.Size = new System.Drawing.Size(27, 25);
             this.btnNormal.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -450,7 +549,7 @@
             this.btnMinimizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnMinimizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMinimizar.Image = ((System.Drawing.Image)(resources.GetObject("btnMinimizar.Image")));
-            this.btnMinimizar.Location = new System.Drawing.Point(920, 12);
+            this.btnMinimizar.Location = new System.Drawing.Point(976, 12);
             this.btnMinimizar.Name = "btnMinimizar";
             this.btnMinimizar.Size = new System.Drawing.Size(27, 28);
             this.btnMinimizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -464,7 +563,7 @@
             this.btnCerrar.BackgroundImageLayout = System.Windows.Forms.ImageLayout.None;
             this.btnCerrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCerrar.Image = ((System.Drawing.Image)(resources.GetObject("btnCerrar.Image")));
-            this.btnCerrar.Location = new System.Drawing.Point(1005, 12);
+            this.btnCerrar.Location = new System.Drawing.Point(1061, 12);
             this.btnCerrar.Name = "btnCerrar";
             this.btnCerrar.Size = new System.Drawing.Size(27, 25);
             this.btnCerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -477,7 +576,7 @@
             this.btnMaximizar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.btnMaximizar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnMaximizar.Image = ((System.Drawing.Image)(resources.GetObject("btnMaximizar.Image")));
-            this.btnMaximizar.Location = new System.Drawing.Point(964, 12);
+            this.btnMaximizar.Location = new System.Drawing.Point(1020, 12);
             this.btnMaximizar.Name = "btnMaximizar";
             this.btnMaximizar.Size = new System.Drawing.Size(27, 28);
             this.btnMaximizar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -498,11 +597,16 @@
             this.tmFechaHora.Enabled = true;
             this.tmFechaHora.Tick += new System.EventHandler(this.tmFechaHora_Tick);
             // 
+            // usuarioBindingSource
+            // 
+            this.usuarioBindingSource.DataSource = typeof(FarmaciaOASIS.Data.Usuario);
+            // 
             // FormMenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(1044, 600);
+            this.AutoScroll = true;
+            this.ClientSize = new System.Drawing.Size(1100, 780);
             this.Controls.Add(this.panel1ContenedorPrincipal);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -528,6 +632,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMaximizar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }
@@ -537,9 +642,6 @@
         private System.Windows.Forms.Panel panel1ContenedorPrincipal;
         private System.Windows.Forms.Panel BarraTitulo;
         private System.Windows.Forms.Panel panel1;
-        private System.Windows.Forms.Label label5;
-        private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label lbFecha;
         private System.Windows.Forms.PictureBox pictureBox7;
         private System.Windows.Forms.Label lblHora;
@@ -553,7 +655,6 @@
         private System.Windows.Forms.PictureBox pictureBox4;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox1;
-        private System.Windows.Forms.Button btnUsuarios;
         private System.Windows.Forms.Timer tmMostrarMenu;
         private System.Windows.Forms.Timer tmOcultarMenu;
         private System.Windows.Forms.Timer tmFechaHora;
@@ -566,6 +667,13 @@
         public System.Windows.Forms.Button btnProveedores;
         public System.Windows.Forms.Button btnVentas;
         public System.Windows.Forms.Panel panelContenedor;
+        private System.Windows.Forms.Label rolLabel1;
+        private System.Windows.Forms.BindingSource usuarioBindingSource;
+        private System.Windows.Forms.Label ciLabel1;
+        private System.Windows.Forms.Label apellidoLabel1;
+        private System.Windows.Forms.Label nombreLabel1;
+        public System.Windows.Forms.Label codUsuarioLabel1;
+        public System.Windows.Forms.Button btnUsuarios;
     }
 }
 

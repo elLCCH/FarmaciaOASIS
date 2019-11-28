@@ -53,6 +53,7 @@
             this.btnAceptar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(159)))), ((int)(((byte)(127)))));
             this.btnAceptar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.btnAceptar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(118)))), ((int)(((byte)(126)))));
+            this.btnAceptar.TabIndex = 13;
             this.btnAceptar.Click += new System.EventHandler(this.BtnAceptar_Click);
             // 
             // btnCancelar
@@ -60,50 +61,67 @@
             this.btnCancelar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(159)))), ((int)(((byte)(127)))));
             this.btnCancelar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.btnCancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(118)))), ((int)(((byte)(126)))));
+            this.btnCancelar.TabIndex = 14;
             this.btnCancelar.Click += new System.EventHandler(this.BtnCancelar_Click);
+            // 
+            // label1
+            // 
+            this.label1.Location = new System.Drawing.Point(-1, 21);
+            this.label1.Size = new System.Drawing.Size(374, 31);
+            this.label1.Text = "REGISTRAR PROVEEDOR";
             // 
             // apellidoLabel
             // 
             apellidoLabel.AutoSize = true;
-            apellidoLabel.Location = new System.Drawing.Point(89, 149);
+            apellidoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            apellidoLabel.ForeColor = System.Drawing.SystemColors.ControlDark;
+            apellidoLabel.Location = new System.Drawing.Point(25, 125);
             apellidoLabel.Name = "apellidoLabel";
-            apellidoLabel.Size = new System.Drawing.Size(47, 13);
+            apellidoLabel.Size = new System.Drawing.Size(84, 24);
             apellidoLabel.TabIndex = 19;
             apellidoLabel.Text = "Apellido:";
             // 
             // ciudadLabel
             // 
             ciudadLabel.AutoSize = true;
-            ciudadLabel.Location = new System.Drawing.Point(89, 175);
+            ciudadLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            ciudadLabel.ForeColor = System.Drawing.SystemColors.ControlDark;
+            ciudadLabel.Location = new System.Drawing.Point(25, 170);
             ciudadLabel.Name = "ciudadLabel";
-            ciudadLabel.Size = new System.Drawing.Size(43, 13);
+            ciudadLabel.Size = new System.Drawing.Size(75, 24);
             ciudadLabel.TabIndex = 21;
             ciudadLabel.Text = "Ciudad:";
             // 
             // direccionLabel
             // 
             direccionLabel.AutoSize = true;
-            direccionLabel.Location = new System.Drawing.Point(89, 201);
+            direccionLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            direccionLabel.ForeColor = System.Drawing.SystemColors.ControlDark;
+            direccionLabel.Location = new System.Drawing.Point(25, 217);
             direccionLabel.Name = "direccionLabel";
-            direccionLabel.Size = new System.Drawing.Size(55, 13);
+            direccionLabel.Size = new System.Drawing.Size(95, 24);
             direccionLabel.TabIndex = 25;
             direccionLabel.Text = "Direccion:";
             // 
             // nombreLabel
             // 
             nombreLabel.AutoSize = true;
-            nombreLabel.Location = new System.Drawing.Point(90, 123);
+            nombreLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            nombreLabel.ForeColor = System.Drawing.SystemColors.ControlDark;
+            nombreLabel.Location = new System.Drawing.Point(25, 80);
             nombreLabel.Name = "nombreLabel";
-            nombreLabel.Size = new System.Drawing.Size(47, 13);
+            nombreLabel.Size = new System.Drawing.Size(84, 24);
             nombreLabel.TabIndex = 27;
             nombreLabel.Text = "Nombre:";
             // 
             // telfLabel
             // 
             telfLabel.AutoSize = true;
-            telfLabel.Location = new System.Drawing.Point(89, 227);
+            telfLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            telfLabel.ForeColor = System.Drawing.SystemColors.ControlDark;
+            telfLabel.Location = new System.Drawing.Point(25, 262);
             telfLabel.Name = "telfLabel";
-            telfLabel.Size = new System.Drawing.Size(28, 13);
+            telfLabel.Size = new System.Drawing.Size(46, 24);
             telfLabel.TabIndex = 29;
             telfLabel.Text = "Telf:";
             // 
@@ -114,42 +132,47 @@
             // apellidoTextBox
             // 
             this.apellidoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.proveedorBindingSource, "Apellido", true));
-            this.apellidoTextBox.Location = new System.Drawing.Point(150, 146);
+            this.apellidoTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.apellidoTextBox.Location = new System.Drawing.Point(125, 122);
             this.apellidoTextBox.Name = "apellidoTextBox";
-            this.apellidoTextBox.Size = new System.Drawing.Size(100, 20);
-            this.apellidoTextBox.TabIndex = 20;
+            this.apellidoTextBox.Size = new System.Drawing.Size(218, 29);
+            this.apellidoTextBox.TabIndex = 9;
             // 
             // ciudadTextBox
             // 
             this.ciudadTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.proveedorBindingSource, "Ciudad", true));
-            this.ciudadTextBox.Location = new System.Drawing.Point(150, 172);
+            this.ciudadTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ciudadTextBox.Location = new System.Drawing.Point(125, 167);
             this.ciudadTextBox.Name = "ciudadTextBox";
-            this.ciudadTextBox.Size = new System.Drawing.Size(100, 20);
-            this.ciudadTextBox.TabIndex = 22;
+            this.ciudadTextBox.Size = new System.Drawing.Size(218, 29);
+            this.ciudadTextBox.TabIndex = 10;
             // 
             // direccionTextBox
             // 
             this.direccionTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.proveedorBindingSource, "Direccion", true));
-            this.direccionTextBox.Location = new System.Drawing.Point(150, 198);
+            this.direccionTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.direccionTextBox.Location = new System.Drawing.Point(125, 214);
             this.direccionTextBox.Name = "direccionTextBox";
-            this.direccionTextBox.Size = new System.Drawing.Size(100, 20);
-            this.direccionTextBox.TabIndex = 26;
+            this.direccionTextBox.Size = new System.Drawing.Size(218, 29);
+            this.direccionTextBox.TabIndex = 11;
             // 
             // nombreTextBox
             // 
             this.nombreTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.proveedorBindingSource, "Nombre", true));
-            this.nombreTextBox.Location = new System.Drawing.Point(151, 120);
+            this.nombreTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nombreTextBox.Location = new System.Drawing.Point(125, 77);
             this.nombreTextBox.Name = "nombreTextBox";
-            this.nombreTextBox.Size = new System.Drawing.Size(100, 20);
-            this.nombreTextBox.TabIndex = 28;
+            this.nombreTextBox.Size = new System.Drawing.Size(218, 29);
+            this.nombreTextBox.TabIndex = 8;
             // 
             // telfTextBox
             // 
             this.telfTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.proveedorBindingSource, "Telf", true));
-            this.telfTextBox.Location = new System.Drawing.Point(150, 224);
+            this.telfTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.telfTextBox.Location = new System.Drawing.Point(125, 259);
             this.telfTextBox.Name = "telfTextBox";
-            this.telfTextBox.Size = new System.Drawing.Size(100, 20);
-            this.telfTextBox.TabIndex = 30;
+            this.telfTextBox.Size = new System.Drawing.Size(218, 29);
+            this.telfTextBox.TabIndex = 12;
             // 
             // frmProveedor
             // 
@@ -169,6 +192,7 @@
             this.Name = "frmProveedor";
             this.Text = "frmProveedor";
             this.Load += new System.EventHandler(this.frmProveedor_Load);
+            this.Controls.SetChildIndex(this.label1, 0);
             this.Controls.SetChildIndex(this.btnCancelar, 0);
             this.Controls.SetChildIndex(this.btnAceptar, 0);
             this.Controls.SetChildIndex(this.telfTextBox, 0);

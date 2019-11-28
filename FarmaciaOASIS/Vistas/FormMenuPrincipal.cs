@@ -1,4 +1,6 @@
-﻿using System;
+﻿using FarmaciaOASIS.Controladores;
+using FarmaciaOASIS.Data;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -13,10 +15,34 @@ namespace FarmaciaOASIS.Vistas
 {
     public partial class FormMenuPrincipal : Form
     {
+        string _Cuenta, _Pass;
+        UsuarioController _Usuario = new UsuarioController();
         public FormMenuPrincipal()
         {
             InitializeComponent();
             this.SetStyle(ControlStyles.ResizeRedraw, true);
+
+        }
+        public FormMenuPrincipal(string pCuenta, string pPass)
+        {
+            _Cuenta = pCuenta;
+            _Pass = pPass;
+            InitializeComponent();
+            this.SetStyle(ControlStyles.ResizeRedraw, true);
+        }
+        private void FormMenuPrincipal_Load(object sender, EventArgs e)
+        {
+            usuarioBindingSource.DataSource = _Usuario.ControlSesion(_Cuenta, _Pass);
+            MostrarFormLogo();
+
+            var reg = (Usuario)usuarioBindingSource.Current;
+            if (reg.Rol != "ADMINISTRADOR")
+            {
+
+                btnProveedores.Visible = false;
+                btnUsuarios.Visible = false;
+            }
+
         }
         int lx, ly;
         int sw, sh;
@@ -101,10 +127,7 @@ namespace FarmaciaOASIS.Vistas
         {
            AbrirFormEnPanel(new Vistas.frmLogo());
         }
-        private void FormMenuPrincipal_Load(object sender, EventArgs e)
-        {
-            MostrarFormLogo();
-        }
+        
         //METODO PARA MOSTRAR FORMULARIO DE LOGO Al CERRAR OTROS FORM ----------------------------------------------------------
         private void MostrarFormLogoAlCerrarForms(object sender, FormClosedEventArgs e)
         {
@@ -174,9 +197,14 @@ namespace FarmaciaOASIS.Vistas
             AbrirFormEnPanel(new Gestiones.frmGestionarProveedores());
         }
 
+        private void BtnReportes_Click(object sender, EventArgs e)
+        {
+            AbrirFormEnPanel(new Gestiones.frmReportes());
+        }
+
         private void BtnVentas_Click(object sender, EventArgs e)
         {
-            AbrirFormEnPanel(new VentanasCruds.frmVentaProductos());
+            AbrirFormEnPanel(new VentanasCruds.frmVentaProductos(Convert.ToInt32(codUsuarioLabel1.Text)));
         }
 
         private void BtnCliente_Click(object sender, EventArgs e)

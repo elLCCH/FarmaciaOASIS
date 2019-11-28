@@ -35,10 +35,12 @@ namespace FarmaciaOASIS.Vistas.VentanasCruds
             if (_esNuevo)
             {
                 proveedorBindingSource.AddNew();
+                label1.Text = "REGISTRAR PROVEEDOR";
             }
             else
             {
                 proveedorBindingSource.DataSource = _objUsuario.BuscarPorPK(Convert.ToInt32(_cuenta));
+                label1.Text = "MODIFICAR PROVEEDOR";
             }
         }
 

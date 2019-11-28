@@ -36,10 +36,12 @@ namespace FarmaciaOASIS.Vistas.VentanasCruds
             if (_esNuevo)
             {
                 clienteBindingSource.AddNew();
+                label1.Text = "REGISTRAR CLIENTE";
             }
             else
             {
                 clienteBindingSource.DataSource = _objUsuario.BuscarPorCI(_cuenta);
+                label1.Text = "MODIFICAR CLIENTE";
             }
         }
         

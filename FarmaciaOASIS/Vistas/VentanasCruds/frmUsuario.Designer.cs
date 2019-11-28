@@ -59,6 +59,7 @@
             this.btnAceptar.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(159)))), ((int)(((byte)(127)))));
             this.btnAceptar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
             this.btnAceptar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(118)))), ((int)(((byte)(126)))));
+            this.btnAceptar.TabIndex = 15;
             this.btnAceptar.Click += new System.EventHandler(this.BtnAceptar_Click);
             // 
             // btnCancelar
@@ -68,66 +69,79 @@
             this.btnCancelar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(118)))), ((int)(((byte)(126)))));
             this.btnCancelar.Click += new System.EventHandler(this.BtnCancelar_Click);
             // 
+            // label1
+            // 
+            this.label1.Location = new System.Drawing.Point(22, 18);
+            this.label1.Size = new System.Drawing.Size(323, 31);
+            this.label1.Text = "REGISTRAR USUARIO";
+            // 
             // apellidoLabel
             // 
             apellidoLabel.AutoSize = true;
-            apellidoLabel.Location = new System.Drawing.Point(90, 148);
+            apellidoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            apellidoLabel.Location = new System.Drawing.Point(30, 137);
             apellidoLabel.Name = "apellidoLabel";
-            apellidoLabel.Size = new System.Drawing.Size(47, 13);
+            apellidoLabel.Size = new System.Drawing.Size(84, 24);
             apellidoLabel.TabIndex = 19;
             apellidoLabel.Text = "Apellido:";
             // 
             // celLabel
             // 
             celLabel.AutoSize = true;
-            celLabel.Location = new System.Drawing.Point(90, 228);
+            celLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            celLabel.Location = new System.Drawing.Point(28, 242);
             celLabel.Name = "celLabel";
-            celLabel.Size = new System.Drawing.Size(25, 13);
+            celLabel.Size = new System.Drawing.Size(43, 24);
             celLabel.TabIndex = 21;
             celLabel.Text = "Cel:";
             // 
             // ciLabel
             // 
             ciLabel.AutoSize = true;
-            ciLabel.Location = new System.Drawing.Point(90, 96);
+            ciLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            ciLabel.Location = new System.Drawing.Point(27, 62);
             ciLabel.Name = "ciLabel";
-            ciLabel.Size = new System.Drawing.Size(19, 13);
+            ciLabel.Size = new System.Drawing.Size(32, 24);
             ciLabel.TabIndex = 23;
             ciLabel.Text = "Ci:";
             // 
             // contraseniaLabel
             // 
             contraseniaLabel.AutoSize = true;
-            contraseniaLabel.Location = new System.Drawing.Point(90, 202);
+            contraseniaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            contraseniaLabel.Location = new System.Drawing.Point(28, 207);
             contraseniaLabel.Name = "contraseniaLabel";
-            contraseniaLabel.Size = new System.Drawing.Size(66, 13);
+            contraseniaLabel.Size = new System.Drawing.Size(115, 24);
             contraseniaLabel.TabIndex = 27;
             contraseniaLabel.Text = "Contrasenia:";
             // 
             // cuentaLabel
             // 
             cuentaLabel.AutoSize = true;
-            cuentaLabel.Location = new System.Drawing.Point(90, 176);
+            cuentaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            cuentaLabel.Location = new System.Drawing.Point(28, 171);
             cuentaLabel.Name = "cuentaLabel";
-            cuentaLabel.Size = new System.Drawing.Size(44, 13);
+            cuentaLabel.Size = new System.Drawing.Size(75, 24);
             cuentaLabel.TabIndex = 29;
             cuentaLabel.Text = "Cuenta:";
             // 
             // nombreLabel
             // 
             nombreLabel.AutoSize = true;
-            nombreLabel.Location = new System.Drawing.Point(90, 122);
+            nombreLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            nombreLabel.Location = new System.Drawing.Point(27, 100);
             nombreLabel.Name = "nombreLabel";
-            nombreLabel.Size = new System.Drawing.Size(47, 13);
+            nombreLabel.Size = new System.Drawing.Size(84, 24);
             nombreLabel.TabIndex = 31;
             nombreLabel.Text = "Nombre:";
             // 
             // rolLabel
             // 
             rolLabel.AutoSize = true;
-            rolLabel.Location = new System.Drawing.Point(92, 261);
+            rolLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            rolLabel.Location = new System.Drawing.Point(30, 279);
             rolLabel.Name = "rolLabel";
-            rolLabel.Size = new System.Drawing.Size(26, 13);
+            rolLabel.Size = new System.Drawing.Size(43, 24);
             rolLabel.TabIndex = 32;
             rolLabel.Text = "Rol:";
             // 
@@ -138,62 +152,69 @@
             // apellidoTextBox
             // 
             this.apellidoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "Apellido", true));
-            this.apellidoTextBox.Location = new System.Drawing.Point(164, 145);
+            this.apellidoTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.apellidoTextBox.Location = new System.Drawing.Point(142, 134);
             this.apellidoTextBox.Name = "apellidoTextBox";
-            this.apellidoTextBox.Size = new System.Drawing.Size(100, 20);
-            this.apellidoTextBox.TabIndex = 20;
+            this.apellidoTextBox.Size = new System.Drawing.Size(190, 29);
+            this.apellidoTextBox.TabIndex = 10;
             // 
             // celTextBox
             // 
             this.celTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "Cel", true));
-            this.celTextBox.Location = new System.Drawing.Point(164, 225);
+            this.celTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.celTextBox.Location = new System.Drawing.Point(143, 240);
             this.celTextBox.Name = "celTextBox";
-            this.celTextBox.Size = new System.Drawing.Size(100, 20);
-            this.celTextBox.TabIndex = 22;
+            this.celTextBox.Size = new System.Drawing.Size(190, 29);
+            this.celTextBox.TabIndex = 13;
             // 
             // ciTextBox
             // 
             this.ciTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "Ci", true));
-            this.ciTextBox.Location = new System.Drawing.Point(164, 93);
+            this.ciTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.ciTextBox.Location = new System.Drawing.Point(142, 59);
             this.ciTextBox.Name = "ciTextBox";
-            this.ciTextBox.Size = new System.Drawing.Size(100, 20);
-            this.ciTextBox.TabIndex = 24;
+            this.ciTextBox.Size = new System.Drawing.Size(190, 29);
+            this.ciTextBox.TabIndex = 8;
             // 
             // contraseniaTextBox
             // 
             this.contraseniaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "Contrasenia", true));
-            this.contraseniaTextBox.Location = new System.Drawing.Point(164, 199);
+            this.contraseniaTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.contraseniaTextBox.Location = new System.Drawing.Point(143, 204);
             this.contraseniaTextBox.Name = "contraseniaTextBox";
-            this.contraseniaTextBox.Size = new System.Drawing.Size(100, 20);
-            this.contraseniaTextBox.TabIndex = 28;
+            this.contraseniaTextBox.Size = new System.Drawing.Size(190, 29);
+            this.contraseniaTextBox.TabIndex = 12;
             // 
             // cuentaTextBox
             // 
             this.cuentaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "Cuenta", true));
-            this.cuentaTextBox.Location = new System.Drawing.Point(164, 173);
+            this.cuentaTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.cuentaTextBox.Location = new System.Drawing.Point(143, 169);
             this.cuentaTextBox.Name = "cuentaTextBox";
-            this.cuentaTextBox.Size = new System.Drawing.Size(100, 20);
-            this.cuentaTextBox.TabIndex = 30;
+            this.cuentaTextBox.Size = new System.Drawing.Size(190, 29);
+            this.cuentaTextBox.TabIndex = 11;
             // 
             // nombreTextBox
             // 
             this.nombreTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "Nombre", true));
-            this.nombreTextBox.Location = new System.Drawing.Point(164, 119);
+            this.nombreTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.nombreTextBox.Location = new System.Drawing.Point(142, 97);
             this.nombreTextBox.Name = "nombreTextBox";
-            this.nombreTextBox.Size = new System.Drawing.Size(100, 20);
-            this.nombreTextBox.TabIndex = 32;
+            this.nombreTextBox.Size = new System.Drawing.Size(190, 29);
+            this.nombreTextBox.TabIndex = 9;
             // 
             // rolComboBox
             // 
             this.rolComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "Rol", true));
+            this.rolComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.rolComboBox.FormattingEnabled = true;
             this.rolComboBox.Items.AddRange(new object[] {
-            "gg1",
-            "gg2"});
-            this.rolComboBox.Location = new System.Drawing.Point(164, 258);
+            "AUXILIAR",
+            "ADMINISTRADOR"});
+            this.rolComboBox.Location = new System.Drawing.Point(143, 276);
             this.rolComboBox.Name = "rolComboBox";
-            this.rolComboBox.Size = new System.Drawing.Size(121, 21);
-            this.rolComboBox.TabIndex = 33;
+            this.rolComboBox.Size = new System.Drawing.Size(189, 32);
+            this.rolComboBox.TabIndex = 14;
             // 
             // frmUsuario
             // 
@@ -217,6 +238,7 @@
             this.Name = "frmUsuario";
             this.Text = "frmUsuario";
             this.Load += new System.EventHandler(this.frmUsuario_Load);
+            this.Controls.SetChildIndex(this.label1, 0);
             this.Controls.SetChildIndex(this.btnCancelar, 0);
             this.Controls.SetChildIndex(this.btnAceptar, 0);
             this.Controls.SetChildIndex(this.nombreTextBox, 0);
