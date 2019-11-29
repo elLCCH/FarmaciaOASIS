@@ -614,5 +614,29 @@ namespace FarmaciaOASIS.Vistas.VentanasCruds
                 e.Handled = true;
             }
         }
+
+        private void BtnBuscarCliente_Click(object sender, EventArgs e)
+        {
+
+            clienteBindingSource.DataSource = _objUsuario.Listar("");
+            panelBuscarCliente.Visible = true;
+        }
+
+        private void BtnSelecCliente_Click(object sender, EventArgs e)
+        {
+            panelBuscarCliente.Visible = false;
+            txtCiClie.Text = ciLabel1.Text;
+            btnRegProd.Enabled = true;
+        }
+
+        private void TxtCiClie_TextChanged(object sender, EventArgs e)
+        {
+            btnRegProd.Enabled = false;
+        }
+
+        private void TextBox1_TextChanged(object sender, EventArgs e)
+        {
+            clienteBindingSource.DataSource = _objUsuario.Listar(txtBuscarCliente.Text);
+        }
     }
 }

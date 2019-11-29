@@ -102,6 +102,15 @@
             this.txtNoAutorizacion = new System.Windows.Forms.TextBox();
             this.bdvCliente = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.bdvMed = new Bunifu.Framework.UI.BunifuDragControl(this.components);
+            this.panelBuscarCliente = new System.Windows.Forms.Panel();
+            this.label16 = new System.Windows.Forms.Label();
+            this.txtBuscarCliente = new System.Windows.Forms.TextBox();
+            this.btnSelecCliente = new System.Windows.Forms.Button();
+            this.clienteDataGridView = new System.Windows.Forms.DataGridView();
+            this.Apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.btnBuscarCliente = new System.Windows.Forms.Button();
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.clienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -114,6 +123,7 @@
             this.detalleFacturaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.facturaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.usuarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.bdcBuscarCliente = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             ciLabel = new System.Windows.Forms.Label();
             cantidadLabel = new System.Windows.Forms.Label();
             pUnitLabel = new System.Windows.Forms.Label();
@@ -132,6 +142,8 @@
             this.PanelMed.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.medicamentoDataGridView)).BeginInit();
             this.panelCliente.SuspendLayout();
+            this.panelBuscarCliente.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.clienteDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.medicamentoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.detalleFacturaBindingSource)).BeginInit();
@@ -304,6 +316,7 @@
             this.txtCiClie.Name = "txtCiClie";
             this.txtCiClie.Size = new System.Drawing.Size(100, 22);
             this.txtCiClie.TabIndex = 8;
+            this.txtCiClie.TextChanged += new System.EventHandler(this.TxtCiClie_TextChanged);
             this.txtCiClie.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtCiClie_KeyPress);
             this.txtCiClie.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TxtCiClie_KeyUp);
             // 
@@ -327,6 +340,7 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.btnBuscarCliente);
             this.groupBox1.Controls.Add(pUnitLabel);
             this.groupBox1.Controls.Add(this.pUnitLabel1);
             this.groupBox1.Controls.Add(cantidadLabel);
@@ -722,7 +736,7 @@
             this.PanelMed.Controls.Add(this.medicamentoDataGridView);
             this.PanelMed.Controls.Add(this.btnAceptarRP);
             this.PanelMed.Controls.Add(this.btnCancelarRP);
-            this.PanelMed.Location = new System.Drawing.Point(662, 22);
+            this.PanelMed.Location = new System.Drawing.Point(662, 12);
             this.PanelMed.Name = "PanelMed";
             this.PanelMed.Size = new System.Drawing.Size(478, 414);
             this.PanelMed.TabIndex = 48;
@@ -937,6 +951,110 @@
             this.txtNoAutorizacion.TabIndex = 57;
             this.txtNoAutorizacion.Text = "55555";
             // 
+            // panelBuscarCliente
+            // 
+            this.panelBuscarCliente.BackColor = System.Drawing.Color.Teal;
+            this.panelBuscarCliente.Controls.Add(this.clienteDataGridView);
+            this.panelBuscarCliente.Controls.Add(this.label16);
+            this.panelBuscarCliente.Controls.Add(this.txtBuscarCliente);
+            this.panelBuscarCliente.Controls.Add(this.btnSelecCliente);
+            this.panelBuscarCliente.Location = new System.Drawing.Point(251, 63);
+            this.panelBuscarCliente.Name = "panelBuscarCliente";
+            this.panelBuscarCliente.Size = new System.Drawing.Size(478, 414);
+            this.panelBuscarCliente.TabIndex = 92;
+            this.panelBuscarCliente.Visible = false;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.ForeColor = System.Drawing.Color.Black;
+            this.label16.Location = new System.Drawing.Point(130, 22);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(220, 31);
+            this.label16.TabIndex = 41;
+            this.label16.Text = "Buscar Clientes";
+            // 
+            // txtBuscarCliente
+            // 
+            this.txtBuscarCliente.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtBuscarCliente.Location = new System.Drawing.Point(35, 69);
+            this.txtBuscarCliente.MaxLength = 50;
+            this.txtBuscarCliente.Name = "txtBuscarCliente";
+            this.txtBuscarCliente.Size = new System.Drawing.Size(413, 20);
+            this.txtBuscarCliente.TabIndex = 80;
+            this.txtBuscarCliente.TextChanged += new System.EventHandler(this.TextBox1_TextChanged);
+            // 
+            // btnSelecCliente
+            // 
+            this.btnSelecCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(53)))), ((int)(((byte)(73)))));
+            this.btnSelecCliente.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(159)))), ((int)(((byte)(127)))));
+            this.btnSelecCliente.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.btnSelecCliente.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(118)))), ((int)(((byte)(126)))));
+            this.btnSelecCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSelecCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSelecCliente.ForeColor = System.Drawing.Color.LightGray;
+            this.btnSelecCliente.Image = ((System.Drawing.Image)(resources.GetObject("btnSelecCliente.Image")));
+            this.btnSelecCliente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSelecCliente.Location = new System.Drawing.Point(177, 348);
+            this.btnSelecCliente.Name = "btnSelecCliente";
+            this.btnSelecCliente.Size = new System.Drawing.Size(122, 40);
+            this.btnSelecCliente.TabIndex = 90;
+            this.btnSelecCliente.Text = "Aceptar";
+            this.btnSelecCliente.UseVisualStyleBackColor = false;
+            this.btnSelecCliente.Click += new System.EventHandler(this.BtnSelecCliente_Click);
+            // 
+            // clienteDataGridView
+            // 
+            this.clienteDataGridView.AllowUserToAddRows = false;
+            this.clienteDataGridView.AllowUserToDeleteRows = false;
+            this.clienteDataGridView.AutoGenerateColumns = false;
+            this.clienteDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.clienteDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn9,
+            this.dataGridViewTextBoxColumn10,
+            this.Apellido});
+            this.clienteDataGridView.DataSource = this.clienteBindingSource;
+            this.clienteDataGridView.Location = new System.Drawing.Point(39, 105);
+            this.clienteDataGridView.Name = "clienteDataGridView";
+            this.clienteDataGridView.ReadOnly = true;
+            this.clienteDataGridView.Size = new System.Drawing.Size(415, 220);
+            this.clienteDataGridView.TabIndex = 91;
+            // 
+            // Apellido
+            // 
+            this.Apellido.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Apellido.DataPropertyName = "Apellido";
+            this.Apellido.HeaderText = "Apellido";
+            this.Apellido.Name = "Apellido";
+            this.Apellido.ReadOnly = true;
+            // 
+            // btnBuscarCliente
+            // 
+            this.btnBuscarCliente.Location = new System.Drawing.Point(283, 24);
+            this.btnBuscarCliente.Name = "btnBuscarCliente";
+            this.btnBuscarCliente.Size = new System.Drawing.Size(124, 48);
+            this.btnBuscarCliente.TabIndex = 27;
+            this.btnBuscarCliente.Text = "Buscar Cliente";
+            this.btnBuscarCliente.UseVisualStyleBackColor = true;
+            this.btnBuscarCliente.Click += new System.EventHandler(this.BtnBuscarCliente_Click);
+            // 
+            // dataGridViewTextBoxColumn9
+            // 
+            this.dataGridViewTextBoxColumn9.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn9.DataPropertyName = "Ci";
+            this.dataGridViewTextBoxColumn9.HeaderText = "Ci";
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            this.dataGridViewTextBoxColumn9.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn10
+            // 
+            this.dataGridViewTextBoxColumn10.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn10.DataPropertyName = "Nombre";
+            this.dataGridViewTextBoxColumn10.HeaderText = "Nombre";
+            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            this.dataGridViewTextBoxColumn10.ReadOnly = true;
+            // 
             // clienteBindingSource
             // 
             this.clienteBindingSource.DataSource = typeof(FarmaciaOASIS.Data.Cliente);
@@ -1006,6 +1124,13 @@
             // 
             this.usuarioBindingSource.DataSource = typeof(FarmaciaOASIS.Data.Usuario);
             // 
+            // bdcBuscarCliente
+            // 
+            this.bdcBuscarCliente.Fixed = false;
+            this.bdcBuscarCliente.Horizontal = true;
+            this.bdcBuscarCliente.TargetControl = this.panelBuscarCliente;
+            this.bdcBuscarCliente.Vertical = true;
+            // 
             // frmVentaProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1013,6 +1138,7 @@
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(130)))), ((int)(((byte)(185)))));
             this.ClientSize = new System.Drawing.Size(1160, 609);
+            this.Controls.Add(this.panelBuscarCliente);
             this.Controls.Add(this.txtNoAutorizacion);
             this.Controls.Add(this.panelCliente);
             this.Controls.Add(this.PanelMed);
@@ -1025,6 +1151,7 @@
             this.Name = "frmVentaProductos";
             this.Text = "frmVentaProductos";
             this.Load += new System.EventHandler(this.frmVentaProductos_Load);
+            this.TextChanged += new System.EventHandler(this.TxtBuscarMedicamento_TextChanged);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             this.groupBox1.ResumeLayout(false);
@@ -1039,6 +1166,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.medicamentoDataGridView)).EndInit();
             this.panelCliente.ResumeLayout(false);
             this.panelCliente.PerformLayout();
+            this.panelBuscarCliente.ResumeLayout(false);
+            this.panelBuscarCliente.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.clienteDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.medicamentoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.detalleFacturaBindingSource)).EndInit();
@@ -1121,5 +1251,15 @@
         private System.Windows.Forms.Label label3;
         private Bunifu.Framework.UI.BunifuDragControl bdvCliente;
         private Bunifu.Framework.UI.BunifuDragControl bdvMed;
+        private System.Windows.Forms.Panel panelBuscarCliente;
+        private System.Windows.Forms.DataGridView clienteDataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
+        private System.Windows.Forms.DataGridViewTextBoxColumn Apellido;
+        private System.Windows.Forms.Label label16;
+        private System.Windows.Forms.TextBox txtBuscarCliente;
+        public System.Windows.Forms.Button btnSelecCliente;
+        private System.Windows.Forms.Button btnBuscarCliente;
+        private Bunifu.Framework.UI.BunifuDragControl bdcBuscarCliente;
     }
 }
