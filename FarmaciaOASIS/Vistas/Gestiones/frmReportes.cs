@@ -17,6 +17,7 @@ namespace FarmaciaOASIS.Vistas.Gestiones
     public partial class frmReportes : frmGestion
     {
         DetalleFacturaController _DFac = new DetalleFacturaController();
+        MedicamentoController _med = new MedicamentoController();
         public frmReportes()
         {
             InitializeComponent();
@@ -139,7 +140,7 @@ namespace FarmaciaOASIS.Vistas.Gestiones
                 {
                     string i = "";
                     /////AQUI VIENE LA FUNCION DEL NOMBRE DEL MEDICAMNTO
-                    nommed = i + "A";
+                    nommed = _med.ObtenerNombreMed(Convert.ToInt32(row.Cells["CodMed"].Value));
                     cantidad = Convert.ToString(row.Cells["ColCant"].Value);
                     PrecU = Convert.ToString(row.Cells["ColPre"].Value);
                     //TotalPago = TotalPago + (Convert.ToInt32(row.Cells["ColPre"].Value))* (Convert.ToInt32(row.Cells["ColCant"].Value));

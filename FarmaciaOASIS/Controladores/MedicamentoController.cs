@@ -37,5 +37,12 @@ namespace FarmaciaOASIS.Controladores
         {
             return _db.Medicamento.Where(x => x.CodMed == pCodMed).ToList();
         }
+        internal string ObtenerNombreMed(int pCodMed)
+        {
+            //return _db.Medicamento.Select(x=>x.NomMed)
+            var Namemed = _db.Medicamento.Where(s => s.CodMed == pCodMed)
+                          .Select(s => s.NomMed).ToString();
+            return Namemed;
+        }
     }
 }
