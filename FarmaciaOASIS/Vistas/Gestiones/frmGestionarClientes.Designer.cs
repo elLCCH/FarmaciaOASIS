@@ -89,7 +89,9 @@
             // txtBusqueda
             // 
             this.txtBusqueda.BackColor = System.Drawing.Color.SpringGreen;
+            this.txtBusqueda.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtBusqueda.Location = new System.Drawing.Point(119, 84);
+            this.txtBusqueda.MaxLength = 20;
             this.txtBusqueda.Size = new System.Drawing.Size(546, 19);
             this.txtBusqueda.Text = "";
             this.txtBusqueda.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TxtBusqueda_KeyUp);
@@ -202,6 +204,7 @@
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Posición";
             this.bindingNavigatorPositionItem.AutoSize = false;
+            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
             this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 22);
             this.bindingNavigatorPositionItem.Text = "0";
@@ -342,15 +345,15 @@
             this.Name = "frmGestionarClientes";
             this.Text = "frmGestionarClientes";
             this.Load += new System.EventHandler(this.frmGestionarClientes_Load);
-            this.Controls.SetChildIndex(this.txtBusqueda, 0);
-            this.Controls.SetChildIndex(this.btnRegistrar, 0);
-            this.Controls.SetChildIndex(this.btnModificar, 0);
-            this.Controls.SetChildIndex(this.btnEliminar, 0);
             this.Controls.SetChildIndex(this.label1, 0);
             this.Controls.SetChildIndex(this.clienteBindingNavigator, 0);
             this.Controls.SetChildIndex(this.clienteDataGridView, 0);
             this.Controls.SetChildIndex(this.ciLabel1, 0);
             this.Controls.SetChildIndex(ciLabel, 0);
+            this.Controls.SetChildIndex(this.txtBusqueda, 0);
+            this.Controls.SetChildIndex(this.btnRegistrar, 0);
+            this.Controls.SetChildIndex(this.btnModificar, 0);
+            this.Controls.SetChildIndex(this.btnEliminar, 0);
             ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clienteBindingNavigator)).EndInit();
             this.clienteBindingNavigator.ResumeLayout(false);

@@ -37,6 +37,10 @@
             System.Windows.Forms.Label fechaLabel;
             this.detalleFacturaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.detalleFacturaDataGridView = new System.Windows.Forms.DataGridView();
+            this.ColNumFact = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CodMed = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColCant = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColPre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreLabel1 = new System.Windows.Forms.Label();
             this.apellidoLabel1 = new System.Windows.Forms.Label();
             this.ciLabel1 = new System.Windows.Forms.Label();
@@ -45,10 +49,6 @@
             this.fechaLabel1 = new System.Windows.Forms.Label();
             this.lblTotal = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.ColNumFact = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CodMed = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColCant = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColPre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             nombreLabel = new System.Windows.Forms.Label();
             apellidoLabel = new System.Windows.Forms.Label();
             ciLabel = new System.Windows.Forms.Label();
@@ -80,8 +80,10 @@
             // 
             // txtBusqueda
             // 
+            this.txtBusqueda.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtBusqueda.Location = new System.Drawing.Point(31, 60);
             this.txtBusqueda.Text = "";
+            this.txtBusqueda.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtBusqueda_KeyPress);
             this.txtBusqueda.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TxtBusqueda_KeyUp);
             // 
             // nombreLabel
@@ -172,6 +174,34 @@
             this.detalleFacturaDataGridView.Size = new System.Drawing.Size(451, 265);
             this.detalleFacturaDataGridView.TabIndex = 12;
             // 
+            // ColNumFact
+            // 
+            this.ColNumFact.DataPropertyName = "NoFactura";
+            this.ColNumFact.HeaderText = "NoFactura";
+            this.ColNumFact.Name = "ColNumFact";
+            this.ColNumFact.ReadOnly = true;
+            // 
+            // CodMed
+            // 
+            this.CodMed.DataPropertyName = "CodMed";
+            this.CodMed.HeaderText = "CodMed";
+            this.CodMed.Name = "CodMed";
+            this.CodMed.ReadOnly = true;
+            // 
+            // ColCant
+            // 
+            this.ColCant.DataPropertyName = "CantMed";
+            this.ColCant.HeaderText = "CantMed";
+            this.ColCant.Name = "ColCant";
+            this.ColCant.ReadOnly = true;
+            // 
+            // ColPre
+            // 
+            this.ColPre.DataPropertyName = "Precio";
+            this.ColPre.HeaderText = "Precio";
+            this.ColPre.Name = "ColPre";
+            this.ColPre.ReadOnly = true;
+            // 
             // nombreLabel1
             // 
             this.nombreLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.detalleFacturaBindingSource, "Factura.Cliente.Nombre", true));
@@ -259,34 +289,6 @@
             this.label1.Size = new System.Drawing.Size(346, 31);
             this.label1.TabIndex = 21;
             this.label1.Text = "REPORTE DE FACTURA";
-            // 
-            // ColNumFact
-            // 
-            this.ColNumFact.DataPropertyName = "NoFactura";
-            this.ColNumFact.HeaderText = "NoFactura";
-            this.ColNumFact.Name = "ColNumFact";
-            this.ColNumFact.ReadOnly = true;
-            // 
-            // CodMed
-            // 
-            this.CodMed.DataPropertyName = "CodMed";
-            this.CodMed.HeaderText = "CodMed";
-            this.CodMed.Name = "CodMed";
-            this.CodMed.ReadOnly = true;
-            // 
-            // ColCant
-            // 
-            this.ColCant.DataPropertyName = "CantMed";
-            this.ColCant.HeaderText = "CantMed";
-            this.ColCant.Name = "ColCant";
-            this.ColCant.ReadOnly = true;
-            // 
-            // ColPre
-            // 
-            this.ColPre.DataPropertyName = "Precio";
-            this.ColPre.HeaderText = "Precio";
-            this.ColPre.Name = "ColPre";
-            this.ColPre.ReadOnly = true;
             // 
             // frmReportes
             // 

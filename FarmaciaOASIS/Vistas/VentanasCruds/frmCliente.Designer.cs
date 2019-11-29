@@ -103,27 +103,33 @@
             // 
             // apellidoTextBox
             // 
+            this.apellidoTextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.apellidoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clienteBindingSource, "Apellido", true));
             this.apellidoTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.apellidoTextBox.Location = new System.Drawing.Point(124, 214);
+            this.apellidoTextBox.MaxLength = 30;
             this.apellidoTextBox.Name = "apellidoTextBox";
             this.apellidoTextBox.Size = new System.Drawing.Size(209, 29);
             this.apellidoTextBox.TabIndex = 10;
             // 
             // ciTextBox
             // 
+            this.ciTextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.ciTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clienteBindingSource, "Ci", true));
             this.ciTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ciTextBox.Location = new System.Drawing.Point(124, 121);
+            this.ciTextBox.MaxLength = 15;
             this.ciTextBox.Name = "ciTextBox";
             this.ciTextBox.Size = new System.Drawing.Size(209, 29);
             this.ciTextBox.TabIndex = 8;
             // 
             // nombreTextBox
             // 
+            this.nombreTextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.nombreTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clienteBindingSource, "Nombre", true));
             this.nombreTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nombreTextBox.Location = new System.Drawing.Point(124, 168);
+            this.nombreTextBox.MaxLength = 30;
             this.nombreTextBox.Name = "nombreTextBox";
             this.nombreTextBox.Size = new System.Drawing.Size(209, 29);
             this.nombreTextBox.TabIndex = 9;

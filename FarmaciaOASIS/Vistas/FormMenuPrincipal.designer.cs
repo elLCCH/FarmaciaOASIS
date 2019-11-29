@@ -39,6 +39,7 @@
             this.panelContenedor = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
             this.codUsuarioLabel1 = new System.Windows.Forms.Label();
+            this.usuarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.rolLabel1 = new System.Windows.Forms.Label();
             this.ciLabel1 = new System.Windows.Forms.Label();
             this.apellidoLabel1 = new System.Windows.Forms.Label();
@@ -69,7 +70,6 @@
             this.tmMostrarMenu = new System.Windows.Forms.Timer(this.components);
             this.tmOcultarMenu = new System.Windows.Forms.Timer(this.components);
             this.tmFechaHora = new System.Windows.Forms.Timer(this.components);
-            this.usuarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
             nombreLabel = new System.Windows.Forms.Label();
             apellidoLabel = new System.Windows.Forms.Label();
             ciLabel = new System.Windows.Forms.Label();
@@ -77,6 +77,7 @@
             codUsuarioLabel = new System.Windows.Forms.Label();
             this.panel1ContenedorPrincipal.SuspendLayout();
             this.panel1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             this.panelMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMenu)).BeginInit();
@@ -91,7 +92,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMaximizar)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // nombreLabel
@@ -159,7 +159,7 @@
             this.panel1ContenedorPrincipal.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1ContenedorPrincipal.Location = new System.Drawing.Point(0, 0);
             this.panel1ContenedorPrincipal.Name = "panel1ContenedorPrincipal";
-            this.panel1ContenedorPrincipal.Size = new System.Drawing.Size(1100, 780);
+            this.panel1ContenedorPrincipal.Size = new System.Drawing.Size(1100, 583);
             this.panel1ContenedorPrincipal.TabIndex = 0;
             // 
             // panelContenedor
@@ -168,7 +168,7 @@
             this.panelContenedor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelContenedor.Location = new System.Drawing.Point(230, 50);
             this.panelContenedor.Name = "panelContenedor";
-            this.panelContenedor.Size = new System.Drawing.Size(870, 619);
+            this.panelContenedor.Size = new System.Drawing.Size(870, 422);
             this.panelContenedor.TabIndex = 2;
             // 
             // panel1
@@ -188,7 +188,7 @@
             this.panel1.Controls.Add(this.pictureBox7);
             this.panel1.Controls.Add(this.lblHora);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(230, 669);
+            this.panel1.Location = new System.Drawing.Point(230, 472);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(870, 111);
             this.panel1.TabIndex = 5;
@@ -203,6 +203,10 @@
             this.codUsuarioLabel1.Size = new System.Drawing.Size(100, 23);
             this.codUsuarioLabel1.TabIndex = 14;
             this.codUsuarioLabel1.Text = "aa";
+            // 
+            // usuarioBindingSource
+            // 
+            this.usuarioBindingSource.DataSource = typeof(FarmaciaOASIS.Data.Usuario);
             // 
             // rolLabel1
             // 
@@ -301,7 +305,7 @@
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 50);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(230, 730);
+            this.panelMenu.Size = new System.Drawing.Size(230, 533);
             this.panelMenu.TabIndex = 2;
             // 
             // btnProveedores
@@ -337,7 +341,7 @@
             this.btnCerrarSesion.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.btnCerrarSesion.Image = global::FarmaciaOASIS.Properties.Resources.CerrarSesion2;
             this.btnCerrarSesion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCerrarSesion.Location = new System.Drawing.Point(0, 640);
+            this.btnCerrarSesion.Location = new System.Drawing.Point(0, 443);
             this.btnCerrarSesion.Name = "btnCerrarSesion";
             this.btnCerrarSesion.Size = new System.Drawing.Size(230, 97);
             this.btnCerrarSesion.TabIndex = 7;
@@ -597,16 +601,12 @@
             this.tmFechaHora.Enabled = true;
             this.tmFechaHora.Tick += new System.EventHandler(this.tmFechaHora_Tick);
             // 
-            // usuarioBindingSource
-            // 
-            this.usuarioBindingSource.DataSource = typeof(FarmaciaOASIS.Data.Usuario);
-            // 
             // FormMenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1100, 780);
+            this.ClientSize = new System.Drawing.Size(1100, 583);
             this.Controls.Add(this.panel1ContenedorPrincipal);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
@@ -618,6 +618,7 @@
             this.panel1ContenedorPrincipal.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             this.panelMenu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnMenu)).EndInit();
@@ -632,7 +633,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMaximizar)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

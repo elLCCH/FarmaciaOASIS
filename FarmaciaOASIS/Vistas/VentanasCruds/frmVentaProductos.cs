@@ -49,7 +49,7 @@ namespace FarmaciaOASIS.Vistas.VentanasCruds
         private void BtnRegistrarCliente_Click(object sender, EventArgs e)
         {
             clienteBindingSource.AddNew();
-            panelxd.Visible = true;
+            panelCliente.Visible = true;
             Inhabilitar();
         }
         private Cliente CargarDatos()
@@ -68,7 +68,7 @@ namespace FarmaciaOASIS.Vistas.VentanasCruds
                 txtCiClie.Text = ciTextBox.Text;
                 nombreLabel2.Text = nombreTextBox.Text;
                 apellidoLabel2.Text = apellidoTextBox.Text;
-                panelxd.Visible = false;
+                panelCliente.Visible = false;
                 clienteBindingSource.DataSource = _objUsuario.BuscarPorCI(ciTextBox.Text);
                 txtCiClie.Focus();
                 habilitar();
@@ -79,7 +79,7 @@ namespace FarmaciaOASIS.Vistas.VentanasCruds
 
         private void BtnCancelar_Click(object sender, EventArgs e)
         {
-            panelxd.Visible = false;
+            panelCliente.Visible = false;
             habilitar();
         }
 
@@ -183,7 +183,7 @@ namespace FarmaciaOASIS.Vistas.VentanasCruds
             else
             {
                 int Total;
-                //txtCant.Text = txtCantAComprar.Text;
+                txtCant.Text = txtCantAComprar.Text;
                 Total = Convert.ToInt32(txtCant.Text) * Convert.ToInt32(pUnitLabel1.Text);
                 txtTotal.Text = Convert.ToString(Total);
                 PanelMed.Visible = false;
@@ -528,6 +528,122 @@ namespace FarmaciaOASIS.Vistas.VentanasCruds
         private void groupBox1_Enter(object sender, EventArgs e)
         {
 
+        }
+
+        private void TxtCiClie_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Para obligar a que sólo se introduzcan números
+            if (Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+              if (Char.IsControl(e.KeyChar)) //permitir teclas de control como retroceso
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                //el resto de teclas pulsadas se desactivan
+                e.Handled = true;
+            }
+        }
+
+        
+
+        private void TxtCant_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Para obligar a que sólo se introduzcan números
+            if (Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+              if (Char.IsControl(e.KeyChar)) //permitir teclas de control como retroceso
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                //el resto de teclas pulsadas se desactivan
+                e.Handled = true;
+            }
+        }
+
+        private void TxtNoAutorizacion_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Para obligar a que sólo se introduzcan números
+            if (Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+              if (Char.IsControl(e.KeyChar)) //permitir teclas de control como retroceso
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                //el resto de teclas pulsadas se desactivan
+                e.Handled = true;
+            }
+        }
+
+        private void CiTextBox_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Para obligar a que sólo se introduzcan números
+            if (Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+              if (Char.IsControl(e.KeyChar)) //permitir teclas de control como retroceso
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                //el resto de teclas pulsadas se desactivan
+                e.Handled = true;
+            }
+        }
+
+        private void TxtTotal_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Para obligar a que sólo se introduzcan números
+            if (Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+              if (Char.IsControl(e.KeyChar)) //permitir teclas de control como retroceso
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                //el resto de teclas pulsadas se desactivan
+                e.Handled = true;
+            }
+        }
+
+        private void TxtCantAComprar_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            //Para obligar a que sólo se introduzcan números
+            if (Char.IsDigit(e.KeyChar))
+            {
+                e.Handled = false;
+            }
+            else
+              if (Char.IsControl(e.KeyChar)) //permitir teclas de control como retroceso
+            {
+                e.Handled = false;
+            }
+            else
+            {
+                //el resto de teclas pulsadas se desactivan
+                e.Handled = true;
+            }
         }
     }
 }

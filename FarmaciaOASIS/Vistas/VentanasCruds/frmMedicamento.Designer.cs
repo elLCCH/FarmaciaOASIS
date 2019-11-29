@@ -30,19 +30,21 @@
         {
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label cantidadLabel;
-            System.Windows.Forms.Label codProvLabel;
             System.Windows.Forms.Label nomMedLabel;
             System.Windows.Forms.Label pUnitLabel;
+            System.Windows.Forms.Label codProvLabel;
             this.medicamentoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.cantidadTextBox = new System.Windows.Forms.TextBox();
-            this.codProvTextBox = new System.Windows.Forms.TextBox();
             this.nomMedTextBox = new System.Windows.Forms.TextBox();
             this.pUnitTextBox = new System.Windows.Forms.TextBox();
+            this.codProvComboBox = new System.Windows.Forms.ComboBox();
+            this.proveedorBindingSource = new System.Windows.Forms.BindingSource(this.components);
             cantidadLabel = new System.Windows.Forms.Label();
-            codProvLabel = new System.Windows.Forms.Label();
             nomMedLabel = new System.Windows.Forms.Label();
             pUnitLabel = new System.Windows.Forms.Label();
+            codProvLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.medicamentoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.proveedorBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // btnAceptar
@@ -78,17 +80,6 @@
             cantidadLabel.TabIndex = 18;
             cantidadLabel.Text = "Cantidad:";
             // 
-            // codProvLabel
-            // 
-            codProvLabel.AutoSize = true;
-            codProvLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            codProvLabel.ForeColor = System.Drawing.SystemColors.AppWorkspace;
-            codProvLabel.Location = new System.Drawing.Point(33, 266);
-            codProvLabel.Name = "codProvLabel";
-            codProvLabel.Size = new System.Drawing.Size(93, 24);
-            codProvLabel.TabIndex = 22;
-            codProvLabel.Text = "Cod Prov:";
-            // 
             // nomMedLabel
             // 
             nomMedLabel.AutoSize = true;
@@ -120,24 +111,19 @@
             this.cantidadTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.medicamentoBindingSource, "Cantidad", true));
             this.cantidadTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cantidadTextBox.Location = new System.Drawing.Point(132, 171);
+            this.cantidadTextBox.MaxLength = 5;
             this.cantidadTextBox.Name = "cantidadTextBox";
             this.cantidadTextBox.Size = new System.Drawing.Size(206, 29);
             this.cantidadTextBox.TabIndex = 9;
-            // 
-            // codProvTextBox
-            // 
-            this.codProvTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.medicamentoBindingSource, "CodProv", true));
-            this.codProvTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.codProvTextBox.Location = new System.Drawing.Point(132, 263);
-            this.codProvTextBox.Name = "codProvTextBox";
-            this.codProvTextBox.Size = new System.Drawing.Size(206, 29);
-            this.codProvTextBox.TabIndex = 11;
+            this.cantidadTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CantidadTextBox_KeyPress);
             // 
             // nomMedTextBox
             // 
+            this.nomMedTextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.nomMedTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.medicamentoBindingSource, "NomMed", true));
             this.nomMedTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nomMedTextBox.Location = new System.Drawing.Point(132, 127);
+            this.nomMedTextBox.MaxLength = 30;
             this.nomMedTextBox.Name = "nomMedTextBox";
             this.nomMedTextBox.Size = new System.Drawing.Size(206, 29);
             this.nomMedTextBox.TabIndex = 8;
@@ -147,19 +133,49 @@
             this.pUnitTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.medicamentoBindingSource, "PUnit", true));
             this.pUnitTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.pUnitTextBox.Location = new System.Drawing.Point(132, 216);
+            this.pUnitTextBox.MaxLength = 5;
             this.pUnitTextBox.Name = "pUnitTextBox";
             this.pUnitTextBox.Size = new System.Drawing.Size(206, 29);
             this.pUnitTextBox.TabIndex = 10;
+            this.pUnitTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PUnitTextBox_KeyPress);
+            // 
+            // codProvLabel
+            // 
+            codProvLabel.AutoSize = true;
+            codProvLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            codProvLabel.ForeColor = System.Drawing.SystemColors.ControlDark;
+            codProvLabel.Location = new System.Drawing.Point(33, 264);
+            codProvLabel.Name = "codProvLabel";
+            codProvLabel.Size = new System.Drawing.Size(93, 24);
+            codProvLabel.TabIndex = 26;
+            codProvLabel.Text = "Cod Prov:";
+            // 
+            // codProvComboBox
+            // 
+            this.codProvComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.medicamentoBindingSource, "CodProv", true));
+            this.codProvComboBox.DataSource = this.proveedorBindingSource;
+            this.codProvComboBox.DisplayMember = "Nombre";
+            this.codProvComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.codProvComboBox.FormattingEnabled = true;
+            this.codProvComboBox.Location = new System.Drawing.Point(132, 261);
+            this.codProvComboBox.Name = "codProvComboBox";
+            this.codProvComboBox.Size = new System.Drawing.Size(206, 32);
+            this.codProvComboBox.TabIndex = 27;
+            this.codProvComboBox.ValueMember = "Nombre";
+            // 
+            // proveedorBindingSource
+            // 
+            this.proveedorBindingSource.DataSource = typeof(FarmaciaOASIS.Data.Proveedor);
             // 
             // frmMedicamento
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(371, 407);
+            this.Controls.Add(codProvLabel);
+            this.Controls.Add(this.codProvComboBox);
             this.Controls.Add(cantidadLabel);
             this.Controls.Add(this.cantidadTextBox);
-            this.Controls.Add(codProvLabel);
-            this.Controls.Add(this.codProvTextBox);
             this.Controls.Add(nomMedLabel);
             this.Controls.Add(this.nomMedTextBox);
             this.Controls.Add(pUnitLabel);
@@ -172,13 +188,14 @@
             this.Controls.SetChildIndex(pUnitLabel, 0);
             this.Controls.SetChildIndex(this.nomMedTextBox, 0);
             this.Controls.SetChildIndex(nomMedLabel, 0);
-            this.Controls.SetChildIndex(this.codProvTextBox, 0);
-            this.Controls.SetChildIndex(codProvLabel, 0);
             this.Controls.SetChildIndex(this.cantidadTextBox, 0);
             this.Controls.SetChildIndex(cantidadLabel, 0);
             this.Controls.SetChildIndex(this.btnCancelar, 0);
             this.Controls.SetChildIndex(this.btnAceptar, 0);
+            this.Controls.SetChildIndex(this.codProvComboBox, 0);
+            this.Controls.SetChildIndex(codProvLabel, 0);
             ((System.ComponentModel.ISupportInitialize)(this.medicamentoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.proveedorBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -188,8 +205,9 @@
 
         private System.Windows.Forms.BindingSource medicamentoBindingSource;
         private System.Windows.Forms.TextBox cantidadTextBox;
-        private System.Windows.Forms.TextBox codProvTextBox;
         private System.Windows.Forms.TextBox nomMedTextBox;
         private System.Windows.Forms.TextBox pUnitTextBox;
+        private System.Windows.Forms.ComboBox codProvComboBox;
+        private System.Windows.Forms.BindingSource proveedorBindingSource;
     }
 }
