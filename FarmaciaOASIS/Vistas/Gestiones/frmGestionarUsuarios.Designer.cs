@@ -97,6 +97,8 @@
             // 
             // txtBusqueda
             // 
+            this.txtBusqueda.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtBusqueda.MaxLength = 25;
             this.txtBusqueda.Text = "";
             this.txtBusqueda.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TxtBusqueda_KeyUp);
             // 
@@ -216,6 +218,7 @@
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Posición";
             this.bindingNavigatorPositionItem.AutoSize = false;
+            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
             this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 22);
             this.bindingNavigatorPositionItem.Text = "0";

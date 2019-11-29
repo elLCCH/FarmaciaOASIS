@@ -151,9 +151,11 @@
             // 
             // apellidoTextBox
             // 
+            this.apellidoTextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.apellidoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "Apellido", true));
             this.apellidoTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.apellidoTextBox.Location = new System.Drawing.Point(142, 134);
+            this.apellidoTextBox.MaxLength = 30;
             this.apellidoTextBox.Name = "apellidoTextBox";
             this.apellidoTextBox.Size = new System.Drawing.Size(190, 29);
             this.apellidoTextBox.TabIndex = 10;
@@ -166,12 +168,15 @@
             this.celTextBox.Name = "celTextBox";
             this.celTextBox.Size = new System.Drawing.Size(190, 29);
             this.celTextBox.TabIndex = 13;
+            this.celTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.CelTextBox_KeyPress);
             // 
             // ciTextBox
             // 
+            this.ciTextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.ciTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "Ci", true));
             this.ciTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ciTextBox.Location = new System.Drawing.Point(142, 59);
+            this.ciTextBox.MaxLength = 15;
             this.ciTextBox.Name = "ciTextBox";
             this.ciTextBox.Size = new System.Drawing.Size(190, 29);
             this.ciTextBox.TabIndex = 8;
@@ -181,7 +186,9 @@
             this.contraseniaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "Contrasenia", true));
             this.contraseniaTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.contraseniaTextBox.Location = new System.Drawing.Point(143, 204);
+            this.contraseniaTextBox.MaxLength = 40;
             this.contraseniaTextBox.Name = "contraseniaTextBox";
+            this.contraseniaTextBox.PasswordChar = '*';
             this.contraseniaTextBox.Size = new System.Drawing.Size(190, 29);
             this.contraseniaTextBox.TabIndex = 12;
             // 
@@ -190,15 +197,18 @@
             this.cuentaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "Cuenta", true));
             this.cuentaTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.cuentaTextBox.Location = new System.Drawing.Point(143, 169);
+            this.cuentaTextBox.MaxLength = 30;
             this.cuentaTextBox.Name = "cuentaTextBox";
             this.cuentaTextBox.Size = new System.Drawing.Size(190, 29);
             this.cuentaTextBox.TabIndex = 11;
             // 
             // nombreTextBox
             // 
+            this.nombreTextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.nombreTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "Nombre", true));
             this.nombreTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nombreTextBox.Location = new System.Drawing.Point(142, 97);
+            this.nombreTextBox.MaxLength = 30;
             this.nombreTextBox.Name = "nombreTextBox";
             this.nombreTextBox.Size = new System.Drawing.Size(190, 29);
             this.nombreTextBox.TabIndex = 9;

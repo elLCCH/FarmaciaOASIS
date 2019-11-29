@@ -131,36 +131,44 @@
             // 
             // apellidoTextBox
             // 
+            this.apellidoTextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.apellidoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.proveedorBindingSource, "Apellido", true));
             this.apellidoTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.apellidoTextBox.Location = new System.Drawing.Point(125, 122);
+            this.apellidoTextBox.MaxLength = 30;
             this.apellidoTextBox.Name = "apellidoTextBox";
             this.apellidoTextBox.Size = new System.Drawing.Size(218, 29);
             this.apellidoTextBox.TabIndex = 9;
             // 
             // ciudadTextBox
             // 
+            this.ciudadTextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.ciudadTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.proveedorBindingSource, "Ciudad", true));
             this.ciudadTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ciudadTextBox.Location = new System.Drawing.Point(125, 167);
+            this.ciudadTextBox.MaxLength = 20;
             this.ciudadTextBox.Name = "ciudadTextBox";
             this.ciudadTextBox.Size = new System.Drawing.Size(218, 29);
             this.ciudadTextBox.TabIndex = 10;
             // 
             // direccionTextBox
             // 
+            this.direccionTextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.direccionTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.proveedorBindingSource, "Direccion", true));
             this.direccionTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.direccionTextBox.Location = new System.Drawing.Point(125, 214);
+            this.direccionTextBox.MaxLength = 50;
             this.direccionTextBox.Name = "direccionTextBox";
             this.direccionTextBox.Size = new System.Drawing.Size(218, 29);
             this.direccionTextBox.TabIndex = 11;
             // 
             // nombreTextBox
             // 
+            this.nombreTextBox.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.nombreTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.proveedorBindingSource, "Nombre", true));
             this.nombreTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nombreTextBox.Location = new System.Drawing.Point(125, 77);
+            this.nombreTextBox.MaxLength = 30;
             this.nombreTextBox.Name = "nombreTextBox";
             this.nombreTextBox.Size = new System.Drawing.Size(218, 29);
             this.nombreTextBox.TabIndex = 8;
@@ -170,9 +178,11 @@
             this.telfTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.proveedorBindingSource, "Telf", true));
             this.telfTextBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.telfTextBox.Location = new System.Drawing.Point(125, 259);
+            this.telfTextBox.MaxLength = 10;
             this.telfTextBox.Name = "telfTextBox";
             this.telfTextBox.Size = new System.Drawing.Size(218, 29);
             this.telfTextBox.TabIndex = 12;
+            this.telfTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TelfTextBox_KeyPress);
             // 
             // frmProveedor
             // 

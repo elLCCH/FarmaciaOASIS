@@ -77,6 +77,13 @@
             this.btnRegistrar.Location = new System.Drawing.Point(718, 110);
             this.btnRegistrar.Click += new System.EventHandler(this.BtnAgregar_Click);
             // 
+            // btnModificar
+            // 
+            this.btnModificar.FlatAppearance.BorderSize = 0;
+            this.btnModificar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(69)))), ((int)(((byte)(76)))));
+            this.btnModificar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(45)))), ((int)(((byte)(53)))));
+            this.btnModificar.Click += new System.EventHandler(this.BtnModificar_Click);
+            // 
             // btnEliminar
             // 
             this.btnEliminar.FlatAppearance.BorderSize = 0;
@@ -95,6 +102,8 @@
             // 
             // txtBusqueda
             // 
+            this.txtBusqueda.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtBusqueda.MaxLength = 20;
             this.txtBusqueda.Location = new System.Drawing.Point(317, 79);
             this.txtBusqueda.Text = "";
             this.txtBusqueda.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TxtBusqueda_KeyUp);
@@ -215,6 +224,7 @@
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Posición";
             this.bindingNavigatorPositionItem.AutoSize = false;
+            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
             this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 22);
             this.bindingNavigatorPositionItem.Text = "0";
@@ -395,6 +405,15 @@
             this.label2.Size = new System.Drawing.Size(82, 18);
             this.label2.TabIndex = 25;
             this.label2.Text = "Busqueda";
+            // 
+            // codProvLabel1
+            // 
+            this.codProvLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.proveedorBindingSource, "CodProv", true));
+            this.codProvLabel1.Location = new System.Drawing.Point(97, 116);
+            this.codProvLabel1.Name = "codProvLabel1";
+            this.codProvLabel1.Size = new System.Drawing.Size(100, 23);
+            this.codProvLabel1.TabIndex = 20;
+            this.codProvLabel1.Text = "label2";
             // 
             // frmGestionarProveedores
             // 

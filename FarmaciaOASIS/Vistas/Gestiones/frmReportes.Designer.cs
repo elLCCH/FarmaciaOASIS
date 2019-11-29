@@ -52,7 +52,10 @@
             this.fechaLabel1 = new System.Windows.Forms.Label();
             this.lblTotal = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
+            this.ColNumFact = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CodMed = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColCant = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColPre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             nombreLabel = new System.Windows.Forms.Label();
             apellidoLabel = new System.Windows.Forms.Label();
             ciLabel = new System.Windows.Forms.Label();
@@ -96,7 +99,10 @@
             // 
             this.txtBusqueda.Location = new System.Drawing.Point(303, 55);
             this.txtBusqueda.Size = new System.Drawing.Size(457, 24);
+            this.txtBusqueda.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtBusqueda.Location = new System.Drawing.Point(31, 60);
             this.txtBusqueda.Text = "";
+            this.txtBusqueda.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtBusqueda_KeyPress);
             this.txtBusqueda.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TxtBusqueda_KeyUp);
             // 
             // pictureBox2

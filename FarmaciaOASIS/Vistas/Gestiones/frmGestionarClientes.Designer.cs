@@ -93,8 +93,9 @@
             // 
             // txtBusqueda
             // 
-            this.txtBusqueda.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBusqueda.Location = new System.Drawing.Point(296, 88);
+            this.txtBusqueda.BackColor = System.Drawing.Color.SpringGreen;
+            this.txtBusqueda.Location = new System.Drawing.Point(119, 84);
+            this.txtBusqueda.Size = new System.Drawing.Size(546, 19);
             this.txtBusqueda.Text = "";
             this.txtBusqueda.TextChanged += new System.EventHandler(this.txtBusqueda_TextChanged);
             this.txtBusqueda.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TxtBusqueda_KeyUp);
@@ -217,6 +218,7 @@
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Posición";
             this.bindingNavigatorPositionItem.AutoSize = false;
+            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
             this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 22);
             this.bindingNavigatorPositionItem.Text = "0";
@@ -396,8 +398,6 @@
             this.Name = "frmGestionarClientes";
             this.Text = "frmGestionarClientes";
             this.Load += new System.EventHandler(this.frmGestionarClientes_Load);
-            this.Controls.SetChildIndex(this.pictureBox2, 0);
-            this.Controls.SetChildIndex(this.pictureBox1, 0);
             this.Controls.SetChildIndex(this.txtBusqueda, 0);
             this.Controls.SetChildIndex(this.btnRegistrar, 0);
             this.Controls.SetChildIndex(this.btnModificar, 0);
@@ -407,9 +407,7 @@
             this.Controls.SetChildIndex(this.clienteDataGridView, 0);
             this.Controls.SetChildIndex(this.ciLabel1, 0);
             this.Controls.SetChildIndex(ciLabel, 0);
-            this.Controls.SetChildIndex(this.label2, 0);
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clienteBindingNavigator)).EndInit();
             this.clienteBindingNavigator.ResumeLayout(false);
             this.clienteBindingNavigator.PerformLayout();
