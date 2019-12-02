@@ -14,7 +14,7 @@ namespace FarmaciaOASIS.Vistas.Gestiones
 {
     public partial class frmGestionarClientes : frmGestion
     {
-        ClienteController _objUsuario = new ClienteController();
+        ClienteController _objCliente = new ClienteController();
         public frmGestionarClientes()
         {
             InitializeComponent();
@@ -36,7 +36,7 @@ namespace FarmaciaOASIS.Vistas.Gestiones
         private void Listar(string pBuscar)
         {
 
-            clienteBindingSource.DataSource = _objUsuario.Listar(pBuscar);
+            clienteBindingSource.DataSource = _objCliente.Listar(pBuscar);
             // clienteDataGridView.Columns["imagen"].Visible = false;
 
         }
@@ -45,17 +45,17 @@ namespace FarmaciaOASIS.Vistas.Gestiones
         {
             frmCliente AddUser = new frmCliente(ciLabel1.Text);
             AddUser.ShowDialog();
-            _objUsuario = new ClienteController();
+            _objCliente = new ClienteController();
             Listar(txtBusqueda.Text);
         }
 
         private void BtnEliminar_Click(object sender, EventArgs e)
         {
-            DialogResult res = MessageBox.Show("ELiminar registro?", "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult res = MessageBox.Show("¿ESTA SEGURO DE ELIMINAR ESTE REGISTRO?", "AVISO", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (res == DialogResult.Yes)
             {
-                _objUsuario.Eliminar(ciLabel1.Text);
-                _objUsuario = new ClienteController();
+                _objCliente.Eliminar(ciLabel1.Text);
+                _objCliente = new ClienteController();
                 Listar(txtBusqueda.Text);
             }
         }
@@ -125,11 +125,11 @@ namespace FarmaciaOASIS.Vistas.Gestiones
 
                 // MessageBox.Show("hola");
 
-                DialogResult res = MessageBox.Show("ELiminar registro?", "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                DialogResult res = MessageBox.Show("¿ESTA SEGURO DE ELIMINAR ESTE REGISTRO?", "AVISO", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (res == DialogResult.Yes)
                 {
-                    _objUsuario.Eliminar(ciLabel1.Text);
-                    _objUsuario = new ClienteController();
+                    _objCliente.Eliminar(ciLabel1.Text);
+                    _objCliente = new ClienteController();
                     Listar(txtBusqueda.Text);
                 }
 
@@ -140,7 +140,7 @@ namespace FarmaciaOASIS.Vistas.Gestiones
                 // MessageBox.Show("XD");
                 frmCliente AddUser = new frmCliente(ciLabel1.Text);
                 AddUser.ShowDialog();
-                _objUsuario = new ClienteController();
+                _objCliente = new ClienteController();
                 Listar(txtBusqueda.Text);
 
             }

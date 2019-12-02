@@ -99,6 +99,7 @@
             this.txtpass.TabIndex = 2;
             this.txtpass.Text = "Contraseña";
             this.txtpass.Enter += new System.EventHandler(this.txtpass_Enter);
+            this.txtpass.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Txtuser_KeyUp);
             this.txtpass.Leave += new System.EventHandler(this.txtpass_Leave);
             // 
             // txtuser
@@ -113,6 +114,7 @@
             this.txtuser.TabIndex = 1;
             this.txtuser.Text = "Usuario";
             this.txtuser.Enter += new System.EventHandler(this.txtuser_Enter);
+            this.txtuser.KeyUp += new System.Windows.Forms.KeyEventHandler(this.Txtuser_KeyUp);
             this.txtuser.Leave += new System.EventHandler(this.txtuser_Leave);
             // 
             // pictureBox1

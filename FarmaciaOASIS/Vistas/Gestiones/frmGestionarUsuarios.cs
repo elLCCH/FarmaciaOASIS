@@ -51,7 +51,7 @@ namespace FarmaciaOASIS.Vistas.Gestiones
 
         private void BtnEliminar_Click(object sender, EventArgs e)
         {
-            DialogResult res = MessageBox.Show("ELiminar registro?", "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult res = MessageBox.Show("¿ESTA SEGURO DE ELIMINAR ESTE REGISTRO?", "AVISO", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (res == DialogResult.Yes)
             {
                 _objUsuario.Eliminar(cuentaLabel1.Text);
@@ -120,7 +120,7 @@ namespace FarmaciaOASIS.Vistas.Gestiones
 
                 // MessageBox.Show("hola");
 
-                DialogResult res = MessageBox.Show("ELiminar registro?", "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                DialogResult res = MessageBox.Show("¿ESTA SEGURO DE ELIMINAR ESTE REGISTRO?", "AVISO", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (res == DialogResult.Yes)
                 {
                     _objUsuario.Eliminar(cuentaLabel1.Text);

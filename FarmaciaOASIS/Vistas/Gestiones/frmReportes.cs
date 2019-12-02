@@ -26,6 +26,7 @@ namespace FarmaciaOASIS.Vistas.Gestiones
         private void frmReportes_Load(object sender, EventArgs e)
         {
             ListarTodo();
+            txtBusqueda.Focus();
         }
 
         
@@ -41,6 +42,7 @@ namespace FarmaciaOASIS.Vistas.Gestiones
         {
 
             detalleFacturaBindingSource.DataSource = _DFac.ListarTodo();
+            btnRegistrar.Enabled = false;
 
         }
 
@@ -60,9 +62,20 @@ namespace FarmaciaOASIS.Vistas.Gestiones
                 else
                 {
                     Listar(txtBusqueda.Text);
-                    sumaTotalDGV();
+                    ListarSeleccionado();
+                    btnRegistrar.Enabled = true;
                 }
-                
+
+            }
+        }
+
+        private void ListarSeleccionado()
+        {
+            int TotalPago = 0;
+            foreach (DataGridViewRow row in detalleFacturaDataGridView.Rows)
+            {
+                TotalPago = TotalPago + (Convert.ToInt32(row.Cells["ColPre"].Value)) * (Convert.ToInt32(row.Cells["ColCant"].Value));
+                lblTotal.Text = Convert.ToString(TotalPago);
             }
         }
 
@@ -139,11 +152,21 @@ namespace FarmaciaOASIS.Vistas.Gestiones
                 foreach (DataGridViewRow row in detalleFacturaDataGridView.Rows)
                 {
                     string i = "";
+
                     /////AQUI VIENE LA FUNCION DEL NOMBRE DEL MEDICAMNTO
-                    nommed = _med.ObtenerNombreMed(Convert.ToInt32(row.Cells["CodMed"].Value));
+                    /////nommed = _med.ObtenerNombreMed(Convert.ToInt32(row.Cells["CodMed"].Value));
+                    ///
+                    int CodMedicamento = Convert.ToInt32(row.Cells["CodMed"].Value);
+                    medicamentoBindingSource.DataSource = _med.ListarPorCodMed(CodMedicamento);
+
+                    nommed = nomMedLabel1.Text;
+                    MessageBox.Show(nommed);
+                    //
+
+
                     cantidad = Convert.ToString(row.Cells["ColCant"].Value);
                     PrecU = Convert.ToString(row.Cells["ColPre"].Value);
-                    //TotalPago = TotalPago + (Convert.ToInt32(row.Cells["ColPre"].Value))* (Convert.ToInt32(row.Cells["ColCant"].Value));
+                    
                     //---------FACTURA----------------------------
                     tabla.AddCell(cantidad);
                     tabla.AddCell(nommed);
@@ -155,8 +178,7 @@ namespace FarmaciaOASIS.Vistas.Gestiones
                     tabla.AddCell(Convert.ToString(subt));
                     //---------FACTURA----------------------------
                 }
-                //lblTotal.Text = Convert.ToString(TotalPago);
-
+                
                 //---------FACTURA----------------------------
                 PdfPCell total = new PdfPCell(new Phrase("TOTAL:                    " + totalprods, new iTextSharp.text.Font(iTextSharp.text.Font.NORMAL, 12, iTextSharp.text.Font.BOLD, iTextSharp.text.BaseColor.BLACK)));
                 total.Colspan = 4;

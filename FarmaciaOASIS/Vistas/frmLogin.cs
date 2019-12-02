@@ -105,5 +105,14 @@ namespace FarmaciaOASIS.Vistas
         {
             Application.Exit();
         }
+
+        private void Txtuser_KeyUp(object sender, KeyEventArgs e)
+        {
+            if (e.KeyValue == 13)
+            {
+                e.Handled = true; //silencia el sonido enter
+                btnLogAceptar.PerformClick(); ;
+            }
+        }
     }
 }

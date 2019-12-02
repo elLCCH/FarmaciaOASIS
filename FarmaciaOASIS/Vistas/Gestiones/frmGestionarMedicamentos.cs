@@ -14,7 +14,7 @@ namespace FarmaciaOASIS.Vistas.Gestiones
 {
     public partial class frmGestionarMedicamentos : frmGestion
     {
-        MedicamentoController _objUsuario = new MedicamentoController();
+        MedicamentoController _objMedicamento = new MedicamentoController();
         public frmGestionarMedicamentos()
         {
             InitializeComponent();
@@ -36,7 +36,7 @@ namespace FarmaciaOASIS.Vistas.Gestiones
         private void Listar(string pBuscar)
         {
 
-            medicamentoBindingSource.DataSource = _objUsuario.Listar(pBuscar);
+            medicamentoBindingSource.DataSource = _objMedicamento.Listar(pBuscar);
 
         }
 
@@ -44,17 +44,17 @@ namespace FarmaciaOASIS.Vistas.Gestiones
         {
             frmMedicamento AddUser = new frmMedicamento(codMedLabel1.Text);
             AddUser.ShowDialog();
-            _objUsuario = new MedicamentoController();
+            _objMedicamento = new MedicamentoController();
             Listar(txtBusqueda.Text);
         }
 
         private void BtnEliminar_Click(object sender, EventArgs e)
         {
-            DialogResult res = MessageBox.Show("ELiminar registro?", "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            DialogResult res = MessageBox.Show("¿ESTA SEGURO DE ELIMINAR ESTE REGISTRO?", "AVISO", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
             if (res == DialogResult.Yes)
             {
-                _objUsuario.Eliminar(Convert.ToInt32(codMedLabel1.Text));
-                _objUsuario = new MedicamentoController();
+                _objMedicamento.Eliminar(Convert.ToInt32(codMedLabel1.Text));
+                _objMedicamento = new MedicamentoController();
                 Listar(txtBusqueda.Text);
             }
         }
@@ -124,11 +124,11 @@ namespace FarmaciaOASIS.Vistas.Gestiones
 
                 // MessageBox.Show("hola");
 
-                DialogResult res = MessageBox.Show("ELiminar registro?", "Eliminar", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+                DialogResult res = MessageBox.Show("¿ESTA SEGURO DE ELIMINAR ESTE REGISTRO?", "AVISO", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (res == DialogResult.Yes)
                 {
-                    _objUsuario.Eliminar(Convert.ToInt32(codMedLabel1.Text));
-                    _objUsuario = new MedicamentoController();
+                    _objMedicamento.Eliminar(Convert.ToInt32(codMedLabel1.Text));
+                    _objMedicamento = new MedicamentoController();
                     Listar(txtBusqueda.Text);
                 }
 
@@ -139,7 +139,7 @@ namespace FarmaciaOASIS.Vistas.Gestiones
                 // MessageBox.Show("XD");
                 frmMedicamento AddUser = new frmMedicamento(codMedLabel1.Text);
                 AddUser.ShowDialog();
-                _objUsuario = new MedicamentoController();
+                _objMedicamento = new MedicamentoController();
                 Listar(txtBusqueda.Text);
 
             }

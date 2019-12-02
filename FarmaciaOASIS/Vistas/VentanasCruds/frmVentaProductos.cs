@@ -18,23 +18,17 @@ namespace FarmaciaOASIS.Vistas.VentanasCruds
 {
     public partial class frmVentaProductos : Form
     {
-        ClienteController _objUsuario = new ClienteController();
+        ClienteController _objCliente = new ClienteController();
         MedicamentoController _med = new MedicamentoController();
         DetalleFacturaController _objDFac = new DetalleFacturaController();
         FacturaController _Factura = new FacturaController();
         int _Sesion=0;
-        //public frmVentaProductos()
-        //{
-        //    InitializeComponent();
-        //    clienteBindingSource.DataSource = _objUsuario.Listar("0");
-        //    medicamentoBindingSource.DataSource = _med.Listar("0");
-        //    detalleFacturaBindingSource.DataSource = _objDFac.Listar(1);
-        //}
+        
 
         public frmVentaProductos(int pIDSesion)
         {
             InitializeComponent();
-            clienteBindingSource.DataSource = _objUsuario.Listar("0");
+            clienteBindingSource.DataSource = _objCliente.Listar("0");
             medicamentoBindingSource.DataSource = _med.Listar("0");
             detalleFacturaBindingSource.DataSource = _objDFac.Listar(1);
             _Sesion = pIDSesion;
@@ -44,6 +38,8 @@ namespace FarmaciaOASIS.Vistas.VentanasCruds
             limpiar();
             //detalleFacturaBindingSource.AddNew();
             btnRegProd.Enabled = false;
+            btnEliminar.Enabled = false;
+            btnRegistrar.Enabled = false;
         }
 
         private void BtnRegistrarCliente_Click(object sender, EventArgs e)
@@ -61,7 +57,7 @@ namespace FarmaciaOASIS.Vistas.VentanasCruds
         private void BtnAceptar_Click(object sender, EventArgs e)
         {
             var reg = CargarDatos();
-            if (_objUsuario.Insertar(reg))
+            if (_objCliente.Insertar(reg))
             {
                 //MessageBox.Show("soy me");
                 MessageBox.Show("se inserto correctamente");
@@ -69,7 +65,7 @@ namespace FarmaciaOASIS.Vistas.VentanasCruds
                 nombreLabel2.Text = nombreTextBox.Text;
                 apellidoLabel2.Text = apellidoTextBox.Text;
                 panelCliente.Visible = false;
-                clienteBindingSource.DataSource = _objUsuario.BuscarPorCI(ciTextBox.Text);
+                clienteBindingSource.DataSource = _objCliente.BuscarPorCI(ciTextBox.Text);
                 txtCiClie.Focus();
                 habilitar();
                 //Close();
@@ -93,12 +89,30 @@ namespace FarmaciaOASIS.Vistas.VentanasCruds
                 MessageBox.Show("Seleccione una fila", "ATENCION!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             else
             {
-                btnColocarProd.Visible = true;
-                calcularPrecio();
-                btnColocarProd.Enabled = true;
-                btnColocarProd.Focus();
-                habilitar();
+                int CantActualProd = Convert.ToInt32(cantidadLabel3.Text);
+                if(Convert.ToInt32(txtCantAComprar.Text)<=CantActualProd)
+                {
+                    txtCant.Text = txtCantAComprar.Text;
+                    //procedimiento de calculo de precio en txt y llevado de info a comprar a textbox
+                    btnColocarProd.Visible = true;
+
+                    calcularPrecio();
+                    btnColocarProd.Enabled = true;
+                    btnColocarProd.Focus();
+                    habilitar();
+                }
+                else
+
+                {
+                    MessageBox.Show("NO HAY SUFICIENTES UNIDADES", "AVISO!!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                }
+                
+
             }
+            txtTotal.Enabled = false;
+            txtCant.Enabled = false;
+            btnRegistrarCliente.Enabled = false;
+            btnBuscarCliente.Enabled = false;
 
         }
         private void MedicamentoDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -128,6 +142,8 @@ namespace FarmaciaOASIS.Vistas.VentanasCruds
             txtCant.Enabled = false;
             btnEliminar.Enabled = false;
             btnRegistrar.Enabled = false;
+            btnLimpiar.Enabled = false;
+            btnBuscarCliente.Enabled = false;
         }
         private void habilitar()
         {
@@ -140,6 +156,8 @@ namespace FarmaciaOASIS.Vistas.VentanasCruds
             txtCant.Enabled = true;
             btnEliminar.Enabled = true;
             btnRegistrar.Enabled = true;
+            btnLimpiar.Enabled = true;
+            btnBuscarCliente.Enabled = true;
         }
         private void BtnCancelarRP_Click(object sender, EventArgs e)
         {
@@ -175,7 +193,7 @@ namespace FarmaciaOASIS.Vistas.VentanasCruds
             if (txtCant.Text == "")
             {
                 int Total;
-                txtCant.Text = txtCantAComprar.Text;
+                //txtCant.Text = txtCantAComprar.Text;
                 Total = Convert.ToInt32(txtCantAComprar.Text) * Convert.ToInt32(pUnitLabel1.Text);
                 txtTotal.Text = Convert.ToString(Total);
                 PanelMed.Visible = false;
@@ -183,7 +201,7 @@ namespace FarmaciaOASIS.Vistas.VentanasCruds
             else
             {
                 int Total;
-                txtCant.Text = txtCantAComprar.Text;
+                //txtCant.Text = txtCantAComprar.Text;
                 Total = Convert.ToInt32(txtCant.Text) * Convert.ToInt32(pUnitLabel1.Text);
                 txtTotal.Text = Convert.ToString(Total);
                 PanelMed.Visible = false;
@@ -208,6 +226,7 @@ namespace FarmaciaOASIS.Vistas.VentanasCruds
             */
             bool existe = false;
             int num_fila = 0;
+            
             if (cont_fila == 0)
             {
                 dgvVentas.Rows.Add(codMedLabel1.Text, nomMedLabel1.Text, pUnitLabel1.Text, txtCant.Text, txtTotal.Text);
@@ -240,7 +259,7 @@ namespace FarmaciaOASIS.Vistas.VentanasCruds
                 }
             }
             sumaTotalDGV();
-
+            btnColocarProd.Enabled = false;
         }
 
 
@@ -426,13 +445,15 @@ namespace FarmaciaOASIS.Vistas.VentanasCruds
                 //precioTextBox.Text = precio;
                 //codUsuarioTextBox.Text = "0";
 
-
+                //CARGANDO AL ENTITY
                 reg.NoFactura = UltimaFactura;
                 reg.NoAutorizacion = Convert.ToInt32(txtNoAutorizacion.Text);
                 reg.CodMed = Convert.ToInt32(codigo);
                 reg.CantMed = Convert.ToInt32(cantidad);
                 reg.Precio = Convert.ToInt32(precio);
                 reg.CodUsuario = _Sesion;
+
+                SendToMedicamentoForUpdate(Convert.ToInt32(codigo), Convert.ToInt32(cantidad)); //Actualizando en Base de datos la Cantidad
                 //---------FACTURA----------------------------
                 tabla.AddCell(cantidad);
                 tabla.AddCell(nombre);
@@ -464,11 +485,27 @@ namespace FarmaciaOASIS.Vistas.VentanasCruds
             //---------FACTURA----------------------------
         }
 
+        private void SendToMedicamentoForUpdate(int codigo, int cantidad)
+        {
+            medicamentoBindingSource.DataSource = _med.BuscarPorPK(codigo);
+            var reg = CargarDatosForMedicamentoForUpdate();
+            reg.Cantidad = reg.Cantidad - cantidad;
+            if(_med.Modificar(reg))
+            {
+                MessageBox.Show("se actualizo en tabla la cantidad");
+            }
+
+        }
+        private Medicamento CargarDatosForMedicamentoForUpdate()
+        {
+            var reg = (Medicamento)medicamentoBindingSource.Current;
+            return reg;
+        }
         private void BtnLimpiar_Click(object sender, EventArgs e)
         {
             limpiar();
             dgvVentas.Rows.Clear();
-            clienteBindingSource.DataSource = _objUsuario.Listar("0");
+            clienteBindingSource.DataSource = _objCliente.Listar("0");
             txtCiClie.Text = "";
             lblTotal.Text = "0";
         }
@@ -479,7 +516,7 @@ namespace FarmaciaOASIS.Vistas.VentanasCruds
             {
 
                 var reg = (Cliente)clienteBindingSource.Current;
-                clienteBindingSource.DataSource = _objUsuario.BuscarPorCI(txtCiClie.Text);
+                clienteBindingSource.DataSource = _objCliente.BuscarPorCI(txtCiClie.Text);
                 if (codClienteLabel2.Text != "")
                 {
                     btnRegProd.Enabled = true;
@@ -498,36 +535,6 @@ namespace FarmaciaOASIS.Vistas.VentanasCruds
             string res1 = MenuP.codUsuarioLabel1.Text;
             MessageBox.Show(res1);
             return res1;
-        }
-
-        private void dgvVentas_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-
-        }
-
-        private void lblTotal_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label10_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label8_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void label9_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void groupBox1_Enter(object sender, EventArgs e)
-        {
-
         }
 
         private void TxtCiClie_KeyPress(object sender, KeyPressEventArgs e)
@@ -648,9 +655,10 @@ namespace FarmaciaOASIS.Vistas.VentanasCruds
 
         private void BtnBuscarCliente_Click(object sender, EventArgs e)
         {
-
-            clienteBindingSource.DataSource = _objUsuario.Listar("");
+            
+            clienteBindingSource.DataSource = _objCliente.Listar("");
             panelBuscarCliente.Visible = true;
+            txtBuscarCliente.Focus();
         }
 
         private void BtnSelecCliente_Click(object sender, EventArgs e)
@@ -663,11 +671,13 @@ namespace FarmaciaOASIS.Vistas.VentanasCruds
         private void TxtCiClie_TextChanged(object sender, EventArgs e)
         {
             btnRegProd.Enabled = false;
+            btnEliminar.Enabled = false;
+            btnRegistrar.Enabled = false;
         }
 
         private void TextBox1_TextChanged(object sender, EventArgs e)
         {
-            clienteBindingSource.DataSource = _objUsuario.Listar(txtBuscarCliente.Text);
+            clienteBindingSource.DataSource = _objCliente.Listar(txtBuscarCliente.Text);
         }
     }
 }

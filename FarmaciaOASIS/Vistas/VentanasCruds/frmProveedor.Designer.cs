@@ -40,6 +40,7 @@
             this.direccionTextBox = new System.Windows.Forms.TextBox();
             this.nombreTextBox = new System.Windows.Forms.TextBox();
             this.telfTextBox = new System.Windows.Forms.TextBox();
+            this.bdcfrmProveedor = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             apellidoLabel = new System.Windows.Forms.Label();
             ciudadLabel = new System.Windows.Forms.Label();
             direccionLabel = new System.Windows.Forms.Label();
@@ -184,6 +185,13 @@
             this.telfTextBox.TabIndex = 12;
             this.telfTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TelfTextBox_KeyPress);
             // 
+            // bdcfrmProveedor
+            // 
+            this.bdcfrmProveedor.Fixed = true;
+            this.bdcfrmProveedor.Horizontal = true;
+            this.bdcfrmProveedor.TargetControl = this;
+            this.bdcfrmProveedor.Vertical = true;
+            // 
             // frmProveedor
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -229,5 +237,6 @@
         private System.Windows.Forms.TextBox direccionTextBox;
         private System.Windows.Forms.TextBox nombreTextBox;
         private System.Windows.Forms.TextBox telfTextBox;
+        private Bunifu.Framework.UI.BunifuDragControl bdcfrmProveedor;
     }
 }
