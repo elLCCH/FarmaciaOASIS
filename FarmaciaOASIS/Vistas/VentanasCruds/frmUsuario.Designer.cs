@@ -44,6 +44,7 @@
             this.cuentaTextBox = new System.Windows.Forms.TextBox();
             this.nombreTextBox = new System.Windows.Forms.TextBox();
             this.rolComboBox = new System.Windows.Forms.ComboBox();
+            this.bdcfrmUsuario = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             apellidoLabel = new System.Windows.Forms.Label();
             celLabel = new System.Windows.Forms.Label();
             ciLabel = new System.Windows.Forms.Label();
@@ -226,6 +227,13 @@
             this.rolComboBox.Size = new System.Drawing.Size(189, 32);
             this.rolComboBox.TabIndex = 14;
             // 
+            // bdcfrmUsuario
+            // 
+            this.bdcfrmUsuario.Fixed = true;
+            this.bdcfrmUsuario.Horizontal = true;
+            this.bdcfrmUsuario.TargetControl = this;
+            this.bdcfrmUsuario.Vertical = true;
+            // 
             // frmUsuario
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -281,5 +289,6 @@
         private System.Windows.Forms.TextBox cuentaTextBox;
         private System.Windows.Forms.TextBox nombreTextBox;
         private System.Windows.Forms.ComboBox rolComboBox;
+        private Bunifu.Framework.UI.BunifuDragControl bdcfrmUsuario;
     }
 }

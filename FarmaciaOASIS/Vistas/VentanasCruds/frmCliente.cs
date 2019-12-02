@@ -15,7 +15,7 @@ namespace FarmaciaOASIS.Vistas.VentanasCruds
 {
     public partial class frmCliente : frmVentanaDatos
     {
-        ClienteController _objUsuario = new ClienteController();
+        ClienteController _objCliente = new ClienteController();
         
         private string _cuenta;
         private bool _esNuevo;
@@ -40,31 +40,42 @@ namespace FarmaciaOASIS.Vistas.VentanasCruds
             }
             else
             {
-                clienteBindingSource.DataSource = _objUsuario.BuscarPorCI(_cuenta);
+                clienteBindingSource.DataSource = _objCliente.BuscarPorCI(_cuenta);
                 label1.Text = "MODIFICAR CLIENTE";
             }
         }
         
         private void BtnAceptar_Click(object sender, EventArgs e)
         {
+            
+            
+            
             var reg = CargarDatos();
+            
+            
+            ////PROCEDIMIENTO NORMAL DE CRUD
             if (_esNuevo)
             {
-                if (_objUsuario.Insertar(reg))
+                
+                if (_objCliente.Insertar(reg) && _objCliente.VerificarClienterepetido(ciTextBox.Text)==true)
                 {
                     //MessageBox.Show("soy me");
-                    MessageBox.Show("se inserto correctamente");
+                    MessageBox.Show("CLIENTE REGISTRADO SATISFACTORIAMENTE","AVISO",MessageBoxButtons.OK,MessageBoxIcon.Information);
                     Close();
                 }
+                else
+                { MessageBox.Show("YA EXISTE UN CLIENTE CON CI: '" + reg.Ci + "'", "AVISO!!!", MessageBoxButtons.OK, MessageBoxIcon.Warning); }
             }
             else
             {
-                if (_objUsuario.Modificar(reg))
+                if (_objCliente.Modificar(reg))
                 {
-                    MessageBox.Show("modificacion exitosa");
+                    MessageBox.Show("CLIENTE MODIFICADO SATISFACTORIAMENTE", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Close();
                 }
             }
+            
+                
         }
 
         private Cliente CargarDatos()

@@ -39,13 +39,20 @@
             System.Windows.Forms.Label nombreLabel;
             System.Windows.Forms.Label nombreLabel1;
             System.Windows.Forms.Label apellidoLabel1;
+            System.Windows.Forms.Label cantidadLabel2;
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmVentaProductos));
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmVentaProductos));
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.panelBuscarCliente = new System.Windows.Forms.Panel();
+            this.clienteDataGridView = new System.Windows.Forms.DataGridView();
+            this.Apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label16 = new System.Windows.Forms.Label();
+            this.txtBuscarCliente = new System.Windows.Forms.TextBox();
+            this.btnSelecCliente = new System.Windows.Forms.Button();
             this.apellidoLabel2 = new System.Windows.Forms.Label();
             this.nombreLabel2 = new System.Windows.Forms.Label();
             this.codClienteLabel2 = new System.Windows.Forms.Label();
@@ -54,6 +61,7 @@
             this.lblIdClie = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.btnBuscarCliente = new System.Windows.Forms.Button();
             this.pUnitLabel1 = new System.Windows.Forms.Label();
             this.cantidadLabel1 = new System.Windows.Forms.Label();
             this.btnRegProd = new System.Windows.Forms.Button();
@@ -72,7 +80,6 @@
             this.ColPrecio = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColCantidad = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColCosto = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label8 = new System.Windows.Forms.Label();
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnRegistrar = new System.Windows.Forms.Button();
             this.groupBox4 = new System.Windows.Forms.GroupBox();
@@ -85,11 +92,12 @@
             this.btnColocarProd = new System.Windows.Forms.Button();
             this.codMedLabel1 = new System.Windows.Forms.Label();
             this.PanelMed = new System.Windows.Forms.Panel();
+            this.medicamentoDataGridView = new System.Windows.Forms.DataGridView();
+            this.cantidadLabel3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.txtBuscarMedicamento = new System.Windows.Forms.TextBox();
             this.txtCantAComprar = new System.Windows.Forms.TextBox();
-            this.medicamentoDataGridView = new System.Windows.Forms.DataGridView();
             this.btnAceptarRP = new System.Windows.Forms.Button();
             this.btnCancelarRP = new System.Windows.Forms.Button();
             this.panelCliente = new System.Windows.Forms.Panel();
@@ -102,16 +110,7 @@
             this.txtNoAutorizacion = new System.Windows.Forms.TextBox();
             this.bdvCliente = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.bdvMed = new Bunifu.Framework.UI.BunifuDragControl(this.components);
-            this.panelBuscarCliente = new System.Windows.Forms.Panel();
-            this.label16 = new System.Windows.Forms.Label();
-            this.txtBuscarCliente = new System.Windows.Forms.TextBox();
-            this.btnSelecCliente = new System.Windows.Forms.Button();
-            this.clienteDataGridView = new System.Windows.Forms.DataGridView();
-            this.Apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.btnBuscarCliente = new System.Windows.Forms.Button();
-            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.clienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.bdcBuscarCliente = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -120,10 +119,12 @@
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.medicamentoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.clienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.detalleFacturaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.facturaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.usuarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.bdcBuscarCliente = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             ciLabel = new System.Windows.Forms.Label();
             cantidadLabel = new System.Windows.Forms.Label();
             pUnitLabel = new System.Windows.Forms.Label();
@@ -134,7 +135,10 @@
             nombreLabel = new System.Windows.Forms.Label();
             nombreLabel1 = new System.Windows.Forms.Label();
             apellidoLabel1 = new System.Windows.Forms.Label();
+            cantidadLabel2 = new System.Windows.Forms.Label();
             this.groupBox2.SuspendLayout();
+            this.panelBuscarCliente.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.clienteDataGridView)).BeginInit();
             this.groupBox1.SuspendLayout();
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVentas)).BeginInit();
@@ -142,10 +146,8 @@
             this.PanelMed.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.medicamentoDataGridView)).BeginInit();
             this.panelCliente.SuspendLayout();
-            this.panelBuscarCliente.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.clienteDataGridView)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.medicamentoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.detalleFacturaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.facturaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).BeginInit();
@@ -246,6 +248,15 @@
             apellidoLabel1.TabIndex = 41;
             apellidoLabel1.Text = "Apellido:";
             // 
+            // cantidadLabel2
+            // 
+            cantidadLabel2.AutoSize = true;
+            cantidadLabel2.Location = new System.Drawing.Point(270, 212);
+            cantidadLabel2.Name = "cantidadLabel2";
+            cantidadLabel2.Size = new System.Drawing.Size(52, 13);
+            cantidadLabel2.TabIndex = 91;
+            cantidadLabel2.Text = "Cantidad:";
+            // 
             // label1
             // 
             this.label1.AutoSize = true;
@@ -272,10 +283,88 @@
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox2.Location = new System.Drawing.Point(11, 64);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(448, 170);
+            this.groupBox2.Size = new System.Drawing.Size(294, 144);
             this.groupBox2.TabIndex = 31;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Datos del Cliente";
+            // 
+            // panelBuscarCliente
+            // 
+            this.panelBuscarCliente.BackColor = System.Drawing.Color.Teal;
+            this.panelBuscarCliente.Controls.Add(this.clienteDataGridView);
+            this.panelBuscarCliente.Controls.Add(this.label16);
+            this.panelBuscarCliente.Controls.Add(this.txtBuscarCliente);
+            this.panelBuscarCliente.Controls.Add(this.btnSelecCliente);
+            this.panelBuscarCliente.Location = new System.Drawing.Point(218, 45);
+            this.panelBuscarCliente.Name = "panelBuscarCliente";
+            this.panelBuscarCliente.Size = new System.Drawing.Size(478, 414);
+            this.panelBuscarCliente.TabIndex = 92;
+            this.panelBuscarCliente.Visible = false;
+            // 
+            // clienteDataGridView
+            // 
+            this.clienteDataGridView.AllowUserToAddRows = false;
+            this.clienteDataGridView.AllowUserToDeleteRows = false;
+            this.clienteDataGridView.AutoGenerateColumns = false;
+            this.clienteDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.clienteDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.dataGridViewTextBoxColumn9,
+            this.dataGridViewTextBoxColumn10,
+            this.Apellido});
+            this.clienteDataGridView.DataSource = this.clienteBindingSource;
+            this.clienteDataGridView.Location = new System.Drawing.Point(39, 105);
+            this.clienteDataGridView.Name = "clienteDataGridView";
+            this.clienteDataGridView.ReadOnly = true;
+            this.clienteDataGridView.Size = new System.Drawing.Size(415, 220);
+            this.clienteDataGridView.TabIndex = 91;
+            // 
+            // Apellido
+            // 
+            this.Apellido.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.Apellido.DataPropertyName = "Apellido";
+            this.Apellido.HeaderText = "Apellido";
+            this.Apellido.Name = "Apellido";
+            this.Apellido.ReadOnly = true;
+            // 
+            // label16
+            // 
+            this.label16.AutoSize = true;
+            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label16.ForeColor = System.Drawing.Color.Black;
+            this.label16.Location = new System.Drawing.Point(130, 22);
+            this.label16.Name = "label16";
+            this.label16.Size = new System.Drawing.Size(220, 31);
+            this.label16.TabIndex = 41;
+            this.label16.Text = "Buscar Clientes";
+            // 
+            // txtBuscarCliente
+            // 
+            this.txtBuscarCliente.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtBuscarCliente.Location = new System.Drawing.Point(35, 69);
+            this.txtBuscarCliente.MaxLength = 50;
+            this.txtBuscarCliente.Name = "txtBuscarCliente";
+            this.txtBuscarCliente.Size = new System.Drawing.Size(419, 20);
+            this.txtBuscarCliente.TabIndex = 80;
+            this.txtBuscarCliente.TextChanged += new System.EventHandler(this.TextBox1_TextChanged);
+            // 
+            // btnSelecCliente
+            // 
+            this.btnSelecCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(53)))), ((int)(((byte)(73)))));
+            this.btnSelecCliente.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(159)))), ((int)(((byte)(127)))));
+            this.btnSelecCliente.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
+            this.btnSelecCliente.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(118)))), ((int)(((byte)(126)))));
+            this.btnSelecCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSelecCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSelecCliente.ForeColor = System.Drawing.Color.LightGray;
+            this.btnSelecCliente.Image = ((System.Drawing.Image)(resources.GetObject("btnSelecCliente.Image")));
+            this.btnSelecCliente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnSelecCliente.Location = new System.Drawing.Point(177, 348);
+            this.btnSelecCliente.Name = "btnSelecCliente";
+            this.btnSelecCliente.Size = new System.Drawing.Size(122, 40);
+            this.btnSelecCliente.TabIndex = 90;
+            this.btnSelecCliente.Text = "Aceptar";
+            this.btnSelecCliente.UseVisualStyleBackColor = false;
+            this.btnSelecCliente.Click += new System.EventHandler(this.BtnSelecCliente_Click);
             // 
             // apellidoLabel2
             // 
@@ -350,11 +439,20 @@
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(311, 63);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(431, 78);
+            this.groupBox1.Size = new System.Drawing.Size(431, 70);
             this.groupBox1.TabIndex = 32;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Registro de datos";
-            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // btnBuscarCliente
+            // 
+            this.btnBuscarCliente.Location = new System.Drawing.Point(13, 16);
+            this.btnBuscarCliente.Name = "btnBuscarCliente";
+            this.btnBuscarCliente.Size = new System.Drawing.Size(127, 47);
+            this.btnBuscarCliente.TabIndex = 27;
+            this.btnBuscarCliente.Text = "Buscar Cliente";
+            this.btnBuscarCliente.UseVisualStyleBackColor = true;
+            this.btnBuscarCliente.Click += new System.EventHandler(this.BtnBuscarCliente_Click);
             // 
             // pUnitLabel1
             // 
@@ -376,7 +474,7 @@
             // 
             // btnRegProd
             // 
-            this.btnRegProd.Location = new System.Drawing.Point(156, 23);
+            this.btnRegProd.Location = new System.Drawing.Point(291, 15);
             this.btnRegProd.Name = "btnRegProd";
             this.btnRegProd.Size = new System.Drawing.Size(124, 48);
             this.btnRegProd.TabIndex = 10;
@@ -386,7 +484,7 @@
             // 
             // btnRegistrarCliente
             // 
-            this.btnRegistrarCliente.Location = new System.Drawing.Point(17, 23);
+            this.btnRegistrarCliente.Location = new System.Drawing.Point(152, 15);
             this.btnRegistrarCliente.Name = "btnRegistrarCliente";
             this.btnRegistrarCliente.Size = new System.Drawing.Size(120, 48);
             this.btnRegistrarCliente.TabIndex = 9;
@@ -404,11 +502,10 @@
             this.groupBox3.Controls.Add(this.label10);
             this.groupBox3.Controls.Add(this.lblTotal);
             this.groupBox3.Controls.Add(this.dgvVentas);
-            this.groupBox3.Controls.Add(this.label8);
             this.groupBox3.Controls.Add(this.btnEliminar);
             this.groupBox3.Controls.Add(this.btnRegistrar);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox3.Location = new System.Drawing.Point(11, 242);
+            this.groupBox3.Location = new System.Drawing.Point(13, 214);
             this.groupBox3.Name = "groupBox3";
             this.groupBox3.Size = new System.Drawing.Size(724, 313);
             this.groupBox3.TabIndex = 33;
@@ -426,7 +523,6 @@
             this.label9.TabIndex = 41;
             this.label9.Text = "Importe";
             this.label9.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label9.Click += new System.EventHandler(this.label9_Click);
             // 
             // label12
             // 
@@ -485,7 +581,6 @@
             this.label10.Size = new System.Drawing.Size(46, 18);
             this.label10.TabIndex = 21;
             this.label10.Text = "Total";
-            this.label10.Click += new System.EventHandler(this.label10_Click);
             // 
             // lblTotal
             // 
@@ -497,7 +592,6 @@
             this.lblTotal.TabIndex = 20;
             this.lblTotal.Text = "0";
             this.lblTotal.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.lblTotal.Click += new System.EventHandler(this.lblTotal_Click);
             // 
             // dgvVentas
             // 
@@ -553,7 +647,6 @@
             this.dgvVentas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvVentas.Size = new System.Drawing.Size(647, 216);
             this.dgvVentas.TabIndex = 11;
-            this.dgvVentas.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvVentas_CellContentClick);
             // 
             // ColCodigo
             // 
@@ -594,19 +687,6 @@
             this.ColCosto.Name = "ColCosto";
             this.ColCosto.ReadOnly = true;
             this.ColCosto.Width = 110;
-            // 
-            // label8
-            // 
-            this.label8.BackColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label8.ForeColor = System.Drawing.Color.White;
-            this.label8.Location = new System.Drawing.Point(549, 71);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(130, 23);
-            this.label8.TabIndex = 19;
-            this.label8.Text = "Importe";
-            this.label8.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
-            this.label8.Click += new System.EventHandler(this.label8_Click);
             // 
             // btnEliminar
             // 
@@ -729,57 +809,20 @@
             // PanelMed
             // 
             this.PanelMed.BackColor = System.Drawing.Color.Teal;
+            this.PanelMed.Controls.Add(this.medicamentoDataGridView);
+            this.PanelMed.Controls.Add(cantidadLabel2);
+            this.PanelMed.Controls.Add(this.cantidadLabel3);
             this.PanelMed.Controls.Add(this.label4);
             this.PanelMed.Controls.Add(this.label5);
             this.PanelMed.Controls.Add(this.txtBuscarMedicamento);
             this.PanelMed.Controls.Add(this.txtCantAComprar);
-            this.PanelMed.Controls.Add(this.medicamentoDataGridView);
             this.PanelMed.Controls.Add(this.btnAceptarRP);
             this.PanelMed.Controls.Add(this.btnCancelarRP);
-            this.PanelMed.Location = new System.Drawing.Point(662, 12);
+            this.PanelMed.Location = new System.Drawing.Point(195, 56);
             this.PanelMed.Name = "PanelMed";
-            this.PanelMed.Size = new System.Drawing.Size(478, 414);
+            this.PanelMed.Size = new System.Drawing.Size(461, 431);
             this.PanelMed.TabIndex = 48;
             this.PanelMed.Visible = false;
-            // 
-            // label4
-            // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label4.Location = new System.Drawing.Point(338, 71);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(79, 18);
-            this.label4.TabIndex = 42;
-            this.label4.Text = "Cantidad:";
-            // 
-            // label5
-            // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label5.ForeColor = System.Drawing.Color.Black;
-            this.label5.Location = new System.Drawing.Point(113, 19);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(259, 31);
-            this.label5.TabIndex = 41;
-            this.label5.Text = "Registrar Producto";
-            // 
-            // txtBuscarMedicamento
-            // 
-            this.txtBuscarMedicamento.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtBuscarMedicamento.Location = new System.Drawing.Point(35, 69);
-            this.txtBuscarMedicamento.MaxLength = 50;
-            this.txtBuscarMedicamento.Name = "txtBuscarMedicamento";
-            this.txtBuscarMedicamento.Size = new System.Drawing.Size(297, 20);
-            this.txtBuscarMedicamento.TabIndex = 80;
-            this.txtBuscarMedicamento.TextChanged += new System.EventHandler(this.TxtBuscarMedicamento_TextChanged);
-            // 
-            // txtCantAComprar
-            // 
-            this.txtCantAComprar.Location = new System.Drawing.Point(416, 69);
-            this.txtCantAComprar.Name = "txtCantAComprar";
-            this.txtCantAComprar.Size = new System.Drawing.Size(33, 20);
-            this.txtCantAComprar.TabIndex = 81;
-            this.txtCantAComprar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtCantAComprar_KeyPress);
             // 
             // medicamentoDataGridView
             // 
@@ -798,12 +841,60 @@
             this.dataGridViewTextBoxColumn6,
             this.dataGridViewTextBoxColumn7});
             this.medicamentoDataGridView.DataSource = this.medicamentoBindingSource;
-            this.medicamentoDataGridView.Location = new System.Drawing.Point(35, 97);
+            this.medicamentoDataGridView.Location = new System.Drawing.Point(25, 90);
             this.medicamentoDataGridView.MultiSelect = false;
             this.medicamentoDataGridView.Name = "medicamentoDataGridView";
             this.medicamentoDataGridView.ReadOnly = true;
             this.medicamentoDataGridView.Size = new System.Drawing.Size(414, 234);
             this.medicamentoDataGridView.TabIndex = 82;
+            // 
+            // cantidadLabel3
+            // 
+            this.cantidadLabel3.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.medicamentoBindingSource, "Cantidad", true));
+            this.cantidadLabel3.Location = new System.Drawing.Point(328, 212);
+            this.cantidadLabel3.Name = "cantidadLabel3";
+            this.cantidadLabel3.Size = new System.Drawing.Size(100, 23);
+            this.cantidadLabel3.TabIndex = 92;
+            this.cantidadLabel3.Text = "label15";
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label4.Location = new System.Drawing.Point(328, 64);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(79, 18);
+            this.label4.TabIndex = 42;
+            this.label4.Text = "Cantidad:";
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label5.ForeColor = System.Drawing.Color.Black;
+            this.label5.Location = new System.Drawing.Point(103, 12);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(259, 31);
+            this.label5.TabIndex = 41;
+            this.label5.Text = "Registrar Producto";
+            // 
+            // txtBuscarMedicamento
+            // 
+            this.txtBuscarMedicamento.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtBuscarMedicamento.Location = new System.Drawing.Point(25, 62);
+            this.txtBuscarMedicamento.MaxLength = 50;
+            this.txtBuscarMedicamento.Name = "txtBuscarMedicamento";
+            this.txtBuscarMedicamento.Size = new System.Drawing.Size(297, 20);
+            this.txtBuscarMedicamento.TabIndex = 80;
+            this.txtBuscarMedicamento.TextChanged += new System.EventHandler(this.TxtBuscarMedicamento_TextChanged);
+            // 
+            // txtCantAComprar
+            // 
+            this.txtCantAComprar.Location = new System.Drawing.Point(406, 62);
+            this.txtCantAComprar.Name = "txtCantAComprar";
+            this.txtCantAComprar.Size = new System.Drawing.Size(33, 20);
+            this.txtCantAComprar.TabIndex = 81;
+            this.txtCantAComprar.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtCantAComprar_KeyPress);
             // 
             // btnAceptarRP
             // 
@@ -816,7 +907,7 @@
             this.btnAceptarRP.ForeColor = System.Drawing.Color.LightGray;
             this.btnAceptarRP.Image = ((System.Drawing.Image)(resources.GetObject("btnAceptarRP.Image")));
             this.btnAceptarRP.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnAceptarRP.Location = new System.Drawing.Point(109, 344);
+            this.btnAceptarRP.Location = new System.Drawing.Point(99, 337);
             this.btnAceptarRP.Name = "btnAceptarRP";
             this.btnAceptarRP.Size = new System.Drawing.Size(122, 40);
             this.btnAceptarRP.TabIndex = 90;
@@ -835,7 +926,7 @@
             this.btnCancelarRP.ForeColor = System.Drawing.Color.LightGray;
             this.btnCancelarRP.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelarRP.Image")));
             this.btnCancelarRP.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCancelarRP.Location = new System.Drawing.Point(278, 344);
+            this.btnCancelarRP.Location = new System.Drawing.Point(268, 337);
             this.btnCancelarRP.Name = "btnCancelarRP";
             this.btnCancelarRP.Size = new System.Drawing.Size(119, 40);
             this.btnCancelarRP.TabIndex = 91;
@@ -855,7 +946,7 @@
             this.panelCliente.Controls.Add(this.nombreTextBox);
             this.panelCliente.Controls.Add(this.btnAceptar);
             this.panelCliente.Controls.Add(this.btnCancelar);
-            this.panelCliente.Location = new System.Drawing.Point(714, 19);
+            this.panelCliente.Location = new System.Drawing.Point(293, 30);
             this.panelCliente.Name = "panelCliente";
             this.panelCliente.Size = new System.Drawing.Size(270, 304);
             this.panelCliente.TabIndex = 49;
@@ -951,113 +1042,12 @@
             this.txtNoAutorizacion.TabIndex = 57;
             this.txtNoAutorizacion.Text = "55555";
             // 
-            // panelBuscarCliente
+            // bdcBuscarCliente
             // 
-            this.panelBuscarCliente.BackColor = System.Drawing.Color.Teal;
-            this.panelBuscarCliente.Controls.Add(this.clienteDataGridView);
-            this.panelBuscarCliente.Controls.Add(this.label16);
-            this.panelBuscarCliente.Controls.Add(this.txtBuscarCliente);
-            this.panelBuscarCliente.Controls.Add(this.btnSelecCliente);
-            this.panelBuscarCliente.Location = new System.Drawing.Point(251, 63);
-            this.panelBuscarCliente.Name = "panelBuscarCliente";
-            this.panelBuscarCliente.Size = new System.Drawing.Size(478, 414);
-            this.panelBuscarCliente.TabIndex = 92;
-            this.panelBuscarCliente.Visible = false;
-            // 
-            // label16
-            // 
-            this.label16.AutoSize = true;
-            this.label16.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label16.ForeColor = System.Drawing.Color.Black;
-            this.label16.Location = new System.Drawing.Point(130, 22);
-            this.label16.Name = "label16";
-            this.label16.Size = new System.Drawing.Size(220, 31);
-            this.label16.TabIndex = 41;
-            this.label16.Text = "Buscar Clientes";
-            // 
-            // txtBuscarCliente
-            // 
-            this.txtBuscarCliente.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtBuscarCliente.Location = new System.Drawing.Point(35, 69);
-            this.txtBuscarCliente.MaxLength = 50;
-            this.txtBuscarCliente.Name = "txtBuscarCliente";
-            this.txtBuscarCliente.Size = new System.Drawing.Size(413, 20);
-            this.txtBuscarCliente.TabIndex = 80;
-            this.txtBuscarCliente.TextChanged += new System.EventHandler(this.TextBox1_TextChanged);
-            // 
-            // btnSelecCliente
-            // 
-            this.btnSelecCliente.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(53)))), ((int)(((byte)(73)))));
-            this.btnSelecCliente.FlatAppearance.BorderColor = System.Drawing.Color.FromArgb(((int)(((byte)(85)))), ((int)(((byte)(159)))), ((int)(((byte)(127)))));
-            this.btnSelecCliente.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(20)))), ((int)(((byte)(20)))));
-            this.btnSelecCliente.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(70)))), ((int)(((byte)(118)))), ((int)(((byte)(126)))));
-            this.btnSelecCliente.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSelecCliente.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSelecCliente.ForeColor = System.Drawing.Color.LightGray;
-            this.btnSelecCliente.Image = ((System.Drawing.Image)(resources.GetObject("btnSelecCliente.Image")));
-            this.btnSelecCliente.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnSelecCliente.Location = new System.Drawing.Point(177, 348);
-            this.btnSelecCliente.Name = "btnSelecCliente";
-            this.btnSelecCliente.Size = new System.Drawing.Size(122, 40);
-            this.btnSelecCliente.TabIndex = 90;
-            this.btnSelecCliente.Text = "Aceptar";
-            this.btnSelecCliente.UseVisualStyleBackColor = false;
-            this.btnSelecCliente.Click += new System.EventHandler(this.BtnSelecCliente_Click);
-            // 
-            // clienteDataGridView
-            // 
-            this.clienteDataGridView.AllowUserToAddRows = false;
-            this.clienteDataGridView.AllowUserToDeleteRows = false;
-            this.clienteDataGridView.AutoGenerateColumns = false;
-            this.clienteDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.clienteDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.dataGridViewTextBoxColumn9,
-            this.dataGridViewTextBoxColumn10,
-            this.Apellido});
-            this.clienteDataGridView.DataSource = this.clienteBindingSource;
-            this.clienteDataGridView.Location = new System.Drawing.Point(39, 105);
-            this.clienteDataGridView.Name = "clienteDataGridView";
-            this.clienteDataGridView.ReadOnly = true;
-            this.clienteDataGridView.Size = new System.Drawing.Size(415, 220);
-            this.clienteDataGridView.TabIndex = 91;
-            // 
-            // Apellido
-            // 
-            this.Apellido.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.Apellido.DataPropertyName = "Apellido";
-            this.Apellido.HeaderText = "Apellido";
-            this.Apellido.Name = "Apellido";
-            this.Apellido.ReadOnly = true;
-            // 
-            // btnBuscarCliente
-            // 
-            this.btnBuscarCliente.Location = new System.Drawing.Point(283, 24);
-            this.btnBuscarCliente.Name = "btnBuscarCliente";
-            this.btnBuscarCliente.Size = new System.Drawing.Size(124, 48);
-            this.btnBuscarCliente.TabIndex = 27;
-            this.btnBuscarCliente.Text = "Buscar Cliente";
-            this.btnBuscarCliente.UseVisualStyleBackColor = true;
-            this.btnBuscarCliente.Click += new System.EventHandler(this.BtnBuscarCliente_Click);
-            // 
-            // dataGridViewTextBoxColumn9
-            // 
-            this.dataGridViewTextBoxColumn9.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn9.DataPropertyName = "Ci";
-            this.dataGridViewTextBoxColumn9.HeaderText = "Ci";
-            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            this.dataGridViewTextBoxColumn9.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn10
-            // 
-            this.dataGridViewTextBoxColumn10.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn10.DataPropertyName = "Nombre";
-            this.dataGridViewTextBoxColumn10.HeaderText = "Nombre";
-            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
-            this.dataGridViewTextBoxColumn10.ReadOnly = true;
-            // 
-            // clienteBindingSource
-            // 
-            this.clienteBindingSource.DataSource = typeof(FarmaciaOASIS.Data.Cliente);
+            this.bdcBuscarCliente.Fixed = false;
+            this.bdcBuscarCliente.Horizontal = true;
+            this.bdcBuscarCliente.TargetControl = this.panelBuscarCliente;
+            this.bdcBuscarCliente.Vertical = true;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -1112,6 +1102,26 @@
             // 
             this.medicamentoBindingSource.DataSource = typeof(FarmaciaOASIS.Data.Medicamento);
             // 
+            // clienteBindingSource
+            // 
+            this.clienteBindingSource.DataSource = typeof(FarmaciaOASIS.Data.Cliente);
+            // 
+            // dataGridViewTextBoxColumn9
+            // 
+            this.dataGridViewTextBoxColumn9.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn9.DataPropertyName = "Ci";
+            this.dataGridViewTextBoxColumn9.HeaderText = "Ci";
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            this.dataGridViewTextBoxColumn9.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn10
+            // 
+            this.dataGridViewTextBoxColumn10.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn10.DataPropertyName = "Nombre";
+            this.dataGridViewTextBoxColumn10.HeaderText = "Nombre";
+            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            this.dataGridViewTextBoxColumn10.ReadOnly = true;
+            // 
             // detalleFacturaBindingSource
             // 
             this.detalleFacturaBindingSource.DataSource = typeof(FarmaciaOASIS.Data.DetalleFactura);
@@ -1124,13 +1134,6 @@
             // 
             this.usuarioBindingSource.DataSource = typeof(FarmaciaOASIS.Data.Usuario);
             // 
-            // bdcBuscarCliente
-            // 
-            this.bdcBuscarCliente.Fixed = false;
-            this.bdcBuscarCliente.Horizontal = true;
-            this.bdcBuscarCliente.TargetControl = this.panelBuscarCliente;
-            this.bdcBuscarCliente.Vertical = true;
-            // 
             // frmVentaProductos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -1138,15 +1141,17 @@
             this.AutoScroll = true;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(130)))), ((int)(((byte)(185)))));
             this.ClientSize = new System.Drawing.Size(1160, 609);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(69)))), ((int)(((byte)(75)))));
+            this.ClientSize = new System.Drawing.Size(797, 609);
+            this.Controls.Add(this.PanelMed);
+            this.Controls.Add(this.panelCliente);
             this.Controls.Add(this.panelBuscarCliente);
             this.Controls.Add(this.txtNoAutorizacion);
-            this.Controls.Add(this.panelCliente);
-            this.Controls.Add(this.PanelMed);
             this.Controls.Add(this.groupBox4);
-            this.Controls.Add(this.groupBox3);
-            this.Controls.Add(this.groupBox1);
-            this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.groupBox3);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmVentaProductos";
             this.Text = "frmVentaProductos";
@@ -1154,6 +1159,9 @@
             this.TextChanged += new System.EventHandler(this.TxtBuscarMedicamento_TextChanged);
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
+            this.panelBuscarCliente.ResumeLayout(false);
+            this.panelBuscarCliente.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.clienteDataGridView)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox3.ResumeLayout(false);
@@ -1166,11 +1174,8 @@
             ((System.ComponentModel.ISupportInitialize)(this.medicamentoDataGridView)).EndInit();
             this.panelCliente.ResumeLayout(false);
             this.panelCliente.PerformLayout();
-            this.panelBuscarCliente.ResumeLayout(false);
-            this.panelBuscarCliente.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.clienteDataGridView)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.medicamentoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.detalleFacturaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.facturaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).EndInit();
@@ -1192,7 +1197,6 @@
         private System.Windows.Forms.Label label10;
         private System.Windows.Forms.Label lblTotal;
         private System.Windows.Forms.DataGridView dgvVentas;
-        private System.Windows.Forms.Label label8;
         private System.Windows.Forms.Button btnRegistrar;
         private System.Windows.Forms.Button btnEliminar;
         public System.Windows.Forms.TextBox txtCiClie;
@@ -1261,5 +1265,6 @@
         public System.Windows.Forms.Button btnSelecCliente;
         private System.Windows.Forms.Button btnBuscarCliente;
         private Bunifu.Framework.UI.BunifuDragControl bdcBuscarCliente;
+        private System.Windows.Forms.Label cantidadLabel3;
     }
 }

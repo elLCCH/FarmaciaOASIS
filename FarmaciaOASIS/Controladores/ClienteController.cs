@@ -37,5 +37,22 @@ namespace FarmaciaOASIS.Controladores
             return _db.Cliente.Where(x => x.Ci == pCi).ToList();
         }
 
+        public bool VerificarClienterepetido(string pCi) //metodo autenticar con parametro usuario y contraseña respectivamente
+        {
+            try
+            {
+                //en una var "res" donde usamos de la base de datos usando la tabla usuario donde x sea usado para uso de datos en tabla BD
+                var res = _db.Cliente.Where(x => x.Ci == pCi).SingleOrDefault(); //singleOrdefault mandará excepcion si existe mas de un usuario con lo mismos datos
+                if (res != null) //si res es diferente de vacio
+                    return true;
+                else
+                    return false;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+        }
+
     }
 }

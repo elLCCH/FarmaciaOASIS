@@ -38,6 +38,7 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.Label nomMedLabel;
             this.detalleFacturaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.detalleFacturaDataGridView = new System.Windows.Forms.DataGridView();
             this.ColNumFact = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -56,6 +57,8 @@
             this.CodMed = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColCant = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.ColPre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.medicamentoBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.nomMedLabel1 = new System.Windows.Forms.Label();
             nombreLabel = new System.Windows.Forms.Label();
             apellidoLabel = new System.Windows.Forms.Label();
             ciLabel = new System.Windows.Forms.Label();
@@ -64,8 +67,10 @@
             fechaLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
+            nomMedLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.detalleFacturaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.detalleFacturaDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.medicamentoBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // btnRegistrar
@@ -77,7 +82,16 @@
             this.btnRegistrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(45)))), ((int)(((byte)(53)))));
             this.btnRegistrar.Location = new System.Drawing.Point(322, 405);
             this.btnRegistrar.Size = new System.Drawing.Size(135, 46);
+            this.btnRegistrar.Size = new System.Drawing.Size(179, 46);
+            this.btnRegistrar.Text = "Generar PDF";
             this.btnRegistrar.Click += new System.EventHandler(this.BtnRegistrar_Click);
+            // 
+            // btnModificar
+            // 
+            this.btnModificar.FlatAppearance.BorderSize = 0;
+            this.btnModificar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(69)))), ((int)(((byte)(76)))));
+            this.btnModificar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(45)))), ((int)(((byte)(53)))));
+            this.btnModificar.Visible = false;
             // 
             // btnEliminar
             // 
@@ -85,6 +99,7 @@
             this.btnEliminar.FlatAppearance.BorderSize = 0;
             this.btnEliminar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(69)))), ((int)(((byte)(76)))));
             this.btnEliminar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(45)))), ((int)(((byte)(53)))));
+            this.btnEliminar.Visible = false;
             this.btnEliminar.Location = new System.Drawing.Point(474, 405);
             // 
             // btnModificar
@@ -180,6 +195,15 @@
             fechaLabel.Size = new System.Drawing.Size(75, 24);
             fechaLabel.TabIndex = 18;
             fechaLabel.Text = "Fecha:";
+            // 
+            // nomMedLabel
+            // 
+            nomMedLabel.AutoSize = true;
+            nomMedLabel.Location = new System.Drawing.Point(509, 257);
+            nomMedLabel.Name = "nomMedLabel";
+            nomMedLabel.Size = new System.Drawing.Size(56, 13);
+            nomMedLabel.TabIndex = 21;
+            nomMedLabel.Text = "Nom Med:";
             // 
             // detalleFacturaBindingSource
             // 
@@ -337,9 +361,9 @@
             this.lblTotal.ForeColor = System.Drawing.SystemColors.Control;
             this.lblTotal.Location = new System.Drawing.Point(196, 306);
             this.lblTotal.Name = "lblTotal";
-            this.lblTotal.Size = new System.Drawing.Size(66, 24);
+            this.lblTotal.Size = new System.Drawing.Size(56, 24);
             this.lblTotal.TabIndex = 20;
-            this.lblTotal.Text = "label1";
+            this.lblTotal.Text = "Total";
             // 
             // label1
             // 
@@ -351,6 +375,19 @@
             this.label1.Size = new System.Drawing.Size(306, 33);
             this.label1.TabIndex = 21;
             this.label1.Text = "REPORTE DE FACTURA";
+            // 
+            // medicamentoBindingSource
+            // 
+            this.medicamentoBindingSource.DataSource = typeof(FarmaciaOASIS.Data.Medicamento);
+            // 
+            // nomMedLabel1
+            // 
+            this.nomMedLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.medicamentoBindingSource, "NomMed", true));
+            this.nomMedLabel1.Location = new System.Drawing.Point(571, 257);
+            this.nomMedLabel1.Name = "nomMedLabel1";
+            this.nomMedLabel1.Size = new System.Drawing.Size(100, 23);
+            this.nomMedLabel1.TabIndex = 22;
+            this.nomMedLabel1.Text = "label2";
             // 
             // label2
             // 
@@ -368,6 +405,10 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(53)))), ((int)(((byte)(73)))));
+            this.ClientSize = new System.Drawing.Size(894, 450);
+            this.Controls.Add(this.detalleFacturaDataGridView);
+            this.Controls.Add(nomMedLabel);
+            this.Controls.Add(this.nomMedLabel1);
             this.ClientSize = new System.Drawing.Size(963, 500);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -384,7 +425,6 @@
             this.Controls.Add(this.apellidoLabel1);
             this.Controls.Add(nombreLabel);
             this.Controls.Add(this.nombreLabel1);
-            this.Controls.Add(this.detalleFacturaDataGridView);
             this.Name = "frmReportes";
             this.Text = "frmReportes";
             this.Load += new System.EventHandler(this.frmReportes_Load);
@@ -394,7 +434,6 @@
             this.Controls.SetChildIndex(this.btnRegistrar, 0);
             this.Controls.SetChildIndex(this.btnModificar, 0);
             this.Controls.SetChildIndex(this.btnEliminar, 0);
-            this.Controls.SetChildIndex(this.detalleFacturaDataGridView, 0);
             this.Controls.SetChildIndex(this.nombreLabel1, 0);
             this.Controls.SetChildIndex(nombreLabel, 0);
             this.Controls.SetChildIndex(this.apellidoLabel1, 0);
@@ -409,11 +448,15 @@
             this.Controls.SetChildIndex(fechaLabel, 0);
             this.Controls.SetChildIndex(this.lblTotal, 0);
             this.Controls.SetChildIndex(this.label1, 0);
+            this.Controls.SetChildIndex(this.nomMedLabel1, 0);
+            this.Controls.SetChildIndex(nomMedLabel, 0);
+            this.Controls.SetChildIndex(this.detalleFacturaDataGridView, 0);
             this.Controls.SetChildIndex(this.label2, 0);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.detalleFacturaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.detalleFacturaDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.medicamentoBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -436,5 +479,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn CodMed;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColCant;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColPre;
+        private System.Windows.Forms.BindingSource medicamentoBindingSource;
+        private System.Windows.Forms.Label nomMedLabel1;
     }
 }

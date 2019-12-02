@@ -39,6 +39,7 @@
             this.pUnitTextBox = new System.Windows.Forms.TextBox();
             this.codProvComboBox = new System.Windows.Forms.ComboBox();
             this.proveedorBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.bdcfrmMedicamentos = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             cantidadLabel = new System.Windows.Forms.Label();
             nomMedLabel = new System.Windows.Forms.Label();
             pUnitLabel = new System.Windows.Forms.Label();
@@ -102,6 +103,17 @@
             pUnitLabel.TabIndex = 26;
             pUnitLabel.Text = "PUnit:";
             // 
+            // codProvLabel
+            // 
+            codProvLabel.AutoSize = true;
+            codProvLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            codProvLabel.ForeColor = System.Drawing.SystemColors.ControlDark;
+            codProvLabel.Location = new System.Drawing.Point(33, 264);
+            codProvLabel.Name = "codProvLabel";
+            codProvLabel.Size = new System.Drawing.Size(93, 24);
+            codProvLabel.TabIndex = 26;
+            codProvLabel.Text = "Cod Prov:";
+            // 
             // medicamentoBindingSource
             // 
             this.medicamentoBindingSource.DataSource = typeof(FarmaciaOASIS.Data.Medicamento);
@@ -139,20 +151,10 @@
             this.pUnitTextBox.TabIndex = 10;
             this.pUnitTextBox.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.PUnitTextBox_KeyPress);
             // 
-            // codProvLabel
-            // 
-            codProvLabel.AutoSize = true;
-            codProvLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            codProvLabel.ForeColor = System.Drawing.SystemColors.ControlDark;
-            codProvLabel.Location = new System.Drawing.Point(33, 264);
-            codProvLabel.Name = "codProvLabel";
-            codProvLabel.Size = new System.Drawing.Size(93, 24);
-            codProvLabel.TabIndex = 26;
-            codProvLabel.Text = "Cod Prov:";
-            // 
             // codProvComboBox
             // 
             this.codProvComboBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.medicamentoBindingSource, "CodProv", true));
+            this.codProvComboBox.DataBindings.Add(new System.Windows.Forms.Binding("SelectedValue", this.proveedorBindingSource, "Nombre", true));
             this.codProvComboBox.DataSource = this.proveedorBindingSource;
             this.codProvComboBox.DisplayMember = "Nombre";
             this.codProvComboBox.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -161,11 +163,18 @@
             this.codProvComboBox.Name = "codProvComboBox";
             this.codProvComboBox.Size = new System.Drawing.Size(206, 32);
             this.codProvComboBox.TabIndex = 27;
-            this.codProvComboBox.ValueMember = "Nombre";
+            this.codProvComboBox.ValueMember = "Apellido";
             // 
             // proveedorBindingSource
             // 
             this.proveedorBindingSource.DataSource = typeof(FarmaciaOASIS.Data.Proveedor);
+            // 
+            // bdcfrmMedicamentos
+            // 
+            this.bdcfrmMedicamentos.Fixed = true;
+            this.bdcfrmMedicamentos.Horizontal = true;
+            this.bdcfrmMedicamentos.TargetControl = this;
+            this.bdcfrmMedicamentos.Vertical = true;
             // 
             // frmMedicamento
             // 
@@ -209,5 +218,6 @@
         private System.Windows.Forms.TextBox pUnitTextBox;
         private System.Windows.Forms.ComboBox codProvComboBox;
         private System.Windows.Forms.BindingSource proveedorBindingSource;
+        private Bunifu.Framework.UI.BunifuDragControl bdcfrmMedicamentos;
     }
 }

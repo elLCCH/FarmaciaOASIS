@@ -49,17 +49,20 @@ namespace FarmaciaOASIS.Vistas.VentanasCruds
             var reg = CargarDatos();
             if (_esNuevo)
             {
-                if (_objUsuario.Insertar(reg))
+                if (_objUsuario.Insertar(reg) && _objUsuario.VerificarUsuarioRepetido(ciTextBox.Text) == true)
                 {
-                    MessageBox.Show("se inserto correctamente");
+                    MessageBox.Show("USUARIO REGISTRADO SATISFACTORIAMENTE", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Close();
                 }
+                else
+                { MessageBox.Show("YA EXISTE UN USUARIO CON CI: '" + reg.Ci + "'", "AVISO!!!", MessageBoxButtons.OK, MessageBoxIcon.Warning); }
+
             }
             else
             {
                 if (_objUsuario.Modificar(reg))
                 {
-                    MessageBox.Show("modificacion exitosa");
+                    MessageBox.Show("USUARIO MODIFICADO SATISFACTORIAMENTE", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Close();
                 }
             }

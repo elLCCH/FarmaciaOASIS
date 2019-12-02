@@ -36,6 +36,7 @@
             this.apellidoTextBox = new System.Windows.Forms.TextBox();
             this.ciTextBox = new System.Windows.Forms.TextBox();
             this.nombreTextBox = new System.Windows.Forms.TextBox();
+            this.bdcfrmCliente = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             apellidoLabel = new System.Windows.Forms.Label();
             ciLabel = new System.Windows.Forms.Label();
             nombreLabel = new System.Windows.Forms.Label();
@@ -134,6 +135,13 @@
             this.nombreTextBox.Size = new System.Drawing.Size(209, 29);
             this.nombreTextBox.TabIndex = 9;
             // 
+            // bdcfrmCliente
+            // 
+            this.bdcfrmCliente.Fixed = true;
+            this.bdcfrmCliente.Horizontal = true;
+            this.bdcfrmCliente.TargetControl = this;
+            this.bdcfrmCliente.Vertical = true;
+            // 
             // frmCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -169,5 +177,6 @@
         private System.Windows.Forms.TextBox apellidoTextBox;
         private System.Windows.Forms.TextBox ciTextBox;
         private System.Windows.Forms.TextBox nombreTextBox;
+        private Bunifu.Framework.UI.BunifuDragControl bdcfrmCliente;
     }
 }

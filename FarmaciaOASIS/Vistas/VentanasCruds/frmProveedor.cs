@@ -14,7 +14,7 @@ namespace FarmaciaOASIS.Vistas.VentanasCruds
 {
     public partial class frmProveedor : frmVentanaDatos
     {
-        ProveedorController _objUsuario = new ProveedorController();
+        ProveedorController _objProveedor = new ProveedorController();
         private string _cuenta;
         private bool _esNuevo;
         public frmProveedor()
@@ -39,7 +39,7 @@ namespace FarmaciaOASIS.Vistas.VentanasCruds
             }
             else
             {
-                proveedorBindingSource.DataSource = _objUsuario.BuscarPorPK(Convert.ToInt32(_cuenta));
+                proveedorBindingSource.DataSource = _objProveedor.BuscarPorPK(Convert.ToInt32(_cuenta));
                 label1.Text = "MODIFICAR PROVEEDOR";
             }
         }
@@ -49,17 +49,17 @@ namespace FarmaciaOASIS.Vistas.VentanasCruds
             var reg = CargarDatos();
             if (_esNuevo)
             {
-                if (_objUsuario.Insertar(reg))
+                if (_objProveedor.Insertar(reg))
                 {
-                    MessageBox.Show("se inserto correctamente");
+                    MessageBox.Show("PROVEEDOR REGISTRADO SATISFACTORIAMENTE", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Close();
                 }
             }
             else
             {
-                if (_objUsuario.Modificar(reg))
+                if (_objProveedor.Modificar(reg))
                 {
-                    MessageBox.Show("modificacion exitosa");
+                    MessageBox.Show("PROVEEDOR MODIFICADO SATISFACTORIAMENTE", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Close();
                 }
             }

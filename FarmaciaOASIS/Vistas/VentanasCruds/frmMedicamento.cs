@@ -14,7 +14,7 @@ namespace FarmaciaOASIS.Vistas.VentanasCruds
 {
     public partial class frmMedicamento : frmVentanaDatos
     {
-        MedicamentoController _objUsuario = new MedicamentoController();
+        MedicamentoController _objMedicamento = new MedicamentoController();
         private string _cuenta;
         private bool _esNuevo;
         public frmMedicamento()
@@ -39,7 +39,7 @@ namespace FarmaciaOASIS.Vistas.VentanasCruds
             }
             else
             {
-                medicamentoBindingSource.DataSource = _objUsuario.BuscarPorPK(Convert.ToInt32(_cuenta));
+                medicamentoBindingSource.DataSource = _objMedicamento.BuscarPorPK(Convert.ToInt32(_cuenta));
                 label1.Text = "         MODIFICAR\n     MEDICAMENTO";
             }
         }
@@ -49,17 +49,20 @@ namespace FarmaciaOASIS.Vistas.VentanasCruds
             var reg = CargarDatos();
             if (_esNuevo)
             { 
-                if (_objUsuario.Insertar(reg))
+                if (_objMedicamento.Insertar(reg) && _objMedicamento.VerificarMedicamentoRepetido(nomMedTextBox.Text) == true)
                 {
-                    MessageBox.Show("se inserto correctamente");
+                    MessageBox.Show("MEDICAMENTO REGISTRADO SATISFACTORIAMENTE", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Close();
                 }
+                else
+                { MessageBox.Show("YA EXISTE UN MEDICAMENTO LLAMADO: '" + reg.NomMed + "'", "AVISO!!!", MessageBoxButtons.OK, MessageBoxIcon.Warning); }
+
             }
             else
             {
-                if (_objUsuario.Modificar(reg))
+                if (_objMedicamento.Modificar(reg))
                 {
-                    MessageBox.Show("modificacion exitosa");
+                    MessageBox.Show("MEDICAMENTO MODIFICADO SATISFACTORIAMENTE", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Close();
                 }
             }

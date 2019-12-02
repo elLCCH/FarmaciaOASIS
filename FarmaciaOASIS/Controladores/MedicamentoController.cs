@@ -37,12 +37,27 @@ namespace FarmaciaOASIS.Controladores
         {
             return _db.Medicamento.Where(x => x.CodMed == pCodMed).ToList();
         }
-        internal string ObtenerNombreMed(int pCodMed)
+
+        internal List<Medicamento> ListarPorCodMed(int pCodMed)
         {
-            //return _db.Medicamento.Select(x=>x.NomMed)
-            var Namemed = _db.Medicamento.Where(s => s.CodMed == pCodMed)
-                          .Select(s => s.NomMed).ToString();
-            return Namemed;
+            return _db.Medicamento.Where(x => x.CodMed == pCodMed).ToList();
+        }
+        public bool VerificarMedicamentoRepetido(string pNomMed) //metodo autenticar con parametro usuario y contraseña respectivamente
+        {
+            try
+            {
+                //en una var "res" donde usamos de la base de datos usando la tabla usuario donde x sea usado para uso de datos en tabla BD
+                var res = _db.Medicamento.Where(x => x.NomMed == pNomMed).SingleOrDefault(); //singleOrdefault mandará excepcion si existe mas de un usuario con lo mismos datos
+                if (res != null) //si res es diferente de vacio
+                    return true;
+                else
+                    return false;
+            }
+            catch (Exception ex)
+            {
+                return false;
+            }
+
         }
     }
 }
