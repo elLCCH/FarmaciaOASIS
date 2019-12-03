@@ -73,6 +73,16 @@ namespace FarmaciaOASIS.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap bowl_of_hygieia_pharmacy_asclepius_medicine_pharmacy {
+            get {
+                object obj = ResourceManager.GetObject("bowl-of-hygieia-pharmacy-asclepius-medicine-pharmacy", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap CerrarSesion2 {
             get {
                 object obj = ResourceManager.GetObject("CerrarSesion2", resourceCulture);
@@ -186,6 +196,17 @@ namespace FarmaciaOASIS.Properties {
         internal static System.Drawing.Bitmap producto2 {
             get {
                 object obj = ResourceManager.GetObject("producto2", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap staff_of_hermes_caduceus_as_a_symbol_of_medicine_caduceus_as_a_symbol_of_medicine_medical_logo {
+            get {
+                object obj = ResourceManager.GetObject("staff-of-hermes-caduceus-as-a-symbol-of-medicine-caduceus-as-a-symbol-of-medicine" +
+                        "-medical-logo", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

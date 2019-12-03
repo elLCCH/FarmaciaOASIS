@@ -16,5 +16,10 @@ namespace FarmaciaOASIS.Vistas
         {
             InitializeComponent();
         }
+
+        private void frmGestion_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

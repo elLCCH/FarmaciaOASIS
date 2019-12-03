@@ -241,37 +241,6 @@ namespace FarmaciaOASIS.Vistas.VentanasCruds
             }
 
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         private void sumaTotalDGV()
         {
             int TotalPago = 0;

@@ -154,5 +154,10 @@ namespace FarmaciaOASIS.Vistas.Gestiones
 
             }
         }
+
+        private void txtBusqueda_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

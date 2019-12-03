@@ -127,11 +127,17 @@
   <data name="logo de menu - modificado" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\logo de menu - modificado.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="logo-5" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\logo-5.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="CerrarSesion2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\CerrarSesion2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="logo-3" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\logo-3.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="bowl-of-hygieia-pharmacy-asclepius-medicine-pharmacy" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\bowl-of-hygieia-pharmacy-asclepius-medicine-pharmacy.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="logo-2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\logo-2.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -157,7 +163,7 @@
   <data name="logo-4" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\logo-4.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="logo-5" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\logo-5.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="staff-of-hermes-caduceus-as-a-symbol-of-medicine-caduceus-as-a-symbol-of-medicine-medical-logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\staff-of-hermes-caduceus-as-a-symbol-of-medicine-caduceus-as-a-symbol-of-medicine-medical-logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>
