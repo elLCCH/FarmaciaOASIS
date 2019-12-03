@@ -300,6 +300,7 @@
     <Content Include="Resources\21.png" />
     <Content Include="Resources\bien.png" />
     <Content Include="Resources\bien2.png" />
+    <None Include="Resources\bowl-of-hygieia-pharmacy-asclepius-medicine-pharmacy.png" />
     <Content Include="Resources\cadado.png" />
     <Content Include="Resources\cerrar.png" />
     <Content Include="Resources\CerrarSesion2.png" />
@@ -404,6 +405,7 @@
     <Content Include="Resources\producto2.png" />
     <Content Include="Resources\producto21.png" />
     <Content Include="Resources\shut-down.png" />
+    <None Include="Resources\staff-of-hermes-caduceus-as-a-symbol-of-medicine-caduceus-as-a-symbol-of-medicine-medical-logo.png" />
     <Content Include="Resources\user.png" />
     <Content Include="Resources\Usuarios.png" />
     <Content Include="Resources\Usuarios1.png" />

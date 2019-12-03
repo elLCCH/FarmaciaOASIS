@@ -31,6 +31,9 @@
             this.components = new System.ComponentModel.Container();
             System.Windows.Forms.Label codProvLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmGestionarProveedores));
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.proveedorBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.proveedorBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
@@ -53,11 +56,13 @@
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Agregar = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Modificar = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.Eliminar = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.codProvLabel1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             codProvLabel = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.proveedorBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.proveedorBindingNavigator)).BeginInit();
             this.proveedorBindingNavigator.SuspendLayout();
@@ -69,46 +74,62 @@
             this.btnRegistrar.FlatAppearance.BorderSize = 0;
             this.btnRegistrar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(69)))), ((int)(((byte)(76)))));
             this.btnRegistrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(45)))), ((int)(((byte)(53)))));
+            this.btnRegistrar.Location = new System.Drawing.Point(718, 110);
             this.btnRegistrar.Click += new System.EventHandler(this.BtnAgregar_Click);
-            // 
-            // btnModificar
-            // 
-            this.btnModificar.FlatAppearance.BorderSize = 0;
-            this.btnModificar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(69)))), ((int)(((byte)(76)))));
-            this.btnModificar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(45)))), ((int)(((byte)(53)))));
-            this.btnModificar.Click += new System.EventHandler(this.BtnModificar_Click);
             // 
             // btnEliminar
             // 
             this.btnEliminar.FlatAppearance.BorderSize = 0;
             this.btnEliminar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(69)))), ((int)(((byte)(76)))));
             this.btnEliminar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(45)))), ((int)(((byte)(53)))));
+            this.btnEliminar.Location = new System.Drawing.Point(711, 26);
+            this.btnEliminar.Visible = false;
             this.btnEliminar.Click += new System.EventHandler(this.BtnEliminar_Click);
+            // 
+            // btnModificar
+            // 
+            this.btnModificar.FlatAppearance.BorderSize = 0;
+            this.btnModificar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(69)))), ((int)(((byte)(76)))));
+            this.btnModificar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(45)))), ((int)(((byte)(53)))));
+            this.btnModificar.Location = new System.Drawing.Point(203, 28);
+            this.btnModificar.Visible = false;
+            this.btnModificar.Click += new System.EventHandler(this.BtnModificar_Click);
             // 
             // txtBusqueda
             // 
             this.txtBusqueda.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
+            this.txtBusqueda.Location = new System.Drawing.Point(317, 79);
             this.txtBusqueda.MaxLength = 20;
             this.txtBusqueda.Text = "";
             this.txtBusqueda.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TxtBusqueda_KeyUp);
             // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Location = new System.Drawing.Point(0, 27);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(852, 26);
+            // 
             // codProvLabel
             // 
             codProvLabel.AutoSize = true;
-            codProvLabel.Location = new System.Drawing.Point(37, 116);
+            codProvLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            codProvLabel.ForeColor = System.Drawing.Color.White;
+            codProvLabel.Location = new System.Drawing.Point(185, 232);
             codProvLabel.Name = "codProvLabel";
-            codProvLabel.Size = new System.Drawing.Size(54, 13);
+            codProvLabel.Size = new System.Drawing.Size(63, 13);
             codProvLabel.TabIndex = 19;
             codProvLabel.Text = "Cod Prov:";
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Monotype Corsiva", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.label1.ForeColor = System.Drawing.Color.White;
-            this.label1.Location = new System.Drawing.Point(191, 19);
+            this.label1.Location = new System.Drawing.Point(344, 27);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(421, 31);
+            this.label1.Size = new System.Drawing.Size(368, 33);
             this.label1.TabIndex = 18;
             this.label1.Text = "GESTION DE PROVEEDORES";
             // 
@@ -142,7 +163,7 @@
             this.proveedorBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.proveedorBindingNavigator.Name = "proveedorBindingNavigator";
             this.proveedorBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.proveedorBindingNavigator.Size = new System.Drawing.Size(800, 25);
+            this.proveedorBindingNavigator.Size = new System.Drawing.Size(963, 25);
             this.proveedorBindingNavigator.TabIndex = 19;
             this.proveedorBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -158,7 +179,7 @@
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(37, 22);
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
             this.bindingNavigatorCountItem.Text = "de {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Número total de elementos";
             // 
@@ -245,7 +266,20 @@
             // 
             this.proveedorDataGridView.AllowUserToAddRows = false;
             this.proveedorDataGridView.AllowUserToDeleteRows = false;
+            this.proveedorDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.proveedorDataGridView.AutoGenerateColumns = false;
+            this.proveedorDataGridView.BackgroundColor = System.Drawing.Color.WhiteSmoke;
+            this.proveedorDataGridView.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LimeGreen;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.proveedorDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.proveedorDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.proveedorDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.dataGridViewTextBoxColumn1,
@@ -254,20 +288,38 @@
             this.dataGridViewTextBoxColumn4,
             this.dataGridViewTextBoxColumn5,
             this.dataGridViewTextBoxColumn6,
-            this.Agregar,
             this.Modificar,
             this.Eliminar});
             this.proveedorDataGridView.DataSource = this.proveedorBindingSource;
-            this.proveedorDataGridView.Location = new System.Drawing.Point(12, 141);
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(245)))), ((int)(((byte)(214)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.proveedorDataGridView.DefaultCellStyle = dataGridViewCellStyle2;
+            this.proveedorDataGridView.EnableHeadersVisualStyles = false;
+            this.proveedorDataGridView.GridColor = System.Drawing.Color.LimeGreen;
+            this.proveedorDataGridView.Location = new System.Drawing.Point(78, 152);
             this.proveedorDataGridView.Name = "proveedorDataGridView";
             this.proveedorDataGridView.ReadOnly = true;
-            this.proveedorDataGridView.Size = new System.Drawing.Size(753, 220);
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.LimeGreen;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(245)))), ((int)(((byte)(214)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.proveedorDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.proveedorDataGridView.Size = new System.Drawing.Size(775, 323);
             this.proveedorDataGridView.TabIndex = 19;
             this.proveedorDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.proveedorDataGridView_CellClick);
             this.proveedorDataGridView.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.proveedorDataGridView_CellPainting);
             // 
             // dataGridViewTextBoxColumn1
             // 
+            this.dataGridViewTextBoxColumn1.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.dataGridViewTextBoxColumn1.DataPropertyName = "CodProv";
             this.dataGridViewTextBoxColumn1.HeaderText = "CodProv";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
@@ -275,6 +327,7 @@
             // 
             // dataGridViewTextBoxColumn2
             // 
+            this.dataGridViewTextBoxColumn2.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.dataGridViewTextBoxColumn2.DataPropertyName = "Nombre";
             this.dataGridViewTextBoxColumn2.HeaderText = "Nombre";
             this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
@@ -282,6 +335,7 @@
             // 
             // dataGridViewTextBoxColumn3
             // 
+            this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.dataGridViewTextBoxColumn3.DataPropertyName = "Apellido";
             this.dataGridViewTextBoxColumn3.HeaderText = "Apellido";
             this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
@@ -289,6 +343,7 @@
             // 
             // dataGridViewTextBoxColumn4
             // 
+            this.dataGridViewTextBoxColumn4.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.dataGridViewTextBoxColumn4.DataPropertyName = "Ciudad";
             this.dataGridViewTextBoxColumn4.HeaderText = "Ciudad";
             this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
@@ -296,6 +351,7 @@
             // 
             // dataGridViewTextBoxColumn5
             // 
+            this.dataGridViewTextBoxColumn5.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.dataGridViewTextBoxColumn5.DataPropertyName = "Direccion";
             this.dataGridViewTextBoxColumn5.HeaderText = "Direccion";
             this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
@@ -303,60 +359,76 @@
             // 
             // dataGridViewTextBoxColumn6
             // 
+            this.dataGridViewTextBoxColumn6.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
             this.dataGridViewTextBoxColumn6.DataPropertyName = "Telf";
             this.dataGridViewTextBoxColumn6.HeaderText = "Telf";
             this.dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
             this.dataGridViewTextBoxColumn6.ReadOnly = true;
-            // 
-            // Agregar
-            // 
-            this.Agregar.HeaderText = "";
-            this.Agregar.Name = "Agregar";
-            this.Agregar.ReadOnly = true;
             // 
             // Modificar
             // 
             this.Modificar.HeaderText = "";
             this.Modificar.Name = "Modificar";
             this.Modificar.ReadOnly = true;
+            this.Modificar.Width = 50;
             // 
             // Eliminar
             // 
             this.Eliminar.HeaderText = "";
             this.Eliminar.Name = "Eliminar";
             this.Eliminar.ReadOnly = true;
+            this.Eliminar.Width = 50;
             // 
             // codProvLabel1
             // 
             this.codProvLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.proveedorBindingSource, "CodProv", true));
-            this.codProvLabel1.Location = new System.Drawing.Point(97, 116);
+            this.codProvLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
+            this.codProvLabel1.ForeColor = System.Drawing.Color.White;
+            this.codProvLabel1.Location = new System.Drawing.Point(176, 222);
             this.codProvLabel1.Name = "codProvLabel1";
             this.codProvLabel1.Size = new System.Drawing.Size(100, 23);
             this.codProvLabel1.TabIndex = 20;
             this.codProvLabel1.Text = "label2";
             // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.Control;
+            this.label2.Location = new System.Drawing.Point(229, 85);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(82, 18);
+            this.label2.TabIndex = 25;
+            this.label2.Text = "Busqueda";
+            // 
             // frmGestionarProveedores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.ClientSize = new System.Drawing.Size(963, 500);
+            this.Controls.Add(this.proveedorDataGridView);
+            this.Controls.Add(this.label2);
             this.Controls.Add(codProvLabel);
             this.Controls.Add(this.codProvLabel1);
-            this.Controls.Add(this.proveedorDataGridView);
             this.Controls.Add(this.proveedorBindingNavigator);
             this.Controls.Add(this.label1);
             this.Name = "frmGestionarProveedores";
             this.Text = "frmGestionarProveedores";
             this.Load += new System.EventHandler(this.frmGestionarProveedores_Load);
+            this.Controls.SetChildIndex(this.pictureBox2, 0);
+            this.Controls.SetChildIndex(this.pictureBox1, 0);
             this.Controls.SetChildIndex(this.txtBusqueda, 0);
             this.Controls.SetChildIndex(this.btnRegistrar, 0);
             this.Controls.SetChildIndex(this.btnModificar, 0);
             this.Controls.SetChildIndex(this.btnEliminar, 0);
             this.Controls.SetChildIndex(this.label1, 0);
             this.Controls.SetChildIndex(this.proveedorBindingNavigator, 0);
-            this.Controls.SetChildIndex(this.proveedorDataGridView, 0);
             this.Controls.SetChildIndex(this.codProvLabel1, 0);
             this.Controls.SetChildIndex(codProvLabel, 0);
+            this.Controls.SetChildIndex(this.label2, 0);
+            this.Controls.SetChildIndex(this.proveedorDataGridView, 0);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.proveedorBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.proveedorBindingNavigator)).EndInit();
             this.proveedorBindingNavigator.ResumeLayout(false);
@@ -386,13 +458,13 @@
         private System.Windows.Forms.ToolStripButton proveedorBindingNavigatorSaveItem;
         private System.Windows.Forms.DataGridView proveedorDataGridView;
         private System.Windows.Forms.Label codProvLabel1;
+        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
-        private System.Windows.Forms.DataGridViewTextBoxColumn Agregar;
         private System.Windows.Forms.DataGridViewTextBoxColumn Modificar;
         private System.Windows.Forms.DataGridViewTextBoxColumn Eliminar;
     }

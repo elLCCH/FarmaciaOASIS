@@ -38,7 +38,7 @@ namespace FarmaciaOASIS.Vistas
 
             }
             else
-                MessageBox.Show("NO OK");
+                MessageBox.Show("LA CUENTA O CONTRASEÑA SON INCORRECTOS","NO SE PUDO INICIAR SESION",MessageBoxButtons.OK,MessageBoxIcon.Information);
         }
 
         private void txtuser_Leave(object sender, EventArgs e)

@@ -56,20 +56,37 @@ namespace FarmaciaOASIS.Vistas.VentanasCruds
         }
         private void BtnAceptar_Click(object sender, EventArgs e)
         {
-            var reg = CargarDatos();
-            if (_objCliente.Insertar(reg))
+            
+
+            //
+
+            try
             {
-                //MessageBox.Show("soy me");
-                MessageBox.Show("se inserto correctamente");
-                txtCiClie.Text = ciTextBox.Text;
-                nombreLabel2.Text = nombreTextBox.Text;
-                apellidoLabel2.Text = apellidoTextBox.Text;
-                panelCliente.Visible = false;
-                clienteBindingSource.DataSource = _objCliente.BuscarPorCI(ciTextBox.Text);
-                txtCiClie.Focus();
-                habilitar();
-                //Close();
+                var reg = CargarDatos();
+                if (_objCliente.Insertar(reg) && _objCliente.VerificarClienterepetido(ciTextBox.Text) == true)
+                {
+                    //MessageBox.Show("soy me");
+                    MessageBox.Show("CLIENTE REGISTRADO SATISFACTORIAMENTE", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    txtCiClie.Text = ciTextBox.Text;
+                    nombreLabel2.Text = nombreTextBox.Text;
+                    apellidoLabel2.Text = apellidoTextBox.Text;
+                    panelCliente.Visible = false;
+                    clienteBindingSource.DataSource = _objCliente.BuscarPorCI(ciTextBox.Text);
+                    txtCiClie.Focus();
+                    habilitar();
+                    //Close();
+                }
+                else
+                { MessageBox.Show("YA EXISTE UN CLIENTE CON CI: '" + reg.Ci + "'", "AVISO!!!", MessageBoxButtons.OK, MessageBoxIcon.Warning); }
+
             }
+            catch (Exception)
+            {
+
+                MessageBox.Show("DEBE INTRODUCIR LOS DATOS CORRECTAMENTE!!", "AVISO!!!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            //
+            
 
         }
 
@@ -126,7 +143,7 @@ namespace FarmaciaOASIS.Vistas.VentanasCruds
         {
             medicamentoBindingSource.DataSource = _med.Listar(txtBuscarMedicamento.Text);
             txtBuscarMedicamento.Focus();
-            PanelMed.Visible = true;
+            PanelRegProducto.Visible = true;
             Inhabilitar();
 
         }
@@ -161,7 +178,7 @@ namespace FarmaciaOASIS.Vistas.VentanasCruds
         }
         private void BtnCancelarRP_Click(object sender, EventArgs e)
         {
-            PanelMed.Visible = false;
+            PanelRegProducto.Visible = false;
             habilitar();
         }
         private Medicamento CargarDatosMedicamento()
@@ -196,7 +213,7 @@ namespace FarmaciaOASIS.Vistas.VentanasCruds
                 //txtCant.Text = txtCantAComprar.Text;
                 Total = Convert.ToInt32(txtCantAComprar.Text) * Convert.ToInt32(pUnitLabel1.Text);
                 txtTotal.Text = Convert.ToString(Total);
-                PanelMed.Visible = false;
+                PanelRegProducto.Visible = false;
             }
             else
             {
@@ -204,7 +221,7 @@ namespace FarmaciaOASIS.Vistas.VentanasCruds
                 //txtCant.Text = txtCantAComprar.Text;
                 Total = Convert.ToInt32(txtCant.Text) * Convert.ToInt32(pUnitLabel1.Text);
                 txtTotal.Text = Convert.ToString(Total);
-                PanelMed.Visible = false;
+                PanelRegProducto.Visible = false;
             }
 
         }
@@ -261,37 +278,6 @@ namespace FarmaciaOASIS.Vistas.VentanasCruds
             sumaTotalDGV();
             btnColocarProd.Enabled = false;
         }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         private void sumaTotalDGV()
         {
             int TotalPago = 0;

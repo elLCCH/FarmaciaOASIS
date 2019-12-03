@@ -208,6 +208,7 @@
             this.Controls.Add(telfLabel);
             this.Controls.Add(this.telfTextBox);
             this.Name = "frmProveedor";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmProveedor";
             this.Load += new System.EventHandler(this.frmProveedor_Load);
             this.Controls.SetChildIndex(this.label1, 0);
