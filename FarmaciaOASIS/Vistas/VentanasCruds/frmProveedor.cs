@@ -46,23 +46,32 @@ namespace FarmaciaOASIS.Vistas.VentanasCruds
 
         private void BtnAceptar_Click(object sender, EventArgs e)
         {
-            var reg = CargarDatos();
-            if (_esNuevo)
+            try
             {
-                if (_objProveedor.Insertar(reg))
+                var reg = CargarDatos();
+                if (_esNuevo)
                 {
-                    MessageBox.Show("PROVEEDOR REGISTRADO SATISFACTORIAMENTE", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    Close();
+                    if (_objProveedor.Insertar(reg))
+                    {
+                        MessageBox.Show("PROVEEDOR REGISTRADO SATISFACTORIAMENTE", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        Close();
+                    }
+                }
+                else
+                {
+                    if (_objProveedor.Modificar(reg))
+                    {
+                        MessageBox.Show("PROVEEDOR MODIFICADO SATISFACTORIAMENTE", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        Close();
+                    }
                 }
             }
-            else
+            catch (Exception)
             {
-                if (_objProveedor.Modificar(reg))
-                {
-                    MessageBox.Show("PROVEEDOR MODIFICADO SATISFACTORIAMENTE", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    Close();
-                }
+
+                MessageBox.Show("DEBE INTRODUCIR LOS DATOS CORRECTAMENTE!!", "AVISO!!!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
             }
+            
         }
 
         private Proveedor CargarDatos()

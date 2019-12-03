@@ -122,9 +122,9 @@
             telfLabel.ForeColor = System.Drawing.SystemColors.ControlDark;
             telfLabel.Location = new System.Drawing.Point(25, 262);
             telfLabel.Name = "telfLabel";
-            telfLabel.Size = new System.Drawing.Size(46, 24);
+            telfLabel.Size = new System.Drawing.Size(90, 24);
             telfLabel.TabIndex = 29;
-            telfLabel.Text = "Telf:";
+            telfLabel.Text = "Telefono:";
             // 
             // proveedorBindingSource
             // 

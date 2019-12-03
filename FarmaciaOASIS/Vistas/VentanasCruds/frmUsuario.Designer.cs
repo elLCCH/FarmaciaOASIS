@@ -92,9 +92,9 @@
             celLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             celLabel.Location = new System.Drawing.Point(28, 242);
             celLabel.Name = "celLabel";
-            celLabel.Size = new System.Drawing.Size(43, 24);
+            celLabel.Size = new System.Drawing.Size(74, 24);
             celLabel.TabIndex = 21;
-            celLabel.Text = "Cel:";
+            celLabel.Text = "Celular:";
             // 
             // ciLabel
             // 
@@ -112,9 +112,9 @@
             contraseniaLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             contraseniaLabel.Location = new System.Drawing.Point(28, 207);
             contraseniaLabel.Name = "contraseniaLabel";
-            contraseniaLabel.Size = new System.Drawing.Size(115, 24);
+            contraseniaLabel.Size = new System.Drawing.Size(111, 24);
             contraseniaLabel.TabIndex = 27;
-            contraseniaLabel.Text = "Contrasenia:";
+            contraseniaLabel.Text = "Contraseña:";
             // 
             // cuentaLabel
             // 

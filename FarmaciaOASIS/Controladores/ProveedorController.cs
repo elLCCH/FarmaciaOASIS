@@ -36,5 +36,11 @@ namespace FarmaciaOASIS.Controladores
         {
             return _db.Proveedor.Where(x => x.CodProv == pCodProv).ToList();
         }
+        
+        internal List<Proveedor> ObtenerIdProvPorNombre(string pNombreProv)
+        {
+            return _db.Proveedor.Where(x => x.Nombre == pNombreProv).ToList();
+            //return _db.Proveedor.Where(x => x.Nombre.Contains(pNombreProv)).ToList();
+        }
     }
 }
