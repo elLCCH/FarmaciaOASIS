@@ -32,26 +32,24 @@
             System.Windows.Forms.Label nombreLabel;
             System.Windows.Forms.Label apellidoLabel;
             System.Windows.Forms.Label ciLabel;
-            System.Windows.Forms.Label rolLabel;
             System.Windows.Forms.Label codUsuarioLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FormMenuPrincipal));
             this.panel1ContenedorPrincipal = new System.Windows.Forms.Panel();
             this.panelContenedor = new System.Windows.Forms.Panel();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.lblHora = new System.Windows.Forms.Label();
             this.codUsuarioLabel1 = new System.Windows.Forms.Label();
-            this.usuarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.rolLabel1 = new System.Windows.Forms.Label();
             this.ciLabel1 = new System.Windows.Forms.Label();
             this.apellidoLabel1 = new System.Windows.Forms.Label();
             this.nombreLabel1 = new System.Windows.Forms.Label();
             this.lbFecha = new System.Windows.Forms.Label();
             this.pictureBox7 = new System.Windows.Forms.PictureBox();
-            this.lblHora = new System.Windows.Forms.Label();
             this.panelMenu = new System.Windows.Forms.Panel();
             this.btnProveedores = new System.Windows.Forms.Button();
             this.btnCerrarSesion = new System.Windows.Forms.Button();
             this.btnMenu = new System.Windows.Forms.PictureBox();
             this.btnCliente = new System.Windows.Forms.Button();
+            this.rolLabel1 = new System.Windows.Forms.Label();
             this.pictureBox6 = new System.Windows.Forms.PictureBox();
             this.btnReportes = new System.Windows.Forms.Button();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
@@ -70,14 +68,13 @@
             this.tmMostrarMenu = new System.Windows.Forms.Timer(this.components);
             this.tmOcultarMenu = new System.Windows.Forms.Timer(this.components);
             this.tmFechaHora = new System.Windows.Forms.Timer(this.components);
+            this.usuarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
             nombreLabel = new System.Windows.Forms.Label();
             apellidoLabel = new System.Windows.Forms.Label();
             ciLabel = new System.Windows.Forms.Label();
-            rolLabel = new System.Windows.Forms.Label();
             codUsuarioLabel = new System.Windows.Forms.Label();
             this.panel1ContenedorPrincipal.SuspendLayout();
             this.panel1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).BeginInit();
             this.panelMenu.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.btnMenu)).BeginInit();
@@ -92,6 +89,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMaximizar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // nombreLabel
@@ -99,7 +97,7 @@
             nombreLabel.AutoSize = true;
             nombreLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             nombreLabel.ForeColor = System.Drawing.SystemColors.ControlDark;
-            nombreLabel.Location = new System.Drawing.Point(83, 24);
+            nombreLabel.Location = new System.Drawing.Point(85, 25);
             nombreLabel.Name = "nombreLabel";
             nombreLabel.Size = new System.Drawing.Size(91, 24);
             nombreLabel.TabIndex = 7;
@@ -110,7 +108,7 @@
             apellidoLabel.AutoSize = true;
             apellidoLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             apellidoLabel.ForeColor = System.Drawing.SystemColors.ControlDark;
-            apellidoLabel.Location = new System.Drawing.Point(83, 47);
+            apellidoLabel.Location = new System.Drawing.Point(85, 48);
             apellidoLabel.Name = "apellidoLabel";
             apellidoLabel.Size = new System.Drawing.Size(93, 24);
             apellidoLabel.TabIndex = 8;
@@ -121,29 +119,18 @@
             ciLabel.AutoSize = true;
             ciLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             ciLabel.ForeColor = System.Drawing.SystemColors.ControlDark;
-            ciLabel.Location = new System.Drawing.Point(83, 3);
+            ciLabel.Location = new System.Drawing.Point(85, 4);
             ciLabel.Name = "ciLabel";
             ciLabel.Size = new System.Drawing.Size(35, 24);
             ciLabel.TabIndex = 10;
             ciLabel.Text = "Ci:";
-            // 
-            // rolLabel
-            // 
-            rolLabel.AutoSize = true;
-            rolLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            rolLabel.ForeColor = System.Drawing.SystemColors.ControlDark;
-            rolLabel.Location = new System.Drawing.Point(83, 71);
-            rolLabel.Name = "rolLabel";
-            rolLabel.Size = new System.Drawing.Size(47, 24);
-            rolLabel.TabIndex = 12;
-            rolLabel.Text = "Rol:";
             // 
             // codUsuarioLabel
             // 
             codUsuarioLabel.AutoSize = true;
             codUsuarioLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             codUsuarioLabel.ForeColor = System.Drawing.SystemColors.ControlDark;
-            codUsuarioLabel.Location = new System.Drawing.Point(302, 73);
+            codUsuarioLabel.Location = new System.Drawing.Point(642, 27);
             codUsuarioLabel.Name = "codUsuarioLabel";
             codUsuarioLabel.Size = new System.Drawing.Size(131, 24);
             codUsuarioLabel.TabIndex = 13;
@@ -168,16 +155,15 @@
             this.panelContenedor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelContenedor.Location = new System.Drawing.Point(230, 50);
             this.panelContenedor.Name = "panelContenedor";
-            this.panelContenedor.Size = new System.Drawing.Size(870, 422);
+            this.panelContenedor.Size = new System.Drawing.Size(870, 455);
             this.panelContenedor.TabIndex = 2;
             // 
             // panel1
             // 
             this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(55)))), ((int)(((byte)(61)))), ((int)(((byte)(69)))));
+            this.panel1.Controls.Add(this.lblHora);
             this.panel1.Controls.Add(codUsuarioLabel);
             this.panel1.Controls.Add(this.codUsuarioLabel1);
-            this.panel1.Controls.Add(rolLabel);
-            this.panel1.Controls.Add(this.rolLabel1);
             this.panel1.Controls.Add(ciLabel);
             this.panel1.Controls.Add(this.ciLabel1);
             this.panel1.Controls.Add(apellidoLabel);
@@ -186,45 +172,41 @@
             this.panel1.Controls.Add(this.nombreLabel1);
             this.panel1.Controls.Add(this.lbFecha);
             this.panel1.Controls.Add(this.pictureBox7);
-            this.panel1.Controls.Add(this.lblHora);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(230, 472);
+            this.panel1.Location = new System.Drawing.Point(230, 505);
             this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(870, 111);
+            this.panel1.Size = new System.Drawing.Size(870, 78);
             this.panel1.TabIndex = 5;
+            // 
+            // lblHora
+            // 
+            this.lblHora.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.lblHora.AutoSize = true;
+            this.lblHora.Font = new System.Drawing.Font("Microsoft Sans Serif", 35.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblHora.ForeColor = System.Drawing.Color.LightGray;
+            this.lblHora.Location = new System.Drawing.Point(612, 3);
+            this.lblHora.Name = "lblHora";
+            this.lblHora.Size = new System.Drawing.Size(205, 54);
+            this.lblHora.TabIndex = 1;
+            this.lblHora.Text = "21:49:45";
             // 
             // codUsuarioLabel1
             // 
             this.codUsuarioLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "CodUsuario", true));
             this.codUsuarioLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.codUsuarioLabel1.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.codUsuarioLabel1.Location = new System.Drawing.Point(439, 73);
+            this.codUsuarioLabel1.Location = new System.Drawing.Point(697, 28);
             this.codUsuarioLabel1.Name = "codUsuarioLabel1";
             this.codUsuarioLabel1.Size = new System.Drawing.Size(100, 23);
             this.codUsuarioLabel1.TabIndex = 14;
             this.codUsuarioLabel1.Text = "aa";
-            // 
-            // usuarioBindingSource
-            // 
-            this.usuarioBindingSource.DataSource = typeof(FarmaciaOASIS.Data.Usuario);
-            // 
-            // rolLabel1
-            // 
-            this.rolLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "Rol", true));
-            this.rolLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rolLabel1.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.rolLabel1.Location = new System.Drawing.Point(182, 73);
-            this.rolLabel1.Name = "rolLabel1";
-            this.rolLabel1.Size = new System.Drawing.Size(100, 23);
-            this.rolLabel1.TabIndex = 13;
-            this.rolLabel1.Text = "label1";
             // 
             // ciLabel1
             // 
             this.ciLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "Ci", true));
             this.ciLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ciLabel1.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.ciLabel1.Location = new System.Drawing.Point(182, 4);
+            this.ciLabel1.Location = new System.Drawing.Point(184, 5);
             this.ciLabel1.Name = "ciLabel1";
             this.ciLabel1.Size = new System.Drawing.Size(100, 23);
             this.ciLabel1.TabIndex = 11;
@@ -235,7 +217,7 @@
             this.apellidoLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "Apellido", true));
             this.apellidoLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.apellidoLabel1.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.apellidoLabel1.Location = new System.Drawing.Point(182, 48);
+            this.apellidoLabel1.Location = new System.Drawing.Point(184, 49);
             this.apellidoLabel1.Name = "apellidoLabel1";
             this.apellidoLabel1.Size = new System.Drawing.Size(100, 23);
             this.apellidoLabel1.TabIndex = 9;
@@ -246,7 +228,7 @@
             this.nombreLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "Nombre", true));
             this.nombreLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.nombreLabel1.ForeColor = System.Drawing.SystemColors.ControlDark;
-            this.nombreLabel1.Location = new System.Drawing.Point(182, 27);
+            this.nombreLabel1.Location = new System.Drawing.Point(184, 28);
             this.nombreLabel1.Name = "nombreLabel1";
             this.nombreLabel1.Size = new System.Drawing.Size(100, 23);
             this.nombreLabel1.TabIndex = 8;
@@ -258,7 +240,7 @@
             this.lbFecha.AutoSize = true;
             this.lbFecha.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(128)));
             this.lbFecha.ForeColor = System.Drawing.Color.White;
-            this.lbFecha.Location = new System.Drawing.Point(608, 71);
+            this.lbFecha.Location = new System.Drawing.Point(606, 54);
             this.lbFecha.Name = "lbFecha";
             this.lbFecha.Size = new System.Drawing.Size(224, 20);
             this.lbFecha.TabIndex = 4;
@@ -267,24 +249,12 @@
             // pictureBox7
             // 
             this.pictureBox7.Image = global::FarmaciaOASIS.Properties.Resources.icono_cliente;
-            this.pictureBox7.Location = new System.Drawing.Point(12, 18);
+            this.pictureBox7.Location = new System.Drawing.Point(14, 4);
             this.pictureBox7.Name = "pictureBox7";
             this.pictureBox7.Size = new System.Drawing.Size(65, 65);
             this.pictureBox7.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.pictureBox7.TabIndex = 3;
             this.pictureBox7.TabStop = false;
-            // 
-            // lblHora
-            // 
-            this.lblHora.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.lblHora.AutoSize = true;
-            this.lblHora.Font = new System.Drawing.Font("Microsoft Sans Serif", 35.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblHora.ForeColor = System.Drawing.Color.LightGray;
-            this.lblHora.Location = new System.Drawing.Point(612, 11);
-            this.lblHora.Name = "lblHora";
-            this.lblHora.Size = new System.Drawing.Size(205, 54);
-            this.lblHora.TabIndex = 1;
-            this.lblHora.Text = "21:49:45";
             // 
             // panelMenu
             // 
@@ -293,6 +263,7 @@
             this.panelMenu.Controls.Add(this.btnCerrarSesion);
             this.panelMenu.Controls.Add(this.btnMenu);
             this.panelMenu.Controls.Add(this.btnCliente);
+            this.panelMenu.Controls.Add(this.rolLabel1);
             this.panelMenu.Controls.Add(this.pictureBox6);
             this.panelMenu.Controls.Add(this.btnReportes);
             this.panelMenu.Controls.Add(this.pictureBox3);
@@ -348,6 +319,7 @@
             this.btnCerrarSesion.Text = "Cerrar Sesion";
             this.btnCerrarSesion.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCerrarSesion.UseVisualStyleBackColor = true;
+            this.btnCerrarSesion.Click += new System.EventHandler(this.btnCerrar_Click);
             // 
             // btnMenu
             // 
@@ -381,6 +353,17 @@
             this.btnCliente.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCliente.UseVisualStyleBackColor = true;
             this.btnCliente.Click += new System.EventHandler(this.BtnCliente_Click);
+            // 
+            // rolLabel1
+            // 
+            this.rolLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "Rol", true));
+            this.rolLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.rolLabel1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.rolLabel1.Location = new System.Drawing.Point(3, 7);
+            this.rolLabel1.Name = "rolLabel1";
+            this.rolLabel1.Size = new System.Drawing.Size(163, 23);
+            this.rolLabel1.TabIndex = 13;
+            this.rolLabel1.Text = "label1";
             // 
             // pictureBox6
             // 
@@ -601,6 +584,10 @@
             this.tmFechaHora.Enabled = true;
             this.tmFechaHora.Tick += new System.EventHandler(this.tmFechaHora_Tick);
             // 
+            // usuarioBindingSource
+            // 
+            this.usuarioBindingSource.DataSource = typeof(FarmaciaOASIS.Data.Usuario);
+            // 
             // FormMenuPrincipal
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -618,7 +605,6 @@
             this.panel1ContenedorPrincipal.ResumeLayout(false);
             this.panel1.ResumeLayout(false);
             this.panel1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox7)).EndInit();
             this.panelMenu.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)(this.btnMenu)).EndInit();
@@ -633,6 +619,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.btnMinimizar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnCerrar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.btnMaximizar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).EndInit();
             this.ResumeLayout(false);
 
         }

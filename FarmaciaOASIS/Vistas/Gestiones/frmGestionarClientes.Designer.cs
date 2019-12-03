@@ -81,6 +81,7 @@
             this.btnEliminar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(69)))), ((int)(((byte)(76)))));
             this.btnEliminar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(45)))), ((int)(((byte)(53)))));
             this.btnEliminar.Location = new System.Drawing.Point(671, 28);
+            this.btnEliminar.Visible = false;
             this.btnEliminar.Click += new System.EventHandler(this.BtnEliminar_Click);
             // 
             // btnModificar
@@ -89,13 +90,14 @@
             this.btnModificar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(69)))), ((int)(((byte)(76)))));
             this.btnModificar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(45)))), ((int)(((byte)(53)))));
             this.btnModificar.Location = new System.Drawing.Point(218, 28);
+            this.btnModificar.Visible = false;
             this.btnModificar.Click += new System.EventHandler(this.BtnModificar_Click);
             // 
             // txtBusqueda
             // 
             this.txtBusqueda.BackColor = System.Drawing.Color.SpringGreen;
             this.txtBusqueda.Location = new System.Drawing.Point(119, 84);
-            this.txtBusqueda.Size = new System.Drawing.Size(546, 19);
+            this.txtBusqueda.Size = new System.Drawing.Size(546, 24);
             this.txtBusqueda.Text = "";
             this.txtBusqueda.TextChanged += new System.EventHandler(this.txtBusqueda_TextChanged);
             this.txtBusqueda.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TxtBusqueda_KeyUp);
@@ -113,7 +115,7 @@
             ciLabel.AutoSize = true;
             ciLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             ciLabel.ForeColor = System.Drawing.Color.White;
-            ciLabel.Location = new System.Drawing.Point(125, 122);
+            ciLabel.Location = new System.Drawing.Point(180, 229);
             ciLabel.Name = "ciLabel";
             ciLabel.Size = new System.Drawing.Size(22, 13);
             ciLabel.TabIndex = 18;
@@ -178,7 +180,7 @@
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(37, 22);
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
             this.bindingNavigatorCountItem.Text = "de {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Número total de elementos";
             // 
@@ -366,7 +368,7 @@
             this.ciLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clienteBindingSource, "Ci", true));
             this.ciLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ciLabel1.ForeColor = System.Drawing.Color.White;
-            this.ciLabel1.Location = new System.Drawing.Point(150, 122);
+            this.ciLabel1.Location = new System.Drawing.Point(208, 229);
             this.ciLabel1.Name = "ciLabel1";
             this.ciLabel1.Size = new System.Drawing.Size(78, 17);
             this.ciLabel1.TabIndex = 19;
@@ -389,25 +391,29 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(176)))), ((int)(((byte)(140)))));
             this.ClientSize = new System.Drawing.Size(963, 500);
-            this.Controls.Add(this.label2);
+            this.Controls.Add(this.clienteDataGridView);
             this.Controls.Add(ciLabel);
             this.Controls.Add(this.ciLabel1);
-            this.Controls.Add(this.clienteDataGridView);
             this.Controls.Add(this.clienteBindingNavigator);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.label2);
             this.Name = "frmGestionarClientes";
             this.Text = "frmGestionarClientes";
             this.Load += new System.EventHandler(this.frmGestionarClientes_Load);
+            this.Controls.SetChildIndex(this.label2, 0);
+            this.Controls.SetChildIndex(this.pictureBox2, 0);
+            this.Controls.SetChildIndex(this.pictureBox1, 0);
             this.Controls.SetChildIndex(this.txtBusqueda, 0);
             this.Controls.SetChildIndex(this.btnRegistrar, 0);
             this.Controls.SetChildIndex(this.btnModificar, 0);
             this.Controls.SetChildIndex(this.btnEliminar, 0);
             this.Controls.SetChildIndex(this.label1, 0);
             this.Controls.SetChildIndex(this.clienteBindingNavigator, 0);
-            this.Controls.SetChildIndex(this.clienteDataGridView, 0);
             this.Controls.SetChildIndex(this.ciLabel1, 0);
             this.Controls.SetChildIndex(ciLabel, 0);
-            ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).EndInit();
+            this.Controls.SetChildIndex(this.clienteDataGridView, 0);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clienteBindingNavigator)).EndInit();
             this.clienteBindingNavigator.ResumeLayout(false);
             this.clienteBindingNavigator.PerformLayout();

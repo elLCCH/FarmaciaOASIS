@@ -154,6 +154,7 @@
             this.Controls.Add(nombreLabel);
             this.Controls.Add(this.nombreTextBox);
             this.Name = "frmCliente";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmCliente";
             this.Load += new System.EventHandler(this.frmCliente_Load);
             this.Controls.SetChildIndex(this.label1, 0);

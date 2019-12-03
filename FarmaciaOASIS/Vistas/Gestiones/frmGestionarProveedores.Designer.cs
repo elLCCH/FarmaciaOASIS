@@ -77,19 +77,13 @@
             this.btnRegistrar.Location = new System.Drawing.Point(718, 110);
             this.btnRegistrar.Click += new System.EventHandler(this.BtnAgregar_Click);
             // 
-            // btnModificar
-            // 
-            this.btnModificar.FlatAppearance.BorderSize = 0;
-            this.btnModificar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(69)))), ((int)(((byte)(76)))));
-            this.btnModificar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(45)))), ((int)(((byte)(53)))));
-            this.btnModificar.Click += new System.EventHandler(this.BtnModificar_Click);
-            // 
             // btnEliminar
             // 
             this.btnEliminar.FlatAppearance.BorderSize = 0;
             this.btnEliminar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(69)))), ((int)(((byte)(76)))));
             this.btnEliminar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(45)))), ((int)(((byte)(53)))));
             this.btnEliminar.Location = new System.Drawing.Point(711, 26);
+            this.btnEliminar.Visible = false;
             this.btnEliminar.Click += new System.EventHandler(this.BtnEliminar_Click);
             // 
             // btnModificar
@@ -98,13 +92,14 @@
             this.btnModificar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(69)))), ((int)(((byte)(76)))));
             this.btnModificar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(45)))), ((int)(((byte)(53)))));
             this.btnModificar.Location = new System.Drawing.Point(203, 28);
+            this.btnModificar.Visible = false;
             this.btnModificar.Click += new System.EventHandler(this.BtnModificar_Click);
             // 
             // txtBusqueda
             // 
             this.txtBusqueda.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtBusqueda.MaxLength = 20;
             this.txtBusqueda.Location = new System.Drawing.Point(317, 79);
+            this.txtBusqueda.MaxLength = 20;
             this.txtBusqueda.Text = "";
             this.txtBusqueda.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TxtBusqueda_KeyUp);
             // 
@@ -121,7 +116,7 @@
             codProvLabel.AutoSize = true;
             codProvLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             codProvLabel.ForeColor = System.Drawing.Color.White;
-            codProvLabel.Location = new System.Drawing.Point(106, 126);
+            codProvLabel.Location = new System.Drawing.Point(185, 232);
             codProvLabel.Name = "codProvLabel";
             codProvLabel.Size = new System.Drawing.Size(63, 13);
             codProvLabel.TabIndex = 19;
@@ -184,7 +179,7 @@
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(37, 22);
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
             this.bindingNavigatorCountItem.Text = "de {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Número total de elementos";
             // 
@@ -389,7 +384,7 @@
             this.codProvLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.proveedorBindingSource, "CodProv", true));
             this.codProvLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             this.codProvLabel1.ForeColor = System.Drawing.Color.White;
-            this.codProvLabel1.Location = new System.Drawing.Point(166, 126);
+            this.codProvLabel1.Location = new System.Drawing.Point(176, 222);
             this.codProvLabel1.Name = "codProvLabel1";
             this.codProvLabel1.Size = new System.Drawing.Size(100, 23);
             this.codProvLabel1.TabIndex = 20;
@@ -406,24 +401,15 @@
             this.label2.TabIndex = 25;
             this.label2.Text = "Busqueda";
             // 
-            // codProvLabel1
-            // 
-            this.codProvLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.proveedorBindingSource, "CodProv", true));
-            this.codProvLabel1.Location = new System.Drawing.Point(97, 116);
-            this.codProvLabel1.Name = "codProvLabel1";
-            this.codProvLabel1.Size = new System.Drawing.Size(100, 23);
-            this.codProvLabel1.TabIndex = 20;
-            this.codProvLabel1.Text = "label2";
-            // 
             // frmGestionarProveedores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(963, 500);
+            this.Controls.Add(this.proveedorDataGridView);
             this.Controls.Add(this.label2);
             this.Controls.Add(codProvLabel);
             this.Controls.Add(this.codProvLabel1);
-            this.Controls.Add(this.proveedorDataGridView);
             this.Controls.Add(this.proveedorBindingNavigator);
             this.Controls.Add(this.label1);
             this.Name = "frmGestionarProveedores";
@@ -437,10 +423,10 @@
             this.Controls.SetChildIndex(this.btnEliminar, 0);
             this.Controls.SetChildIndex(this.label1, 0);
             this.Controls.SetChildIndex(this.proveedorBindingNavigator, 0);
-            this.Controls.SetChildIndex(this.proveedorDataGridView, 0);
             this.Controls.SetChildIndex(this.codProvLabel1, 0);
             this.Controls.SetChildIndex(codProvLabel, 0);
             this.Controls.SetChildIndex(this.label2, 0);
+            this.Controls.SetChildIndex(this.proveedorDataGridView, 0);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.proveedorBindingSource)).EndInit();

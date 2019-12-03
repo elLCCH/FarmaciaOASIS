@@ -212,6 +212,7 @@
             this.Controls.Add(this.nomMedTextBox);
             this.Controls.Add(pUnitLabel);
             this.Name = "frmMedicamento";
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "frmMedicamento";
             this.Load += new System.EventHandler(this.frmMedicamento_Load);
             this.Controls.SetChildIndex(this.label1, 0);

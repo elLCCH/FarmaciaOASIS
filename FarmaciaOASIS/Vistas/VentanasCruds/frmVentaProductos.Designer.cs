@@ -47,12 +47,6 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.label1 = new System.Windows.Forms.Label();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.panelBuscarCliente = new System.Windows.Forms.Panel();
-            this.clienteDataGridView = new System.Windows.Forms.DataGridView();
-            this.Apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.label16 = new System.Windows.Forms.Label();
-            this.txtBuscarCliente = new System.Windows.Forms.TextBox();
-            this.btnSelecCliente = new System.Windows.Forms.Button();
             this.apellidoLabel2 = new System.Windows.Forms.Label();
             this.nombreLabel2 = new System.Windows.Forms.Label();
             this.codClienteLabel2 = new System.Windows.Forms.Label();
@@ -60,6 +54,12 @@
             this.txtCiClie = new System.Windows.Forms.TextBox();
             this.lblIdClie = new System.Windows.Forms.Label();
             this.label2 = new System.Windows.Forms.Label();
+            this.panelBuscarCliente = new System.Windows.Forms.Panel();
+            this.clienteDataGridView = new System.Windows.Forms.DataGridView();
+            this.Apellido = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label16 = new System.Windows.Forms.Label();
+            this.txtBuscarCliente = new System.Windows.Forms.TextBox();
+            this.btnSelecCliente = new System.Windows.Forms.Button();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
             this.btnBuscarCliente = new System.Windows.Forms.Button();
             this.pUnitLabel1 = new System.Windows.Forms.Label();
@@ -91,7 +91,7 @@
             this.txtTotal = new System.Windows.Forms.TextBox();
             this.btnColocarProd = new System.Windows.Forms.Button();
             this.codMedLabel1 = new System.Windows.Forms.Label();
-            this.PanelMed = new System.Windows.Forms.Panel();
+            this.PanelRegProducto = new System.Windows.Forms.Panel();
             this.medicamentoDataGridView = new System.Windows.Forms.DataGridView();
             this.cantidadLabel3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -111,6 +111,10 @@
             this.bdvCliente = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.bdvMed = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             this.bdcBuscarCliente = new Bunifu.Framework.UI.BunifuDragControl(this.components);
+            this.label8 = new System.Windows.Forms.Label();
+            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.clienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -119,9 +123,6 @@
             this.dataGridViewTextBoxColumn6 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn7 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.medicamentoBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.clienteBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.dataGridViewTextBoxColumn9 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.detalleFacturaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.facturaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.usuarioBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -143,11 +144,11 @@
             this.groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVentas)).BeginInit();
             this.groupBox4.SuspendLayout();
-            this.PanelMed.SuspendLayout();
+            this.PanelRegProducto.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.medicamentoDataGridView)).BeginInit();
             this.panelCliente.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.medicamentoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.medicamentoBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.detalleFacturaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.facturaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).BeginInit();
@@ -186,9 +187,9 @@
             nomMedLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             nomMedLabel.Location = new System.Drawing.Point(4, 43);
             nomMedLabel.Name = "nomMedLabel";
-            nomMedLabel.Size = new System.Drawing.Size(86, 18);
+            nomMedLabel.Size = new System.Drawing.Size(147, 18);
             nomMedLabel.TabIndex = 52;
-            nomMedLabel.Text = "Nom Med:";
+            nomMedLabel.Text = "Nombre Producto:";
             // 
             // codMedLabel
             // 
@@ -196,9 +197,9 @@
             codMedLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             codMedLabel.Location = new System.Drawing.Point(4, 17);
             codMedLabel.Name = "codMedLabel";
-            codMedLabel.Size = new System.Drawing.Size(81, 18);
+            codMedLabel.Size = new System.Drawing.Size(141, 18);
             codMedLabel.TabIndex = 48;
-            codMedLabel.Text = "Cod Med:";
+            codMedLabel.Text = "Codigo Producto:";
             // 
             // apellidoLabel
             // 
@@ -288,6 +289,67 @@
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Datos del Cliente";
             // 
+            // apellidoLabel2
+            // 
+            this.apellidoLabel2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clienteBindingSource, "Apellido", true));
+            this.apellidoLabel2.Location = new System.Drawing.Point(123, 99);
+            this.apellidoLabel2.Name = "apellidoLabel2";
+            this.apellidoLabel2.Size = new System.Drawing.Size(100, 23);
+            this.apellidoLabel2.TabIndex = 42;
+            // 
+            // nombreLabel2
+            // 
+            this.nombreLabel2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clienteBindingSource, "Nombre", true));
+            this.nombreLabel2.Location = new System.Drawing.Point(123, 75);
+            this.nombreLabel2.Name = "nombreLabel2";
+            this.nombreLabel2.Size = new System.Drawing.Size(100, 23);
+            this.nombreLabel2.TabIndex = 41;
+            // 
+            // codClienteLabel2
+            // 
+            this.codClienteLabel2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clienteBindingSource, "CodCliente", true));
+            this.codClienteLabel2.Location = new System.Drawing.Point(25, 21);
+            this.codClienteLabel2.Name = "codClienteLabel2";
+            this.codClienteLabel2.Size = new System.Drawing.Size(100, 23);
+            this.codClienteLabel2.TabIndex = 38;
+            // 
+            // ciLabel1
+            // 
+            this.ciLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clienteBindingSource, "Ci", true));
+            this.ciLabel1.Location = new System.Drawing.Point(169, 19);
+            this.ciLabel1.Name = "ciLabel1";
+            this.ciLabel1.Size = new System.Drawing.Size(100, 23);
+            this.ciLabel1.TabIndex = 35;
+            // 
+            // txtCiClie
+            // 
+            this.txtCiClie.Location = new System.Drawing.Point(126, 43);
+            this.txtCiClie.MaxLength = 15;
+            this.txtCiClie.Name = "txtCiClie";
+            this.txtCiClie.Size = new System.Drawing.Size(100, 22);
+            this.txtCiClie.TabIndex = 8;
+            this.txtCiClie.TextChanged += new System.EventHandler(this.TxtCiClie_TextChanged);
+            this.txtCiClie.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtCiClie_KeyPress);
+            this.txtCiClie.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TxtCiClie_KeyUp);
+            // 
+            // lblIdClie
+            // 
+            this.lblIdClie.AutoSize = true;
+            this.lblIdClie.Location = new System.Drawing.Point(123, 21);
+            this.lblIdClie.Name = "lblIdClie";
+            this.lblIdClie.Size = new System.Drawing.Size(0, 16);
+            this.lblIdClie.TabIndex = 31;
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Location = new System.Drawing.Point(24, 44);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(29, 18);
+            this.label2.TabIndex = 1;
+            this.label2.Text = "CI:";
+            // 
             // panelBuscarCliente
             // 
             this.panelBuscarCliente.BackColor = System.Drawing.Color.Teal;
@@ -295,7 +357,7 @@
             this.panelBuscarCliente.Controls.Add(this.label16);
             this.panelBuscarCliente.Controls.Add(this.txtBuscarCliente);
             this.panelBuscarCliente.Controls.Add(this.btnSelecCliente);
-            this.panelBuscarCliente.Location = new System.Drawing.Point(218, 45);
+            this.panelBuscarCliente.Location = new System.Drawing.Point(226, 56);
             this.panelBuscarCliente.Name = "panelBuscarCliente";
             this.panelBuscarCliente.Size = new System.Drawing.Size(478, 414);
             this.panelBuscarCliente.TabIndex = 92;
@@ -366,70 +428,11 @@
             this.btnSelecCliente.UseVisualStyleBackColor = false;
             this.btnSelecCliente.Click += new System.EventHandler(this.BtnSelecCliente_Click);
             // 
-            // apellidoLabel2
-            // 
-            this.apellidoLabel2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clienteBindingSource, "Apellido", true));
-            this.apellidoLabel2.Location = new System.Drawing.Point(123, 99);
-            this.apellidoLabel2.Name = "apellidoLabel2";
-            this.apellidoLabel2.Size = new System.Drawing.Size(100, 23);
-            this.apellidoLabel2.TabIndex = 42;
-            // 
-            // nombreLabel2
-            // 
-            this.nombreLabel2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clienteBindingSource, "Nombre", true));
-            this.nombreLabel2.Location = new System.Drawing.Point(123, 75);
-            this.nombreLabel2.Name = "nombreLabel2";
-            this.nombreLabel2.Size = new System.Drawing.Size(100, 23);
-            this.nombreLabel2.TabIndex = 41;
-            // 
-            // codClienteLabel2
-            // 
-            this.codClienteLabel2.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clienteBindingSource, "CodCliente", true));
-            this.codClienteLabel2.Location = new System.Drawing.Point(25, 21);
-            this.codClienteLabel2.Name = "codClienteLabel2";
-            this.codClienteLabel2.Size = new System.Drawing.Size(100, 23);
-            this.codClienteLabel2.TabIndex = 38;
-            // 
-            // ciLabel1
-            // 
-            this.ciLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clienteBindingSource, "Ci", true));
-            this.ciLabel1.Location = new System.Drawing.Point(169, 19);
-            this.ciLabel1.Name = "ciLabel1";
-            this.ciLabel1.Size = new System.Drawing.Size(100, 23);
-            this.ciLabel1.TabIndex = 35;
-            // 
-            // txtCiClie
-            // 
-            this.txtCiClie.Location = new System.Drawing.Point(126, 43);
-            this.txtCiClie.MaxLength = 15;
-            this.txtCiClie.Name = "txtCiClie";
-            this.txtCiClie.Size = new System.Drawing.Size(100, 22);
-            this.txtCiClie.TabIndex = 8;
-            this.txtCiClie.TextChanged += new System.EventHandler(this.TxtCiClie_TextChanged);
-            this.txtCiClie.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtCiClie_KeyPress);
-            this.txtCiClie.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TxtCiClie_KeyUp);
-            // 
-            // lblIdClie
-            // 
-            this.lblIdClie.AutoSize = true;
-            this.lblIdClie.Location = new System.Drawing.Point(123, 21);
-            this.lblIdClie.Name = "lblIdClie";
-            this.lblIdClie.Size = new System.Drawing.Size(0, 16);
-            this.lblIdClie.TabIndex = 31;
-            // 
-            // label2
-            // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label2.Location = new System.Drawing.Point(24, 44);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(29, 18);
-            this.label2.TabIndex = 1;
-            this.label2.Text = "CI:";
-            // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(this.label8);
             this.groupBox1.Controls.Add(this.btnBuscarCliente);
+            this.groupBox1.Controls.Add(this.txtNoAutorizacion);
             this.groupBox1.Controls.Add(pUnitLabel);
             this.groupBox1.Controls.Add(this.pUnitLabel1);
             this.groupBox1.Controls.Add(cantidadLabel);
@@ -439,14 +442,14 @@
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.Location = new System.Drawing.Point(311, 63);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(431, 70);
+            this.groupBox1.Size = new System.Drawing.Size(588, 70);
             this.groupBox1.TabIndex = 32;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Registro de datos";
             // 
             // btnBuscarCliente
             // 
-            this.btnBuscarCliente.Location = new System.Drawing.Point(13, 16);
+            this.btnBuscarCliente.Location = new System.Drawing.Point(7, 17);
             this.btnBuscarCliente.Name = "btnBuscarCliente";
             this.btnBuscarCliente.Size = new System.Drawing.Size(127, 47);
             this.btnBuscarCliente.TabIndex = 27;
@@ -474,7 +477,7 @@
             // 
             // btnRegProd
             // 
-            this.btnRegProd.Location = new System.Drawing.Point(291, 15);
+            this.btnRegProd.Location = new System.Drawing.Point(275, 16);
             this.btnRegProd.Name = "btnRegProd";
             this.btnRegProd.Size = new System.Drawing.Size(124, 48);
             this.btnRegProd.TabIndex = 10;
@@ -484,7 +487,7 @@
             // 
             // btnRegistrarCliente
             // 
-            this.btnRegistrarCliente.Location = new System.Drawing.Point(152, 15);
+            this.btnRegistrarCliente.Location = new System.Drawing.Point(145, 16);
             this.btnRegistrarCliente.Name = "btnRegistrarCliente";
             this.btnRegistrarCliente.Size = new System.Drawing.Size(120, 48);
             this.btnRegistrarCliente.TabIndex = 9;
@@ -499,15 +502,11 @@
             this.groupBox3.Controls.Add(this.label13);
             this.groupBox3.Controls.Add(this.label14);
             this.groupBox3.Controls.Add(this.label3);
-            this.groupBox3.Controls.Add(this.label10);
-            this.groupBox3.Controls.Add(this.lblTotal);
             this.groupBox3.Controls.Add(this.dgvVentas);
-            this.groupBox3.Controls.Add(this.btnEliminar);
-            this.groupBox3.Controls.Add(this.btnRegistrar);
             this.groupBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox3.Location = new System.Drawing.Point(13, 214);
             this.groupBox3.Name = "groupBox3";
-            this.groupBox3.Size = new System.Drawing.Size(724, 313);
+            this.groupBox3.Size = new System.Drawing.Size(698, 262);
             this.groupBox3.TabIndex = 33;
             this.groupBox3.TabStop = false;
             this.groupBox3.Text = "Datos del Producto";
@@ -576,7 +575,7 @@
             // 
             this.label10.AutoSize = true;
             this.label10.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label10.Location = new System.Drawing.Point(524, 276);
+            this.label10.Location = new System.Drawing.Point(729, 399);
             this.label10.Name = "label10";
             this.label10.Size = new System.Drawing.Size(46, 18);
             this.label10.TabIndex = 21;
@@ -586,7 +585,7 @@
             // 
             this.lblTotal.BackColor = System.Drawing.SystemColors.ActiveBorder;
             this.lblTotal.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblTotal.Location = new System.Drawing.Point(576, 276);
+            this.lblTotal.Location = new System.Drawing.Point(781, 399);
             this.lblTotal.Name = "lblTotal";
             this.lblTotal.Size = new System.Drawing.Size(104, 23);
             this.lblTotal.TabIndex = 20;
@@ -629,7 +628,7 @@
             this.dgvVentas.DefaultCellStyle = dataGridViewCellStyle2;
             this.dgvVentas.EnableHeadersVisualStyles = false;
             this.dgvVentas.GridColor = System.Drawing.Color.LimeGreen;
-            this.dgvVentas.Location = new System.Drawing.Point(27, 46);
+            this.dgvVentas.Location = new System.Drawing.Point(27, 20);
             this.dgvVentas.Name = "dgvVentas";
             this.dgvVentas.ReadOnly = true;
             this.dgvVentas.RowHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
@@ -645,7 +644,7 @@
             dataGridViewCellStyle4.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
             this.dgvVentas.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvVentas.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dgvVentas.Size = new System.Drawing.Size(647, 216);
+            this.dgvVentas.Size = new System.Drawing.Size(646, 233);
             this.dgvVentas.TabIndex = 11;
             // 
             // ColCodigo
@@ -690,9 +689,10 @@
             // 
             // btnEliminar
             // 
-            this.btnEliminar.Location = new System.Drawing.Point(27, 270);
+            this.btnEliminar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnEliminar.Location = new System.Drawing.Point(716, 228);
             this.btnEliminar.Name = "btnEliminar";
-            this.btnEliminar.Size = new System.Drawing.Size(162, 37);
+            this.btnEliminar.Size = new System.Drawing.Size(183, 34);
             this.btnEliminar.TabIndex = 35;
             this.btnEliminar.Text = "Eliminar de la Lista";
             this.btnEliminar.UseVisualStyleBackColor = true;
@@ -700,9 +700,10 @@
             // 
             // btnRegistrar
             // 
-            this.btnRegistrar.Location = new System.Drawing.Point(195, 270);
+            this.btnRegistrar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnRegistrar.Location = new System.Drawing.Point(725, 268);
             this.btnRegistrar.Name = "btnRegistrar";
-            this.btnRegistrar.Size = new System.Drawing.Size(120, 37);
+            this.btnRegistrar.Size = new System.Drawing.Size(162, 37);
             this.btnRegistrar.TabIndex = 36;
             this.btnRegistrar.Text = "Registrar Ventas";
             this.btnRegistrar.UseVisualStyleBackColor = true;
@@ -711,27 +712,26 @@
             // groupBox4
             // 
             this.groupBox4.Controls.Add(this.label11);
-            this.groupBox4.Controls.Add(this.label7);
-            this.groupBox4.Controls.Add(this.btnLimpiar);
-            this.groupBox4.Controls.Add(this.txtCant);
             this.groupBox4.Controls.Add(this.nomMedLabel1);
-            this.groupBox4.Controls.Add(this.txtTotal);
+            this.groupBox4.Controls.Add(this.label7);
             this.groupBox4.Controls.Add(nomMedLabel);
-            this.groupBox4.Controls.Add(this.btnColocarProd);
             this.groupBox4.Controls.Add(this.codMedLabel1);
+            this.groupBox4.Controls.Add(this.btnColocarProd);
+            this.groupBox4.Controls.Add(this.txtCant);
             this.groupBox4.Controls.Add(codMedLabel);
+            this.groupBox4.Controls.Add(this.txtTotal);
             this.groupBox4.Location = new System.Drawing.Point(311, 139);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(431, 69);
+            this.groupBox4.Size = new System.Drawing.Size(588, 69);
             this.groupBox4.TabIndex = 47;
             this.groupBox4.TabStop = false;
-            this.groupBox4.Text = "groupBox4";
+            this.groupBox4.Text = "Datos a Registrar";
             // 
             // label11
             // 
             this.label11.AutoSize = true;
             this.label11.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label11.Location = new System.Drawing.Point(167, 17);
+            this.label11.Location = new System.Drawing.Point(338, 16);
             this.label11.Name = "label11";
             this.label11.Size = new System.Drawing.Size(62, 18);
             this.label11.TabIndex = 56;
@@ -741,7 +741,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label7.Location = new System.Drawing.Point(167, 42);
+            this.label7.Location = new System.Drawing.Point(320, 42);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(79, 18);
             this.label7.TabIndex = 55;
@@ -749,9 +749,10 @@
             // 
             // btnLimpiar
             // 
-            this.btnLimpiar.Location = new System.Drawing.Point(327, 14);
+            this.btnLimpiar.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnLimpiar.Location = new System.Drawing.Point(740, 311);
             this.btnLimpiar.Name = "btnLimpiar";
-            this.btnLimpiar.Size = new System.Drawing.Size(99, 21);
+            this.btnLimpiar.Size = new System.Drawing.Size(122, 37);
             this.btnLimpiar.TabIndex = 47;
             this.btnLimpiar.Text = "Limpiar";
             this.btnLimpiar.UseVisualStyleBackColor = true;
@@ -759,7 +760,7 @@
             // 
             // txtCant
             // 
-            this.txtCant.Location = new System.Drawing.Point(258, 40);
+            this.txtCant.Location = new System.Drawing.Point(411, 40);
             this.txtCant.MaxLength = 5;
             this.txtCant.Name = "txtCant";
             this.txtCant.Size = new System.Drawing.Size(48, 20);
@@ -770,7 +771,7 @@
             // 
             this.nomMedLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.medicamentoBindingSource, "NomMed", true));
             this.nomMedLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nomMedLabel1.Location = new System.Drawing.Point(91, 42);
+            this.nomMedLabel1.Location = new System.Drawing.Point(151, 42);
             this.nomMedLabel1.Name = "nomMedLabel1";
             this.nomMedLabel1.Size = new System.Drawing.Size(100, 23);
             this.nomMedLabel1.TabIndex = 53;
@@ -778,7 +779,7 @@
             // 
             // txtTotal
             // 
-            this.txtTotal.Location = new System.Drawing.Point(258, 14);
+            this.txtTotal.Location = new System.Drawing.Point(411, 14);
             this.txtTotal.MaxLength = 5;
             this.txtTotal.Name = "txtTotal";
             this.txtTotal.Size = new System.Drawing.Size(48, 20);
@@ -787,9 +788,10 @@
             // 
             // btnColocarProd
             // 
-            this.btnColocarProd.Location = new System.Drawing.Point(326, 40);
+            this.btnColocarProd.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnColocarProd.Location = new System.Drawing.Point(473, 11);
             this.btnColocarProd.Name = "btnColocarProd";
-            this.btnColocarProd.Size = new System.Drawing.Size(99, 20);
+            this.btnColocarProd.Size = new System.Drawing.Size(109, 51);
             this.btnColocarProd.TabIndex = 54;
             this.btnColocarProd.Text = "Colocar Producto";
             this.btnColocarProd.UseVisualStyleBackColor = true;
@@ -800,29 +802,29 @@
             // 
             this.codMedLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.medicamentoBindingSource, "CodMed", true));
             this.codMedLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.codMedLabel1.Location = new System.Drawing.Point(91, 16);
+            this.codMedLabel1.Location = new System.Drawing.Point(151, 16);
             this.codMedLabel1.Name = "codMedLabel1";
             this.codMedLabel1.Size = new System.Drawing.Size(100, 23);
             this.codMedLabel1.TabIndex = 49;
             this.codMedLabel1.Text = "label11";
             // 
-            // PanelMed
+            // PanelRegProducto
             // 
-            this.PanelMed.BackColor = System.Drawing.Color.Teal;
-            this.PanelMed.Controls.Add(this.medicamentoDataGridView);
-            this.PanelMed.Controls.Add(cantidadLabel2);
-            this.PanelMed.Controls.Add(this.cantidadLabel3);
-            this.PanelMed.Controls.Add(this.label4);
-            this.PanelMed.Controls.Add(this.label5);
-            this.PanelMed.Controls.Add(this.txtBuscarMedicamento);
-            this.PanelMed.Controls.Add(this.txtCantAComprar);
-            this.PanelMed.Controls.Add(this.btnAceptarRP);
-            this.PanelMed.Controls.Add(this.btnCancelarRP);
-            this.PanelMed.Location = new System.Drawing.Point(195, 56);
-            this.PanelMed.Name = "PanelMed";
-            this.PanelMed.Size = new System.Drawing.Size(461, 431);
-            this.PanelMed.TabIndex = 48;
-            this.PanelMed.Visible = false;
+            this.PanelRegProducto.BackColor = System.Drawing.Color.Teal;
+            this.PanelRegProducto.Controls.Add(this.medicamentoDataGridView);
+            this.PanelRegProducto.Controls.Add(cantidadLabel2);
+            this.PanelRegProducto.Controls.Add(this.cantidadLabel3);
+            this.PanelRegProducto.Controls.Add(this.label4);
+            this.PanelRegProducto.Controls.Add(this.label5);
+            this.PanelRegProducto.Controls.Add(this.txtBuscarMedicamento);
+            this.PanelRegProducto.Controls.Add(this.txtCantAComprar);
+            this.PanelRegProducto.Controls.Add(this.btnAceptarRP);
+            this.PanelRegProducto.Controls.Add(this.btnCancelarRP);
+            this.PanelRegProducto.Location = new System.Drawing.Point(240, 45);
+            this.PanelRegProducto.Name = "PanelRegProducto";
+            this.PanelRegProducto.Size = new System.Drawing.Size(461, 431);
+            this.PanelRegProducto.TabIndex = 48;
+            this.PanelRegProducto.Visible = false;
             // 
             // medicamentoDataGridView
             // 
@@ -946,7 +948,7 @@
             this.panelCliente.Controls.Add(this.nombreTextBox);
             this.panelCliente.Controls.Add(this.btnAceptar);
             this.panelCliente.Controls.Add(this.btnCancelar);
-            this.panelCliente.Location = new System.Drawing.Point(293, 30);
+            this.panelCliente.Location = new System.Drawing.Point(373, 58);
             this.panelCliente.Name = "panelCliente";
             this.panelCliente.Size = new System.Drawing.Size(270, 304);
             this.panelCliente.TabIndex = 49;
@@ -1036,11 +1038,25 @@
             // 
             // txtNoAutorizacion
             // 
-            this.txtNoAutorizacion.Location = new System.Drawing.Point(556, 30);
+            this.txtNoAutorizacion.Location = new System.Drawing.Point(414, 36);
             this.txtNoAutorizacion.Name = "txtNoAutorizacion";
-            this.txtNoAutorizacion.Size = new System.Drawing.Size(100, 20);
+            this.txtNoAutorizacion.Size = new System.Drawing.Size(168, 24);
             this.txtNoAutorizacion.TabIndex = 57;
             this.txtNoAutorizacion.Text = "55555";
+            // 
+            // bdvCliente
+            // 
+            this.bdvCliente.Fixed = true;
+            this.bdvCliente.Horizontal = true;
+            this.bdvCliente.TargetControl = this.panelCliente;
+            this.bdvCliente.Vertical = true;
+            // 
+            // bdvMed
+            // 
+            this.bdvMed.Fixed = true;
+            this.bdvMed.Horizontal = true;
+            this.bdvMed.TargetControl = this.PanelRegProducto;
+            this.bdvMed.Vertical = true;
             // 
             // bdcBuscarCliente
             // 
@@ -1048,6 +1064,36 @@
             this.bdcBuscarCliente.Horizontal = true;
             this.bdcBuscarCliente.TargetControl = this.panelBuscarCliente;
             this.bdcBuscarCliente.Vertical = true;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label8.Location = new System.Drawing.Point(411, 13);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(134, 18);
+            this.label8.TabIndex = 57;
+            this.label8.Text = "No Autorizacion:";
+            // 
+            // dataGridViewTextBoxColumn9
+            // 
+            this.dataGridViewTextBoxColumn9.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn9.DataPropertyName = "Ci";
+            this.dataGridViewTextBoxColumn9.HeaderText = "Ci";
+            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            this.dataGridViewTextBoxColumn9.ReadOnly = true;
+            // 
+            // dataGridViewTextBoxColumn10
+            // 
+            this.dataGridViewTextBoxColumn10.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.dataGridViewTextBoxColumn10.DataPropertyName = "Nombre";
+            this.dataGridViewTextBoxColumn10.HeaderText = "Nombre";
+            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            this.dataGridViewTextBoxColumn10.ReadOnly = true;
+            // 
+            // clienteBindingSource
+            // 
+            this.clienteBindingSource.DataSource = typeof(FarmaciaOASIS.Data.Cliente);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -1102,26 +1148,6 @@
             // 
             this.medicamentoBindingSource.DataSource = typeof(FarmaciaOASIS.Data.Medicamento);
             // 
-            // clienteBindingSource
-            // 
-            this.clienteBindingSource.DataSource = typeof(FarmaciaOASIS.Data.Cliente);
-            // 
-            // dataGridViewTextBoxColumn9
-            // 
-            this.dataGridViewTextBoxColumn9.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn9.DataPropertyName = "Ci";
-            this.dataGridViewTextBoxColumn9.HeaderText = "Ci";
-            this.dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
-            this.dataGridViewTextBoxColumn9.ReadOnly = true;
-            // 
-            // dataGridViewTextBoxColumn10
-            // 
-            this.dataGridViewTextBoxColumn10.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
-            this.dataGridViewTextBoxColumn10.DataPropertyName = "Nombre";
-            this.dataGridViewTextBoxColumn10.HeaderText = "Nombre";
-            this.dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
-            this.dataGridViewTextBoxColumn10.ReadOnly = true;
-            // 
             // detalleFacturaBindingSource
             // 
             this.detalleFacturaBindingSource.DataSource = typeof(FarmaciaOASIS.Data.DetalleFactura);
@@ -1139,19 +1165,21 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(19)))), ((int)(((byte)(130)))), ((int)(((byte)(185)))));
-            this.ClientSize = new System.Drawing.Size(1160, 609);
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(10)))), ((int)(((byte)(69)))), ((int)(((byte)(75)))));
-            this.ClientSize = new System.Drawing.Size(797, 609);
-            this.Controls.Add(this.PanelMed);
-            this.Controls.Add(this.panelCliente);
+            this.ClientSize = new System.Drawing.Size(989, 609);
             this.Controls.Add(this.panelBuscarCliente);
-            this.Controls.Add(this.txtNoAutorizacion);
+            this.Controls.Add(this.btnLimpiar);
+            this.Controls.Add(this.PanelRegProducto);
+            this.Controls.Add(this.panelCliente);
             this.Controls.Add(this.groupBox4);
             this.Controls.Add(this.label1);
+            this.Controls.Add(this.label10);
             this.Controls.Add(this.groupBox2);
+            this.Controls.Add(this.lblTotal);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.groupBox3);
+            this.Controls.Add(this.btnRegistrar);
+            this.Controls.Add(this.btnEliminar);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmVentaProductos";
             this.Text = "frmVentaProductos";
@@ -1165,17 +1193,16 @@
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
             this.groupBox3.ResumeLayout(false);
-            this.groupBox3.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvVentas)).EndInit();
             this.groupBox4.ResumeLayout(false);
             this.groupBox4.PerformLayout();
-            this.PanelMed.ResumeLayout(false);
-            this.PanelMed.PerformLayout();
+            this.PanelRegProducto.ResumeLayout(false);
+            this.PanelRegProducto.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.medicamentoDataGridView)).EndInit();
             this.panelCliente.ResumeLayout(false);
             this.panelCliente.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.medicamentoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.clienteBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.medicamentoBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.detalleFacturaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.facturaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.usuarioBindingSource)).EndInit();
@@ -1221,7 +1248,7 @@
         private System.Windows.Forms.TextBox txtTotal;
         private System.Windows.Forms.Button btnColocarProd;
         private System.Windows.Forms.Label codMedLabel1;
-        private System.Windows.Forms.Panel PanelMed;
+        private System.Windows.Forms.Panel PanelRegProducto;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtBuscarMedicamento;
         private System.Windows.Forms.TextBox txtCantAComprar;
@@ -1266,5 +1293,6 @@
         private System.Windows.Forms.Button btnBuscarCliente;
         private Bunifu.Framework.UI.BunifuDragControl bdcBuscarCliente;
         private System.Windows.Forms.Label cantidadLabel3;
+        private System.Windows.Forms.Label label8;
     }
 }

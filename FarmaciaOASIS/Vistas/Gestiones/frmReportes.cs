@@ -202,6 +202,7 @@ namespace FarmaciaOASIS.Vistas.Gestiones
         private void BtnRegistrar_Click(object sender, EventArgs e)
         {
             sumaTotalDGV();
+            btnRegistrar.Enabled = false;
         }
 
         private void TxtBusqueda_KeyPress(object sender, KeyPressEventArgs e)

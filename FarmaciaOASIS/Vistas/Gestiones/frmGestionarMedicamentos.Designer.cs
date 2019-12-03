@@ -82,6 +82,7 @@
             this.btnEliminar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(69)))), ((int)(((byte)(76)))));
             this.btnEliminar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(45)))), ((int)(((byte)(53)))));
             this.btnEliminar.Location = new System.Drawing.Point(695, 29);
+            this.btnEliminar.Visible = false;
             this.btnEliminar.Click += new System.EventHandler(this.BtnEliminar_Click);
             // 
             // btnModificar
@@ -90,13 +91,14 @@
             this.btnModificar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(69)))), ((int)(((byte)(76)))));
             this.btnModificar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(45)))), ((int)(((byte)(53)))));
             this.btnModificar.Location = new System.Drawing.Point(165, 25);
+            this.btnModificar.Visible = false;
             this.btnModificar.Click += new System.EventHandler(this.BtnModificar_Click);
             // 
             // txtBusqueda
             // 
             this.txtBusqueda.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtBusqueda.MaxLength = 50;
             this.txtBusqueda.Location = new System.Drawing.Point(306, 84);
+            this.txtBusqueda.MaxLength = 50;
             this.txtBusqueda.Text = "";
             this.txtBusqueda.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TxtBusqueda_KeyUp);
             // 
@@ -113,7 +115,7 @@
             codMedLabel.AutoSize = true;
             codMedLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             codMedLabel.ForeColor = System.Drawing.Color.White;
-            codMedLabel.Location = new System.Drawing.Point(129, 122);
+            codMedLabel.Location = new System.Drawing.Point(162, 226);
             codMedLabel.Name = "codMedLabel";
             codMedLabel.Size = new System.Drawing.Size(61, 13);
             codMedLabel.TabIndex = 19;
@@ -176,7 +178,7 @@
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(37, 22);
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
             this.bindingNavigatorCountItem.Text = "de {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Número total de elementos";
             // 
@@ -372,7 +374,7 @@
             this.codMedLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.medicamentoBindingSource, "CodMed", true));
             this.codMedLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold);
             this.codMedLabel1.ForeColor = System.Drawing.Color.White;
-            this.codMedLabel1.Location = new System.Drawing.Point(188, 122);
+            this.codMedLabel1.Location = new System.Drawing.Point(221, 226);
             this.codMedLabel1.Name = "codMedLabel1";
             this.codMedLabel1.Size = new System.Drawing.Size(100, 23);
             this.codMedLabel1.TabIndex = 20;
@@ -395,10 +397,10 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(176)))), ((int)(((byte)(140)))));
             this.ClientSize = new System.Drawing.Size(963, 500);
+            this.Controls.Add(this.medicamentoDataGridView);
             this.Controls.Add(this.label2);
             this.Controls.Add(codMedLabel);
             this.Controls.Add(this.codMedLabel1);
-            this.Controls.Add(this.medicamentoDataGridView);
             this.Controls.Add(this.medicamentoBindingNavigator);
             this.Controls.Add(this.label1);
             this.Name = "frmGestionarMedicamentos";
@@ -412,10 +414,10 @@
             this.Controls.SetChildIndex(this.btnModificar, 0);
             this.Controls.SetChildIndex(this.btnEliminar, 0);
             this.Controls.SetChildIndex(this.medicamentoBindingNavigator, 0);
-            this.Controls.SetChildIndex(this.medicamentoDataGridView, 0);
             this.Controls.SetChildIndex(this.codMedLabel1, 0);
             this.Controls.SetChildIndex(codMedLabel, 0);
             this.Controls.SetChildIndex(this.label2, 0);
+            this.Controls.SetChildIndex(this.medicamentoDataGridView, 0);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.medicamentoBindingSource)).EndInit();
