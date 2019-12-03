@@ -35,8 +35,15 @@
             System.Windows.Forms.Label noFacturaLabel;
             System.Windows.Forms.Label noAutorizacionLabel;
             System.Windows.Forms.Label fechaLabel;
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
             this.detalleFacturaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.detalleFacturaDataGridView = new System.Windows.Forms.DataGridView();
+            this.ColNumFact = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.CodMed = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColCant = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.ColPre = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.nombreLabel1 = new System.Windows.Forms.Label();
             this.apellidoLabel1 = new System.Windows.Forms.Label();
             this.ciLabel1 = new System.Windows.Forms.Label();
@@ -45,44 +52,62 @@
             this.fechaLabel1 = new System.Windows.Forms.Label();
             this.lblTotal = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.ColNumFact = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.CodMed = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColCant = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.ColPre = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label2 = new System.Windows.Forms.Label();
             nombreLabel = new System.Windows.Forms.Label();
             apellidoLabel = new System.Windows.Forms.Label();
             ciLabel = new System.Windows.Forms.Label();
             noFacturaLabel = new System.Windows.Forms.Label();
             noAutorizacionLabel = new System.Windows.Forms.Label();
             fechaLabel = new System.Windows.Forms.Label();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.detalleFacturaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.detalleFacturaDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // btnRegistrar
             // 
+            this.btnRegistrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.btnRegistrar.BackColor = System.Drawing.Color.SlateGray;
             this.btnRegistrar.FlatAppearance.BorderSize = 0;
             this.btnRegistrar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(69)))), ((int)(((byte)(76)))));
             this.btnRegistrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(45)))), ((int)(((byte)(53)))));
+            this.btnRegistrar.Location = new System.Drawing.Point(322, 405);
+            this.btnRegistrar.Size = new System.Drawing.Size(135, 46);
             this.btnRegistrar.Click += new System.EventHandler(this.BtnRegistrar_Click);
-            // 
-            // btnModificar
-            // 
-            this.btnModificar.FlatAppearance.BorderSize = 0;
-            this.btnModificar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(69)))), ((int)(((byte)(76)))));
-            this.btnModificar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(45)))), ((int)(((byte)(53)))));
             // 
             // btnEliminar
             // 
+            this.btnEliminar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.btnEliminar.FlatAppearance.BorderSize = 0;
             this.btnEliminar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(69)))), ((int)(((byte)(76)))));
             this.btnEliminar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(45)))), ((int)(((byte)(53)))));
+            this.btnEliminar.Location = new System.Drawing.Point(474, 405);
+            // 
+            // btnModificar
+            // 
+            this.btnModificar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
+            this.btnModificar.FlatAppearance.BorderSize = 0;
+            this.btnModificar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(69)))), ((int)(((byte)(76)))));
+            this.btnModificar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(45)))), ((int)(((byte)(53)))));
+            this.btnModificar.Location = new System.Drawing.Point(628, 405);
             // 
             // txtBusqueda
             // 
-            this.txtBusqueda.Location = new System.Drawing.Point(31, 60);
+            this.txtBusqueda.Location = new System.Drawing.Point(303, 55);
+            this.txtBusqueda.Size = new System.Drawing.Size(457, 24);
             this.txtBusqueda.Text = "";
             this.txtBusqueda.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TxtBusqueda_KeyUp);
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Location = new System.Drawing.Point(8, 6);
+            this.pictureBox2.Size = new System.Drawing.Size(94, 88);
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Location = new System.Drawing.Point(874, 6);
+            this.pictureBox1.Size = new System.Drawing.Size(87, 88);
             // 
             // nombreLabel
             // 
@@ -158,7 +183,19 @@
             // 
             this.detalleFacturaDataGridView.AllowUserToAddRows = false;
             this.detalleFacturaDataGridView.AllowUserToDeleteRows = false;
+            this.detalleFacturaDataGridView.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.detalleFacturaDataGridView.AutoGenerateColumns = false;
+            this.detalleFacturaDataGridView.BackgroundColor = System.Drawing.Color.WhiteSmoke;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.LimeGreen;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Monotype Corsiva", 14.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.detalleFacturaDataGridView.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             this.detalleFacturaDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.detalleFacturaDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
             this.ColNumFact,
@@ -166,11 +203,60 @@
             this.ColCant,
             this.ColPre});
             this.detalleFacturaDataGridView.DataSource = this.detalleFacturaBindingSource;
-            this.detalleFacturaDataGridView.Location = new System.Drawing.Point(303, 85);
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.SystemColors.Window;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(245)))), ((int)(((byte)(214)))));
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.detalleFacturaDataGridView.DefaultCellStyle = dataGridViewCellStyle2;
+            this.detalleFacturaDataGridView.EnableHeadersVisualStyles = false;
+            this.detalleFacturaDataGridView.Location = new System.Drawing.Point(268, 97);
             this.detalleFacturaDataGridView.Name = "detalleFacturaDataGridView";
             this.detalleFacturaDataGridView.ReadOnly = true;
-            this.detalleFacturaDataGridView.Size = new System.Drawing.Size(451, 265);
+            dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = System.Drawing.Color.LimeGreen;
+            dataGridViewCellStyle3.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F);
+            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(214)))), ((int)(((byte)(245)))), ((int)(((byte)(214)))));
+            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.detalleFacturaDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.detalleFacturaDataGridView.Size = new System.Drawing.Size(595, 302);
             this.detalleFacturaDataGridView.TabIndex = 12;
+            // 
+            // ColNumFact
+            // 
+            this.ColNumFact.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ColNumFact.DataPropertyName = "NoFactura";
+            this.ColNumFact.HeaderText = "NoFactura";
+            this.ColNumFact.Name = "ColNumFact";
+            this.ColNumFact.ReadOnly = true;
+            // 
+            // CodMed
+            // 
+            this.CodMed.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.CodMed.DataPropertyName = "CodMed";
+            this.CodMed.HeaderText = "CodMed";
+            this.CodMed.Name = "CodMed";
+            this.CodMed.ReadOnly = true;
+            // 
+            // ColCant
+            // 
+            this.ColCant.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ColCant.DataPropertyName = "CantMed";
+            this.ColCant.HeaderText = "CantMed";
+            this.ColCant.Name = "ColCant";
+            this.ColCant.ReadOnly = true;
+            // 
+            // ColPre
+            // 
+            this.ColPre.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.Fill;
+            this.ColPre.DataPropertyName = "Precio";
+            this.ColPre.HeaderText = "Precio";
+            this.ColPre.Name = "ColPre";
+            this.ColPre.ReadOnly = true;
             // 
             // nombreLabel1
             // 
@@ -179,7 +265,7 @@
             this.nombreLabel1.ForeColor = System.Drawing.SystemColors.Control;
             this.nombreLabel1.Location = new System.Drawing.Point(196, 170);
             this.nombreLabel1.Name = "nombreLabel1";
-            this.nombreLabel1.Size = new System.Drawing.Size(100, 23);
+            this.nombreLabel1.Size = new System.Drawing.Size(67, 23);
             this.nombreLabel1.TabIndex = 14;
             this.nombreLabel1.Text = "label1";
             // 
@@ -190,7 +276,7 @@
             this.apellidoLabel1.ForeColor = System.Drawing.SystemColors.Control;
             this.apellidoLabel1.Location = new System.Drawing.Point(196, 192);
             this.apellidoLabel1.Name = "apellidoLabel1";
-            this.apellidoLabel1.Size = new System.Drawing.Size(100, 23);
+            this.apellidoLabel1.Size = new System.Drawing.Size(67, 23);
             this.apellidoLabel1.TabIndex = 15;
             this.apellidoLabel1.Text = "label1";
             // 
@@ -201,7 +287,7 @@
             this.ciLabel1.ForeColor = System.Drawing.SystemColors.Control;
             this.ciLabel1.Location = new System.Drawing.Point(196, 215);
             this.ciLabel1.Name = "ciLabel1";
-            this.ciLabel1.Size = new System.Drawing.Size(100, 23);
+            this.ciLabel1.Size = new System.Drawing.Size(67, 23);
             this.ciLabel1.TabIndex = 16;
             this.ciLabel1.Text = "label1";
             // 
@@ -212,7 +298,7 @@
             this.noFacturaLabel1.ForeColor = System.Drawing.SystemColors.Control;
             this.noFacturaLabel1.Location = new System.Drawing.Point(196, 147);
             this.noFacturaLabel1.Name = "noFacturaLabel1";
-            this.noFacturaLabel1.Size = new System.Drawing.Size(100, 23);
+            this.noFacturaLabel1.Size = new System.Drawing.Size(67, 23);
             this.noFacturaLabel1.TabIndex = 17;
             this.noFacturaLabel1.Text = "label1";
             // 
@@ -223,7 +309,7 @@
             this.noAutorizacionLabel1.ForeColor = System.Drawing.SystemColors.Control;
             this.noAutorizacionLabel1.Location = new System.Drawing.Point(196, 121);
             this.noAutorizacionLabel1.Name = "noAutorizacionLabel1";
-            this.noAutorizacionLabel1.Size = new System.Drawing.Size(100, 23);
+            this.noAutorizacionLabel1.Size = new System.Drawing.Size(67, 23);
             this.noAutorizacionLabel1.TabIndex = 18;
             this.noAutorizacionLabel1.Text = "label1";
             // 
@@ -234,7 +320,7 @@
             this.fechaLabel1.ForeColor = System.Drawing.SystemColors.Control;
             this.fechaLabel1.Location = new System.Drawing.Point(196, 250);
             this.fechaLabel1.Name = "fechaLabel1";
-            this.fechaLabel1.Size = new System.Drawing.Size(100, 23);
+            this.fechaLabel1.Size = new System.Drawing.Size(67, 23);
             this.fechaLabel1.TabIndex = 19;
             this.fechaLabel1.Text = "label1";
             // 
@@ -252,48 +338,32 @@
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Microsoft Sans Serif", 20.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Font = new System.Drawing.Font("Monotype Corsiva", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
             this.label1.ForeColor = System.Drawing.SystemColors.Control;
-            this.label1.Location = new System.Drawing.Point(290, 9);
+            this.label1.Location = new System.Drawing.Point(314, 9);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(346, 31);
+            this.label1.Size = new System.Drawing.Size(306, 33);
             this.label1.TabIndex = 21;
             this.label1.Text = "REPORTE DE FACTURA";
             // 
-            // ColNumFact
+            // label2
             // 
-            this.ColNumFact.DataPropertyName = "NoFactura";
-            this.ColNumFact.HeaderText = "NoFactura";
-            this.ColNumFact.Name = "ColNumFact";
-            this.ColNumFact.ReadOnly = true;
-            // 
-            // CodMed
-            // 
-            this.CodMed.DataPropertyName = "CodMed";
-            this.CodMed.HeaderText = "CodMed";
-            this.CodMed.Name = "CodMed";
-            this.CodMed.ReadOnly = true;
-            // 
-            // ColCant
-            // 
-            this.ColCant.DataPropertyName = "CantMed";
-            this.ColCant.HeaderText = "CantMed";
-            this.ColCant.Name = "ColCant";
-            this.ColCant.ReadOnly = true;
-            // 
-            // ColPre
-            // 
-            this.ColPre.DataPropertyName = "Precio";
-            this.ColPre.HeaderText = "Precio";
-            this.ColPre.Name = "ColPre";
-            this.ColPre.ReadOnly = true;
+            this.label2.AutoSize = true;
+            this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.ForeColor = System.Drawing.SystemColors.Control;
+            this.label2.Location = new System.Drawing.Point(214, 55);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(82, 18);
+            this.label2.TabIndex = 25;
+            this.label2.Text = "Busqueda";
             // 
             // frmReportes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(53)))), ((int)(((byte)(73)))));
-            this.ClientSize = new System.Drawing.Size(889, 450);
+            this.ClientSize = new System.Drawing.Size(963, 500);
+            this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.lblTotal);
             this.Controls.Add(fechaLabel);
@@ -312,6 +382,8 @@
             this.Name = "frmReportes";
             this.Text = "frmReportes";
             this.Load += new System.EventHandler(this.frmReportes_Load);
+            this.Controls.SetChildIndex(this.pictureBox2, 0);
+            this.Controls.SetChildIndex(this.pictureBox1, 0);
             this.Controls.SetChildIndex(this.txtBusqueda, 0);
             this.Controls.SetChildIndex(this.btnRegistrar, 0);
             this.Controls.SetChildIndex(this.btnModificar, 0);
@@ -331,6 +403,9 @@
             this.Controls.SetChildIndex(fechaLabel, 0);
             this.Controls.SetChildIndex(this.lblTotal, 0);
             this.Controls.SetChildIndex(this.label1, 0);
+            this.Controls.SetChildIndex(this.label2, 0);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.detalleFacturaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.detalleFacturaDataGridView)).EndInit();
             this.ResumeLayout(false);
@@ -350,6 +425,7 @@
         private System.Windows.Forms.Label fechaLabel1;
         private System.Windows.Forms.Label lblTotal;
         private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColNumFact;
         private System.Windows.Forms.DataGridViewTextBoxColumn CodMed;
         private System.Windows.Forms.DataGridViewTextBoxColumn ColCant;
