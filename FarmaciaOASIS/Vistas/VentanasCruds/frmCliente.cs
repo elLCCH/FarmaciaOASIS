@@ -47,33 +47,41 @@ namespace FarmaciaOASIS.Vistas.VentanasCruds
         
         private void BtnAceptar_Click(object sender, EventArgs e)
         {
-            
-            
-            
-            var reg = CargarDatos();
-            
-            
-            ////PROCEDIMIENTO NORMAL DE CRUD
-            if (_esNuevo)
+
+            try
             {
-                
-                if (_objCliente.Insertar(reg) && _objCliente.VerificarClienterepetido(ciTextBox.Text)==true)
+                var reg = CargarDatos();
+
+
+                ////PROCEDIMIENTO NORMAL DE CRUD
+                if (_esNuevo)
                 {
-                    //MessageBox.Show("soy me");
-                    MessageBox.Show("CLIENTE REGISTRADO SATISFACTORIAMENTE","AVISO",MessageBoxButtons.OK,MessageBoxIcon.Information);
-                    Close();
+
+                    if (_objCliente.Insertar(reg) && _objCliente.VerificarClienterepetido(ciTextBox.Text) == true)
+                    {
+                        //MessageBox.Show("soy me");
+                        MessageBox.Show("CLIENTE REGISTRADO SATISFACTORIAMENTE", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        Close();
+                    }
+                    else
+                    { MessageBox.Show("YA EXISTE UN CLIENTE CON CI: '" + reg.Ci + "'", "AVISO!!!", MessageBoxButtons.OK, MessageBoxIcon.Warning); }
                 }
                 else
-                { MessageBox.Show("YA EXISTE UN CLIENTE CON CI: '" + reg.Ci + "'", "AVISO!!!", MessageBoxButtons.OK, MessageBoxIcon.Warning); }
-            }
-            else
-            {
-                if (_objCliente.Modificar(reg))
                 {
-                    MessageBox.Show("CLIENTE MODIFICADO SATISFACTORIAMENTE", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    Close();
+                    if (_objCliente.Modificar(reg))
+                    {
+                        MessageBox.Show("CLIENTE MODIFICADO SATISFACTORIAMENTE", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        Close();
+                    }
                 }
             }
+            catch (Exception)
+            {
+
+                MessageBox.Show("DEBE INTRODUCIR LOS DATOS CORRECTAMENTE!!", "AVISO!!!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            
+            
             
                 
         }

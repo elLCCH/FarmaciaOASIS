@@ -46,26 +46,35 @@ namespace FarmaciaOASIS.Vistas.VentanasCruds
 
         private void BtnAceptar_Click(object sender, EventArgs e)
         {
-            var reg = CargarDatos();
-            if (_esNuevo)
+            try
             {
-                if (_objUsuario.Insertar(reg) && _objUsuario.VerificarUsuarioRepetido(ciTextBox.Text) == true)
+                var reg = CargarDatos();
+                if (_esNuevo)
                 {
-                    MessageBox.Show("USUARIO REGISTRADO SATISFACTORIAMENTE", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    Close();
+                    if (_objUsuario.Insertar(reg) && _objUsuario.VerificarUsuarioRepetido(ciTextBox.Text) == true)
+                    {
+                        MessageBox.Show("USUARIO REGISTRADO SATISFACTORIAMENTE", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        Close();
+                    }
+                    else
+                    { MessageBox.Show("YA EXISTE UN USUARIO CON CI: '" + reg.Ci + "'", "AVISO!!!", MessageBoxButtons.OK, MessageBoxIcon.Warning); }
+
                 }
                 else
-                { MessageBox.Show("YA EXISTE UN USUARIO CON CI: '" + reg.Ci + "'", "AVISO!!!", MessageBoxButtons.OK, MessageBoxIcon.Warning); }
-
-            }
-            else
-            {
-                if (_objUsuario.Modificar(reg))
                 {
-                    MessageBox.Show("USUARIO MODIFICADO SATISFACTORIAMENTE", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    Close();
+                    if (_objUsuario.Modificar(reg))
+                    {
+                        MessageBox.Show("USUARIO MODIFICADO SATISFACTORIAMENTE", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        Close();
+                    }
                 }
             }
+            catch (Exception)
+            {
+
+                MessageBox.Show("DEBE INTRODUCIR LOS DATOS CORRECTAMENTE!!", "AVISO!!!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            
         }
 
         private Usuario CargarDatos()

@@ -15,6 +15,8 @@ namespace FarmaciaOASIS.Vistas.VentanasCruds
     public partial class frmMedicamento : frmVentanaDatos
     {
         MedicamentoController _objMedicamento = new MedicamentoController();
+        ProveedorController _Prov = new ProveedorController();
+        dbFarmaciaOASISEntities _entity = new dbFarmaciaOASISEntities();
         private string _cuenta;
         private bool _esNuevo;
         public frmMedicamento()
@@ -32,6 +34,7 @@ namespace FarmaciaOASIS.Vistas.VentanasCruds
 
         private void frmMedicamento_Load(object sender, EventArgs e)
         {
+
             if (_esNuevo)
             {
                 medicamentoBindingSource.AddNew();
@@ -42,36 +45,62 @@ namespace FarmaciaOASIS.Vistas.VentanasCruds
                 medicamentoBindingSource.DataSource = _objMedicamento.BuscarPorPK(Convert.ToInt32(_cuenta));
                 label1.Text = "         MODIFICAR\n     MEDICAMENTO";
             }
+
+            CargarNombresProveedores(); //en el comboBox
         }
 
+        private void CargarNombresProveedores()
+        {
+            var r = from ru in _entity.Proveedor
+
+                    select new { ru.Nombre };
+
+
+
+            nombreComboBox.DisplayMember = "Nombre";
+            nombreComboBox.DataSource = r.ToList();
+            nombreComboBox.SelectedIndex = 0;
+        }
+        
         private void BtnAceptar_Click(object sender, EventArgs e)
         {
-            var reg = CargarDatos();
-            if (_esNuevo)
-            { 
-                if (_objMedicamento.Insertar(reg) && _objMedicamento.VerificarMedicamentoRepetido(nomMedTextBox.Text) == true)
-                {
-                    MessageBox.Show("MEDICAMENTO REGISTRADO SATISFACTORIAMENTE", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    Close();
+            try
+            {
+                var reg = CargarDatos();
+                if (_esNuevo)
+                { 
+                    if (_objMedicamento.Insertar(reg) && _objMedicamento.VerificarMedicamentoRepetido(nomMedTextBox.Text) == true)
+                    {
+                        MessageBox.Show("MEDICAMENTO REGISTRADO SATISFACTORIAMENTE", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        Close();
+                    }
+                    else
+                    { MessageBox.Show("YA EXISTE UN MEDICAMENTO LLAMADO: '" + reg.NomMed + "'", "AVISO!!!", MessageBoxButtons.OK, MessageBoxIcon.Warning); }
+
                 }
                 else
-                { MessageBox.Show("YA EXISTE UN MEDICAMENTO LLAMADO: '" + reg.NomMed + "'", "AVISO!!!", MessageBoxButtons.OK, MessageBoxIcon.Warning); }
-
-            }
-            else
-            {
-                if (_objMedicamento.Modificar(reg))
                 {
-                    MessageBox.Show("MEDICAMENTO MODIFICADO SATISFACTORIAMENTE", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                    Close();
+                    if (_objMedicamento.Modificar(reg))
+                    {
+                        MessageBox.Show("MEDICAMENTO MODIFICADO SATISFACTORIAMENTE", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        Close();
+                    }
                 }
             }
+            catch (Exception)
+            {
+
+                MessageBox.Show("DEBE INTRODUCIR LOS DATOS CORRECTAMENTE!!", "AVISO!!!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+            
         }
 
         private Medicamento CargarDatos()
         {
+            int codProve= Convert.ToInt32(codProvLabel1.Text); //obteniendo idProveedor
             var reg = (Medicamento)medicamentoBindingSource.Current;
             //reg.FechaNac = DateTime.Now;
+            reg.CodProv = Convert.ToInt32(codProve);
             return reg;
         }
 
@@ -118,6 +147,10 @@ namespace FarmaciaOASIS.Vistas.VentanasCruds
             }
         }
 
-       
+        private void NombreComboBox_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            proveedorBindingSource.DataSource = _Prov.ObtenerIdProvPorNombre(nombreComboBox.Text);
+        }
+
     }
 }
