@@ -32,11 +32,16 @@
             this.btnEliminar = new System.Windows.Forms.Button();
             this.btnModificar = new System.Windows.Forms.Button();
             this.txtBusqueda = new System.Windows.Forms.TextBox();
+            this.pictureBox2 = new System.Windows.Forms.PictureBox();
+            this.pictureBox1 = new System.Windows.Forms.PictureBox();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             this.SuspendLayout();
             // 
             // btnRegistrar
             // 
-            this.btnRegistrar.BackColor = System.Drawing.Color.SlateGray;
+            this.btnRegistrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnRegistrar.BackColor = System.Drawing.Color.LimeGreen;
             this.btnRegistrar.Cursor = System.Windows.Forms.Cursors.Default;
             this.btnRegistrar.FlatAppearance.BorderSize = 0;
             this.btnRegistrar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(69)))), ((int)(((byte)(76)))));
@@ -47,7 +52,7 @@
             this.btnRegistrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnRegistrar.Location = new System.Drawing.Point(99, 376);
             this.btnRegistrar.Name = "btnRegistrar";
-            this.btnRegistrar.Size = new System.Drawing.Size(135, 46);
+            this.btnRegistrar.Size = new System.Drawing.Size(135, 33);
             this.btnRegistrar.TabIndex = 9;
             this.btnRegistrar.Text = "Registrar";
             this.btnRegistrar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -93,22 +98,47 @@
             // 
             // txtBusqueda
             // 
-            this.txtBusqueda.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(46)))), ((int)(((byte)(139)))), ((int)(((byte)(110)))));
-            this.txtBusqueda.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.txtBusqueda.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtBusqueda.ForeColor = System.Drawing.Color.Silver;
-            this.txtBusqueda.Location = new System.Drawing.Point(49, 83);
+            this.txtBusqueda.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.txtBusqueda.BackColor = System.Drawing.Color.White;
+            this.txtBusqueda.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.txtBusqueda.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
+            this.txtBusqueda.ForeColor = System.Drawing.Color.Black;
+            this.txtBusqueda.Location = new System.Drawing.Point(283, 80);
             this.txtBusqueda.Name = "txtBusqueda";
-            this.txtBusqueda.Size = new System.Drawing.Size(598, 19);
+            this.txtBusqueda.Size = new System.Drawing.Size(383, 24);
             this.txtBusqueda.TabIndex = 6;
             this.txtBusqueda.Text = "Busqueda...";
+            // 
+            // pictureBox2
+            // 
+            this.pictureBox2.Image = global::FarmaciaOASIS.Properties.Resources.staff_of_hermes_caduceus_as_a_symbol_of_medicine_caduceus_as_a_symbol_of_medicine_medical_logo;
+            this.pictureBox2.Location = new System.Drawing.Point(71, 44);
+            this.pictureBox2.Name = "pictureBox2";
+            this.pictureBox2.Size = new System.Drawing.Size(110, 112);
+            this.pictureBox2.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox2.TabIndex = 23;
+            this.pictureBox2.TabStop = false;
+            // 
+            // pictureBox1
+            // 
+            this.pictureBox1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.pictureBox1.Image = global::FarmaciaOASIS.Properties.Resources.bowl_of_hygieia_pharmacy_asclepius_medicine_pharmacy;
+            this.pictureBox1.Location = new System.Drawing.Point(749, 32);
+            this.pictureBox1.Name = "pictureBox1";
+            this.pictureBox1.Size = new System.Drawing.Size(111, 113);
+            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.pictureBox1.TabIndex = 24;
+            this.pictureBox1.TabStop = false;
             // 
             // frmGestion
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(33)))), ((int)(((byte)(53)))), ((int)(((byte)(73)))));
-            this.ClientSize = new System.Drawing.Size(800, 450);
+            this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(176)))), ((int)(((byte)(140)))));
+            this.ClientSize = new System.Drawing.Size(963, 500);
+            this.Controls.Add(this.pictureBox1);
+            this.Controls.Add(this.pictureBox2);
             this.Controls.Add(this.btnEliminar);
             this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnRegistrar);
@@ -117,6 +147,8 @@
             this.Name = "frmGestion";
             this.Text = "frmGestion";
             this.Load += new System.EventHandler(this.frmGestion_Load);
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -127,5 +159,7 @@
         public System.Windows.Forms.Button btnEliminar;
         public System.Windows.Forms.Button btnModificar;
         public System.Windows.Forms.TextBox txtBusqueda;
+        public System.Windows.Forms.PictureBox pictureBox2;
+        public System.Windows.Forms.PictureBox pictureBox1;
     }
 }
