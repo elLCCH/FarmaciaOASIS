@@ -95,9 +95,9 @@
             // 
             // txtBusqueda
             // 
-            this.txtBusqueda.BackColor = System.Drawing.Color.SpringGreen;
-            this.txtBusqueda.Location = new System.Drawing.Point(119, 84);
-            this.txtBusqueda.Size = new System.Drawing.Size(546, 24);
+            this.txtBusqueda.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.txtBusqueda.Location = new System.Drawing.Point(293, 90);
+            this.txtBusqueda.Size = new System.Drawing.Size(407, 24);
             this.txtBusqueda.Text = "";
             this.txtBusqueda.TextChanged += new System.EventHandler(this.txtBusqueda_TextChanged);
             this.txtBusqueda.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TxtBusqueda_KeyUp);
@@ -180,7 +180,7 @@
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(35, 22);
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(37, 22);
             this.bindingNavigatorCountItem.Text = "de {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Número total de elementos";
             // 
@@ -220,7 +220,6 @@
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Posición";
             this.bindingNavigatorPositionItem.AutoSize = false;
-            this.bindingNavigatorPositionItem.Font = new System.Drawing.Font("Segoe UI", 9F);
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
             this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(50, 22);
             this.bindingNavigatorPositionItem.Text = "0";
@@ -300,7 +299,7 @@
             this.clienteDataGridView.DefaultCellStyle = dataGridViewCellStyle2;
             this.clienteDataGridView.EnableHeadersVisualStyles = false;
             this.clienteDataGridView.GridColor = System.Drawing.Color.LimeGreen;
-            this.clienteDataGridView.Location = new System.Drawing.Point(109, 149);
+            this.clienteDataGridView.Location = new System.Drawing.Point(127, 149);
             this.clienteDataGridView.Name = "clienteDataGridView";
             this.clienteDataGridView.ReadOnly = true;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;

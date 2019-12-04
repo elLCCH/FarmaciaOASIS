@@ -665,5 +665,15 @@ namespace FarmaciaOASIS.Vistas.VentanasCruds
         {
             clienteBindingSource.DataSource = _objCliente.Listar(txtBuscarCliente.Text);
         }
+
+        private void label17_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void PanelRegProducto_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

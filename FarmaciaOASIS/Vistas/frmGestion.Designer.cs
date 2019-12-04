@@ -104,7 +104,7 @@
             this.txtBusqueda.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
             this.txtBusqueda.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F);
             this.txtBusqueda.ForeColor = System.Drawing.Color.Black;
-            this.txtBusqueda.Location = new System.Drawing.Point(283, 80);
+            this.txtBusqueda.Location = new System.Drawing.Point(313, 83);
             this.txtBusqueda.Name = "txtBusqueda";
             this.txtBusqueda.Size = new System.Drawing.Size(383, 24);
             this.txtBusqueda.TabIndex = 6;
