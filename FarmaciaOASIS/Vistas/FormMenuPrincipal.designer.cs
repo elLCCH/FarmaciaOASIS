@@ -127,6 +127,7 @@
             // 
             // codUsuarioLabel
             // 
+            codUsuarioLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             codUsuarioLabel.AutoSize = true;
             codUsuarioLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             codUsuarioLabel.ForeColor = System.Drawing.SystemColors.ControlDark;
@@ -184,7 +185,7 @@
             this.lblHora.AutoSize = true;
             this.lblHora.Font = new System.Drawing.Font("Microsoft Sans Serif", 35.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHora.ForeColor = System.Drawing.Color.LightGray;
-            this.lblHora.Location = new System.Drawing.Point(612, 3);
+            this.lblHora.Location = new System.Drawing.Point(620, 1);
             this.lblHora.Name = "lblHora";
             this.lblHora.Size = new System.Drawing.Size(205, 54);
             this.lblHora.TabIndex = 1;
@@ -192,6 +193,7 @@
             // 
             // codUsuarioLabel1
             // 
+            this.codUsuarioLabel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.codUsuarioLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "CodUsuario", true));
             this.codUsuarioLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.codUsuarioLabel1.ForeColor = System.Drawing.SystemColors.ControlDark;
@@ -358,7 +360,7 @@
             // 
             this.rolLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "Rol", true));
             this.rolLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rolLabel1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.rolLabel1.ForeColor = System.Drawing.Color.White;
             this.rolLabel1.Location = new System.Drawing.Point(3, 7);
             this.rolLabel1.Name = "rolLabel1";
             this.rolLabel1.Size = new System.Drawing.Size(163, 23);

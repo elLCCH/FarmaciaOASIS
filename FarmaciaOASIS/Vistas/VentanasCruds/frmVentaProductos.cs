@@ -675,5 +675,10 @@ namespace FarmaciaOASIS.Vistas.VentanasCruds
         {
 
         }
+
+        private void dgvVentas_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

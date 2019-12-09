@@ -124,6 +124,9 @@
   <data name="2" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\2.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="nursing" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\nursing.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="logo de menu - modificado" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\logo de menu - modificado.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -145,6 +148,9 @@
   <data name="Usuarios" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Usuarios.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="staff-of-hermes-caduceus-as-a-symbol-of-medicine-caduceus-as-a-symbol-of-medicine-medical-logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\staff-of-hermes-caduceus-as-a-symbol-of-medicine-caduceus-as-a-symbol-of-medicine-medical-logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="icono-cliente" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\icono-cliente.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -163,7 +169,7 @@
   <data name="logo-4" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\logo-4.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="staff-of-hermes-caduceus-as-a-symbol-of-medicine-caduceus-as-a-symbol-of-medicine-medical-logo" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\staff-of-hermes-caduceus-as-a-symbol-of-medicine-caduceus-as-a-symbol-of-medicine-medical-logo.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="nursing-physician-medicine-nurse-practitioner-fotolia-doctors-and-nurses" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\nursing-physician-medicine-nurse-practitioner-fotolia-doctors-and-nurses.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

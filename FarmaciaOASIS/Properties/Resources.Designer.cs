@@ -193,6 +193,26 @@ namespace FarmaciaOASIS.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap nursing {
+            get {
+                object obj = ResourceManager.GetObject("nursing", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap nursing_physician_medicine_nurse_practitioner_fotolia_doctors_and_nurses {
+            get {
+                object obj = ResourceManager.GetObject("nursing-physician-medicine-nurse-practitioner-fotolia-doctors-and-nurses", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap producto2 {
             get {
                 object obj = ResourceManager.GetObject("producto2", resourceCulture);

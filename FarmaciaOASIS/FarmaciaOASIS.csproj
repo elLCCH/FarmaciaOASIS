@@ -401,6 +401,8 @@
     <Content Include="Resources\medicamento.png" />
     <Content Include="Resources\menu2.png" />
     <Content Include="Resources\menu21.png" />
+    <None Include="Resources\nursing.jpg" />
+    <None Include="Resources\nursing-physician-medicine-nurse-practitioner-fotolia-doctors-and-nurses.png" />
     <Content Include="Resources\perfil.png" />
     <Content Include="Resources\producto2.png" />
     <Content Include="Resources\producto21.png" />
