@@ -46,6 +46,17 @@ namespace FarmaciaOASIS.Vistas.VentanasCruds
         {
             clienteBindingSource.AddNew();
             panelCliente.Visible = true;
+            if(dgvVentas.Rows.Count!=0)
+            {
+                btnRegistrar.Enabled = true;
+                btnEliminar.Enabled = true;
+            }
+            else
+            {
+                btnRegistrar.Enabled = false;
+                btnEliminar.Enabled = false;
+            }
+            
             Inhabilitar();
         }
         private Cliente CargarDatos()
@@ -94,20 +105,22 @@ namespace FarmaciaOASIS.Vistas.VentanasCruds
         {
             panelCliente.Visible = false;
             habilitar();
+            btnEliminar.Enabled = false;
+            btnRegistrar.Enabled = false;
         }
 
         //panel de REGISTRAR PRODUCTOS
         private void BtnAceptarRP_Click(object sender, EventArgs e)
         {
-
+            
             //medicamentoDataGridView.
 
             if (NomMed == "" || txtCantAComprar.Text == "")
-                MessageBox.Show("Seleccione una fila", "ATENCION!", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("INTRODUZCA LA CANTIDAD A COMPRAR", "ATENCION!", MessageBoxButtons.OK, MessageBoxIcon.Information);
             else
             {
                 int CantActualProd = Convert.ToInt32(cantidadLabel3.Text);
-                if(Convert.ToInt32(txtCantAComprar.Text)<=CantActualProd)
+                if(Convert.ToInt32(txtCantAComprar.Text)<=CantActualProd && EsMenorMasElDGV()==true)
                 {
                     txtCant.Text = txtCantAComprar.Text;
                     //procedimiento de calculo de precio en txt y llevado de info a comprar a textbox
@@ -132,11 +145,73 @@ namespace FarmaciaOASIS.Vistas.VentanasCruds
             btnBuscarCliente.Enabled = false;
 
         }
+        
+        private bool EsMenorMasElDGV()
+        {
+            bool existe = false;
+            int num_fila = 0;
+            int CantPreliminar=0;
+            int CantActualBD=0;
+            
+            foreach (DataGridViewRow Fila in dgvVentas.Rows)
+            {
+                
+                if (Fila.Cells[0].Value.ToString() == codMedLabel1.Text)
+                {
+                    existe = true;
+                    num_fila = Fila.Index;
+                    
+                }
+                //MessageBox.Show(Convert.ToString(num_fila));
+                
+            }
+           
+            //verificando si existe en dgv
+            if (dgvVentas.Rows.Count != 0 && existe == true)
+            {
+                //MessageBox.Show(Convert.ToString(dgvVentas.Rows[num_fila].Cells[3].Value));
+                CantPreliminar = (Convert.ToInt32(txtCantAComprar.Text) + Convert.ToInt32(dgvVentas.Rows[num_fila].Cells[3].Value));
+                CantActualBD = Convert.ToInt32(CantMed);//Convert.ToInt32(medicamentoDataGridView.Rows[2].Cells[3].Value);
+                //MessageBox.Show("Cantidad Actual"+CantMed);MessageBox.Show("fila"+Convert.ToString(num_fila));
+                //MessageBox.Show(Convert.ToString("Cantidad Preliminar"+CantPreliminar));
+            }
+            
+            if(existe==true)
+            {
+                if (CantPreliminar <= CantActualBD)
+                {
+                   // MessageBox.Show("es menor");
+                    return true;
+                }
+                else
+                {
+                   // MessageBox.Show("se sobrepasa");
+                    return false;
+                }
+            }
+            else
+            {
+                //num_fila++;
+                //MessageBox.Show("se sumo new fila");
+                return true;
+            }
+           
+
+
+            //dgvVentas.Rows[num_fila].Cells[3].Value = (Convert.ToDouble(txtCant.Text) + Convert.ToDouble(dgvVentas.Rows[num_fila].Cells[3].Value)).ToString();
+            //double importe = Convert.ToDouble(dgvVentas.Rows[num_fila].Cells[2].Value) * Convert.ToDouble(dgvVentas.Rows[num_fila].Cells[3].Value);
+            //dgvVentas.Rows[num_fila].Cells[4].Value = importe;
+
+
+        }
+
         private void MedicamentoDataGridView_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            NomMed = this.medicamentoDataGridView.Rows[e.RowIndex].Cells["NomMed"].Value.ToString();
-            PUnit = this.medicamentoDataGridView.Rows[e.RowIndex].Cells["PUnit"].Value.ToString();
-            CodMed = this.medicamentoDataGridView.Rows[e.RowIndex].Cells["CodMed"].Value.ToString();
+            //NomMed = this.medicamentoDataGridView.Rows[e.RowIndex].Cells["NomMed"].Value.ToString();
+            //PUnit = this.medicamentoDataGridView.Rows[e.RowIndex].Cells["PUnit"].Value.ToString();
+            //CodMed = this.medicamentoDataGridView.Rows[e.RowIndex].Cells["CodMed"].Value.ToString();
+            CantMed = this.medicamentoDataGridView.Rows[e.RowIndex].Cells["Cantidad"].Value.ToString();
+            //MessageBox.Show(CantMed);
         }
 
         private void BtnRegProd_Click(object sender, EventArgs e)
@@ -180,6 +255,17 @@ namespace FarmaciaOASIS.Vistas.VentanasCruds
         {
             PanelRegProducto.Visible = false;
             habilitar();
+            if(dgvVentas.Rows.Count!=0)
+            {
+                btnEliminar.Enabled = true;
+                btnRegistrar.Enabled = true;
+            }
+            else
+            {
+                btnEliminar.Enabled = false;
+                btnRegistrar.Enabled = false;
+            }
+            
         }
         private Medicamento CargarDatosMedicamento()
         {
@@ -229,10 +315,11 @@ namespace FarmaciaOASIS.Vistas.VentanasCruds
         public static string NomMed;
         public static string PUnit;
         public static string CodMed;
+        public static string CantMed;
 
 
 
-        public static int cont_fila = 0;
+        int cont_fila = 0;
         public static double total;
         private void BtnColocarProd_Click(object sender, EventArgs e)
         {
@@ -260,23 +347,33 @@ namespace FarmaciaOASIS.Vistas.VentanasCruds
                         num_fila = Fila.Index;
                     }
                 }
-                if (existe == true)
+                try
                 {
-                    dgvVentas.Rows[num_fila].Cells[3].Value = (Convert.ToDouble(txtCant.Text) + Convert.ToDouble(dgvVentas.Rows[num_fila].Cells[3].Value)).ToString();
-                    double importe = Convert.ToDouble(dgvVentas.Rows[num_fila].Cells[2].Value) * Convert.ToDouble(dgvVentas.Rows[num_fila].Cells[3].Value);
-                    dgvVentas.Rows[num_fila].Cells[4].Value = importe;
+                    if (existe == true)
+                    {
+                        dgvVentas.Rows[num_fila].Cells[3].Value = (Convert.ToDouble(txtCant.Text) + Convert.ToDouble(dgvVentas.Rows[num_fila].Cells[3].Value)).ToString();
+                        double importe = Convert.ToDouble(dgvVentas.Rows[num_fila].Cells[2].Value) * Convert.ToDouble(dgvVentas.Rows[num_fila].Cells[3].Value);
+                        dgvVentas.Rows[num_fila].Cells[4].Value = importe;
+                    }
+                    else
+                    {
+
+                        dgvVentas.Rows.Add(codMedLabel1.Text, nomMedLabel1.Text, pUnitLabel1.Text, txtCant.Text);
+                        double costo = Convert.ToDouble(dgvVentas.Rows[cont_fila].Cells[2].Value) * Convert.ToDouble(dgvVentas.Rows[cont_fila].Cells[3].Value);
+                        dgvVentas.Rows[cont_fila].Cells[4].Value = costo;
+                        cont_fila++;
+                    }
                 }
-                else
+                catch (Exception)
                 {
 
-                    dgvVentas.Rows.Add(codMedLabel1.Text, nomMedLabel1.Text, pUnitLabel1.Text, txtCant.Text);
-                    double costo = Convert.ToDouble(dgvVentas.Rows[cont_fila].Cells[2].Value) * Convert.ToDouble(dgvVentas.Rows[cont_fila].Cells[3].Value);
-                    dgvVentas.Rows[cont_fila].Cells[4].Value = costo;
-                    cont_fila++;
+                    MessageBox.Show("nose q paso");
                 }
+                
             }
             sumaTotalDGV();
             btnColocarProd.Enabled = false;
+            
         }
         private void sumaTotalDGV()
         {
@@ -299,18 +396,18 @@ namespace FarmaciaOASIS.Vistas.VentanasCruds
             txtCantAComprar.Text = "";
 
 
-
         }
 
         private void BtnEliminar_Click(object sender, EventArgs e)
         {
             dgvVentas.Rows.RemoveAt(dgvVentas.CurrentRow.Index);
             sumaTotalDGV();
-            nombreLabel2.Text = "";
-            apellidoLabel2.Text = "";
-            txtCiClie.Text = "";
-            ciLabel1.Text = "";
-            codClienteLabel2.Text = "";
+            if(dgvVentas.Rows.Count == 0)
+            {
+                btnRegistrar.Enabled = false;
+                btnEliminar.Enabled = false;
+            }
+            
         }
 
         private void BtnRegistrar_Click(object sender, EventArgs e)
@@ -325,14 +422,14 @@ namespace FarmaciaOASIS.Vistas.VentanasCruds
             regFactura.Fecha = DateTime.Now;
             if (_Factura.Insertar(regFactura))
             {
-                MessageBox.Show("se creo una nueva factura");
+                //MessageBox.Show("se creo una nueva factura");
 
             }
             ////----------------------------------------------------------/////
 
             //CALCULO DE LA ULTIMA FACTURA
             int UltimaFactura = Convert.ToInt32(_Factura.BuscarElMax());
-            MessageBox.Show(Convert.ToString(UltimaFactura));
+            //MessageBox.Show(Convert.ToString(UltimaFactura));
 
             string codigo, nombre, precio, cantidad, costo;
             //---------FACTURA---------------------------------------------------//
@@ -453,7 +550,7 @@ namespace FarmaciaOASIS.Vistas.VentanasCruds
                 //INSERTACION para Detalle Factura
                 if (_objDFac.Insertar(reg))
                 {
-                    MessageBox.Show("se inserto correctamente");
+                    //MessageBox.Show("se inserto correctamente");
 
                 }
 
@@ -469,6 +566,15 @@ namespace FarmaciaOASIS.Vistas.VentanasCruds
             // num factura en nombre
             System.Diagnostics.Process.Start("C:\\FarmaciaOasis\\Factura " + numfact + ".pdf");
             //---------FACTURA----------------------------
+
+
+            //limpieza
+            limpiar();
+            dgvVentas.Rows.Clear();
+            clienteBindingSource.DataSource = _objCliente.Listar("0");
+            txtCiClie.Text = "";
+            lblTotal.Text = "0";
+            cont_fila = 0;
         }
 
         private void SendToMedicamentoForUpdate(int codigo, int cantidad)
@@ -478,7 +584,7 @@ namespace FarmaciaOASIS.Vistas.VentanasCruds
             reg.Cantidad = reg.Cantidad - cantidad;
             if(_med.Modificar(reg))
             {
-                MessageBox.Show("se actualizo en tabla la cantidad");
+               // MessageBox.Show("se actualizo en tabla la cantidad");
             }
 
         }
@@ -494,6 +600,8 @@ namespace FarmaciaOASIS.Vistas.VentanasCruds
             clienteBindingSource.DataSource = _objCliente.Listar("0");
             txtCiClie.Text = "";
             lblTotal.Text = "0";
+            cont_fila = 0;
+
         }
 
         private void TxtCiClie_KeyUp(object sender, KeyEventArgs e)
@@ -506,6 +614,12 @@ namespace FarmaciaOASIS.Vistas.VentanasCruds
                 if (codClienteLabel2.Text != "")
                 {
                     btnRegProd.Enabled = true;
+                    dgvVentas.Enabled = true;
+                    if (dgvVentas.Rows.Count!=0)
+                    {
+                        btnRegistrar.Enabled = true;
+                    }
+                    
                 }
                 else { btnRegProd.Enabled = false; }
 
@@ -645,6 +759,7 @@ namespace FarmaciaOASIS.Vistas.VentanasCruds
             clienteBindingSource.DataSource = _objCliente.Listar("");
             panelBuscarCliente.Visible = true;
             txtBuscarCliente.Focus();
+            Inhabilitar();
         }
 
         private void BtnSelecCliente_Click(object sender, EventArgs e)
@@ -652,6 +767,10 @@ namespace FarmaciaOASIS.Vistas.VentanasCruds
             panelBuscarCliente.Visible = false;
             txtCiClie.Text = ciLabel1.Text;
             btnRegProd.Enabled = true;
+            habilitar();
+            btnEliminar.Enabled = false;
+            btnRegistrar.Enabled = false;
+            dgvVentas.Enabled = true;
         }
 
         private void TxtCiClie_TextChanged(object sender, EventArgs e)
@@ -659,6 +778,12 @@ namespace FarmaciaOASIS.Vistas.VentanasCruds
             btnRegProd.Enabled = false;
             btnEliminar.Enabled = false;
             btnRegistrar.Enabled = false;
+
+            btnBuscarCliente.Enabled = true;
+            btnRegistrarCliente.Enabled = true;
+            //inhabilitar dgv y boton de regVenta
+            btnRegistrar.Enabled = false;
+            dgvVentas.Enabled = false;
         }
 
         private void TextBox1_TextChanged(object sender, EventArgs e)
