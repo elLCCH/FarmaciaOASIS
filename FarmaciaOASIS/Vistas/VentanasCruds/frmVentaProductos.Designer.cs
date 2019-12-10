@@ -162,7 +162,7 @@
             // ciLabel
             // 
             ciLabel.AutoSize = true;
-            ciLabel.Location = new System.Drawing.Point(137, 19);
+            ciLabel.Location = new System.Drawing.Point(122, 19);
             ciLabel.Name = "ciLabel";
             ciLabel.Size = new System.Drawing.Size(29, 18);
             ciLabel.TabIndex = 34;
@@ -325,9 +325,9 @@
             // ciLabel1
             // 
             this.ciLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.clienteBindingSource, "Ci", true));
-            this.ciLabel1.Location = new System.Drawing.Point(169, 19);
+            this.ciLabel1.Location = new System.Drawing.Point(154, 19);
             this.ciLabel1.Name = "ciLabel1";
-            this.ciLabel1.Size = new System.Drawing.Size(100, 23);
+            this.ciLabel1.Size = new System.Drawing.Size(89, 23);
             this.ciLabel1.TabIndex = 35;
             // 
             // txtCiClie
@@ -465,7 +465,7 @@
             this.groupBox1.ForeColor = System.Drawing.Color.White;
             this.groupBox1.Location = new System.Drawing.Point(313, 52);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(588, 70);
+            this.groupBox1.Size = new System.Drawing.Size(575, 70);
             this.groupBox1.TabIndex = 32;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Registro de datos";
@@ -737,7 +737,7 @@
             this.groupBox4.ForeColor = System.Drawing.Color.White;
             this.groupBox4.Location = new System.Drawing.Point(313, 126);
             this.groupBox4.Name = "groupBox4";
-            this.groupBox4.Size = new System.Drawing.Size(588, 69);
+            this.groupBox4.Size = new System.Drawing.Size(575, 69);
             this.groupBox4.TabIndex = 47;
             this.groupBox4.TabStop = false;
             this.groupBox4.Text = "Datos a Registrar";

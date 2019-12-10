@@ -127,6 +127,7 @@
             // 
             // codUsuarioLabel
             // 
+            codUsuarioLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             codUsuarioLabel.AutoSize = true;
             codUsuarioLabel.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             codUsuarioLabel.ForeColor = System.Drawing.SystemColors.ControlDark;
@@ -146,7 +147,7 @@
             this.panel1ContenedorPrincipal.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1ContenedorPrincipal.Location = new System.Drawing.Point(0, 0);
             this.panel1ContenedorPrincipal.Name = "panel1ContenedorPrincipal";
-            this.panel1ContenedorPrincipal.Size = new System.Drawing.Size(1100, 583);
+            this.panel1ContenedorPrincipal.Size = new System.Drawing.Size(1100, 605);
             this.panel1ContenedorPrincipal.TabIndex = 0;
             // 
             // panelContenedor
@@ -155,7 +156,7 @@
             this.panelContenedor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelContenedor.Location = new System.Drawing.Point(230, 50);
             this.panelContenedor.Name = "panelContenedor";
-            this.panelContenedor.Size = new System.Drawing.Size(870, 455);
+            this.panelContenedor.Size = new System.Drawing.Size(870, 477);
             this.panelContenedor.TabIndex = 2;
             // 
             // panel1
@@ -173,7 +174,7 @@
             this.panel1.Controls.Add(this.lbFecha);
             this.panel1.Controls.Add(this.pictureBox7);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(230, 505);
+            this.panel1.Location = new System.Drawing.Point(230, 527);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(870, 78);
             this.panel1.TabIndex = 5;
@@ -184,7 +185,7 @@
             this.lblHora.AutoSize = true;
             this.lblHora.Font = new System.Drawing.Font("Microsoft Sans Serif", 35.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHora.ForeColor = System.Drawing.Color.LightGray;
-            this.lblHora.Location = new System.Drawing.Point(612, 3);
+            this.lblHora.Location = new System.Drawing.Point(614, 3);
             this.lblHora.Name = "lblHora";
             this.lblHora.Size = new System.Drawing.Size(205, 54);
             this.lblHora.TabIndex = 1;
@@ -192,6 +193,7 @@
             // 
             // codUsuarioLabel1
             // 
+            this.codUsuarioLabel1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.codUsuarioLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "CodUsuario", true));
             this.codUsuarioLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.codUsuarioLabel1.ForeColor = System.Drawing.SystemColors.ControlDark;
@@ -205,7 +207,7 @@
             // 
             this.ciLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "Ci", true));
             this.ciLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ciLabel1.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.ciLabel1.ForeColor = System.Drawing.Color.White;
             this.ciLabel1.Location = new System.Drawing.Point(184, 5);
             this.ciLabel1.Name = "ciLabel1";
             this.ciLabel1.Size = new System.Drawing.Size(100, 23);
@@ -216,7 +218,7 @@
             // 
             this.apellidoLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "Apellido", true));
             this.apellidoLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.apellidoLabel1.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.apellidoLabel1.ForeColor = System.Drawing.Color.White;
             this.apellidoLabel1.Location = new System.Drawing.Point(184, 49);
             this.apellidoLabel1.Name = "apellidoLabel1";
             this.apellidoLabel1.Size = new System.Drawing.Size(100, 23);
@@ -227,7 +229,7 @@
             // 
             this.nombreLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "Nombre", true));
             this.nombreLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.nombreLabel1.ForeColor = System.Drawing.SystemColors.ControlDark;
+            this.nombreLabel1.ForeColor = System.Drawing.Color.White;
             this.nombreLabel1.Location = new System.Drawing.Point(184, 28);
             this.nombreLabel1.Name = "nombreLabel1";
             this.nombreLabel1.Size = new System.Drawing.Size(100, 23);
@@ -276,7 +278,7 @@
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 50);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(230, 533);
+            this.panelMenu.Size = new System.Drawing.Size(230, 555);
             this.panelMenu.TabIndex = 2;
             // 
             // btnProveedores
@@ -312,7 +314,7 @@
             this.btnCerrarSesion.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.btnCerrarSesion.Image = global::FarmaciaOASIS.Properties.Resources.CerrarSesion2;
             this.btnCerrarSesion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCerrarSesion.Location = new System.Drawing.Point(0, 443);
+            this.btnCerrarSesion.Location = new System.Drawing.Point(0, 465);
             this.btnCerrarSesion.Name = "btnCerrarSesion";
             this.btnCerrarSesion.Size = new System.Drawing.Size(230, 97);
             this.btnCerrarSesion.TabIndex = 7;
@@ -358,7 +360,7 @@
             // 
             this.rolLabel1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.usuarioBindingSource, "Rol", true));
             this.rolLabel1.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rolLabel1.ForeColor = System.Drawing.SystemColors.ControlDarkDark;
+            this.rolLabel1.ForeColor = System.Drawing.Color.White;
             this.rolLabel1.Location = new System.Drawing.Point(3, 7);
             this.rolLabel1.Name = "rolLabel1";
             this.rolLabel1.Size = new System.Drawing.Size(163, 23);
@@ -593,13 +595,14 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1100, 583);
+            this.ClientSize = new System.Drawing.Size(1100, 605);
             this.Controls.Add(this.panel1ContenedorPrincipal);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.MinimumSize = new System.Drawing.Size(680, 500);
             this.Name = "FormMenuPrincipal";
             this.Opacity = 0.93D;
+            this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Form1";
             this.Load += new System.EventHandler(this.FormMenuPrincipal_Load);
             this.panel1ContenedorPrincipal.ResumeLayout(false);
