@@ -790,5 +790,10 @@ namespace FarmaciaOASIS.Vistas.VentanasCruds
         {
             clienteBindingSource.DataSource = _objCliente.Listar(txtBuscarCliente.Text);
         }
+
+        private void medicamentoDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
     }
 }

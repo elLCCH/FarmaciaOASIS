@@ -242,6 +242,7 @@
             dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.detalleFacturaDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            this.detalleFacturaDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.detalleFacturaDataGridView.Size = new System.Drawing.Size(621, 367);
             this.detalleFacturaDataGridView.TabIndex = 12;
             // 

@@ -170,6 +170,7 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.medicamentoDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.medicamentoDataGridView.RowHeadersVisible = false;
+            this.medicamentoDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.medicamentoDataGridView.Size = new System.Drawing.Size(776, 355);
             this.medicamentoDataGridView.TabIndex = 19;
             this.medicamentoDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.medicamentoDataGridView_CellClick);

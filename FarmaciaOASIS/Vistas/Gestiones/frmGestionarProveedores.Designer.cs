@@ -172,6 +172,7 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.proveedorDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.proveedorDataGridView.RowHeadersVisible = false;
+            this.proveedorDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.proveedorDataGridView.Size = new System.Drawing.Size(775, 332);
             this.proveedorDataGridView.TabIndex = 19;
             this.proveedorDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.proveedorDataGridView_CellClick);
