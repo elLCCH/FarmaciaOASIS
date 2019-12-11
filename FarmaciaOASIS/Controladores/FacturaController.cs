@@ -40,5 +40,10 @@ namespace FarmaciaOASIS.Controladores
         {
             return _db.Factura.Max(x => x.NoFactura).ToString();
         }
+        public List<Factura> ListarPorFecha(DateTime pFechaIni, DateTime pFechaFinal)
+        {
+            pFechaFinal = pFechaFinal.AddDays(1);
+            return _db.Factura.Where(x => x.Fecha>=pFechaIni && x.Fecha<pFechaFinal).ToList();
+        }
     }
 }

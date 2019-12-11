@@ -39,6 +39,8 @@
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataVisualization.Charting.ChartArea chartArea1 = new System.Windows.Forms.DataVisualization.Charting.ChartArea();
+            System.Windows.Forms.DataVisualization.Charting.Legend legend1 = new System.Windows.Forms.DataVisualization.Charting.Legend();
             this.detalleFacturaBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.detalleFacturaDataGridView = new System.Windows.Forms.DataGridView();
             this.ColNumFact = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -56,6 +58,19 @@
             this.medicamentoBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.nomMedLabel1 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
+            this.facturaBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.facturaDataGridView = new System.Windows.Forms.DataGridView();
+            this.NoFactura = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.chart1 = new System.Windows.Forms.DataVisualization.Charting.Chart();
+            this.panel1 = new System.Windows.Forms.Panel();
+            this.panelGanancias = new System.Windows.Forms.Panel();
+            this.btnAceptarGanacias = new System.Windows.Forms.Button();
+            this.label4 = new System.Windows.Forms.Label();
+            this.bdvGanacias = new Bunifu.Framework.UI.BunifuDragControl(this.components);
             nombreLabel = new System.Windows.Forms.Label();
             apellidoLabel = new System.Windows.Forms.Label();
             ciLabel = new System.Windows.Forms.Label();
@@ -68,6 +83,11 @@
             ((System.ComponentModel.ISupportInitialize)(this.detalleFacturaBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.detalleFacturaDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.medicamentoBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.facturaBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.facturaDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).BeginInit();
+            this.panel1.SuspendLayout();
+            this.panelGanancias.SuspendLayout();
             this.SuspendLayout();
             // 
             // btnRegistrar
@@ -77,7 +97,7 @@
             this.btnRegistrar.FlatAppearance.BorderSize = 0;
             this.btnRegistrar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(69)))), ((int)(((byte)(76)))));
             this.btnRegistrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(45)))), ((int)(((byte)(53)))));
-            this.btnRegistrar.Location = new System.Drawing.Point(90, 340);
+            this.btnRegistrar.Location = new System.Drawing.Point(73, 344);
             this.btnRegistrar.Size = new System.Drawing.Size(179, 46);
             this.btnRegistrar.Text = "Generar PDF";
             this.btnRegistrar.Click += new System.EventHandler(this.BtnRegistrar_Click);
@@ -88,7 +108,8 @@
             this.btnEliminar.FlatAppearance.BorderSize = 0;
             this.btnEliminar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(69)))), ((int)(((byte)(76)))));
             this.btnEliminar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(45)))), ((int)(((byte)(53)))));
-            this.btnEliminar.Location = new System.Drawing.Point(521, 405);
+            this.btnEliminar.Location = new System.Drawing.Point(6, 442);
+            this.btnEliminar.Size = new System.Drawing.Size(135, 40);
             this.btnEliminar.Visible = false;
             // 
             // btnModificar
@@ -97,14 +118,16 @@
             this.btnModificar.FlatAppearance.BorderSize = 0;
             this.btnModificar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(69)))), ((int)(((byte)(76)))));
             this.btnModificar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(45)))), ((int)(((byte)(53)))));
-            this.btnModificar.Location = new System.Drawing.Point(675, 405);
-            this.btnModificar.Visible = false;
+            this.btnModificar.Location = new System.Drawing.Point(15, 396);
+            this.btnModificar.Size = new System.Drawing.Size(298, 40);
+            this.btnModificar.Text = "Ver Reporte de Ganancias";
+            this.btnModificar.Click += new System.EventHandler(this.BtnModificar_Click);
             // 
             // txtBusqueda
             // 
             this.txtBusqueda.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
             this.txtBusqueda.Location = new System.Drawing.Point(296, 56);
-            this.txtBusqueda.Size = new System.Drawing.Size(623, 24);
+            this.txtBusqueda.Size = new System.Drawing.Size(583, 24);
             this.txtBusqueda.Text = "";
             this.txtBusqueda.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.TxtBusqueda_KeyPress);
             this.txtBusqueda.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TxtBusqueda_KeyUp);
@@ -116,7 +139,7 @@
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Location = new System.Drawing.Point(967, 6);
+            this.pictureBox1.Location = new System.Drawing.Point(927, 6);
             this.pictureBox1.Size = new System.Drawing.Size(87, 88);
             // 
             // nombreLabel
@@ -231,7 +254,7 @@
             dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
             this.detalleFacturaDataGridView.DefaultCellStyle = dataGridViewCellStyle2;
             this.detalleFacturaDataGridView.EnableHeadersVisualStyles = false;
-            this.detalleFacturaDataGridView.Location = new System.Drawing.Point(298, 84);
+            this.detalleFacturaDataGridView.Location = new System.Drawing.Point(333, 101);
             this.detalleFacturaDataGridView.Name = "detalleFacturaDataGridView";
             this.detalleFacturaDataGridView.ReadOnly = true;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -243,7 +266,7 @@
             dataGridViewCellStyle3.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
             this.detalleFacturaDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.detalleFacturaDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.detalleFacturaDataGridView.Size = new System.Drawing.Size(621, 367);
+            this.detalleFacturaDataGridView.Size = new System.Drawing.Size(546, 298);
             this.detalleFacturaDataGridView.TabIndex = 12;
             // 
             // ColNumFact
@@ -389,13 +412,125 @@
             this.label3.TabIndex = 25;
             this.label3.Text = "Busqueda:";
             // 
+            // facturaBindingSource
+            // 
+            this.facturaBindingSource.DataSource = typeof(FarmaciaOASIS.Data.Factura);
+            // 
+            // facturaDataGridView
+            // 
+            this.facturaDataGridView.AutoGenerateColumns = false;
+            this.facturaDataGridView.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            this.facturaDataGridView.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
+            this.NoFactura,
+            this.dataGridViewTextBoxColumn2,
+            this.dataGridViewTextBoxColumn3,
+            this.dataGridViewTextBoxColumn4,
+            this.dataGridViewTextBoxColumn5});
+            this.facturaDataGridView.DataSource = this.facturaBindingSource;
+            this.facturaDataGridView.Location = new System.Drawing.Point(28, 3);
+            this.facturaDataGridView.Name = "facturaDataGridView";
+            this.facturaDataGridView.Size = new System.Drawing.Size(342, 220);
+            this.facturaDataGridView.TabIndex = 26;
+            // 
+            // NoFactura
+            // 
+            this.NoFactura.DataPropertyName = "NoFactura";
+            this.NoFactura.HeaderText = "NoFactura";
+            this.NoFactura.Name = "NoFactura";
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            this.dataGridViewTextBoxColumn2.DataPropertyName = "Fecha";
+            this.dataGridViewTextBoxColumn2.HeaderText = "Fecha";
+            this.dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            this.dataGridViewTextBoxColumn3.DataPropertyName = "CodCliente";
+            this.dataGridViewTextBoxColumn3.HeaderText = "CodCliente";
+            this.dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            this.dataGridViewTextBoxColumn4.DataPropertyName = "Cliente";
+            this.dataGridViewTextBoxColumn4.HeaderText = "Cliente";
+            this.dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            this.dataGridViewTextBoxColumn5.DataPropertyName = "DetalleFactura";
+            this.dataGridViewTextBoxColumn5.HeaderText = "DetalleFactura";
+            this.dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            // 
+            // chart1
+            // 
+            chartArea1.Name = "ChartArea1";
+            this.chart1.ChartAreas.Add(chartArea1);
+            legend1.Name = "Legend1";
+            this.chart1.Legends.Add(legend1);
+            this.chart1.Location = new System.Drawing.Point(41, 77);
+            this.chart1.Name = "chart1";
+            this.chart1.Size = new System.Drawing.Size(725, 325);
+            this.chart1.TabIndex = 29;
+            this.chart1.Text = "chart1";
+            // 
+            // panel1
+            // 
+            this.panel1.Controls.Add(this.facturaDataGridView);
+            this.panel1.Location = new System.Drawing.Point(932, 86);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(162, 107);
+            this.panel1.TabIndex = 30;
+            this.panel1.Visible = false;
+            // 
+            // panelGanancias
+            // 
+            this.panelGanancias.Controls.Add(this.btnAceptarGanacias);
+            this.panelGanancias.Controls.Add(this.label4);
+            this.panelGanancias.Controls.Add(this.chart1);
+            this.panelGanancias.Location = new System.Drawing.Point(108, 6);
+            this.panelGanancias.Name = "panelGanancias";
+            this.panelGanancias.Size = new System.Drawing.Size(786, 470);
+            this.panelGanancias.TabIndex = 31;
+            this.panelGanancias.Visible = false;
+            // 
+            // btnAceptarGanacias
+            // 
+            this.btnAceptarGanacias.Location = new System.Drawing.Point(351, 408);
+            this.btnAceptarGanacias.Name = "btnAceptarGanacias";
+            this.btnAceptarGanacias.Size = new System.Drawing.Size(125, 31);
+            this.btnAceptarGanacias.TabIndex = 31;
+            this.btnAceptarGanacias.Text = "ACEPTAR";
+            this.btnAceptarGanacias.UseVisualStyleBackColor = true;
+            this.btnAceptarGanacias.Click += new System.EventHandler(this.BtnAceptarGanacias_Click);
+            // 
+            // label4
+            // 
+            this.label4.AutoSize = true;
+            this.label4.Font = new System.Drawing.Font("Monotype Corsiva", 20.25F, ((System.Drawing.FontStyle)((System.Drawing.FontStyle.Bold | System.Drawing.FontStyle.Italic))));
+            this.label4.ForeColor = System.Drawing.SystemColors.Control;
+            this.label4.Location = new System.Drawing.Point(239, 27);
+            this.label4.Name = "label4";
+            this.label4.Size = new System.Drawing.Size(336, 33);
+            this.label4.TabIndex = 30;
+            this.label4.Text = "REPORTE DE GANANCIAS";
+            // 
+            // bdvGanacias
+            // 
+            this.bdvGanacias.Fixed = false;
+            this.bdvGanacias.Horizontal = true;
+            this.bdvGanacias.TargetControl = this.panelGanancias;
+            this.bdvGanacias.Vertical = true;
+            // 
             // frmReportes
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(24)))), ((int)(((byte)(176)))), ((int)(((byte)(140)))));
-            this.ClientSize = new System.Drawing.Size(1056, 500);
+            this.ClientSize = new System.Drawing.Size(1016, 494);
+            this.Controls.Add(this.panelGanancias);
             this.Controls.Add(this.detalleFacturaDataGridView);
+            this.Controls.Add(this.panel1);
             this.Controls.Add(this.label3);
             this.Controls.Add(nomMedLabel);
             this.Controls.Add(this.nomMedLabel1);
@@ -433,18 +568,26 @@
             this.Controls.SetChildIndex(this.nomMedLabel1, 0);
             this.Controls.SetChildIndex(nomMedLabel, 0);
             this.Controls.SetChildIndex(this.label3, 0);
+            this.Controls.SetChildIndex(this.panel1, 0);
+            this.Controls.SetChildIndex(this.detalleFacturaDataGridView, 0);
             this.Controls.SetChildIndex(this.pictureBox2, 0);
             this.Controls.SetChildIndex(this.pictureBox1, 0);
             this.Controls.SetChildIndex(this.txtBusqueda, 0);
             this.Controls.SetChildIndex(this.btnModificar, 0);
             this.Controls.SetChildIndex(this.btnEliminar, 0);
             this.Controls.SetChildIndex(this.btnRegistrar, 0);
-            this.Controls.SetChildIndex(this.detalleFacturaDataGridView, 0);
+            this.Controls.SetChildIndex(this.panelGanancias, 0);
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.detalleFacturaBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.detalleFacturaDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.medicamentoBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.facturaBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.facturaDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.chart1)).EndInit();
+            this.panel1.ResumeLayout(false);
+            this.panelGanancias.ResumeLayout(false);
+            this.panelGanancias.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -470,5 +613,18 @@
         private System.Windows.Forms.BindingSource medicamentoBindingSource;
         private System.Windows.Forms.Label nomMedLabel1;
         private System.Windows.Forms.Label label3;
+        private System.Windows.Forms.BindingSource facturaBindingSource;
+        private System.Windows.Forms.DataGridView facturaDataGridView;
+        private System.Windows.Forms.DataGridViewTextBoxColumn NoFactura;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private System.Windows.Forms.DataVisualization.Charting.Chart chart1;
+        private System.Windows.Forms.Panel panel1;
+        private System.Windows.Forms.Panel panelGanancias;
+        private System.Windows.Forms.Button btnAceptarGanacias;
+        private System.Windows.Forms.Label label4;
+        private Bunifu.Framework.UI.BunifuDragControl bdvGanacias;
     }
 }
