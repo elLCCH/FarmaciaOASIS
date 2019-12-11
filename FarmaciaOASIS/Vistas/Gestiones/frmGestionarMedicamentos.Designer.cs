@@ -158,7 +158,7 @@
             this.medicamentoDataGridView.DefaultCellStyle = dataGridViewCellStyle2;
             this.medicamentoDataGridView.EnableHeadersVisualStyles = false;
             this.medicamentoDataGridView.GridColor = System.Drawing.Color.LimeGreen;
-            this.medicamentoDataGridView.Location = new System.Drawing.Point(105, 117);
+            this.medicamentoDataGridView.Location = new System.Drawing.Point(103, 117);
             this.medicamentoDataGridView.Name = "medicamentoDataGridView";
             this.medicamentoDataGridView.ReadOnly = true;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -171,7 +171,7 @@
             this.medicamentoDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.medicamentoDataGridView.RowHeadersVisible = false;
             this.medicamentoDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.medicamentoDataGridView.Size = new System.Drawing.Size(776, 328);
+            this.medicamentoDataGridView.Size = new System.Drawing.Size(776, 355);
             this.medicamentoDataGridView.TabIndex = 19;
             this.medicamentoDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.medicamentoDataGridView_CellClick);
             this.medicamentoDataGridView.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.medicamentoDataGridView_CellPainting);

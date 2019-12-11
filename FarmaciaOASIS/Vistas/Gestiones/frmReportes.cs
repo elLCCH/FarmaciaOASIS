@@ -11,6 +11,7 @@ using System.Windows.Forms;
 using System.IO;
 using iTextSharp.text;
 using iTextSharp.text.pdf;
+using System.Windows.Forms.DataVisualization.Charting;
 
 namespace FarmaciaOASIS.Vistas.Gestiones
 {
@@ -18,6 +19,7 @@ namespace FarmaciaOASIS.Vistas.Gestiones
     {
         DetalleFacturaController _DFac = new DetalleFacturaController();
         MedicamentoController _med = new MedicamentoController();
+        FacturaController _Fac = new FacturaController();
         public frmReportes()
         {
             InitializeComponent();
@@ -25,11 +27,62 @@ namespace FarmaciaOASIS.Vistas.Gestiones
 
         private void frmReportes_Load(object sender, EventArgs e)
         {
+            Graficacion();
             ListarTodo();
+            
             txtBusqueda.Focus();
         }
 
-        
+        private void Graficacion()
+        {
+            int mes1 = Graficar(-30, 0); //ultimos 30 dias
+            int mes2 = Graficar(-60, -30); //hace 2 meses
+            int mes3 = Graficar(-90, -60); //hace 3 meses
+            int mes4 = Graficar(-120, -90); //hace 4 meses
+            int mes5 = Graficar(-150, -120); //hace 5 meses
+            //vectores con los datos
+            string[] series = { "ULTIMOS 30 DIAS", "HACE 2 MESES", "HACE 3 MESES", "HACE 4 MESES", "HACE 5 MESES" };
+            int[] puntos = { mes1, mes2, mes3, mes4, mes5 };
+
+            //cambiar la combiacion de colores
+            chart1.Palette = ChartColorPalette.Pastel;
+
+            for (int i = 0; i < series.Length; i++)
+            {
+                //titulos
+                Series serie = chart1.Series.Add(series[i]);
+                //cant
+                serie.Label = puntos[i].ToString();
+                serie.Points.Add(puntos[i]);
+            }
+        }
+
+        private int Graficar(int pIni,int pFin)
+        {
+
+            DateTime date1 = DateTime.Now.AddDays(pIni);
+            DateTime date2 = DateTime.Now.AddDays(pFin);
+
+
+            facturaBindingSource.DataSource = _Fac.ListarPorFecha(date1, date2);
+
+            //operacion de sumacion entre las fechas
+            int TotalPagoGrafica = 0;
+            foreach (DataGridViewRow row in facturaDataGridView.Rows)
+            {
+                int numFac = Convert.ToInt32(row.Cells["NoFactura"].Value);
+
+                detalleFacturaBindingSource.DataSource = _DFac.Listar(numFac);
+               // MessageBox.Show("ya se listo");
+
+                foreach (DataGridViewRow row1 in detalleFacturaDataGridView.Rows)
+                {
+                    TotalPagoGrafica = TotalPagoGrafica + (Convert.ToInt32(row1.Cells["ColPre"].Value)) * (Convert.ToInt32(row1.Cells["ColCant"].Value));
+
+                }
+            }
+            return TotalPagoGrafica;
+        }
 
         private void Listar(string pBuscar)
         {
@@ -63,7 +116,28 @@ namespace FarmaciaOASIS.Vistas.Gestiones
                 {
                     Listar(txtBusqueda.Text);
                     ListarSeleccionado();
-                    btnRegistrar.Enabled = true;
+                    if (detalleFacturaDataGridView.Rows.Count != 0)
+                    {
+                       // MessageBox.Show("existe");
+                        
+                        
+                        btnRegistrar.Enabled = true;
+                    }
+                    else
+                    {
+                        //MessageBox.Show("no existe");
+                        btnRegistrar.Enabled = false;
+                        MessageBox.Show("NO SE ENCONTRÓ NINGUNA FACTURA!", "AVISO!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        
+                    }
+
+
+                    //else
+                    //{
+
+
+                    //}
+
                 }
 
             }
@@ -72,8 +146,10 @@ namespace FarmaciaOASIS.Vistas.Gestiones
         private void ListarSeleccionado()
         {
             int TotalPago = 0;
+            //detalleFacturaBindingSource.DataSource = _DFac.Listar(Convert.ToInt32(txtBusqueda.Text));
             foreach (DataGridViewRow row in detalleFacturaDataGridView.Rows)
             {
+                
                 TotalPago = TotalPago + (Convert.ToInt32(row.Cells["ColPre"].Value)) * (Convert.ToInt32(row.Cells["ColCant"].Value));
                 lblTotal.Text = Convert.ToString(TotalPago);
             }
@@ -224,5 +300,26 @@ namespace FarmaciaOASIS.Vistas.Gestiones
             }
         }
 
+        private void Button1_Click(object sender, EventArgs e)
+        {
+
+
+
+            //poniendo las fechas iniciales y finales
+            //DateTime date1 = Convert.ToDateTime(textBox1.Text);
+            //DateTime date2 = Convert.ToDateTime(textBox2.Text);
+
+
+        }
+
+        private void BtnModificar_Click(object sender, EventArgs e)
+        {
+            panelGanancias.Visible = true;
+        }
+
+        private void BtnAceptarGanacias_Click(object sender, EventArgs e)
+        {
+            panelGanancias.Visible = false;
+        }
     }
 }

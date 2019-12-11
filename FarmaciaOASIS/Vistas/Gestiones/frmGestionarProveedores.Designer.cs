@@ -58,7 +58,7 @@
             this.btnRegistrar.FlatAppearance.BorderSize = 0;
             this.btnRegistrar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(69)))), ((int)(((byte)(76)))));
             this.btnRegistrar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(45)))), ((int)(((byte)(53)))));
-            this.btnRegistrar.Location = new System.Drawing.Point(716, 73);
+            this.btnRegistrar.Location = new System.Drawing.Point(703, 88);
             this.btnRegistrar.Click += new System.EventHandler(this.BtnAgregar_Click);
             // 
             // btnEliminar
@@ -82,7 +82,7 @@
             // txtBusqueda
             // 
             this.txtBusqueda.CharacterCasing = System.Windows.Forms.CharacterCasing.Upper;
-            this.txtBusqueda.Location = new System.Drawing.Point(317, 79);
+            this.txtBusqueda.Location = new System.Drawing.Point(302, 94);
             this.txtBusqueda.MaxLength = 20;
             this.txtBusqueda.Text = "";
             this.txtBusqueda.KeyUp += new System.Windows.Forms.KeyEventHandler(this.TxtBusqueda_KeyUp);
@@ -160,7 +160,7 @@
             this.proveedorDataGridView.DefaultCellStyle = dataGridViewCellStyle2;
             this.proveedorDataGridView.EnableHeadersVisualStyles = false;
             this.proveedorDataGridView.GridColor = System.Drawing.Color.LimeGreen;
-            this.proveedorDataGridView.Location = new System.Drawing.Point(107, 112);
+            this.proveedorDataGridView.Location = new System.Drawing.Point(93, 136);
             this.proveedorDataGridView.Name = "proveedorDataGridView";
             this.proveedorDataGridView.ReadOnly = true;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -173,7 +173,7 @@
             this.proveedorDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.proveedorDataGridView.RowHeadersVisible = false;
             this.proveedorDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.proveedorDataGridView.Size = new System.Drawing.Size(775, 346);
+            this.proveedorDataGridView.Size = new System.Drawing.Size(775, 332);
             this.proveedorDataGridView.TabIndex = 19;
             this.proveedorDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.proveedorDataGridView_CellClick);
             this.proveedorDataGridView.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.proveedorDataGridView_CellPainting);
@@ -256,7 +256,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label2.ForeColor = System.Drawing.SystemColors.Control;
-            this.label2.Location = new System.Drawing.Point(229, 85);
+            this.label2.Location = new System.Drawing.Point(209, 96);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(82, 18);
             this.label2.TabIndex = 25;

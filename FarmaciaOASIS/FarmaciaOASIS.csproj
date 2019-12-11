@@ -31,6 +31,9 @@
     <ErrorReport>prompt</ErrorReport>
     <WarningLevel>4</WarningLevel>
   </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>iconoOASIS.ico</ApplicationIcon>
+  </PropertyGroup>
   <ItemGroup>
     <Reference Include="Bunifu_UI_v1.5.3, Version=1.5.3.0, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -51,6 +54,7 @@
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
     <Reference Include="System.Security" />
+    <Reference Include="System.Windows.Forms.DataVisualization" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -296,6 +300,7 @@
       <DependentUpon>dbFarmaciaOASIS.edmx</DependentUpon>
       <LastGenOutput>dbFarmaciaOASIS.cs</LastGenOutput>
     </Content>
+    <Content Include="iconoOASIS.ico" />
     <Content Include="Resources\2.png" />
     <Content Include="Resources\21.png" />
     <Content Include="Resources\bien.png" />

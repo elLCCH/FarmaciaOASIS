@@ -99,9 +99,14 @@ namespace FarmaciaOASIS.Vistas
             if (panelMenu.Width == 63)
             {
                 panelMenu.Width = 230;
+                rolLabel1.Visible = true;
             }
             else
-               panelMenu.Width = 63;
+            {
+                panelMenu.Width = 63;
+                rolLabel1.Visible = false;
+            }
+               
         }
         private void tmMostrarMenu_Tick(object sender, EventArgs e)
         {

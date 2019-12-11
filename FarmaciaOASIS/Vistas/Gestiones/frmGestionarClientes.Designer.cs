@@ -159,7 +159,7 @@
             this.clienteDataGridView.DefaultCellStyle = dataGridViewCellStyle2;
             this.clienteDataGridView.EnableHeadersVisualStyles = false;
             this.clienteDataGridView.GridColor = System.Drawing.Color.LimeGreen;
-            this.clienteDataGridView.Location = new System.Drawing.Point(126, 123);
+            this.clienteDataGridView.Location = new System.Drawing.Point(107, 120);
             this.clienteDataGridView.Name = "clienteDataGridView";
             this.clienteDataGridView.ReadOnly = true;
             dataGridViewCellStyle3.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
@@ -172,7 +172,7 @@
             this.clienteDataGridView.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             this.clienteDataGridView.RowHeadersVisible = false;
             this.clienteDataGridView.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.clienteDataGridView.Size = new System.Drawing.Size(744, 339);
+            this.clienteDataGridView.Size = new System.Drawing.Size(744, 353);
             this.clienteDataGridView.TabIndex = 18;
             this.clienteDataGridView.CellClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.clienteDataGridView_CellClick);
             this.clienteDataGridView.CellPainting += new System.Windows.Forms.DataGridViewCellPaintingEventHandler(this.clienteDataGridView_CellPainting);
