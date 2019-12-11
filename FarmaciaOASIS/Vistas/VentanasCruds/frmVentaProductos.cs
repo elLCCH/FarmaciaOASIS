@@ -89,7 +89,7 @@ namespace FarmaciaOASIS.Vistas.VentanasCruds
                 }
                 else
                 { MessageBox.Show("YA EXISTE UN CLIENTE CON CI: '" + reg.Ci + "'", "AVISO!!!", MessageBoxButtons.OK, MessageBoxIcon.Warning); }
-
+                dgvVentas.Enabled = true;
             }
             catch (Exception)
             {
@@ -198,8 +198,8 @@ namespace FarmaciaOASIS.Vistas.VentanasCruds
            
 
 
-            //dgvVentas.Rows[num_fila].Cells[3].Value = (Convert.ToDouble(txtCant.Text) + Convert.ToDouble(dgvVentas.Rows[num_fila].Cells[3].Value)).ToString();
-            //double importe = Convert.ToDouble(dgvVentas.Rows[num_fila].Cells[2].Value) * Convert.ToDouble(dgvVentas.Rows[num_fila].Cells[3].Value);
+            //dgvVentas.Rows[num_fila].Cells[3].Value = (Convert.ToInt32(txtCant.Text) + Convert.ToInt32(dgvVentas.Rows[num_fila].Cells[3].Value)).ToString();
+            //double importe = Convert.ToInt32(dgvVentas.Rows[num_fila].Cells[2].Value) * Convert.ToInt32(dgvVentas.Rows[num_fila].Cells[3].Value);
             //dgvVentas.Rows[num_fila].Cells[4].Value = importe;
 
 
@@ -351,15 +351,15 @@ namespace FarmaciaOASIS.Vistas.VentanasCruds
                 {
                     if (existe == true)
                     {
-                        dgvVentas.Rows[num_fila].Cells[3].Value = (Convert.ToDouble(txtCant.Text) + Convert.ToDouble(dgvVentas.Rows[num_fila].Cells[3].Value)).ToString();
-                        double importe = Convert.ToDouble(dgvVentas.Rows[num_fila].Cells[2].Value) * Convert.ToDouble(dgvVentas.Rows[num_fila].Cells[3].Value);
+                        dgvVentas.Rows[num_fila].Cells[3].Value = (Convert.ToInt32(txtCant.Text) + Convert.ToInt32(dgvVentas.Rows[num_fila].Cells[3].Value)).ToString();
+                        int importe = Convert.ToInt32(dgvVentas.Rows[num_fila].Cells[2].Value) * Convert.ToInt32(dgvVentas.Rows[num_fila].Cells[3].Value);
                         dgvVentas.Rows[num_fila].Cells[4].Value = importe;
                     }
                     else
                     {
 
                         dgvVentas.Rows.Add(codMedLabel1.Text, nomMedLabel1.Text, pUnitLabel1.Text, txtCant.Text);
-                        double costo = Convert.ToDouble(dgvVentas.Rows[cont_fila].Cells[2].Value) * Convert.ToDouble(dgvVentas.Rows[cont_fila].Cells[3].Value);
+                        int costo = Convert.ToInt32(dgvVentas.Rows[cont_fila].Cells[2].Value) * Convert.ToInt32(dgvVentas.Rows[cont_fila].Cells[3].Value);
                         dgvVentas.Rows[cont_fila].Cells[4].Value = costo;
                         cont_fila++;
                     }
@@ -367,7 +367,7 @@ namespace FarmaciaOASIS.Vistas.VentanasCruds
                 catch (Exception)
                 {
 
-                    MessageBox.Show("nose q paso");
+                    MessageBox.Show("OCURRIÓ UN ERROR AL AÑADIR A LA TABLA, POR FAVOR REINICE EL FORMULARIO VENTAS","ERROR",MessageBoxButtons.OK,MessageBoxIcon.Error);
                 }
                 
             }
@@ -541,8 +541,8 @@ namespace FarmaciaOASIS.Vistas.VentanasCruds
                 tabla.AddCell(cantidad);
                 tabla.AddCell(nombre);
                 tabla.AddCell(precio);
-                c1 = Convert.ToDouble(cantidad);
-                c2 = Convert.ToDouble(precio);
+                c1 = Convert.ToInt32(cantidad);
+                c2 = Convert.ToInt32(precio);
                 subt = c1 * c2;
                 totalprods = subt + totalprods;
                 tabla.AddCell(Convert.ToString(subt));
@@ -621,7 +621,11 @@ namespace FarmaciaOASIS.Vistas.VentanasCruds
                     }
                     
                 }
-                else { btnRegProd.Enabled = false; }
+                else
+                {
+                    MessageBox.Show("NO EXISTE UN CLIENTE CON CI: " + txtCiClie.Text + "!!", "AVISO", MessageBoxButtons.OK, MessageBoxIcon.Information); ;
+                    btnRegProd.Enabled = false;
+                }
 
             }
 
@@ -792,6 +796,11 @@ namespace FarmaciaOASIS.Vistas.VentanasCruds
         }
 
         private void medicamentoDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
+
+        private void DgvVentas_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
 
         }

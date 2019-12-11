@@ -114,18 +114,30 @@ namespace FarmaciaOASIS.Vistas.Gestiones
                 }
                 else
                 {
-                    if(detalleFacturaDataGridView.Rows.Count != 0)
+                    Listar(txtBusqueda.Text);
+                    ListarSeleccionado();
+                    if (detalleFacturaDataGridView.Rows.Count != 0)
                     {
-                        Listar(txtBusqueda.Text);
-                        ListarSeleccionado();
+                       // MessageBox.Show("existe");
+                        
+                        
                         btnRegistrar.Enabled = true;
                     }
                     else
                     {
+                        //MessageBox.Show("no existe");
                         btnRegistrar.Enabled = false;
                         MessageBox.Show("NO SE ENCONTRÓ NINGUNA FACTURA!", "AVISO!", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+                        
                     }
-                    
+
+
+                    //else
+                    //{
+
+
+                    //}
+
                 }
 
             }
@@ -134,8 +146,10 @@ namespace FarmaciaOASIS.Vistas.Gestiones
         private void ListarSeleccionado()
         {
             int TotalPago = 0;
+            //detalleFacturaBindingSource.DataSource = _DFac.Listar(Convert.ToInt32(txtBusqueda.Text));
             foreach (DataGridViewRow row in detalleFacturaDataGridView.Rows)
             {
+                
                 TotalPago = TotalPago + (Convert.ToInt32(row.Cells["ColPre"].Value)) * (Convert.ToInt32(row.Cells["ColCant"].Value));
                 lblTotal.Text = Convert.ToString(TotalPago);
             }

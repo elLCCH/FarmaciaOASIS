@@ -114,7 +114,6 @@
             // 
             // btnModificar
             // 
-            this.btnModificar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom)));
             this.btnModificar.FlatAppearance.BorderSize = 0;
             this.btnModificar.FlatAppearance.MouseDownBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(64)))), ((int)(((byte)(69)))), ((int)(((byte)(76)))));
             this.btnModificar.FlatAppearance.MouseOverBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(38)))), ((int)(((byte)(45)))), ((int)(((byte)(53)))));
@@ -485,10 +484,11 @@
             // 
             // panelGanancias
             // 
+            this.panelGanancias.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(20)))), ((int)(((byte)(176)))), ((int)(((byte)(230)))));
             this.panelGanancias.Controls.Add(this.btnAceptarGanacias);
             this.panelGanancias.Controls.Add(this.label4);
             this.panelGanancias.Controls.Add(this.chart1);
-            this.panelGanancias.Location = new System.Drawing.Point(108, 6);
+            this.panelGanancias.Location = new System.Drawing.Point(108, 42);
             this.panelGanancias.Name = "panelGanancias";
             this.panelGanancias.Size = new System.Drawing.Size(786, 470);
             this.panelGanancias.TabIndex = 31;

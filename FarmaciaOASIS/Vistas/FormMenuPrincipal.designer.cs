@@ -147,7 +147,7 @@
             this.panel1ContenedorPrincipal.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panel1ContenedorPrincipal.Location = new System.Drawing.Point(0, 0);
             this.panel1ContenedorPrincipal.Name = "panel1ContenedorPrincipal";
-            this.panel1ContenedorPrincipal.Size = new System.Drawing.Size(1100, 605);
+            this.panel1ContenedorPrincipal.Size = new System.Drawing.Size(1100, 730);
             this.panel1ContenedorPrincipal.TabIndex = 0;
             // 
             // panelContenedor
@@ -156,7 +156,7 @@
             this.panelContenedor.Dock = System.Windows.Forms.DockStyle.Fill;
             this.panelContenedor.Location = new System.Drawing.Point(230, 50);
             this.panelContenedor.Name = "panelContenedor";
-            this.panelContenedor.Size = new System.Drawing.Size(870, 477);
+            this.panelContenedor.Size = new System.Drawing.Size(870, 602);
             this.panelContenedor.TabIndex = 2;
             // 
             // panel1
@@ -174,7 +174,7 @@
             this.panel1.Controls.Add(this.lbFecha);
             this.panel1.Controls.Add(this.pictureBox7);
             this.panel1.Dock = System.Windows.Forms.DockStyle.Bottom;
-            this.panel1.Location = new System.Drawing.Point(230, 527);
+            this.panel1.Location = new System.Drawing.Point(230, 652);
             this.panel1.Name = "panel1";
             this.panel1.Size = new System.Drawing.Size(870, 78);
             this.panel1.TabIndex = 5;
@@ -278,7 +278,7 @@
             this.panelMenu.Dock = System.Windows.Forms.DockStyle.Left;
             this.panelMenu.Location = new System.Drawing.Point(0, 50);
             this.panelMenu.Name = "panelMenu";
-            this.panelMenu.Size = new System.Drawing.Size(230, 555);
+            this.panelMenu.Size = new System.Drawing.Size(230, 680);
             this.panelMenu.TabIndex = 2;
             // 
             // btnProveedores
@@ -314,7 +314,7 @@
             this.btnCerrarSesion.ForeColor = System.Drawing.Color.WhiteSmoke;
             this.btnCerrarSesion.Image = global::FarmaciaOASIS.Properties.Resources.CerrarSesion2;
             this.btnCerrarSesion.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnCerrarSesion.Location = new System.Drawing.Point(0, 465);
+            this.btnCerrarSesion.Location = new System.Drawing.Point(0, 590);
             this.btnCerrarSesion.Name = "btnCerrarSesion";
             this.btnCerrarSesion.Size = new System.Drawing.Size(230, 97);
             this.btnCerrarSesion.TabIndex = 7;
@@ -595,11 +595,11 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoScroll = true;
-            this.ClientSize = new System.Drawing.Size(1100, 605);
+            this.ClientSize = new System.Drawing.Size(1100, 730);
             this.Controls.Add(this.panel1ContenedorPrincipal);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
-            this.MinimumSize = new System.Drawing.Size(680, 500);
+            this.MinimumSize = new System.Drawing.Size(1100, 726);
             this.Name = "FormMenuPrincipal";
             this.Opacity = 0.93D;
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;

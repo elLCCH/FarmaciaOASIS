@@ -35,7 +35,7 @@ namespace FarmaciaOASIS.Controladores
         }
         internal List<DetalleFactura> ListarTodo()
         {
-            return _db.DetalleFactura.Select(x => x).OrderBy(y=>y.NoFactura).ToList();
+            return _db.DetalleFactura.Select(x => x).OrderByDescending(y=>y.NoFactura).ToList();
         }
        
     }
